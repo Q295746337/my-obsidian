@@ -11,7 +11,7 @@
 ## Phases
 
 - [ ] Phase 1：盘点与结构确认（已完成基础盘点，写入 notes.md）
-- [ ] Phase 2：并行处理 JVM / JUC / AI（3 个任务，已启动）
+- [ ] Phase 2：并行处理 JVM / JUC / AI（AI 已完成，JVM/JUC 进行中）
 - [ ] Phase 3：整合索引、交叉链接、图谱颜色、检索层
 - [ ] Phase 4：全库验收 + 交付报告
 
@@ -35,4 +35,4 @@
 
 ## Status
 
-**Currently in Phase 2** — JVM、JUC、AI 三个后台任务已启动，等待完成通知。
+**Currently in Phase 2** — AI 已完成并通过自检；等待 JVM、JUC 完成。
