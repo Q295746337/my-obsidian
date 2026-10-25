@@ -1,3 +1,9 @@
+---
+aliases:
+  - AOP
+  - 面向切面编程
+---
+
 # Spring AOP
 
 ## Spring_day02

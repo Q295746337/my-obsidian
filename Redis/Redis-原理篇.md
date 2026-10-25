@@ -1,3 +1,10 @@
+---
+aliases:
+  - Redis原理
+  - SDS
+  - 跳表
+---
+
 # Redis 原理篇
 
 ## Redis原理篇

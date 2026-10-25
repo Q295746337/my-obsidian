@@ -1962,7 +1962,7 @@ revoke all on itcast.* from 'heima '@ '% ';
 ```
 
 
-## 4. 函数
+## 3. 函数
 
 
 函数  是指一段可以直接被另一段程序调用的程序或代码。   也就意味着，这一段程序或代码在MySQL中已经给我们提供了，我们要做的就是在合适的业务场景调用对应的函数完成对应的业务需求即可。    那么，函数到底在哪儿使用呢？
@@ -2287,7 +2287,7 @@ MySQL的常见函数我们学习完了，那接下来，我们就来分析一下
 答案 : case ... when ...
 
 
-## 6. 约束
+## 4. 约束
 
 
 ### 4.1 概述
@@ -2557,7 +2557,7 @@ alter table emp add constraint fk_emp_dept_id foreign key (dept_id) references d
 这就是SET NULL这种删除/更新行为的效果。
 
 
-## 7. 多表查询
+## 5. 多表查询
 
 
 我们之前在讲解SQL语句的时候，讲解了DQL语句，也就是数据查询语句，但是之前讲解的查询都是单表查询，而本章节我们要学习的则是多表查询操作，主要从以下几个方面进行讲解。
@@ -3555,7 +3555,7 @@ select s.name , s.no , c.name from student s , student_course sc , course c wher
 备注 : 以上需求的实现方式可能会很多 , SQL写法也有很多，只要能满足我们的需求，查询出符合条件的记录即可。
 
 
-## 8. 事务
+## 6. 事务
 
 
 ### 6.1 事务简介
@@ -3624,9 +3624,13 @@ insert into account (name, money) VALUES
 
 ```sql
 -- 1. 查询张三余额
-select * from account where name = '张三 ';   -- 2. 张三的余额减少10
-update account set money = money - 1000 where name = '张三 ';   -- 3. 李四的余额增加10
-update account set money = money + 1000 where name = '李四 ';
+select * from account where name = '张三';
+
+-- 2. 张三的余额减少 1000
+update account set money = money - 1000 where name = '张三';
+
+-- 3. 李四的余额增加 1000
+update account set money = money + 1000 where name = '李四';
 ```
 
 
@@ -3641,10 +3645,14 @@ update account set money = money + 1000 where name = '李四 ';
 
 ```sql
 -- 1. 查询张三余额
-select * from account where name = '张三 ';   -- 2. 张三的余额减少10
-update account set money = money - 1000 where name = '张三 ';   出错了
--- 3. 李四的余额增加10
-update account set money = money + 1000 where name = '李四 ';
+select * from account where name = '张三';
+
+-- 2. 张三的余额减少 1000
+update account set money = money - 1000 where name = '张三';
+-- 出错了
+
+-- 3. 李四的余额增加 1000
+update account set money = money + 1000 where name = '李四';
 ```
 
 
@@ -3661,7 +3669,8 @@ update account set money = money + 1000 where name = '李四 ';
 
 
 ```sql
-SELECT  @@autocommit ;   SET   @@autocommit = 0 ;
+SELECT @@autocommit;
+SET @@autocommit = 0;
 ```
 
 
@@ -3691,7 +3700,9 @@ ROLLBACK;
 
 
 ```sql
-START  TRANSACTION   或  BEGIN ;
+START TRANSACTION;
+-- 或
+BEGIN;
 ```
 
 
@@ -3705,22 +3716,32 @@ COMMIT;
 
 3). 回滚事务
 
+```sql
+ROLLBACK;
+```
 
 转账案例：
 
 
 ```sql
 -- 开启事务
-start transaction
+start transaction;
+
 -- 1. 查询张三余额
-select * from account where name = '张三 ';   -- 2. 张三的余额减少10
-update account set money = money - 1000 where name = '张三 ';   -- 3. 李四的余额增加100
-update account set money = money + 1000 where name = '李四 ';1
--- 如果正常执行完毕, 则提交事务
+select * from account where name = '张三';
+
+-- 2. 张三的余额减少 1000
+update account set money = money - 1000 where name = '张三';
+
+-- 3. 李四的余额增加 1000
+update account set money = money + 1000 where name = '李四';
+
+-- 如果正常执行完毕，则提交事务
+commit;
+
+-- 如果执行过程中报错，则回滚事务
 -- rollback;
 ```
-
-commit;   -- 如果执行过程中报错, 则回滚事务
 
 
 ### 6.3 事务四大特性

@@ -1,3 +1,9 @@
+---
+aliases:
+  - InnoDB
+  - MVCC
+---
+
 # InnoDB引擎
 
 ## 6. InnoDB引擎

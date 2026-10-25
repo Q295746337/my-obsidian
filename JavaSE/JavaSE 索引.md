@@ -1,3 +1,9 @@
+---
+aliases:
+  - JavaSE
+  - Java基础
+---
+
 # JavaSE 知识体系
 
 | 笔记 | 内容 | 子文件 |

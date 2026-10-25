@@ -90,6 +90,13 @@
         "a": 1,
         "rgb": 10092543
       }
+    },
+    {
+      "query": "path:检索",
+      "color": {
+        "a": 1,
+        "rgb": 1357990
+      }
     }
   ],
   "collapse-display": false,

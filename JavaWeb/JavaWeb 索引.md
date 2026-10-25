@@ -1,3 +1,9 @@
+---
+aliases:
+  - JavaWeb
+  - Web开发
+---
+
 # JavaWeb 知识体系
 
 | 笔记 | 内容 | 子文件 |

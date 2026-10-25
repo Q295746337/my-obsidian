@@ -1,3 +1,10 @@
+---
+aliases:
+  - IOC
+  - DI
+  - 依赖注入
+---
+
 # Spring 框架
 
 > IOC/DI、AOP、声明式事务 — [[JavaWeb/06-SpringBoot事务与AOP|JavaWeb AOP]] 的底层基础

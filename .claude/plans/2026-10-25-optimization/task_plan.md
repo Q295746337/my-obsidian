@@ -16,13 +16,13 @@
 - [x] Phase 1：基线盘点 + 原始 docx 恢复 + MySQL 细节清单
 - [x] Phase 2：拆分 SpringBoot2/03
 - [x] Phase 3：拆分 SpringBoot2/01
-- [ ] Phase 4：补 14 个空章节
-- [ ] Phase 5：MySQL 细节收口
-- [ ] Phase 6：全库验收 + 更新索引/图谱 + 交付报告
+- [x] Phase 4：补 14 个空章节
+- [x] Phase 5：MySQL 细节收口
+- [x] Phase 6：全库验收 + 更新索引/图谱 + 交付报告
 
 ## Status
 
-**Currently in Phase 4** — SpringBoot2 01/03 已拆分完成，开始补 14 个空章节。
+**Completed** — 交付报告：[[优化执行报告-2026-10-25]]
 
 ## Constraints
 

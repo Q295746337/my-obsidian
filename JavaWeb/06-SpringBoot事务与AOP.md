@@ -1,3 +1,9 @@
+---
+aliases:
+  - SpringBoot AOP
+  - SpringBoot事务
+---
+
 # SpringBoot事务与AOP
 
 > SpringBoot 事务确保 [[02-数据库与持久层|数据库与持久层]] 中数据库操作的一致性。AOP 面向切面编程基于 [[JavaSE/14-反射与动态代理|反射与动态代理]] 的动态代理机制。

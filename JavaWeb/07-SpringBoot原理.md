@@ -1,3 +1,9 @@
+---
+aliases:
+  - SpringBoot原理
+  - 自动配置
+---
+
 # SpringBoot原理
 
 ## SpringBoot原理

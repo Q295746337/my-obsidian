@@ -1,3 +1,9 @@
+---
+aliases:
+  - SpringMVC
+  - MVC
+---
+
 # SpringMVC
 
 > Web 层框架，[[JavaWeb/04-SpringBoot请求响应|JavaWeb 请求响应]] 的前身

@@ -1,3 +1,9 @@
+---
+aliases:
+  - SpringBoot2
+  - SpringBoot
+---
+
 # SpringBoot2 知识体系
 
 > SpringBoot 2.x 完整教程
