@@ -1,0 +1,334 @@
+
+===== SLIDE 1 =====
+[TEXT] 常见技术场景
+
+===== SLIDE 2 =====
+[TEXT] 常见技术场景
+[TEXT] 你负责项目的时候遇到了哪些比较棘手的问题
+[TEXT] 单点登录这块怎么实现的
+[TEXT] 权限认证是如何实现的
+[TEXT] 上传数据的安全性你们怎么控制？
+[TEXT] 你们项目中日志怎么采集的
+[TEXT] 你们是怎么做压测(性能测试)的
+[TEXT] 查看日志的命令
+[TEXT] 怎么快速定位系统的瓶颈
+[TEXT] 生产问题怎么排查
+
+===== SLIDE 3 =====
+[TEXT] 常见技术场景
+[TEXT] 你负责项目的时候遇到了哪些比较棘手的问题
+[TEXT] 单点登录这块怎么实现的
+[TEXT] 权限认证是如何实现的
+[TEXT] 上传数据的安全性你们怎么控制？
+[TEXT] 你们项目中日志怎么采集的
+[TEXT] 查看日志的命令
+[TEXT] 生产问题怎么排查
+
+===== SLIDE 4 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 单点登录的英文名叫做：Single Sign On（简称SSO）,只需要登录一次，就可以访问所有信任的应用系统
+[TEXT] 登录
+[TEXT] 商品
+[TEXT] 支付
+[TEXT] 订单
+[TEXT] 单体
+[TEXT] 微服务、分布式
+[TEXT] 登录
+[TEXT] 商品
+[TEXT] 支付
+[TEXT] 订单
+[TEXT] 单个tomcat服务session可以共享
+[TEXT] 多个tomcat服务session不共享
+[TEXT] 单点登录解决方案
+  JWT(常见)
+  Oauth2
+  CAS
+  …
+
+===== SLIDE 5 =====
+[TEXT] JWT解决单点登录
+[PIC] name=图片 4 size=77x77cm pos=(165,311)
+[TEXT] 网关
+[TEXT] 登录
+[TEXT] 商品
+[TEXT] 支付
+[TEXT] 订单
+
+===== SLIDE 6 =====
+[TEXT] JWT解决单点登录
+[PIC] name=图片 4 size=53x53cm pos=(787,120)
+[TEXT] 网关
+[TEXT] 登录
+[TEXT] 商品
+[TEXT] 支付
+[TEXT] 订单
+[TEXT] 浏览器
+[TEXT] 订单服务
+[TEXT] 12.处理订单
+[TEXT] 网关
+[TEXT] 2.校验token是否有效
+[TEXT] 登录服务
+[TEXT] 6.认证校验，
+  返回token（JWT）
+[TEXT] 8.把token写入cookie
+[TEXT] 10.校验token是否有效
+
+===== SLIDE 7 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 1，先解释什么是单点登录
+  单点登录的英文名叫做：Single Sign On（简称SSO）
+  2，介绍自己项目中涉及到的单点登录（即使没涉及过，也可以说实现的思路）
+  3，介绍单点登录的解决方案，以JWT为例
+[TEXT] 用户访问其他系统，会在网关判断token是否有效
+  如果token无效则会返回401（认证失败）前端跳转到登录页面
+  用户发送登录请求，返回浏览器一个token，浏览器把token保存到cookie
+  再去访问其他服务的时候，都需要携带token，由网关统一验证后路由到目标服务
+
+===== SLIDE 8 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 后台的管理系统，更注重权限控制，最常见的就是RBAC模型来指导实现权限
+[TEXT] RBAC(Role-Based Access Control)基于角色的访问控制
+[TEXT] 5张表（用户表、角色表、权限表、用户角色中间表、角色权限中间表）
+  7张表（用户表、角色表、权限表、菜单表、用户角色中间表、角色权限中间表、权限菜单中间表）
+[TEXT] 3个基础部分组成：用户、角色、权限
+  具体实现
+
+===== SLIDE 9 =====
+[TEXT] RBAC权限模型
+[TEXT] 1
+[TEXT] n
+[TEXT] 1
+[TEXT] 1
+[TEXT] 1
+[TEXT] n
+[TEXT] n
+[TEXT] n
+
+===== SLIDE 10 =====
+[TEXT] RBAC权限模型
+[TEXT] 1
+[TEXT] n
+[TEXT] 1
+[TEXT] 1
+[TEXT] 1
+[TEXT] n
+[TEXT] n
+[TEXT] n
+[TABLE]
+id | name
+1 | 张三
+2 | 李四
+[TABLE]
+id | name
+1 | 销售主管
+2 | 销售员
+[TABLE]
+id | name
+1 | 新增员工
+2 | 新增产品
+3 | 删除产品
+[TABLE]
+user_id | role_id
+1 | 1
+2 | 2
+[TABLE]
+role_id | permission_id
+1 | 1
+2 | 2
+2 | 3
+[TEXT] t_user
+[TEXT] t_role
+[TEXT] t_permission
+[TEXT] 张三具有什么权限呢？
+  流程：张三登录系统---> 查询张三拥有的角色列表--->再根据角色查询拥有的权限
+[TEXT] 权限框架：
+  Apache shiro   、 Spring security（推荐）
+
+===== SLIDE 11 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 后台管理系统的开发经验
+  介绍RBAC权限模型5张表的关系（用户、角色、权限）
+  权限框架：Spring security
+
+===== SLIDE 12 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 使用非对称加密（或对称加密），给前端一个公钥让他把数据加密后传到后台，后台负责解密后处理数据
+
+===== SLIDE 13 =====
+[TEXT] 对称加密
+[TEXT] 秘钥
+[TEXT] 原始数据（123456）
+[TEXT] 原始数据（123456）
+[TEXT] 解密
+[TEXT] 加密
+[TEXT] 密文：
+  b0baee9d279d34fa1dfd71aadb908c3f
+[PIC] name=图形 17 size=100x100cm pos=(616,248)
+[TEXT] 文件加密和解密使用相同的密钥，即加密密钥也可以用作解密密钥
+[TEXT] 网络传输
+[TEXT] 优点：加密速度快，效率高
+  缺点：相对不太安全（不要保存敏感信息）
+
+===== SLIDE 14 =====
+[TEXT] 非对称加密
+[TEXT] 公钥
+[TEXT] 原始数据（123456）
+[TEXT] 原始数据（123456）
+[TEXT] 解密
+[TEXT] 加密
+[TEXT] 密文：
+  b0baee9d279d34fa1dfd71aadb908c3f
+[PIC] name=图形 17 size=100x100cm pos=(398,261)
+[TEXT] 两个密钥：公开密钥（publickey）和私有密钥，公有密钥加密，私有密钥解密
+[PIC] name=图形 15 size=100x100cm pos=(828,258)
+[TEXT] 私钥
+[TEXT] 网络传输
+[TEXT] 优点：与对称加密相比，安全性更高
+  缺点：加密和解密速度慢，建议少量数据加密
+
+===== SLIDE 15 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[PIC] name=图片 1 size=126x126cm pos=(237,311)
+[TEXT] 后台服务
+[TEXT] 服务A
+[TEXT] 服务B
+[TEXT] 服务D
+[TEXT] 服务C
+[TEXT] 使用非对称加密（或对称加密），给前端一个公钥让他把数据加密后传到后台，后台负责解密后处理数据
+[TEXT] 文件很大建议使用对称加密，不过不能保存敏感信息
+  文件较小，要求安全性高，建议采用非对称加密
+
+===== SLIDE 16 =====
+[PIC] name=图形 30 size=94x127cm pos=(74,143)
+[TEXT] 1，什么背景（技术问题）
+  2，过程（解决问题的过程）
+  3，最终落地方案
+[TEXT] 提前准备
+
+===== SLIDE 17 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 1，为什么要采集日志？
+[TEXT] 2，采集日志的方式有哪些?
+[TEXT] 日志是定位系统问题的重要手段，可以根据日志信息快速定位系统中的问题
+[TEXT] ELK：即Elasticsearch、Logstash和Kibana三个软件的首字母
+  常规采集：按天保存到一个日志文件
+[PIC] name=图片 15 size=302x170cm pos=(317,481)
+
+===== SLIDE 18 =====
+[TEXT] 你们项目中日志怎么采集的
+[TEXT] 应用系统1
+[TEXT] 应用系统2
+[TEXT] 应用系统3
+[TEXT] logstash
+[TEXT] Elasticsearch
+[TEXT] Kibana
+[TEXT] ELK即Elasticsearch、Logstash和Kibana三个开源软件的缩写
+[TEXT] logback
+[TEXT] logback
+[TEXT] logback
+[TEXT] 动态收集筛选过滤数据（日志）
+[TEXT] 对数据存储，搜索、分析
+[TEXT] 可视化展示，搜索、分析
+
+===== SLIDE 19 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 我们搭建了ELK日志采集系统
+  介绍ELK的三个组件：
+[TEXT] Elasticsearch是全文搜索分析引擎，可以对数据存储、搜索、分析
+  Logstash是一个数据收集引擎，可以动态收集数据，可以对数据进行过滤、分析，将数据存储到指定的位置
+  Kibana是一个数据分析和可视化平台，配合Elasticsearch对数据进行搜索，分析，图表化展示
+
+===== SLIDE 20 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 目前采集日志的方式：按天保存到一个日志文件
+[PIC] name=图片 1 size=302x170cm pos=(821,102)
+[TEXT] 实时监控日志的变化
+  按照行号查询
+  按照关键字找日志的信息
+  按照日期查询
+  日志太多，处理方
+[TEXT] Linux中查看日志：
+
+===== SLIDE 21 =====
+[TEXT] 查看日志的命令
+[TEXT] 实时监控日志的变化
+  
+  按照行号查询
+  
+  
+  
+  按照关键字找日志的信息
+  
+  按照日期查询
+  
+  日志太多，处理方式
+[TEXT] 实时监控某一个日志文件的变化：tail -f xx.log；实时监控日志最后100行日志： tail –n 100 -f xx.log
+[TEXT] 查询日志尾部最后100行日志：tail – n 100 xx.log
+  查询日志头部开始100行日志：head –n 100 xx.log
+  查询某一个日志行号区间：cat -n xx.log | tail -n +100 | head -n 100 (查询100行至200行的日志)
+[TEXT] 查询日志文件中包含debug的日志行号：cat -n xx.log | grep "debug"
+[TEXT] sed -n '/2023-05-18 14:22:31.070/,/ 2023-05-18 14:27:14.158/p’xx.log
+[PIC] name=图片 11 size=449x180cm pos=(830,433)
+[TEXT] 分页查询日志信息：cat -n xx.log |grep "debug" | more
+  筛选过滤以后，输出到一个文件：cat -n xx.log | grep "debug" >debug.txt
+
+===== SLIDE 22 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 已经上线的bug排查的思路：
+  1，先分析日志，通常在业务中都会有日志的记录，或者查看系统日志，或者查看日志文件，然后定位问题
+  2，远程debug(通常公司的正式环境（生产环境）是不允许远程debug的。一般远程debug都是公司的测试环境，方便调试代码)
+
+===== SLIDE 23 =====
+[TEXT] 远程debug
+[TEXT] 前提条件：远程的代码和本地的代码要保持一致
+  远程代码需要配置启动参数，把项目打包放到服务器后启动项目的参数：
+  
+  
+  idea中设置远程debug，找到idea中的 Edit Configurations...
+[TEXT] java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 project-1.0-SNAPSHOT.jar
+[PIC] name=图片 7 size=469x339cm pos=(101,389)
+[PIC] name=图片 9 size=812x519cm pos=(455,171)
+
+===== SLIDE 24 =====
+[TEXT] 远程debug
+[TEXT] 3. idea中启动远程debug
+  
+  
+  4. 访问远程服务器，在本地代码中打断点即可调试远程
+[PIC] name=图片 4 size=689x98cm pos=(352,193)
+
+===== SLIDE 25 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 已经上线的bug排查的思路：
+  1，先分析日志，通常在业务中都会有日志的记录，或者查看系统日志，或者查看日志文件，然后定位问题
+  2，远程debug(通常公司的正式环境（生产环境）是不允许远程debug的。一般远程debug都是公司的测试环境，方便调试代码)
+
+===== SLIDE 26 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 压测（性能测试），项目上线之前测评系统的压力
+  监控工具、链路追踪工具，项目上线之后监控
+  线上诊断工具Arthas(阿尔萨斯)，项目上线之后监控、排查
+
+===== SLIDE 27 =====
+[TEXT] 压测（性能测试）
+  
+  
+  
+  
+  
+  监控工具、链路追踪工具
+  
+  
+  线上诊断工具Arthas(阿尔萨斯)
+[TEXT] 压测目的：给出系统当前的性能状况；定位系统性能瓶颈或潜在性能瓶颈
+  指标：响应时间、 QPS、并发数、吞吐量、 CPU利用率、内存使用率、磁盘IO、错误率
+  压测工具：LoadRunner、Apache Jmeter …
+  后端工程师：根据压测的结果进行解决或调优（接口慢、代码报错、并发达不到要求…）
+[TEXT] 监控工具：Prometheus+Grafana
+  链路追踪工具：skywalking、Zipkin
+[TEXT] 官网：https://arthas.aliyun.com/
+  核心功能：
+[PIC] name=图片 12 size=624x374cm pos=(595,350)
+[PIC] name=图片 16 size=913x274cm pos=(412,237)
+
+===== SLIDE 28 =====

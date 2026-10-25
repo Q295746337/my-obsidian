@@ -1,0 +1,517 @@
+
+===== SLIDE 1 =====
+[TEXT] 消息中间件篇
+
+===== SLIDE 2 =====
+[TEXT] RabbitMQ
+[TEXT] 消息不丢失
+[TEXT] 消息重复消费
+[TEXT] 消息堆积
+[TEXT] 延迟队列
+[TEXT] 死信队列
+[TEXT] 高可用机制
+[TEXT] Kafka
+[TEXT] 高性能设计
+[TEXT] 数据存储和清理
+
+===== SLIDE 3 =====
+[TEXT] RabbitMQ
+
+===== SLIDE 4 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 消息未到达交换机
+[TEXT] 消息未到达队列
+
+===== SLIDE 5 =====
+[TEXT] 生产者确认机制
+[TEXT] RabbitMQ提供了publisher confirm机制来避免消息发送到MQ过程中丢失。消息发送到MQ以后，会返回一个结果给发送者，表示消息是否处理成功
+[TEXT] publisher
+[TEXT] consumer1
+[TEXT] queue1
+[TEXT] exchange
+[TEXT] consumer2
+[TEXT] queue2
+[TEXT] Fanout
+[TEXT] nack
+  publish-confirm
+[TEXT] ack
+  publish-return
+[TEXT] ack
+  publish-confirm
+[TEXT] 消息失败之后如何处理呢？
+  回调方法即时重发
+  记录日志
+  保存到数据库然后定时重发，成功发送后即刻删除表中的数据
+
+===== SLIDE 6 =====
+[TEXT] 消息持久化
+[TEXT] MQ默认是内存存储消息，开启持久化功能可以确保缓存在MQ中的消息不丢失。
+  交换机持久化：
+  
+  
+  
+  队列持久化：
+  
+  
+  
+  消息持久化，SpringAMQP中的的消息默认是持久的，可以通过MessageProperties中的DeliveryMode来指定的：
+[TEXT] @Beanpublic DirectExchange simpleExchange(){    // 三个参数：交换机名称、是否持久化、当没有queue与其绑定时是否自动删除     return new DirectExchange("simple.direct", true, false);}
+[TEXT] @Beanpublic Queue simpleQueue(){    // 使用QueueBuilder构建队列，durable就是持久化的    return QueueBuilder.durable("simple.queue").build();}
+[TEXT] Message msg = MessageBuilder        .withBody(message.getBytes(StandardCharsets.UTF_8)) // 消息体        .setDeliveryMode(MessageDeliveryMode.PERSISTENT) // 持久化         .build();
+
+===== SLIDE 7 =====
+[TEXT] 消费者确认
+[TEXT] RabbitMQ支持消费者确认机制，即：消费者处理消息后可以向MQ发送ack回执，MQ收到ack回执后才会删除该消息。而SpringAMQP则允许配置三种确认模式：
+  manual：手动ack，需要在业务代码结束后，调用api发送ack。
+  auto：自动ack，由spring监测listener代码是否出现异常，没有异常则返回ack；抛出异常则返回nack
+  none：关闭ack，MQ假定消费者获取消息后会成功处理，因此消息投递后立即被删除
+[TEXT] error.direct
+[TEXT] error.queue
+[TEXT] Retry
+  Exhausted
+[TEXT] 我们可以利用Spring的retry机制，在消费者出现异常时利用本地重试，设置重试次数，当次数达到了以后，如果消息依然失败，将消息投递到异常交换机，交由人工处理
+
+===== SLIDE 8 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 开启生产者确认机制，确保生产者的消息能到达队列
+  开启持久化功能，确保消息未消费前在队列中不会丢失
+  开启消费者确认机制为auto，由spring确认消息处理成功后完成ack
+  开启消费者失败重试机制，多次重试失败后将消息投递到异常交换机，交由人工处理
+[PIC] name=图片 2 size=814x394cm pos=(300,280)
+
+===== SLIDE 9 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 解决方案：
+  每条消息设置一个唯一的标识id
+  幂等方案：【 分布式锁、数据库锁（悲观锁、乐观锁） 】
+[TEXT] 业务唯一标识：支付id，订单id，文章id ….
+[TEXT] 校验业务id是否存在
+[TEXT] 适用于任何MQ：
+  Kafka
+  RabbitMQ
+  RocketMQ
+  …
+[PIC] name=图片 25 size=730x380cm pos=(507,210)
+
+===== SLIDE 10 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[PIC] name=图片 1 size=826x311cm pos=(264,360)
+[TEXT] 延迟队列=死信交换机+TTL（生存时间）
+
+===== SLIDE 11 =====
+[TEXT] 死信交换机
+[TEXT] 当一个队列中的消息满足下列情况之一时，可以成为死信（dead letter）：
+  消费者使用basic.reject或 basic.nack声明消费失败，并且消息的requeue参数设置为false
+  消息是一个过期消息，超时无人消费
+  要投递的队列消息堆积满了，最早的消息可能成为死信
+  如果该队列配置了dead-letter-exchange属性，指定了一个交换机，那么队列中的死信就会投递到这个交换机中，而这个交换机称为死信交换机（Dead Letter Exchange，简称DLX）。
+[TEXT] publisher
+[TEXT] consumer
+[TEXT] simple.queue
+[TEXT] simple.direct
+[TEXT] reject
+[TEXT] dl.direct
+[TEXT] dl.queue
+[TEXT] dead-letter-exchange = dl.direct
+[TEXT] dead-letter-routing-key = dl
+[TEXT] dl
+[PIC] name=图片 26 size=784x206cm pos=(489,188)
+
+===== SLIDE 12 =====
+[TEXT] consumer
+[TEXT] TTL
+[TEXT] TTL，也就是Time-To-Live。如果一个队列中的消息TTL结束仍未消费，则会变为死信，ttl超时分为两种情况：
+  消息所在的队列设置了存活时间
+  消息本身设置了存活时间
+[TEXT] publisher
+[TEXT] ttl.queue
+[TEXT] ttl.direct
+[TEXT] dl.direct
+[TEXT] dl.queue
+[TEXT] ttl = 5000
+[TEXT] ttl
+[TEXT] dl
+[TEXT] x-message-ttl = 10000
+[PIC] name=图片 12 size=753x229cm pos=(459,124)
+
+===== SLIDE 13 =====
+[TEXT] 延迟队列插件
+[TEXT] DelayExchange插件，需要安装在RabbitMQ中
+  RabbitMQ有一个官方的插件社区，地址为：https://www.rabbitmq.com/community-plugins.html
+[PIC] name=图片 4 size=837x196cm pos=(87,293)
+
+===== SLIDE 14 =====
+[TEXT] 延迟队列插件
+[TEXT] DelayExchange的本质还是官方的三种交换机，只是添加了延迟功能。因此使用时只需要声明一个交换机，交换机的类型可以是任意类型，然后设定delayed属性为true即可。
+[PIC] name=图片 4 size=836x249cm pos=(91,281)
+[PIC] name=图片 8 size=969x224cm pos=(324,432)
+
+===== SLIDE 15 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 延迟队列插件实现延迟队列DelayExchange
+  声明一个交换机，添加delayed属性为true
+  发送消息时，添加x-delay头，值为超时时间
+[TEXT] 我们当时一个什么业务使用到了延迟队列（超时订单、限时优惠、定时发布…）
+  其中延迟队列就用到了死信交换机和TTL（消息存活时间）实现的
+  消息超时未消费就会变成死信（死信的其他情况：拒绝被消费，队列满了）
+[PIC] name=图片 11 size=846x423cm pos=(446,204)
+
+===== SLIDE 16 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 解决消息堆积有三种种思路：
+  增加更多消费者，提高消费速度
+  在消费者内开启线程池加快消息处理速度
+  扩大队列容积，提高堆积上限
+
+===== SLIDE 17 =====
+[TEXT] 惰性队列
+[TEXT] 惰性队列的特征如下：
+  接收到消息后直接存入磁盘而非内存
+  消费者要消费消息时才会从磁盘中读取并加载到内存
+  支持数百万条的消息存储
+[PIC] name=图片 3 size=507x196cm pos=(94,398)
+[PIC] name=图片 4 size=751x221cm pos=(581,390)
+
+===== SLIDE 18 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 解决消息堆积有三种种思路：
+  增加更多消费者，提高消费速度
+  在消费者内开启线程池加快消息处理速度
+  扩大队列容积，提高堆积上限，采用惰性队列
+[TEXT] 在声明队列的时候可以设置属性x-queue-mode为lazy，即为惰性队列
+  基于磁盘存储，消息上限高
+  性能比较稳定，但基于磁盘存储，受限于磁盘IO，时效性会降低
+[PIC] name=图片 2 size=709x417cm pos=(505,225)
+
+===== SLIDE 19 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+
+===== SLIDE 20 =====
+[TEXT] 普通集群
+[TEXT] 普通集群，或者叫标准集群（classic cluster），具备下列特征：
+  会在集群的各个节点间共享部分数据，包括：交换机、队列元信息。不包含队列中的消息。
+  当访问集群某节点时，如果队列不在该节点，会从数据所在节点传递到当前节点并返回
+  队列所在节点宕机，队列中的消息就会丢失
+[TEXT] test.exchange
+[TEXT] test.exchange
+[TEXT] test.queue1
+[TEXT] test.queue2
+[TEXT] test.queue3
+[TEXT] test.exchange
+[TEXT] test.exchange
+[TEXT] consumer
+  bind-queue1
+[TEXT] test.queue1
+[TEXT] test.queue1
+
+===== SLIDE 21 =====
+[TEXT] 镜像集群
+[TEXT] 镜像集群：本质是主从模式，具备下面的特征：
+  交换机、队列、队列中的消息会在各个mq的镜像节点之间同步备份。
+  创建队列的节点被称为该队列的主节点，备份到的其它节点叫做该队列的镜像节点。
+  一个队列的主节点可能是另一个队列的镜像节点
+  所有操作都是主节点完成，然后同步给镜像节点
+  主宕机后，镜像节点会替代成新的主
+[TEXT] test.queue2
+[TEXT] test.queue1
+[TEXT] test.exchange
+[TEXT] test.exchange
+[TEXT] test.exchange
+[TEXT] test.queue1
+[TEXT] test.queue2
+[TEXT] test.queue3
+[TEXT] test.queue3
+
+===== SLIDE 22 =====
+[TEXT] 仲裁队列
+[TEXT] 仲裁队列：仲裁队列是3.8版本以后才有的新功能，用来替代镜像队列，具备下列特征：
+  与镜像队列一样，都是主从模式，支持主从数据同步
+  使用非常简单，没有复杂的配置
+  主从同步基于Raft协议，强一致
+[TEXT] @Beanpublic Queue quorumQueue() {    return QueueBuilder            .durable("quorum.queue") // 持久化             .quorum() // 仲裁队列            .build();}
+
+===== SLIDE 23 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 在生产环境下，我们当时采用的镜像模式搭建的集群，共有3个节点
+  镜像队列结构是一主多从（从就是镜像），所有操作都是主节点完成，然后同步给镜像节点
+  主宕机后，镜像节点会替代成新的主（如果在主从同步完成前，主就已经宕机，可能出现数据丢失）
+[TEXT] 我们可以采用仲裁队列，与镜像队列一样，都是主从模式，支持主从数据同步，主从同步基于Raft协议，强一致。
+  并且使用起来也非常简单，不需要额外的配置，在声明队列的时候只要指定这个是仲裁队列即可
+[PIC] name=图片 11 size=767x423cm pos=(498,210)
+
+===== SLIDE 24 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] producer
+[TEXT] consumer
+[TEXT] consumer
+[TEXT] consumer
+[TEXT] producer
+[TEXT] producer
+
+===== SLIDE 25 =====
+[TEXT] 生产者发送消息到Brocker丢失
+[TEXT] 设置异步发送
+[TEXT] producer
+[TEXT] consumer
+[TEXT] consumer
+[TEXT] consumer
+[TEXT] producer
+[TEXT] producer
+[TEXT] //同步发送RecordMetadata recordMetadata = kafkaProducer.send(record).get();//异步发送kafkaProducer.send(record, new Callback() {    @Override    public void onCompletion(RecordMetadata recordMetadata, Exception e) {        if (e != null) {            System.out.println("消息发送失败 | 记录日志");        }        long offset = recordMetadata.offset();        int partition = recordMetadata.partition();        String topic = recordMetadata.topic();    }});
+[TEXT] 消息重试
+[TEXT] //设置重试次数prop.put(ProducerConfig.RETRIES_CONFIG,10);
+
+===== SLIDE 26 =====
+[TEXT] 消息在Brocker中存储丢失
+[TEXT] 发送确认机制acks
+[TEXT] producer
+[TEXT] leader
+[TEXT] producer
+[TEXT] producer
+[TEXT] follower
+[TABLE]
+确认机制 | 说明
+acks=0 | 生产者在成功写入消息之前不会等待任何来自服务器的响应,消息有丢失的风险，但是速度最快
+acks=1（默认值） | 只要集群首领节点收到消息，生产者就会收到一个来自服务器的成功响应
+acks=all | 只有当所有参与赋值的节点全部收到消息时，生产者才会收到一个来自服务器的成功响应
+
+===== SLIDE 27 =====
+[TEXT] 消费者从Brocker接收消息丢失
+[TEXT] Kafka cluster
+[TEXT] Borker1
+[TEXT] Borker2
+[TEXT] T1 P1
+[TEXT] T1 P3
+[TEXT] T1 P2
+[TEXT] T1 P4
+[TEXT] producer
+[TEXT] producer
+[TEXT] producer
+[TEXT] consumer2
+[TEXT] consumer1
+[TEXT] consumer3
+[TEXT] Kafka 中的分区机制指的是将每个主题划分成多个分区（Partition）
+  topic分区中消息只能由消费者组中的唯一一个消费者处理，不同的分区分配给不同的消费者（同一个消费者组）
+
+===== SLIDE 28 =====
+[TEXT] 消费者从Brocker接收消息丢失
+[TABLE]
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+[TEXT] P1
+[TABLE]
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+[TEXT] P2
+[TEXT] consumer1
+[TEXT] 消费者默认是自动按期提交已经消费的偏移量，默认是每隔5s提交一次
+  如果出现重平衡的情况，可能会重复消费或丢失数据
+[TABLE]
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+[TEXT] P3
+[TEXT] consumer2
+[TEXT] 禁用自动提交偏移量，改为手动
+  同步提交
+  异步提交
+  同步+异步组合提交
+[PIC] name=图片 11 size=690x415cm pos=(312,270)
+
+===== SLIDE 29 =====
+[PIC] name=图形 3 size=94x127cm pos=(73,152)
+[TEXT] 需要从三个层面去解决这个问题：
+  生产者发送消息到Brocker丢失
+  设置异步发送，发送失败使用回调进行记录或重发
+  失败重试，参数配置，可以设置重试次数
+  消息在Brocker中存储丢失
+        发送确认acks，选择all，让所有的副本都参与保存数据后确认
+  消费者从Brocker接收消息丢失
+  关闭自动提交偏移量，开启手动提交偏移量
+  提交方式，最好是同步+异步提交
+[PIC] name=图形 13 size=94x127cm pos=(86,546)
+[TEXT] 关闭自动提交偏移量，开启手动提交偏移量
+  提交方式，最好是同步+异步提交
+  幂等方案
+[PIC] name=图片 20 size=592x528cm pos=(507,110)
+
+===== SLIDE 30 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+
+===== SLIDE 31 =====
+[TEXT] 消费者从Brocker接收消息丢失
+[TABLE]
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+[TEXT] P1
+[TABLE]
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+[TEXT] P2
+[TEXT] consumer1
+[TABLE]
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+[TEXT] P3
+[TEXT] consumer2
+[TEXT] topic分区中消息只能由消费者组中的唯一一个消费者处理，所以消息肯定是按照先后顺序进行处理的。但是它也仅仅是保证Topic的一个分区顺序处理，不能保证跨分区的消息先后处理顺序。 所以，如果你想要顺序的处理Topic的所有消息，那就只提供一个分区。
+[PIC] name=图片 9 size=1008x140cm pos=(250,427)
+
+===== SLIDE 32 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 问题原因：
+  一个topic的数据可能存储在不同的分区中，每个分区都有一个按照顺序的存储的偏移量，如果消费者关联了多个分区不能保证顺序性
+  解决方案：
+  发送消息时指定分区号
+  发送消息时按照相同的业务设置相同的key
+[PIC] name=图片 2 size=775x267cm pos=(269,443)
+
+===== SLIDE 33 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+
+===== SLIDE 34 =====
+[TEXT] broker2
+[TEXT] broker1
+[TEXT] Kafka cluster
+[TEXT] producer
+[TEXT] producer
+[TEXT] producer
+[TEXT] consumer
+[TEXT] consumer
+[TEXT] consumer
+[TEXT] Kafka 的服务器端由被称为 Broker 的服务进程构成，即一个 Kafka 集群由多个 Broker 组成
+  这样如果集群中某一台机器宕机，其他机器上的 Broker 也依然能够对外提供服务。这其实就是 Kafka 提供高可用的手段之一
+[TEXT] 集群模式
+
+===== SLIDE 35 =====
+[TEXT] 分区备份机制
+[TEXT] P0-Leader
+[TEXT] P1-Leader
+[TEXT] P2-0-Leader
+[TEXT] P0-follower
+[TEXT] P1-follower
+[TEXT] P0-follower
+[TEXT] P2-follower
+[TEXT] P1-follower
+[TEXT] P2-follower
+[TEXT] broker1
+[TEXT] broker2
+[TEXT] broker3
+[TEXT] Kafka cluster
+[TEXT] 某一个topic中有三个分区P0、P1、P2
+[TEXT] topic
+[TEXT] 一个topic有多个分区，每个分区有多个副本，其中有一个leader，其余的是follower，副本存储在不同的broker中
+  所有的分区副本的内容是都是相同的，如果leader发生故障时，会自动将其中一个follower提升为leader
+
+===== SLIDE 36 =====
+[TEXT] 分区备份机制
+[TEXT] Leader Replica
+[TEXT] Kafka cluster
+[TEXT] producer
+[TEXT] follower
+[TEXT] ……
+[TEXT] ……
+[TEXT] follower
+[TEXT] ISR
+[TEXT] 普通
+[TEXT] ISR（in-sync replica）需要同步复制保存的follower
+[TEXT] 同步
+[TEXT] 异步
+[TEXT] 如果leader失效后，需要选出新的leader，选举的原则如下：
+  第一：选举时优先从ISR中选定，因为这个列表中follower的数据是与leader同步的
+  第二：如果ISR列表中的follower都不行了，就只能从其他follower中选取
+[PIC] name=图片 22 size=606x98cm pos=(666,533)
+
+===== SLIDE 37 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 可以从两个层面回答，第一个是集群，第二个是复制机制
+  集群：
+  一个kafka集群由多个broker实例组成，即使某一台宕机，也不耽误其他broker继续对外提供服务
+  复制机制：
+  一个topic有多个分区，每个分区有多个副本，有一个leader，其余的是follower，副本存储在不同的broker中
+  所有的分区副本的内容是都是相同的，如果leader发生故障时，会自动将其中一个follower提升为leader，保证了系统的容错性、高可用性
+[PIC] name=图形 1 size=94x127cm pos=(79,555)
+[TEXT] ISR（in-sync replica）需要同步复制保存的follower
+  分区副本分为了两类，一个是ISR，与leader副本同步保存数据，另外一个普通的副本，是异步同步数据，当leader挂掉之后，会优先从ISR副本列表中选取一个作为leader
+[PIC] name=图片 10 size=789x480cm pos=(496,198)
+
+===== SLIDE 38 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+
+===== SLIDE 39 =====
+[TEXT] Kafka文件存储机制
+[TEXT] 存储结构：
+[TEXT] itheima
+[TEXT] itheima-0
+[TEXT] itheima-1
+[TEXT] itheima-2
+[TEXT] Segment 0
+[TEXT] Segment 1
+[TEXT] Segment 2
+[TEXT] .index  索引文件
+  .log 数据文件
+  .timeindex 时间索引文件
+[PIC] name=图片 30 size=250x123cm pos=(549,594)
+[PIC] name=图片 32 size=511x78cm pos=(771,186)
+[TEXT] 为什么要分段？
+[TEXT] 删除无用文件方便，提高磁盘利用率
+  查找数据便捷
+
+===== SLIDE 40 =====
+[TEXT] 数据清理机制
+[TEXT] 日志的清理策略有两个
+  根据消息的保留时间，当消息在kafka中保存的时间超过了指定的时间，就会触发清理过程
+  
+  
+  2. 根据topic存储的数据大小，当topic所占的日志文件大小大于一定的阈值，则开始删除最久的消息。需手动开启
+[PIC] name=图片 4 size=728x65cm pos=(126,280)
+[PIC] name=图片 6 size=1044x95cm pos=(124,421)
+
+===== SLIDE 41 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] Kafka存储结构
+  Kafka中topic的数据存储在分区上，分区如果文件过大会分段存储segment
+  每个分段都在磁盘上以索引(xxxx.index)和日志文件(xxxx.log)的形式存储 
+  分段的好处是，第一能够减少单个文件内容的大小，查找数据方便，第二方便kafka进行日志清理。
+  日志的清理策略有两个：
+  根据消息的保留时间，当消息保存的时间超过了指定的时间，就会触发清理，默认是168小时（ 7天）
+  根据topic存储的数据大小，当topic所占的日志文件大小大于一定的阈值，则开始删除最久的消息。（默认关闭）
+[PIC] name=图片 3 size=748x435cm pos=(324,279)
+
+===== SLIDE 42 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+
+===== SLIDE 43 =====
+[TEXT] 零拷贝
+[TEXT] 用户
+  空间
+[TEXT] 内核
+  空间
+[TEXT] 硬件
+[TEXT] 页缓存
+[TEXT] kafka
+[TEXT] 磁盘文件
+[TEXT] producer
+[TEXT] Socket 缓冲区
+[TEXT] 网卡
+[TEXT] consumer
+
+===== SLIDE 44 =====
+[TEXT] 零拷贝
+[TEXT] 用户
+  空间
+[TEXT] 内核
+  空间
+[TEXT] 硬件
+[TEXT] 页缓存
+[TEXT] kafka
+[TEXT] 磁盘文件
+[TEXT] producer
+[TEXT] Socket 缓冲区
+[TEXT] 网卡
+[TEXT] consumer
+
+===== SLIDE 45 =====
+[PIC] name=图形 30 size=94x127cm pos=(73,152)
+[TEXT] 消息分区：不受单台服务器的限制，可以不受限的处理更多的数据
+  顺序读写：磁盘顺序读写，提升读写效率
+  页缓存：把磁盘中的数据缓存到内存中，把对磁盘的访问变为对内存的访问
+  零拷贝：减少上下文切换及数据拷贝
+  消息压缩：减少磁盘IO和网络IO
+  分批发送：将消息打包批量发送，减少网络开销
+[PIC] name=图片 2 size=762x386cm pos=(452,225)
+
+===== SLIDE 46 =====

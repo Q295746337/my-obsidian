@@ -1,0 +1,1496 @@
+
+===== SLIDE 1 =====
+[TEXT] JVM相关面试题
+
+===== SLIDE 2 =====
+[TEXT] 为什么要学习它
+[TEXT] 应对面试
+[TEXT] 深入理解Java
+[TEXT] 中高级程序员必备
+[PIC] name=图片 7 size=232x315cm pos=(808,369)
+[PIC] name=图片 8 size=221x294cm pos=(242,379)
+[TEXT] 升级
+
+===== SLIDE 3 =====
+[TEXT] JVM是什么
+[TEXT] Java Virtual Machine  Java程序的运行环境（java二进制字节码的运行环境）
+[TEXT] 好处：
+  一次编写，到处运行
+  自动内存管理，垃圾回收机制
+
+===== SLIDE 4 =====
+[TEXT] JVM由哪些部分组成，运行流程是什么？
+[TEXT] 运行数据区
+[TEXT] Java Source
+[TEXT] Java Class
+[TEXT] 类加载子系统
+[TEXT] Method Area/MateSpace
+  方法区/元空间
+[TEXT] Heap
+  堆
+[TEXT] PC Register
+  程序计数器
+[TEXT] JVM Stacks 虚拟机栈
+[TEXT] Native Method Stack 本地方法栈
+[TEXT] 执行引擎
+[TEXT] Interpreter
+  解释器
+[TEXT] JIT Compiler
+  即时编辑器
+[TEXT] GC
+  垃圾回收
+[TEXT] 本地方法接口
+[TEXT] 本地库
+
+===== SLIDE 5 =====
+[TEXT] 学习什么
+[TEXT] JVM组成
+  类加载器
+  垃圾回收
+  JVM实践
+[PIC] name=图片 3 size=857x408cm pos=(364,195)
+
+===== SLIDE 6 =====
+[TEXT] JVM组成
+[TEXT] 什么是程序计数器
+  你能给我详细的介绍下堆吗？
+  能不能介绍一下方法区
+  你听过直接内存吗
+  什么是虚拟机栈
+  垃圾回收是否涉及栈内存？
+  栈内存分配越大越好吗？
+  方法内的局部变量是否线程安全？
+  什么情况下会导致栈内存溢出？
+  堆栈的区别是什么
+[TEXT] 类加载器
+[TEXT] 什么是类加载器，类加载器有哪些
+  什么是双亲委派模型？
+  JVM为什么采用双亲委派机制？
+  说一下类装载的执行过程
+[TEXT] 垃圾回收
+[TEXT] 强引用、软引用、弱引用、虚对象什么时候可以被垃圾器回收
+  JVM 垃圾回收算法有哪些？
+  说一下JVM中的分代回收
+  说一下JVM有哪些垃圾回收器？
+  详细聊一下G1垃圾回收器
+[TEXT] JVM实践
+[TEXT] JVM 调优的参数可以在哪里设置
+  用的 JVM 调优的参数都有哪些？
+  说一下 JVM 调优的工具？
+  Java内存泄露的排查思路？
+  CPU飙高排查方案与思路？
+
+===== SLIDE 7 =====
+[TEXT] 难易程度：
+[TEXT] 什么是程序计数器？
+[TEXT] 出现频率：
+
+===== SLIDE 8 =====
+[TEXT] 什么是程序计数器？
+[TEXT] 程序计数器：线程私有的，内部保存的字节码的行号。用于记录正在执行的字节码指令的地址。
+[PIC] name=图片 41 size=957x456cm pos=(139,255)
+
+===== SLIDE 9 =====
+[TEXT] 什么是程序计数器？
+[TEXT] javap -v  xx.class    打印堆栈大小，局部变量的数量和方法的参数。
+[TEXT] 线程1
+[TEXT] 线程2
+[PIC] name=图片 8 size=265x371cm pos=(305,307)
+[PIC] name=图片 10 size=265x371cm pos=(731,307)
+
+===== SLIDE 10 =====
+[TEXT] 什么是程序计数器？
+[TEXT] 线程私有的，每个线程一份，内部保存的字节码的行号。用于记录正在执行的字节码指令的地址。
+
+===== SLIDE 11 =====
+[TEXT] 难易程度：
+[TEXT] 你能给我详细的介绍Java堆吗?
+[TEXT] 出现频率：
+
+===== SLIDE 12 =====
+[TEXT] 你能给我详细的介绍Java堆吗?
+[TEXT] 虚拟机栈
+[TEXT] 本地方法栈
+[TEXT] 程序计数器
+[TEXT] 直接内存
+[TEXT] 本地内存
+[TEXT] 堆
+[TEXT] 老年代
+[TEXT] Eden
+[TEXT] S0
+[TEXT] S1
+[TEXT] 年轻代
+[TEXT] Java8-JVM内存结构
+[TEXT] 元空间
+[TEXT] 年轻代被划分为三部分，Eden区和两个大小严格相同的Survivor区，根据JVM的策略，在经过几次垃圾收集后，任然存活于Survivor的对象将被移动到老年代区间。
+[TEXT] 老年代主要保存生命周期长的对象，一般是一些老的对象
+[TEXT] 元空间保存的类信息、静态变量、常量、编译后的代码
+[TEXT] 线程共享的区域：主要用来保存对象实例，数组等，当堆中没有内存空间可分配给实例，也无法再扩展时，则抛出OutOfMemoryError异常。
+
+===== SLIDE 13 =====
+[TEXT] 你能给我详细的介绍Java堆吗?
+[TEXT] 线程共享的区域：主要用来保存对象实例，数组等，当堆中没有内存空间可分配给实例，也无法再扩展时，则抛出OutOfMemoryError异常。
+[TEXT] 虚拟机栈
+[TEXT] 本地方法栈
+[TEXT] 程序计数器
+[TEXT] 直接内存
+[TEXT] 本地内存
+[TEXT] 堆
+[TEXT] 老年代
+[TEXT] 方法区/永久代
+[TEXT] Eden
+[TEXT] S0
+[TEXT] S1
+[TEXT] 年轻代
+[TEXT] Java7-JVM内存结构
+[TEXT] 虚拟机栈
+[TEXT] 本地方法栈
+[TEXT] 程序计数器
+[TEXT] 直接内存
+[TEXT] 本地内存
+[TEXT] 堆
+[TEXT] 老年代
+[TEXT] Eden
+[TEXT] S0
+[TEXT] S1
+[TEXT] 年轻代
+[TEXT] Java8-JVM内存结构
+[TEXT] 元空间
+[TEXT] 避免
+  OOM
+
+===== SLIDE 14 =====
+[TEXT] 你能给我详细的介绍Java堆吗?
+[TEXT] 线程共享的区域：主要用来保存对象实例，数组等，内存不够则抛出OutOfMemoryError异常。
+  组成：年轻代+老年代
+[TEXT] 年轻代被划分为三部分，Eden区和两个大小严格相同的Survivor区
+  老年代主要保存生命周期长的对象，一般是一些老的对象
+[TEXT] Jdk1.7和1.8的区别
+[TEXT] 1.7中有有一个永久代，存储的是类信息、静态变量、常量、编译后的代码
+  1.8移除了永久代，把数据存储到了本地内存的元空间中，防止内存溢出
+
+===== SLIDE 15 =====
+[TEXT] 难易程度：
+[TEXT] 什么是虚拟机栈
+[TEXT] 出现频率：
+
+===== SLIDE 16 =====
+[TEXT] 什么是虚拟机栈
+[TEXT] Java Virtual machine Stacks (java 虚拟机栈)
+  每个线程运行时所需要的内存，称为虚拟机栈，先进后出
+  每个栈由多个栈帧（frame）组成，对应着每次方法调用时所占用的内存
+  每个线程只能有一个活动栈帧，对应着当前正在执行的那个方法
+[TEXT] 栈帧3
+[TEXT] 栈帧2
+[TEXT] 栈帧1（参数、局部变量、返回地址）
+
+===== SLIDE 17 =====
+[TEXT] 什么是虚拟机栈
+[TEXT] 栈帧3
+[TEXT] 栈帧2
+[TEXT] 栈帧1（参数、局部变量、返回地址）
+[TEXT] 1. 垃圾回收是否涉及栈内存？
+[TEXT] 2. 栈内存分配越大越好吗？
+[TEXT] 垃圾回收主要指就是堆内存，当栈帧弹栈以后，内存就会释放
+[TEXT] 未必，默认的栈内存通常为1024k
+  栈帧过大会导致线程数变少，例如，机器总内存为512m，目前能活动的线程数则为512个，如果把栈内存改为2048k，那么能活动的栈帧就会减半
+
+===== SLIDE 18 =====
+[TEXT] 什么是虚拟机栈
+[TEXT] 3. 方法内的局部变量是否线程安全？
+[TEXT] 如果方法内局部变量没有逃离方法的作用范围，它是线程安全的
+  如果是局部变量引用了对象，并逃离方法的作用范围，需要考虑线程安全
+[TEXT] public static void main(String[] args) {    StringBuilder sb = new StringBuilder();    sb.append(1);    sb.append(2);    new Thread(()->{        m2(sb);    }).start();}public static void m1(){    StringBuilder sb = new StringBuilder();    sb.append(1);    sb.append(2);    System.out.println(sb.toString());}public static void m2(StringBuilder sb){    sb.append(3);    sb.append(4);    System.out.println(sb.toString());}public static StringBuilder m3(){    StringBuilder sb = new StringBuilder();    sb.append(5);    sb.append(6);    return sb;}
+[TEXT] 线程安全
+[TEXT] 线程不安全
+[TEXT] 线程不安全
+
+===== SLIDE 19 =====
+[TEXT] 栈内存溢出情况
+[TEXT] 栈帧过多导致栈内存溢出，典型问题：递归调用
+  栈帧过大导致栈内存溢出
+[TEXT] public static void m4(){    m4();}
+[TEXT] java.lang.StackOverflowError
+
+===== SLIDE 20 =====
+[TEXT] 1.什么是虚拟机栈
+[TEXT] 每个线程运行时所需要的内存，称为虚拟机栈
+  每个栈由多个栈帧（frame）组成，对应着每次方法调用时所占用的内存
+  每个线程只能有一个活动栈帧，对应着当前正在执行的那个方法
+[TEXT] 2.垃圾回收是否涉及栈内存？
+[TEXT] 垃圾回收主要指就是堆内存，当栈帧弹栈以后，内存就会释放
+[TEXT] 3.栈内存分配越大越好吗？
+[TEXT] 未必，默认的栈内存通常为1024k，栈帧过大会导致线程数变少
+[TEXT] 4.方法内的局部变量是否线程安全？
+[TEXT] 如果方法内局部变量没有逃离方法的作用范围，它是线程安全的
+  如果是局部变量引用了对象，并逃离方法的作用范围，需要考虑线程安全
+[TEXT] 5.什么情况下会导致栈内存溢出？
+[TEXT] 栈帧过多导致栈内存溢出，典型问题：递归调用
+  栈帧过大导致栈内存溢出
+
+===== SLIDE 21 =====
+[TEXT] 6.堆栈的区别是什么？
+[TEXT] 栈内存一般会用来存储局部变量和方法调用，但堆内存是用来存储Java对象和数组的的。堆会GC垃圾回收，而栈不会。
+  栈内存是线程私有的，而堆内存是线程共有的。
+  两者异常错误不同，但如果栈内存或者堆内存不足都会抛出异常。
+       栈空间不足：java.lang.StackOverFlowError。
+       堆空间不足：java.lang.OutOfMemoryError。
+
+===== SLIDE 22 =====
+[TEXT] 难易程度：
+[TEXT] 能不能解释一下方法区？
+[TEXT] 出现频率：
+[PIC] name=图片 2 size=547x261cm pos=(902,390)
+
+===== SLIDE 23 =====
+[TEXT] 能不能解释一下方法区？
+[TEXT] 方法区(Method Area)是各个线程共享的内存区域
+  主要存储类的信息、运行时常量池
+  虚拟机启动的时候创建，关闭虚拟机时释放
+  如果方法区域中的内存无法满足分配请求，则会抛出OutOfMemoryError: Metaspace
+
+===== SLIDE 24 =====
+[TEXT] 常量池
+[TEXT] 可以看作是一张表，虚拟机指令根据这张常量表找到要执行的类名、方法名、参数类型、字面量等信息
+[TEXT] 查表翻译
+
+===== SLIDE 25 =====
+[TEXT] 运行时常量池
+[TEXT] 常量池是 *.class 文件中的，当该类被加载，它的常量池信息就会放入运行时常量池，并把里面的符号地址变为真实地址
+[PIC] name=图片 16 size=457x227cm pos=(103,321)
+[PIC] name=图片 18 size=386x273cm pos=(747,292)
+[TEXT] 方法的机器指令
+[TEXT] 常量池
+[TEXT] 查表翻译
+[TEXT] 符号引用
+
+===== SLIDE 26 =====
+[TEXT] 1.能不能解释一下方法区？
+[TEXT] 方法区(Method Area)是各个线程共享的内存区域
+  主要存储类的信息、运行时常量池
+  虚拟机启动的时候创建，关闭虚拟机时释放
+  如果方法区域中的内存无法满足分配请求，则会抛出OutOfMemoryError: Metaspace
+[TEXT] 2.介绍一下运行时常量池
+[TEXT] 常量池：可以看作是一张表，虚拟机指令根据这张常量表找到要执行的类名、方法名、参数类型、字面量等信息
+  当类被加载，它的常量池信息就会放入运行时常量池，并把里面的符号地址变为真实地址
+
+===== SLIDE 27 =====
+[TEXT] 难易程度：
+[TEXT] 你听过直接内存吗？
+[TEXT] 出现频率：
+
+===== SLIDE 28 =====
+[TEXT] 你听过直接内存吗？
+[TEXT] 直接内存：并不属于JVM中的内存结构，不由JVM进行管理。是虚拟机的系统内存，常见于 NIO 操作时，用于数据缓冲区，它分配回收成本较高，但读写性能高
+[TEXT] 举例
+  Java代码完成文件拷贝
+[TEXT] E:/bak1
+[PIC] name=图片 15 size=131x114cm pos=(235,445)
+[TEXT] E:/bak2
+[PIC] name=图片 35 size=131x114cm pos=(235,447)
+[TEXT] 常规IO或NIO
+
+===== SLIDE 29 =====
+[TEXT] 你听过直接内存吗？
+[TEXT] 常规IO的数据拷贝流程
+
+===== SLIDE 30 =====
+[TEXT] 你听过直接内存吗？
+[TEXT] NIO数据拷贝流程
+[TEXT] 直接内存
+
+===== SLIDE 31 =====
+[TEXT] 你听过直接内存吗？
+[TEXT] 并不属于JVM中的内存结构，不由JVM进行管理。是虚拟机的系统内存
+  常见于 NIO 操作时，用于数据缓冲区，分配回收成本较高，但读写性能高，不受 JVM 内存回收管理
+
+===== SLIDE 32 =====
+[TEXT] JVM组成
+[TEXT] 什么是程序计数器
+  你能给我详细的介绍下堆吗？
+  能不能介绍一下方法区
+  你听过直接内存吗
+  什么是虚拟机栈
+  垃圾回收是否涉及栈内存？
+  栈内存分配越大越好吗？
+  方法内的局部变量是否线程安全？
+  什么情况下会导致栈内存溢出？
+  堆栈的区别是什么
+[TEXT] 类加载器
+[TEXT] 什么是类加载器，类加载器有哪些
+  什么是双亲委派模型？
+  JVM为什么采用双亲委派机制？
+  说一下类装载的执行过程
+[TEXT] 垃圾回收
+[TEXT] 强引用、软引用、弱引用、虚对象什么时候可以被垃圾器回收
+  JVM 垃圾回收算法有哪些？
+  说一下JVM中的分代回收
+  说一下JVM有哪些垃圾回收器？
+  详细聊一下G1垃圾回收器
+[TEXT] JVM实践
+[TEXT] JVM 调优的参数可以在哪里设置
+  用的 JVM 调优的参数都有哪些？
+  说一下 JVM 调优的工具？
+  Java内存泄露的排查思路？
+  CPU飙高排查方案与思路？
+[TEXT] 完成
+
+===== SLIDE 33 =====
+[TEXT] 难易程度：
+[TEXT] 什么是类加载器，类加载器有哪些
+[TEXT] 出现频率：
+
+===== SLIDE 34 =====
+[TEXT] 什么是类加载器，类加载器有哪些
+[PIC] name=图片 3 size=957x456cm pos=(72,209)
+[TEXT] 类加载器：用于装载字节码文件(.class文件)
+  运行时数据区：用于分配存储空间
+  执行引擎：执行字节码文件或本地方法
+  垃圾回收器：用于对JVM中的垃圾内容进行回收
+
+===== SLIDE 35 =====
+[TEXT] 什么是类加载器，类加载器有哪些
+[TEXT] 类加载器
+  JVM只会运行二进制文件，类加载器的作用就是将字节码文件加载到JVM中，从而让Java程序能够启动起来。
+[TEXT] 启动类加载器，由C++编写实现
+[TEXT] 扩展类加载器
+[TEXT] 应用类加载器加载开发者自己编写的Java类
+[TEXT] 自定义类加载器，实现自定义类加载规则
+
+===== SLIDE 36 =====
+[TEXT] 什么是类加载器
+[TEXT] 2.  类加载器有哪些
+[TEXT] JVM只会运行二进制文件，类加载器的作用就是将字节码文件加载到JVM中，从而让Java程序能够启动起来。
+[TEXT] 启动类加载器(BootStrap ClassLoader):加载JAVA_HOME/jre/lib目录下的库
+  扩展类加载器(ExtClassLoader):主要加载JAVA_HOME/jre/lib/ext目录中的类
+  应用类加载器(AppClassLoader):用于加载classPath下的类
+  自定义类加载器(CustomizeClassLoader):自定义类继承ClassLoader，实现自定义类加载规则。
+
+===== SLIDE 37 =====
+[TEXT] 难易程度：
+[TEXT] 什么是双亲委派模型？
+[TEXT] 出现频率：
+
+===== SLIDE 38 =====
+[TEXT] 什么是双亲委派模型？
+[TEXT] 加载某一个类，先委托上一级的加载器进行加载，如果上级加载器也有上级，则会继续向上委托，如果该类委托上级没有被加载，子加载器尝试加载该类
+[TEXT] Student类
+[TEXT] String类
+
+===== SLIDE 39 =====
+[TEXT] JVM为什么采用双亲委派机制？
+[TEXT] （1）通过双亲委派机制可以避免某一个类被重复加载，当父类已经加载后则无需重复加载，保证唯一性。
+  （2）为了安全，保证类库API不会被修改
+[TEXT] package java.lang;public class String {    public static void main(String[] args) {        System.out.println("demo info");    }}
+[TEXT] 此时执行main函数，会出现异常，在类 java.lang.String 中找不到 main 方法
+[PIC] name=图片 7 size=854x106cm pos=(103,587)
+[TEXT] 由于是双亲委派的机制，java.lang.String的在启动类加载器得到加载，因为在核心jre库中有其相同名字的类文件，但该类中并没有main方法。这样就能防止恶意篡改核心API库。
+
+===== SLIDE 40 =====
+[TEXT] 什么是双亲委派模型？
+[TEXT] 2.  JVM为什么采用双亲委派机制？
+[TEXT] 加载某一个类，先委托上一级的加载器进行加载，如果上级加载器也有上级，则会继续向上委托，如果该类委托上级没有被加载，子加载器尝试加载该类
+[PIC] name=图片 5 size=237x380cm pos=(1052,277)
+[TEXT] 通过双亲委派机制可以避免某一个类被重复加载，当父类已经加载后则无需重复加载，保证唯一性。
+  为了安全，保证类库API不会被修改
+
+===== SLIDE 41 =====
+[TEXT] 难易程度：
+[TEXT] 说一下类装载的执行过程？
+[TEXT] 出现频率：
+
+===== SLIDE 42 =====
+[TEXT] 说一下类装载的执行过程？
+[TEXT] 类从加载到虚拟机中开始，直到卸载为止，它的整个生命周期包括了：加载、验证、准备、解析、初始化、使用和卸载这7个阶段。其中，验证、准备和解析这三个部分统称为连接（linking）
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] 连接
+
+===== SLIDE 43 =====
+[TEXT] 加载
+[TEXT] 通过类的全名，获取类的二进制数据流。 
+  解析类的二进制数据流为方法区内的数据结构（Java类模型） 
+  创建java.lang.Class类的实例，表示该类型。作为方法区这个类的各种数据的访问入口
+[TEXT] Person.class
+  的Class对象
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] Metaspace(元空间)
+
+===== SLIDE 44 =====
+[TEXT] 验证
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] (1)文件格式验证
+  (2)元数据验证		
+  (3)字节码验证	
+  (4)符号引用验证
+[TEXT] 验证类是否符合 JVM规范，安全性检查
+[TEXT] 格式检查，如：文件格式是否错误、语法是否错误、字节码是否合规
+[TEXT] Class文件在其常量池会通过字符串记录自己将要使用的其他类或者方法，检查它们是否存在
+[PIC] name=图片 46 size=338x238cm pos=(967,280)
+
+===== SLIDE 45 =====
+[TEXT] 准备
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] 为类变量分配内存并设置类变量初始值
+[TEXT] static变量，分配空间在准备阶段完成（设置默认值），赋值在初始化阶段完成
+  static变量是final的基本类型，以及字符串常量，值已确定，赋值在准备阶段完成
+  static变量是final的引用类型，那么赋值也会在初始化阶段完成
+[TEXT] public class Application {    static int b = 10;    static final int c = 20;    static final String d = "hello";    static final Object obj = new Object();}
+
+===== SLIDE 46 =====
+[TEXT] 解析
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] 把类中的符号引用转换为直接引用
+[TEXT] 比如：方法中调用了其他方法，方法名可以理解为符号引用，而直接引用就是使用指针直接指向方法。
+[PIC] name=图片 8 size=457x227cm pos=(51,375)
+[PIC] name=图片 9 size=386x273cm pos=(633,367)
+[TEXT] 方法的机器指令
+[TEXT] 常量池
+[PIC] name=图片 30 size=651x231cm pos=(377,440)
+
+===== SLIDE 47 =====
+[TEXT] 初始化
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] 对类的静态变量，静态代码块执行初始化操作
+[TEXT] 如果初始化一个类的时候，其父类尚未初始化，则优先初始化其父类。
+  如果同时包含多个静态变量和静态代码块，则按照自上而下的顺序依次执行。
+
+===== SLIDE 48 =====
+[TEXT] 初始化
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+[TEXT] JVM 开始从入口方法开始执行用户的程序代码
+  调用静态类成员信息（比如：静态字段、静态方法）
+  使用new关键字为其创建对象实例
+
+===== SLIDE 49 =====
+[TEXT] 说一下类装载的执行过程？
+[TEXT] 加载:查找和导入class文件
+  验证:保证加载类的准确性
+  准备:为类变量分配内存并设置类变量初始值
+  解析:把类中的符号引用转换为直接引用
+  初始化:对类的静态变量，静态代码块执行初始化操作
+  使用:JVM 开始从入口方法开始执行用户的程序代码
+  卸载:当用户程序代码执行完毕后，JVM便开始销毁创建的Class对象。
+[TEXT] 加载
+[TEXT] 验证
+[TEXT] 连接
+[TEXT] 准备
+[TEXT] 解析
+[TEXT] 初始化
+[TEXT] 使用
+[TEXT] 卸载
+
+===== SLIDE 50 =====
+[TEXT] JVM组成
+[TEXT] 什么是程序计数器
+  你能给我详细的介绍下堆吗？
+  能不能介绍一下方法区
+  你听过直接内存吗
+  什么是虚拟机栈
+  垃圾回收是否涉及栈内存？
+  栈内存分配越大越好吗？
+  方法内的局部变量是否线程安全？
+  什么情况下会导致栈内存溢出？
+  堆栈的区别是什么
+[TEXT] 类加载器
+[TEXT] 什么是类加载器，类加载器有哪些
+  什么是双亲委派模型？
+  JVM为什么采用双亲委派机制？
+  说一下类装载的执行过程
+[TEXT] 垃圾回收
+[TEXT] 对象什么时候可以被垃圾器回收
+  JVM 垃圾回收算法有哪些？
+  说一下JVM中的分代回收
+  说一下JVM有哪些垃圾回收器？
+  详细聊一下G1垃圾回收器
+  强引用、软引用、弱引用、虚对象
+[TEXT] JVM实践
+[TEXT] JVM 调优的参数可以在哪里设置
+  用的 JVM 调优的参数都有哪些？
+  说一下 JVM 调优的工具？
+  Java内存泄露的排查思路？
+  CPU飙高排查方案与思路？
+[TEXT] 完成
+[TEXT] 完成
+
+===== SLIDE 51 =====
+[TEXT] 难易程度：
+[TEXT] 对象什么时候可以被垃圾器回收
+[TEXT] 出现频率：
+
+===== SLIDE 52 =====
+[TEXT] 对象什么时候可以被垃圾器回收
+[TEXT] 简单一句就是：如果一个或多个对象没有任何的引用指向它了，那么这个对象现在就是垃圾，如果定位了垃圾，则有可能会被垃圾回收器回收。
+  如果要定位什么是垃圾，有两种方式来确定，第一个是引用计数法，第二个是可达性分析算法
+[PIC] name=图片 2 size=854x407cm pos=(224,171)
+
+===== SLIDE 53 =====
+[TEXT] 引用计数法
+[TEXT] 一个对象被引用了一次，在当前的对象头上递增一次引用次数，如果这个对象的引用次数为0，代表这个对象可回收
+[TEXT] String demo = new String("123");
+[TEXT] demo
+[TEXT] New String(“123”)
+[TEXT] String demo = null;
+[TEXT] ref =
+[TEXT] 0
+[TEXT] 1
+
+===== SLIDE 54 =====
+[TEXT] 引用计数法
+[TEXT] 当对象间出现了循环引用的话，则引用计数法就会失效
+[TEXT] public class Demo {    Demo instance;    String name;    public Demo(String name){        this.name = name;    }}
+[TEXT] Demo a = new Demo("a");Demo b = new Demo("b");a.instance = b;b.instance = a;
+  a = null;b = null;
+[TEXT] a
+[TEXT] b
+[TEXT] new Demo(“a”)
+[TEXT] instance
+[TEXT] new Demo(“b”)
+[TEXT] instance
+[TEXT] ref=
+[TEXT] ref=
+[TEXT] 2
+[TEXT] 2
+
+===== SLIDE 55 =====
+[TEXT] 引用计数法
+[TEXT] 当对象间出现了循环引用的话，则引用计数法就会失效
+[TEXT] public class Demo {    Demo instance;    String name;    public Demo(String name){        this.name = name;    }}
+[TEXT] Demo a = new Demo("a");Demo b = new Demo("b");a.instance = b;b.instance = a;
+  a = null;b = null;
+[TEXT] a
+[TEXT] b
+[TEXT] new Demo(“a”)
+[TEXT] instance
+[TEXT] new Demo(“b”)
+[TEXT] instance
+[TEXT] ref=
+[TEXT] ref=
+[TEXT] 2
+[TEXT] 2
+[TEXT] 1
+[TEXT] 1
+[TEXT] 循环引用，会引发内存泄露
+
+===== SLIDE 56 =====
+[TEXT] 可达性分析算法
+[TEXT] 现在的虚拟机采用的都是通过可达性分析算法来确定哪些内容是垃圾。
+[TEXT] X,Y这两个节点是可回收的
+  Java  虚拟机中的垃圾回收器采用可达性分析来探索所有存活的对象
+  扫描堆中的对象，看是否能够沿着 GC Root 对象 为起点的引用链找到该对象，找不到，表示可以回收
+[TEXT] 哪些对象可以作为 GC Root ?
+
+===== SLIDE 57 =====
+[TEXT] 哪些对象可以作为 GC Root ?
+[TEXT] 虚拟机栈（栈帧中的本地变量表）中引用的对象
+  方法区中类静态属性引用的对象
+  方法区中常量引用的对象
+  本地方法栈中 JNI（即一般说的 Native 方法）引用的对象
+[TEXT] public static  void main(String[] args) {    Demo demo = new Demo();    demo = null;}
+[TEXT] public static Demo a;public static  void main(String[] args) {    Demo b = new Demo();    b.a = new Demo();    b = null;}
+[TEXT] public static final Demo a = new Demo();public static  void main(String[] args) {    Demo demo = new Demo();    demo = null;}
+
+===== SLIDE 58 =====
+[TEXT] 对象什么时候可以被垃圾器回收
+[TEXT] 如果一个或多个对象没有任何的引用指向它了，那么这个对象现在就是垃圾，如果定位了垃圾，则有可能会被垃圾回收器回收。
+  
+  定位垃圾的方式有两种
+  引用计数法
+  可达性分析算法
+
+===== SLIDE 59 =====
+[TEXT] 难易程度：
+[TEXT] JVM 垃圾回收算法有哪些？
+[TEXT] 出现频率：
+
+===== SLIDE 60 =====
+[TEXT] JVM 垃圾回收算法有哪些？
+[TEXT] 标记清除算法
+  复制算法
+  标记整理算法
+
+===== SLIDE 61 =====
+[TEXT] 标记清除算法
+[TEXT] 标记清除算法，是将垃圾回收分为2个阶段，分别是标记和清除。
+  1.根据可达性分析算法得出的垃圾进行标记
+  2.对这些标记为可回收的内容进行垃圾回收
+[TABLE]
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+[TEXT] 回
+  收
+  前
+[TEXT] 存活的对象
+[TEXT] 待回收的
+[TEXT] 空闲的空间
+[TABLE]
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+[TEXT] 回
+  收
+  后
+[TEXT] GC Root
+[TEXT] GC Root
+[TEXT] GC Root
+[TEXT] GC Root
+[TEXT] 优点：标记和清除速度较快
+  缺点：碎片化较为严重，内存不连贯的
+
+===== SLIDE 62 =====
+[TEXT] 标记整理算法
+[TABLE]
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+[TEXT] 回
+  收
+  前
+[TEXT] 存活的对象
+[TEXT] 待回收的
+[TEXT] 空闲的空间
+[TABLE]
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+[TEXT] 回
+  收
+  后
+[TEXT] 优缺点同标记清除算法，解决了标记清除算法的碎片化的问题，同时，标记压缩算法多了一步，对象移动内存位置的步骤，其效率也有有一定的影响。
+
+===== SLIDE 63 =====
+[TEXT] 复制算法
+[TABLE]
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+[TEXT] 回
+  收
+  前
+[TEXT] 存活的对象
+[TEXT] 待回收的
+[TEXT] 空闲的空间
+[TEXT] 另一块内存
+[TABLE]
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+ |  |  |  |  | 
+[TEXT] 回
+  收
+  后
+[TEXT] 优点：
+  在垃圾对象多的情况下，效率较高
+  清理后，内存无碎片
+[TEXT] 缺点：
+  分配的2块内存空间，在同一个时刻，只能使用一半，内存使用率较低
+
+===== SLIDE 64 =====
+[TEXT] JVM 垃圾回收算法有哪些？
+[TEXT] 标记清除算法：垃圾回收分为2个阶段，分别是标记和清除,效率高,有磁盘碎片，内存不连续
+  标记整理算法：标记清除算法一样，将存活对象都向内存另一端移动，然后清理边界以外的垃圾，无碎片，对象需要移动，效率低
+  复制算法：将原有的内存空间一分为二，每次只用其中的一块,正在使用的对象复制到另一个内存空间中，然后将该内存空间清空，交换两个内存的角色，完成垃圾的回收;无碎片，内存使用率低
+
+===== SLIDE 65 =====
+[TEXT] 难易程度：
+[TEXT] 说一下JVM中的分代回收
+[TEXT] 出现频率：
+
+===== SLIDE 66 =====
+[TEXT] 分代收集算法
+[TEXT] 在java8时，堆被分为了两份：新生代和老年代【1：2】
+[TEXT] 对于新生代，内部又被分为了三个区域。
+  伊甸园区Eden，新生的对象都分配到这里
+  幸存者区survivor(分成from和to)
+  Eden区，from区，to区【8：1：1】
+[TEXT] Eden
+[TEXT] from
+[TEXT] to
+[TEXT] (1/10)
+[TEXT] (1/10)
+[TEXT] (8/10)
+
+===== SLIDE 67 =====
+[TEXT] 分代收集算法-工作机制
+[TEXT] Eden                    from                to                                                     Old
+[TEXT] A
+[TEXT] B
+[TEXT] C
+[TEXT] D
+[TEXT] E
+[TEXT] 新创建的对象，都会先分配到eden区
+  当伊甸园内存不足，标记伊甸园与 from（现阶段没有）的存活对象
+  将存活对象采用复制算法复制到 to 中，复制完毕后，伊甸园和 from 内存都得到释放
+
+===== SLIDE 68 =====
+[TEXT] 分代收集算法-工作机制
+[TEXT] Eden                    from                to                                                     Old
+[TEXT] A
+[TEXT] 1
+[TEXT] 2
+[TEXT] 3
+[TEXT] 4
+[TEXT] 5
+[TEXT] 新创建的对象，都会先分配到eden区
+  当伊甸园内存不足，标记伊甸园与 from（现阶段没有）的存活对象
+  将存活对象采用复制算法复制到 to 中，复制完毕后，伊甸园和 from 内存都得到释放
+  经过一段时间后伊甸园的内存又出现不足，标记eden区域to区存活的对象，将存活的对象复制到from区
+
+===== SLIDE 69 =====
+[TEXT] 分代收集算法-工作机制
+[TEXT] Eden                    from                to                                                     Old
+[TEXT] A
+[TEXT] 1
+[TEXT] q
+[TEXT] w
+[TEXT] e
+[TEXT] r
+[TEXT] t
+[TEXT] 新创建的对象，都会先分配到eden区
+  当伊甸园内存不足，标记伊甸园与 from（现阶段没有）的存活对象
+  将存活对象采用复制算法复制到 to 中，复制完毕后，伊甸园和 from 内存都得到释放
+  经过一段时间后伊甸园的内存又出现不足，标记eden区域to区存活的对象，将存活的对象复制到from区
+  当幸存区对象熬过几次回收（最多15次），晋升到老年代（幸存区内存不足或大对象会导致提前晋升）
+
+===== SLIDE 70 =====
+[TEXT] 分代收集算法-工作机制
+[TEXT] Eden                    from                to                                                     Old
+[TEXT] A
+[TEXT] w
+[TEXT] 新创建的对象，都会先分配到eden区
+  当伊甸园内存不足，标记伊甸园与 from（现阶段没有）的存活对象
+  将存活对象采用复制算法复制到 to 中，复制完毕后，伊甸园和 from 内存都得到释放
+  经过一段时间后伊甸园的内存又出现不足，标记eden区域to区存活的对象，将存活的对象复制到from区
+  当幸存区对象熬过几次回收（最多15次），晋升到老年代（幸存区内存不足或大对象会导致提前晋升）
+
+===== SLIDE 71 =====
+[TEXT] MinorGC、 Mixed GC 、 FullGC的区别是什么
+[TEXT] MinorGC【young GC】发生在新生代的垃圾回收，暂停时间短（STW）
+  Mixed GC 新生代 + 老年代部分区域的垃圾回收，G1 收集器特有
+  FullGC： 新生代 + 老年代完整垃圾回收，暂停时间长（STW），应尽力避免
+
+===== SLIDE 72 =====
+[TEXT] 说一下JVM中的分代回收
+[TEXT] 一、堆的区域划分
+  堆被分为了两份：新生代和老年代【1：2】
+  对于新生代，内部又被分为了三个区域。Eden区，幸存者区survivor(分成from和to)【8：1：1】
+  二、对象回收分代回收策略
+  新创建的对象，都会先分配到eden区
+  当伊甸园内存不足，标记伊甸园与 from（现阶段没有）的存活对象
+  将存活对象采用复制算法复制到to中，复制完毕后，伊甸园和 from 内存都得到释放
+  经过一段时间后伊甸园的内存又出现不足，标记eden区域to区存活的对象，将其复制到from区
+  当幸存区对象熬过几次回收（最多15次），晋升到老年代（幸存区内存不足或大对象会提前晋升）
+[TEXT] MinorGC、 Mixed GC 、 FullGC的区别是什么
+[TEXT] MinorGC【young GC】发生在新生代的垃圾回收，暂停时间短（STW）
+  Mixed GC 新生代 + 老年代部分区域的垃圾回收，G1 收集器特有
+  FullGC： 新生代 + 老年代完整垃圾回收，暂停时间长（STW），应尽力避免
+
+===== SLIDE 73 =====
+[TEXT] 难易程度：
+[TEXT] 说一下JVM有哪些垃圾回收器？
+[TEXT] 出现频率：
+
+===== SLIDE 74 =====
+[TEXT] 说一下 JVM 有哪些垃圾回收器？
+[TEXT] 在jvm中，实现了多种垃圾收集器，包括：
+  串行垃圾收集器
+  并行垃圾收集器
+  CMS（并发）垃圾收集器
+  G1垃圾收集器
+
+===== SLIDE 75 =====
+[TEXT] 串行垃圾收集器
+[TEXT] Serial和Serial Old串行垃圾收集器，是指使用单线程进行垃圾回收，堆内存较小，适合个人电脑
+  Serial 作用于新生代，采用复制算法
+  Serial Old 作用于老年代，采用标记-整理算法
+  垃圾回收时，只有一个线程在工作，并且java应用中的所有线程都要暂停（STW），等待垃圾回收的完成。
+
+===== SLIDE 76 =====
+[TEXT] 并行垃圾收集器
+[TEXT] Parallel New和Parallel Old是一个并行垃圾回收器，JDK8默认使用此垃圾回收器
+  Parallel New作用于新生代，采用复制算法
+  Parallel Old作用于老年代，采用标记-整理算法
+  垃圾回收时，多个线程在工作，并且java应用中的所有线程都要暂停（STW），等待垃圾回收的完成。
+[TEXT] cpu 0
+[TEXT] cpu 1
+[TEXT] cpu 2
+[TEXT] cpu 3
+[TEXT] 安全点
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 运行
+[TEXT] 垃圾回收线程
+[TEXT] 垃圾回收线程
+[TEXT] 垃圾回收线程
+[TEXT] 垃圾回收线程
+
+===== SLIDE 77 =====
+[TEXT] CMS（并发）垃圾收集器
+[TEXT] CMS全称 Concurrent Mark Sweep，是一款并发的、使用标记-清除算法的垃圾回收器，该回收器是针对老年代垃圾回收的，是一款以获取最短回收停顿时间为目标的收集器，停顿时间短，用户体验就好。其最大特点是在进行垃圾回收时，应用仍然能正常运行。
+[TEXT] X
+
+===== SLIDE 78 =====
+[TEXT] 说一下JVM有哪些垃圾回收器？
+[TEXT] 在jvm中，实现了多种垃圾收集器，包括：
+  串行垃圾收集器：Serial GC、Serial Old GC
+  并行垃圾收集器：Parallel Old GC、ParNew GC
+  CMS（并发）垃圾收集器：CMS GC，作用在老年代
+  G1垃圾收集器，作用在新生代和老年代
+
+===== SLIDE 79 =====
+[TEXT] 难易程度：
+[TEXT] 详细聊一下G1垃圾回收器
+[TEXT] 出现频率：
+
+===== SLIDE 80 =====
+[TEXT] G1垃圾收集器
+[TEXT] 应用于新生代和老年代，在JDK9之后默认使用G1
+  划分成多个区域，每个区域都可以充当 eden，survivor，old， humongous，其中 humongous 专为大对象准备
+  采用复制算法
+  响应时间与吞吐量兼顾
+  分成三个阶段：新生代回收、并发标记、混合收集
+  如果并发失败（即回收速度赶不上创建新对象速度），会触发 Full GC
+
+===== SLIDE 81 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] 初始时，所有区域都处于空闲状态
+  创建了一些对象，挑出一些空闲区域作为伊甸园区存储这些对象
+  当伊甸园需要垃圾回收时，挑出一个空闲区域作为幸存区，用复制算法复制存活对象，需要暂停用户线程
+
+===== SLIDE 82 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] E
+[TEXT] E
+[TEXT] E
+[TEXT] 初始时，所有区域都处于空闲状态
+  创建了一些对象，挑出一些空闲区域作为伊甸园区存储这些对象
+  当伊甸园需要垃圾回收时，挑出一个空闲区域作为幸存区，用复制算法复制存活对象，需要暂停用户线程
+
+===== SLIDE 83 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] E
+[TEXT] E
+[TEXT] S
+[TEXT] E
+[TEXT] 初始时，所有区域都处于空闲状态
+  创建了一些对象，挑出一些空闲区域作为伊甸园区存储这些对象
+  当伊甸园需要垃圾回收时，挑出一个空闲区域作为幸存区，用复制算法复制存活对象，需要暂停用户线程
+
+===== SLIDE 84 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] S
+[TEXT] 初始时，所有区域都处于空闲状态
+  创建了一些对象，挑出一些空闲区域作为伊甸园区存储这些对象
+  当伊甸园需要垃圾回收时，挑出一个空闲区域作为幸存区，用复制算法复制存活对象，需要暂停用户线程
+
+===== SLIDE 85 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] E
+[TEXT] E
+[TEXT] S
+[TEXT] E
+[TEXT] E
+[TEXT] 随着时间流逝，伊甸园的内存又有不足
+  将伊甸园以及之前幸存区中的存活对象，采用复制算法，复制到新的幸存区，其中较老对象晋升至老年代
+
+===== SLIDE 86 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] E
+[TEXT] E
+[TEXT] S
+[TEXT] O
+[TEXT] E
+[TEXT] E
+[TEXT] S
+[TEXT] 随着时间流逝，伊甸园的内存又有不足
+  将伊甸园以及之前幸存区中的存活对象，采用复制算法，复制到新的幸存区，其中较老对象晋升至老年代
+
+===== SLIDE 87 =====
+[TEXT] Young Collection(年轻代垃圾回收)
+[TEXT] O
+[TEXT] S
+[TEXT] 随着时间流逝，伊甸园的内存又有不足
+  将伊甸园以及之前幸存区中的存活对象，采用复制算法，复制到新的幸存区，其中较老对象晋升至老年代
+
+===== SLIDE 88 =====
+[TEXT] Young Collection + Concurrent Mark (年轻代垃圾回收+并发标记)
+[TEXT] E
+[TEXT] E
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] E
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] S
+[TEXT] E
+[TEXT] 当老年代占用内存超过阈值(默认是45%)后，触发并发标记，这时无需暂停用户线程
+
+===== SLIDE 89 =====
+[TEXT] Young Collection + Concurrent Mark (年轻代垃圾回收+并发标记)
+[TEXT] E
+[TEXT] E
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] E
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] S
+[TEXT] E
+[TEXT] 并发标记之后，会有重新标记阶段解决漏标问题，此时需要暂停用户线程。
+  这些都完成后就知道了老年代有哪些存活对象，随后进入混合收集阶段。此时不会对所有老年代区域进行回收，而是根据暂停时间目标优先回收价值高（存活对象少）的区域（这也是 Gabage First 名称的由来）。
+
+===== SLIDE 90 =====
+[TEXT] Mixed  Collection (混合垃圾回收)
+[TEXT] E
+[TEXT] E
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] S
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] E
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] S
+[TEXT] E
+[TEXT] 混合收集阶段中，参与复制的有 eden、survivor、old
+
+===== SLIDE 91 =====
+[TEXT] Mixed  Collection (混合垃圾回收)
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] S
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] 复制完成，内存得到释放。进入下一轮的新生代回收、并发标记、混合收集
+
+===== SLIDE 92 =====
+[TEXT] Mixed  Collection (混合垃圾回收)
+[TEXT] H
+[TEXT] H
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] S
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] O
+[TEXT] 复制完成，内存得到释放。进入下一轮的新生代回收、并发标记、混合收集
+
+===== SLIDE 93 =====
+[TEXT] 详细聊一下G1垃圾回收器
+[TEXT] 应用于新生代和老年代，在JDK9之后默认使用G1
+  划分成多个区域，每个区域都可以充当 eden，survivor，old， humongous，其中 humongous 专为大对象准备
+  采用复制算法
+  响应时间与吞吐量兼顾
+  分成三个阶段：新生代回收(stw)、并发标记(重新标记stw)、混合收集
+  如果并发失败（即回收速度赶不上创建新对象速度），会触发 Full GC
+
+===== SLIDE 94 =====
+[TEXT] 难易程度：
+[TEXT] 强引用、软引用、弱引用、虚引用的区别
+[TEXT] 出现频率：
+
+===== SLIDE 95 =====
+[TEXT] 强引用、软引用、弱引用、虚引用的区别
+[TEXT] 强引用：只有所有 GC Roots 对象都不通过【强引用】引用该对象，该对象才能被垃圾回收
+[TEXT] User user = new User();
+[TEXT] GC Root
+[TEXT] User对象
+[TEXT] 软引用：仅有软引用引用该对象时，在垃圾回收后，内存仍不足时会再次出发垃圾回收
+[TEXT] GC Root
+[TEXT] SoftReference对象
+[TEXT] User user = new User();SoftReference softReference = new SoftReference(user);
+[TEXT] User对象
+
+===== SLIDE 96 =====
+[TEXT] 强引用、软引用、弱引用、虚引用的区别
+[TEXT] 弱引用：仅有弱引用引用该对象时，在垃圾回收时，无论内存是否充足，都会回收弱引用对象
+[TEXT] User user = new User();WeakReference weakReference = new WeakReference(user);
+[TEXT] GC Root
+[TEXT] WeakReference对象
+[TEXT] User对象
+
+===== SLIDE 97 =====
+[TEXT] 强引用、软引用、弱引用、虚引用的区别
+[TEXT] 虚引用：必须配合引用队列使用，被引用对象回收时，会将虚引用入队，由 Reference Handler 线程调用虚引用相关方法释放直接内存
+[TEXT] User user = new User();ReferenceQueue referenceQueue = new ReferenceQueue();PhantomReference phantomReference = new PhantomReference(user,queue);
+[TEXT] Reference Handler
+[TEXT] 软引用
+[TEXT] 弱引用
+
+===== SLIDE 98 =====
+[TEXT] 强引用、软引用、弱引用、虚引用的区别?
+[TEXT] 强引用：只要所有 GC Roots 能找到，就不会被回收
+  软引用：需要配合SoftReference使用，当垃圾多次回收，内存依然不够的时候会回收软引用对象
+  弱引用：需要配合WeakReference使用，只要进行了垃圾回收，就会把弱引用对象回收
+  虚引用：必须配合引用队列使用，被引用对象回收时，会将虚引用入队，由 Reference Handler 线程调用虚引用相关方法释放直接内存
+
+===== SLIDE 99 =====
+[TEXT] JVM组成
+[TEXT] 什么是程序计数器
+  你能给我详细的介绍下堆吗？
+  能不能介绍一下方法区
+  你听过直接内存吗
+  什么是虚拟机栈
+  垃圾回收是否涉及栈内存？
+  栈内存分配越大越好吗？
+  方法内的局部变量是否线程安全？
+  什么情况下会导致栈内存溢出？
+  堆栈的区别是什么
+[TEXT] 类加载器
+[TEXT] 什么是类加载器，类加载器有哪些
+  什么是双亲委派模型？
+  JVM为什么采用双亲委派机制？
+  说一下类装载的执行过程
+[TEXT] 垃圾回收
+[TEXT] 强引用、软引用、弱引用、虚对象什么时候可以被垃圾器回收
+  JVM 垃圾回收算法有哪些？
+  说一下JVM中的分代回收
+  说一下JVM有哪些垃圾回收器？
+  详细聊一下G1垃圾回收器
+[TEXT] JVM实践
+[TEXT] JVM 调优的参数可以在哪里设置
+  用的 JVM 调优的参数都有哪些？
+  说一下 JVM 调优的工具？
+  Java内存泄露的排查思路？
+  CPU飙高排查方案与思路？
+[TEXT] 完成
+[TEXT] 完成
+[TEXT] 完成
+
+===== SLIDE 100 =====
+[TEXT] 难易程度：
+[TEXT] JVM 调优的参数可以在哪里设置参数值
+[TEXT] 出现频率：
+
+===== SLIDE 101 =====
+[TEXT] JVM 调优的参数可以在哪里设置参数值
+[TEXT] war包部署在tomcat中设置
+  jar包部署在启动参数设置
+
+===== SLIDE 102 =====
+[TEXT] JVM 调优的参数可以在哪里设置参数值
+[TEXT] war包部署在tomcat中设置
+  修改TOMCAT_HOME/bin/catalina.sh文件
+[PIC] name=图片 5 size=1071x334cm pos=(85,306)
+
+===== SLIDE 103 =====
+[TEXT] JVM 调优的参数可以在哪里设置参数值
+[TEXT] jar包部署在启动参数设置
+  通常在linux系统下直接加参数启动springboot项目
+[TEXT] nohup java -Xms512m -Xmx1024m -jar xxxx.jar --spring.profiles.active=prod &
+[TEXT] nohup  :  用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行
+  参数 &  ：让命令在后台执行，终端退出后命令仍旧执行。
+
+===== SLIDE 104 =====
+[TEXT] JVM 调优的参数可以在哪里设置参数值
+[TEXT] war包部署在tomcat中设置
+  修改TOMCAT_HOME/bin/catalina.sh文件
+  jar包部署在启动参数设置
+  java -Xms512m -Xmx1024m -jar xxxx.jar
+
+===== SLIDE 105 =====
+[TEXT] 难易程度：
+[TEXT] JVM 调优的参数都有哪些？
+[TEXT] 出现频率：
+
+===== SLIDE 106 =====
+[TEXT] 用的 JVM 调优的参数都有哪些？
+[TEXT] 对于JVM调优，主要就是调整年轻代、老年代、元空间的内存空间大小及使用的垃圾回收器类型。
+  https://www.oracle.com/java/technologies/javase/vmoptions-jsp.html
+[TEXT] 设置堆空间大小
+  虚拟机栈的设置
+  年轻代中Eden区和两个Survivor区的大小比例
+  年轻代晋升老年代阈值
+  设置垃圾回收收集器
+
+===== SLIDE 107 =====
+[TEXT] 用的 JVM 调优的参数都有哪些？
+[TEXT] 设置堆空间大小
+[TEXT] 设置堆的初始大小和最大大小，为了防止垃圾收集器在初始大小、最大大小之间收缩堆而产生额外的时间，通常把最大、初始大小设置为相同的值。
+[TEXT] -Xms：设置堆的初始化大小-Xmx：设置堆的最大大小
+  
+  -Xms:1024-Xms:1024k-Xms:1024m-Xms:1g
+[TEXT] 不指定单位默认为字节
+  指定单位，按照指定的单位设置
+[TEXT] 堆空间设置多少合适？
+  最大大小的默认值是物理内存的1/4，初始大小是物理内存的1/64
+  堆太小，可能会频繁的导致年轻代和老年代的垃圾回收，会产生stw，暂停用户线程
+  堆内存大肯定是好的，存在风险，假如发生了fullgc,它会扫描整个堆空间，暂停用户线程的时间长
+  设置参考推荐：尽量大，也要考察一下当前计算机其他程序的内存使用情况
+
+===== SLIDE 108 =====
+[TEXT] 用的 JVM 调优的参数都有哪些？
+[TEXT] 虚拟机栈的设置
+[TEXT] 虚拟机栈的设置：每个线程默认会开启1M的内存，用于存放栈帧、调用参数、局部变量等，但一般256K就够用。通常减少每个线程的堆栈，可以产生更多的线程，但这实际上还受限于操作系统。
+[TEXT] -Xss   对每个线程stack大小的调整,-Xss128k
+
+===== SLIDE 109 =====
+[TEXT] 用的 JVM 调优的参数都有哪些？
+[TEXT] 年轻代中Eden区和两个Survivor区的大小比例
+[TEXT] 设置年轻代中Eden区和两个Survivor区的大小比例。该值如果不设置，则默认比例为8:1:1。通过增大Eden区的大小，来减少YGC发生的次数，但有时我们发现，虽然次数减少了，但Eden区满的时候，由于占用的空间较大，导致释放缓慢，此时STW的时间较长，因此需要按照程序情况去调优。
+[TEXT] -XXSurvivorRatio=8，表示年轻代中的分配比率：survivor:eden = 2:8
+[TEXT] 年轻代晋升老年代阈值
+
+===== SLIDE 110 =====
+[TEXT] 用的 JVM 调优的参数都有哪些？
+[TEXT] 设置垃圾回收收集器
+[TEXT] 通过增大吞吐量提高系统性能，可以通过设置并行垃圾回收收集器。
+[TEXT] -XX:+UseG1GC
+[TEXT] -XX:+UseParallelGC-XX:+UseParallelOldGC
+
+===== SLIDE 111 =====
+[TEXT] 用的 JVM 调优的参数都有哪些？
+[TEXT] 设置堆空间大小
+  虚拟机栈的设置
+  年轻代中Eden区和两个Survivor区的大小比例
+  年轻代晋升老年代阈值
+  设置垃圾回收收集器
+
+===== SLIDE 112 =====
+[TEXT] 难易程度：
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] 出现频率：
+
+===== SLIDE 113 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] 命令工具
+[TEXT] jps          进程状态信息
+  jstack     查看java进程内线程的堆栈信息
+  jmap      查看堆转信息
+  jhat       堆转储快照分析工具
+  jstat      JVM统计监测工具
+[TEXT] 可视化工具
+[TEXT] jconsole      用于对jvm的内存，线程，类 的监控
+  VisualVM    能够监控线程，内存情况
+
+===== SLIDE 114 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] jps
+[PIC] name=图片 4 size=282x148cm pos=(77,292)
+[TEXT] 进程状态信息
+[TEXT] jstack
+[TEXT] 查看java进程内线程的堆栈信息
+[TEXT] jstack [option] <pid>
+[PIC] name=图片 10 size=825x273cm pos=(429,435)
+
+===== SLIDE 115 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] jmap
+[TEXT] 用于生成堆转内存快照、内存使用情况
+[TEXT] jmap -heap pid   显示Java堆的信息jmap -dump:format=b,file=heap.hprof pid
+[TEXT] format=b表示以hprof二进制格式转储Java堆的内存
+  file=<filename>用于指定快照dump文件的文件名。
+
+===== SLIDE 116 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] jstat
+[TEXT] 是JVM统计监测工具。可以用来显示垃圾回收信息、类加载信息、新生代统计信息等。
+[TEXT] ①：总结垃圾回收统计
+[TEXT] jstat -gcutil pid
+[TEXT] ②：垃圾回收统计
+[PIC] name=图片 12 size=1074x113cm pos=(104,354)
+[TEXT] jstat -gc pid
+[PIC] name=图片 15 size=1074x105cm pos=(104,561)
+
+===== SLIDE 117 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] jconsole
+[TEXT] 用于对jvm的内存，线程，类 的监控，是一个基于 jmx 的 GUI 性能监控工具
+  
+  打开方式：java 安装目录 bin目录下 直接启动 jconsole.exe 就行
+[PIC] name=图片 4 size=722x586cm pos=(541,111)
+[PIC] name=图片 7 size=722x586cm pos=(541,109)
+
+===== SLIDE 118 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] VisualVM
+[TEXT] 能够监控线程，内存情况，查看方法的CPU时间和内存中的对 象，已被GC的对象，反向查看分配的堆栈
+  
+  打开方式：java 安装目录 bin目录下 直接启动 jvisualvm.exe就行
+[PIC] name=图片 4 size=793x598cm pos=(486,109)
+
+===== SLIDE 119 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] 监控程序运行情况
+[PIC] name=图片 4 size=990x497cm pos=(167,214)
+
+===== SLIDE 120 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] 查看运行中的dump
+[PIC] name=图片 6 size=1077x385cm pos=(128,310)
+[TEXT] Dump文件是进程的内存镜像。可以把程序的执行状态通过调试器保存到dump文件中
+[PIC] name=图片 8 size=778x563cm pos=(508,137)
+
+===== SLIDE 121 =====
+[TEXT] 说一下 JVM 调优的工具？
+[TEXT] 命令工具
+  jps          进程状态信息
+  jstack     查看java进程内线程的堆栈信息
+  jmap      查看堆转信息
+  jhat       堆转储快照分析工具
+  jstat      JVM统计监测工具
+  可视化工具
+  jconsole      用于对jvm的内存，线程，类 的监控
+  VisualVM    能够监控线程，内存情况
+
+===== SLIDE 122 =====
+[TEXT] 难易程度：
+[TEXT] Java内存泄露的排查思路？
+[TEXT] 出现频率：
+
+===== SLIDE 123 =====
+[TEXT] java内存泄露的排查思路？
+[PIC] name=图片 3 size=773x368cm pos=(291,225)
+[TEXT] OutOfMemoryError:java heap space
+
+===== SLIDE 124 =====
+[TEXT] java内存泄露的排查思路？
+[TEXT] 服务器
+[TEXT] 订单
+[TEXT] 商品
+[TEXT] 物流
+[TEXT] 支付
+[TEXT] 启动闪退
+  运行一段时间宕机
+[TEXT] 获取堆内存快照dump
+  VisualVM去分析dump文件
+  通过查看堆信息的情况，定位内存溢出问题
+
+===== SLIDE 125 =====
+[TEXT] java内存泄露的排查思路？
+[TEXT] 1、通过jmap指定打印他的内存快照dump(Dump文件是进程的内存镜像。可以把程序的执行状态通过调试器保存到dump文件中)
+[TEXT] 使用jmap命令获取运行中程序的dump文件
+[TEXT] 使用vm参数获取dump文件
+[TEXT] jmap -dump:format=b,file=heap.hprof pid
+[TEXT] 有的情况是内存溢出之后程序则会直接中断，而jmap只能打印在运行中的程序，所以建议通过参数的方式的生成dump文件
+[TEXT] -XX:+HeapDumpOnOutOfMemoryError-XX:HeapDumpPath=/home/app/dumps/
+
+===== SLIDE 126 =====
+[TEXT] java内存泄露的排查思路？
+[TEXT] 2、通过工具， VisualVM去分析dump文件，VisualVM可以加载离线的dump文件
+[TEXT] 文件-->装入--->选择dump文件即可查看堆快照信息
+[PIC] name=图片 6 size=440x407cm pos=(325,310)
+
+===== SLIDE 127 =====
+[TEXT] java内存泄露的排查思路？
+[TEXT] 3、通过查看堆信息的情况，可以大概定位内存溢出是哪行代码出了问题
+[PIC] name=图片 5 size=515x505cm pos=(408,233)
+
+===== SLIDE 128 =====
+[TEXT] java内存泄露的排查思路？
+[TEXT] 3、通过查看堆信息的情况，可以大概定位内存溢出是哪行代码出了问题
+[PIC] name=图片 5 size=515x505cm pos=(120,228)
+[TEXT] 4、找到对应的代码，通过阅读上下文的情况，进行修复即可
+
+===== SLIDE 129 =====
+[TEXT] java内存泄露的排查思路？
+[TEXT] 1、通过jmap或设置jvm参数获取堆内存快照dump
+  2、通过工具， VisualVM去分析dump文件，VisualVM可以加载离线的dump文件
+  3、通过查看堆信息的情况，可以大概定位内存溢出是哪行代码出了问题
+  4、找到对应的代码，通过阅读上下文的情况，进行修复即可
+[TEXT] 内存泄漏通常是指堆内存，通常是指一些大对象不被回收的情况
+
+===== SLIDE 130 =====
+[TEXT] 难易程度：
+[TEXT] CPU飙高排查方案与思路？
+[TEXT] 出现频率：
+
+===== SLIDE 131 =====
+[TEXT] CPU飙高排查方案与思路？
+[TEXT] 1.使用top命令查看占用cpu的情况
+[TEXT] top
+[TEXT] 2.通过top命令查看后，可以查看是哪一个进程占用cpu较高，上图所示的进程为：40940
+[PIC] name=图片 10 size=890x160cm pos=(91,314)
+
+===== SLIDE 132 =====
+[TEXT] CPU飙高排查方案与思路？
+[TEXT] 3.查看进程中的线程信息
+[PIC] name=图片 8 size=568x384cm pos=(285,250)
+[TEXT] 通过以上分析，在进程40940中的线程40950占用cpu较高
+[TEXT] ps H -eo pid,tid,%cpu | grep 40940
+
+===== SLIDE 133 =====
+[TEXT] CPU飙高排查方案与思路？
+[TEXT] 4.可以根据线程 id 找到有问题的线程，进一步定位到问题代码的源码行号
+[TEXT] jstack 40940   此处是进程id
+[PIC] name=图片 4 size=951x291cm pos=(99,297)
+[PIC] name=图片 14 size=217x127cm pos=(1069,318)
+[TEXT] 十六进制
+[PIC] name=图片 22 size=451x61cm pos=(472,641)
+
+===== SLIDE 134 =====
+[TEXT] CPU飙高排查方案与思路？
+[TEXT] 1.使用top命令查看占用cpu的情况
+  2.通过top命令查看后，可以查看是哪一个进程占用cpu较高
+  3.使用ps命令查看进程中的线程信息
+  4.使用jstack命令查看进程中哪些线程出现了问题，最终定位问题
+
+===== SLIDE 135 =====

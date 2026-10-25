@@ -11,4 +11,4 @@
 
 ---
 
-> 📎 **相关笔记**：[[JavaSE/JavaSE 索引|JavaSE 索引]] · [[JVM/JVM 索引|JVM 索引]]
+> 📎 **相关笔记**：[[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE 索引]] · [[JVM/JVM 索引|JVM 索引]]
