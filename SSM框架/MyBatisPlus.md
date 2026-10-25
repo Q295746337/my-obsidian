@@ -1836,7 +1836,7 @@ class Mybatisplus03DqlApplicationTests {
 }
 ```
 
-###### 步骤3:运行新增方法
+###### INPUT策略 · 步骤3:运行新增方法
 
 如果没有设置主键ID的值，则会报错，错误提示就是主键ID没有给值:
 
@@ -1889,7 +1889,7 @@ class Mybatisplus03DqlApplicationTests {
 
 **注意:**这种生成策略，不需要手动设置ID，如果手动设置ID，则会使用自己设置的值。
 
-###### 步骤3:运行新增方法  
+###### ASSIGN_ID策略 · 步骤3:运行新增方法
 
 ![1631242753467](file:///D:/Java/data/SSM/MyBatisPlus/1631242753467.png)
 

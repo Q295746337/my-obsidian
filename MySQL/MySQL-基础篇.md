@@ -1626,6 +1626,8 @@ select * from emp order by age asc , entrydate desc;
 
 分页操作在业务系统开发时，也是非常常见的一个功能，我们在网站中看到的各种各样的分页条，后台都需要借助于数据库的分页操作。
 
+![](file:///D:/Java/data/MySQL/运维篇/image89.jpeg)
+
 
 ![](file:///D:/Java/data/MySQL/基础篇/image89.jpeg)
 
@@ -2352,6 +2354,8 @@ insert into tb_user (name,age,status,gender) values ( 'Tom1 ',19, '1 ', '男 '),
 
 上面，我们是通过编写SQL语句的形式来完成约束的指定，那加入我们是通过图形化界面来创建表结构时，又该如何来指定约束呢？   只需要在创建表的时候，根据我们的需要选择对应的约束即可。
 
+![](file:///D:/Java/data/MySQL/运维篇/image103.png)
+
 
 ![](file:///D:/Java/data/MySQL/基础篇/image103.png)
 
@@ -2413,6 +2417,8 @@ INSERT INTO emp (id, name, age, job, salary, entrydate, managerid, dept_id) VALU
 
 
 接下来，我们可以做一个测试，删除id为1的部门信息。
+
+![](file:///D:/Java/data/MySQL/运维篇/image107.png)
 
 
 ![](file:///D:/Java/data/MySQL/基础篇/image107.png)

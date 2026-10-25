@@ -807,7 +807,7 @@ pause
 
 ## SpringBoot基础
 
-### 课程内容
+### SpringBoot基础 · 课程内容
 
 > 1. SpringBootWeb入门
 >

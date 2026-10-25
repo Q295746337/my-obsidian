@@ -1988,7 +1988,7 @@ public class UserController {
 }
 ```
 
-##### 步骤2:启动程序测试
+##### 4.6.3 返回文本数据[了解] · 步骤2:启动程序测试
 
 此处不涉及到页面跳转，因为我们现在发送的是GET请求，可以使用浏览器也可以使用PostMan进行测试，输入地址`http://localhost/toText`访问
 

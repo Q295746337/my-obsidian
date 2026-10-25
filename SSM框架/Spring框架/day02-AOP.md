@@ -186,7 +186,7 @@ pom.xml中添加依赖
 
   ![1629888540286](file:///D:/Java/data/SSM/Spring框架/1629888540286.png)
 
-##### 步骤2:配置第三方bean
+##### 1.1.4 实现C3P0管理 · 步骤2:配置第三方bean
 
 在applicationContext.xml配置文件中添加配置
 
@@ -388,7 +388,7 @@ public class BookDaoImpl implements BookDao {
 </beans>
 ```
 
-###### 步骤3:运行程序
+###### 1.2.2.2 实现步骤 · 步骤3:运行程序
 
 在App类中，从IOC容器中获取bookDao对象，调用方法，查看值是否已经被获取到并打印控制台
 
@@ -1817,7 +1817,7 @@ public class JdbcConfig {
 }
 ```
 
-##### 步骤3:运行程序
+##### 4.3.1 使用包扫描引入 · 步骤3:运行程序
 
 依然能获取到bean对象并打印控制台。
 
@@ -1874,7 +1874,7 @@ public class SpringConfig {
   }
   ```
 
-##### 步骤3:运行程序
+##### 4.3.2 使用`@Import`引入 · 步骤3:运行程序
 
 依然能获取到bean对象并打印控制台
 
@@ -2035,7 +2035,7 @@ public DataSource dataSource(BookDao bookDao){
 
 ==引用类型注入只需要为bean定义方法设置形参即可，容器会根据类型自动装配对象。==
 
-###### 步骤3:运行程序
+###### 4.4.2.2 注入引用数据类型步骤 · 步骤3:运行程序
 
 ![1630125475609](file:///D:/Java/data/SSM/Spring框架/1630125475609.png)
 

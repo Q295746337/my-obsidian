@@ -1373,7 +1373,7 @@ public class BookDaoImpl implements BookDao {
 <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory"/>
 ```
 
-##### 步骤3:运行程序
+##### 4.3.2 生命周期设置 · 步骤3:运行程序
 
 运行AppForLifeCycle打印结果为:
 
@@ -1699,7 +1699,7 @@ public class BookServiceImpl implements BookService{
 </beans>
 ```
 
-##### 步骤3:运行程序
+##### 5.1.2 注入引用数据类型 · 步骤3:运行程序
 
 运行AppForDISet类，查看结果，说明userDao已经成功注入。
 
@@ -1723,7 +1723,7 @@ public class BookServiceImpl implements BookService{
 
 ref是指向Spring的IOC容器中的另一个bean对象的，对于简单数据类型，没有对应的bean对象，该如何配置?
 
-##### 步骤1:声明属性并提供setter方法
+##### 5.1.3 注入简单数据类型 · 步骤1:声明属性并提供setter方法
 
 在BookDaoImpl类中声明对应的简单数据类型的属性,并提供对应的setter方法
 
@@ -1747,7 +1747,7 @@ public class BookDaoImpl implements BookDao {
 }
 ```
 
-##### 步骤2:配置文件中进行注入配置
+##### 5.1.3 注入简单数据类型 · 步骤2:配置文件中进行注入配置
 
 在applicationContext.xml配置文件中使用property标签注入
 
@@ -1779,7 +1779,7 @@ value:后面跟的是简单数据类型，对于参数类型，Spring在注入�
 
 这样的话，spring在将`abc`转换成int类型的时候就会报错。
 
-##### 步骤3:运行程序
+##### 5.1.3 注入简单数据类型 · 步骤3:运行程序
 
 运行AppForDISet类，查看结果，说明userDao已经成功注入。
 
@@ -1991,7 +1991,7 @@ public class BookServiceImpl implements BookService{
 
 **说明:**这两个`<contructor-arg>`的配置顺序可以任意
 
-##### 步骤3:运行程序
+##### 5.2.3 构造器注入多个引用数据类型 · 步骤3:运行程序
 
 运行AppForDIConstructor类，查看结果，说明userDao已经成功注入。
 
@@ -2051,7 +2051,7 @@ public class BookDaoImpl implements BookDao {
 
 **说明:**这两个`<contructor-arg>`的配置顺序可以任意
 
-##### 步骤3:运行程序
+##### 5.2.4 构造器注入多个简单数据类型 · 步骤3:运行程序
 
 运行AppForDIConstructor类，查看结果
 

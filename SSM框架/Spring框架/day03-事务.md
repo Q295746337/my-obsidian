@@ -1944,7 +1944,7 @@ public class BookDaoImpl implements BookDao {
 
 #### 4.5.3 具体实现
 
-##### 步骤1:开启SpringAOP的注解功能
+##### 4.5.3 具体实现 · 步骤1:开启SpringAOP的注解功能
 
 ```java
 @Configuration
@@ -1966,7 +1966,7 @@ public class DataAdvice {
 }
 ```
 
-##### 步骤3:添加环绕通知
+##### 4.5.3 具体实现 · 步骤3:添加环绕通知
 
 ```java
 @Component
@@ -2013,7 +2013,7 @@ public class DataAdvice {
 }
 ```
 
-##### 步骤5:运行程序
+##### 4.5.3 具体实现 · 步骤5:运行程序
 
 不管密码`root`前后是否加空格，最终控制台打印的都是true
 
@@ -2736,7 +2736,7 @@ public class AccountServiceImpl implements AccountService {
 }
 ```
 
-###### 步骤5:运行程序
+###### 6.3.2.2 环境准备 · 步骤5:运行程序
 
 * 当程序正常运行，tbl_account表中转账成功，tbl_log表中日志记录成功
 

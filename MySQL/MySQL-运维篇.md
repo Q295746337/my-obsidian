@@ -299,7 +299,7 @@ binlog_ignore_db : 指定不需要同步的数据库
 #### 2.3.3 从库配置
 
 
-## 1. 修改配置文件  /etc/my.cnf
+## MySQL 运维篇 · 1. 修改配置文件  /etc/my.cnf
 
 
 ```sql
@@ -427,6 +427,8 @@ sex varchar (1)
 
 
 垂直分库：以表为依据，根据业务将不同表拆分到不同库中。
+
+![](file:///D:/Java/data/MySQL/基础篇/image25.png)
 
 
 特点：
