@@ -1,0 +1,61 @@
+图中为一段 Python 代码片段（含注释与代码），以行号（27–44）标注，整体呈现一个基于向量库的语义检索 + 大模型问答的流程。关键信息如下：
+
+---
+
+**完整转写文字（含行号与格式）：**
+
+```
+27  # 准备一下资料（向量库的数据）
+28  # add_texts 传入一个 list[str]
+29  vector_store.add_texts(
+30      ["减肥就是少吃多练", "在减脂期间吃东西很重要,清淡少油控制卡路里摄入并运动起来"],
+31  
+32  input_text = "怎么减肥？"
+33  
+34  # 检索向量库
+35  result = vector_store.similarity_search(input_text, k=2)
+36  reference_text = "["
+37  for doc in result:
+38      reference_text += doc.page_content
+39      reference_text += "]"
+40  
+41  chain = prompt | print_prompt | model | StrOutputParser()
+42  res = chain.invoke({"input": input_text, "context": reference_text})
+43  print(res)
+```
+
+> 注：第30行末尾缺少右括号 `)`，应为语法错误；第39行 `reference_text += "]"` 应为每条 doc 后加 `"]"`，但逻辑上更可能是想构造类似 `"[doc1][doc2]"` 的格式（当前代码会将所有 doc 内容拼接后统一加一个 `]`，实际效果为 `"[内容1内容2]"` 后再加 `]` → `"[内容1内容2]]"`，存在逻辑瑕疵）。
+
+---
+
+**关键信息提取：**
+
+1. **数据准备阶段（行27–30）**  
+   - 调用 `vector_store.add_texts()` 方法，传入一个包含两个字符串的列表：  
+     `"减肥就是少吃多练"`  
+     `"在减脂期间吃东西很重要,清淡少油控制卡路里摄入并运动起来"`  
+   - 注释说明：`add_texts` 接收 `list[str]` 类型参数。
+
+2. **用户输入（行32）**  
+   - `input_text = "怎么减肥？"`
+
+3. **向量检索阶段（行34–39）**  
+   - 调用 `vector_store.similarity_search(input_text, k=2)`，返回 top-2 相似文档（`result`）。  
+   - 初始化 `reference_text = "["`  
+   - 遍历 `result` 中每个 `doc`，将其 `page_content` 拼接到 `reference_text`，然后追加 `"]"`（注意：此操作在循环内，但 `"]"` 是每次迭代都加，导致最终格式可能为 `[doc1][doc2]` 或 `[doc1]doc2]`，取决于实现细节；按字面代码，是每次循环都 `+= "]"`，即：  
+     初始：`"["`  
+     第一次：`"[doc1]"`  
+     第二次：`"[doc1]doc2]"` → 实际应为 `[doc1][doc2]` 才合理，此处代码有误）
+
+4. **LLM推理链构建与调用（行41–43）**  
+   - 构建链式调用：`prompt | print_prompt | model | StrOutputParser()`  
+     （使用管道符 `|` 连接组件，符合 LangChain 风格）  
+   - 调用 `chain.invoke()`，传入字典：  
+     ```python
+     {"input": input_text, "context": reference_text}
+     ```
+   - 输出结果 `res` 并打印。
+
+---
+
+**无图外补充**：未出现架构图、流程图、时序图或表格；仅为纯文本代码截图/片段。

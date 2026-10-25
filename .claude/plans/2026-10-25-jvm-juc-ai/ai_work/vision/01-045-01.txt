@@ -1,0 +1,47 @@
+该图是一个以中心节点“T5”为核心的辐射状结构图（类似思维导图），展示多个输入文本及其对应的输出结果，所有连线均从各文本框指向中心“T5”节点，表明这些文本是T5模型的输入或输出示例。
+
+图中全部文字如下（按颜色/样式分组）：
+
+1. **浅绿色矩形框（顶部）**  
+   `"translate English to German: That is good."`
+
+2. **粉红色矩形框（左中）**  
+   `"cola sentence: The course is jumping well."`
+
+3. **浅黄色矩形框（左下）**  
+   `"stsb sentence1: The rhino grazed on the grass. sentence2: A rhino is grazing in a field."`
+
+4. **浅蓝色矩形框（最左下）**  
+   `"summarize: state authorities dispatched emergency crews tuesday to survey the damage after an onslaught of severe weather in mississippi."`
+
+5. **中心节点（黑色粗边框圆角矩形）**  
+   `T5`
+
+6. **浅绿色矩形框（右上）**  
+   `"Das ist gut."`
+
+7. **粉红色矩形框（右中）**  
+   `"not acceptable"`
+
+8. **浅黄色矩形框（右中偏下）**  
+   `"3.8"`
+
+9. **浅蓝色矩形框（右下）**  
+   `"six people hospitalized after a storm in attala county."`
+
+**关键信息与结构说明：**
+- 所有9个文本框均通过单向实线箭头指向中心“T5”节点，表示这些是T5模型处理的样本（可能为输入-输出对，但图中未明确标注哪侧为输入、哪侧为输出；从内容看，左侧三框+左下蓝框似为任务指令+输入，右侧三框+右下蓝框似为对应输出）。
+- 文本内容涵盖多种NLP任务类型：
+  - 翻译（English → German）
+  - 语义相似度（STS-B，含两个句子）
+  - 文本摘要（summarize + 长句）
+  - 句子分类/情感/可接受性判断（"cola sentence" → "not acceptable"）
+  - 回答/生成（"3.8" 可能为评分或数值预测）
+  - 事件抽取/摘要生成（风暴致人住院）
+- 颜色编码可能用于区分任务类型或输出格式，但图中未提供图例说明。
+- 无额外图标、注释、编号或流程顺序标识；仅为静态示例集合图。
+�务预测标签）
+  - 黄色输入 → 黄色输出："3.8"（STS-B任务相似度分数，0–5范围）
+  - 蓝色输入 → 蓝色输出："six people hospitalized after a storm in attala county."（摘要结果）
+
+所有连线均为单向实线，从输入框指向T5，再从T5指向对应输出框（图中未画出T5→输出的显式箭头，但布局清晰表明T5是处理中枢，输入→T5→输出的流向）。无其他图标、注释或额外元素。

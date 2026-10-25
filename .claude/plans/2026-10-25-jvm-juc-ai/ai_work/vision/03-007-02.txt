@@ -1,0 +1,86 @@
+该图为一个系统架构/流程图，描述了基于 Streamlit 的 WEB 网页文件上传服务中，MD5 校验与知识库存储的流程。图中包含多个模块、函数、类及外部组件，通过箭头表示调用或数据流向。
+
+以下为图中全部文字与关键信息的完整转写（按区域划分）：
+
+---
+
+**左侧区域（灰色虚线框内）：Streamlit 框架开发 WEB 网页服务**
+
+- 顶部独立节点（白色圆角矩形）：
+  - `WEB网页上传文件`
+
+- 流程节点（自上而下，带箭头连接）：
+  - `st.file_uploader()`  
+    ↓（向下箭头）
+  - `uploader_file.get_value()`  
+    →（向右箭头）指向右侧 `KnowledgeBaseService 实例`
+  - `KnowledgeBaseService 实例`（位于右侧虚线框内，但逻辑上属于此流程）
+
+- 区域标注文字（灰色背景上）：
+  - `Streamlit框架开发WEB网页服务`
+  - 底部小字（浅灰）：`app_file_upload.py`
+
+---
+
+**中间偏右区域（橙色背景框）：Class KnowledgeBaseService**
+
+- 外层标题（底部居中）：
+  - `Class KnowledgeBaseService`
+
+- 内部结构：
+  - 上方三个独立函数（白色圆角矩形，从上至下）：
+    1. `def check_md5()`
+    2. `def save_md5()`
+    3. `def get_string_md5(str)`
+
+  - 下方一个嵌套框（白色背景），包含：
+    - 两个属性（小圆角矩形）：
+      - `self.chroma`
+      - `self.splitter`
+    - 一个方法（圆角矩形）：
+      - `def upload_by_str(self, data, filename)`
+
+- 连接关系：
+  - `KnowledgeBaseService 实例`（左侧）→ 指向 `def upload_by_str(...)`（箭头终点在该函数框左侧）
+  - `def check_md5()` ←（左向箭头）来自 `def upload_by_str(...)` 所在框（即该函数被 `upload_by_str` 调用）
+  - `def save_md5()` ←（左向箭头）同样来自 `def upload_by_str(...)` 所在框
+  - `def get_string_md5(str)` ←（左向箭头）同样来自 `def upload_by_str(...)` 所在框  
+    （注：三者均被 `upload_by_str` 调用，图中以三条独立左向箭头表示）
+
+---
+
+**右侧区域（黑色背景上）：外部资源**
+
+- 上方独立节点（白色矩形）：
+  - `md5.text`
+
+- 下方节点（圆柱体图标，代表数据库/向量库）：
+  - 标签文字：`Chroma`  
+    下方小字：`向量库`
+
+- 连接关系：
+  - `def upload_by_str(...)` →（右向箭头）指向 `Chroma 向量库`
+  - `md5.text` 无明确连接线（孤立存在，可能表示 MD5 存储文件）
+
+---
+
+**其他视觉元素**
+- 图中央顶部有一个白色实心小圆点（无标签，可能是装饰或连接点标记）。
+- 所有箭头均为单向实线箭头，表示调用或数据流向。
+- 无颜色编码说明，仅通过背景色区分模块：灰色（Streamlit 服务流程）、橙色（KnowledgeBaseService 类定义）、黑色（外部资源区）。
+
+--- 
+
+**总结关键信息流路径：**
+1. 用户在 WEB 网页上传文件 → 触发 `st.file_uploader()`
+2. 获取上传文件对象 → 调用 `uploader_file.get_value()`
+3. 将值传入 `KnowledgeBaseService 实例`
+4. 实例调用其方法 `upload_by_str(self, data, filename)`
+5. `upload_by_str` 内部依次调用：
+   - `get_string_md5(str)`（计算字符串 MD5）
+   - `check_md5()`（校验）
+   - `save_md5()`（保存）
+6. 最终将处理后的数据存入 `Chroma 向量库`
+7. `md5.text` 作为独立文件存在，图中未显示其读写连接。
+
+（注：图中未显示 `self.splitter` 的具体调用关系，仅作为类属性列出。）

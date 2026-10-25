@@ -1,0 +1,63 @@
+该图为一个流程图，描述了基于嵌入（embedding）的查询处理流程。图中所有文字和关键信息如下：
+
+---
+
+**节点文字（按图中出现顺序）：**
+
+1. **Query**  
+   - 形状：圆角矩形（对话气泡样式，左上角有小三角指向左侧）
+   - 位置：左上角，为流程起点之一
+
+2. **Embedding Model**  
+   - 形状：蓝色填充矩形框
+   - 位置：Query 下方，接收来自 Query 的输入
+
+3. **Query Embedding**  
+   - 形状：文档图标（右下角折角的矩形）
+   - 位置：Embedding Model 右侧，接收其输出
+
+4. **Embedding Store**  
+   - 形状：圆柱体（数据库/存储符号），蓝色填充
+   - 位置：Query Embedding 右侧，接收其输出
+
+5. **Relevant Segments**  
+   - 形状：多层堆叠文档图标（表示多个文档/片段）
+   - 位置：Embedding Store 右侧
+
+6. **Query + Relevant Segments**  
+   - 形状：圆角矩形（对话气泡样式，右下角有小三角指向右侧）
+   - 位置：图右上方，接收两个输入流
+
+7. **Language Model**  
+   - 形状：蓝色填充矩形框
+   - 位置：最右侧，为流程终点
+
+---
+
+**连接线与数据流向（箭头方向表示数据/控制流）：**
+
+- 从 **Query** 出发，有两条出边：
+  1. 向下 → **Embedding Model**
+  2. 向右 → **Query + Relevant Segments**
+
+- 从 **Embedding Model** → **Query Embedding**
+
+- 从 **Query Embedding** → **Embedding Store**
+
+- 从 **Embedding Store** → **Relevant Segments**
+
+- 从 **Relevant Segments** → **Query + Relevant Segments**
+
+- 从 **Query + Relevant Segments** → **Language Model**
+
+---
+
+**关键信息总结：**
+
+- 流程起始于“Query”。
+- Query 被送入“Embedding Model”生成“Query Embedding”，后者存入“Embedding Store”。
+- “Embedding Store”检索并输出“Relevant Segments”（相关片段）。
+- 原始“Query”与“Relevant Segments”被合并为“Query + Relevant Segments”。
+- 合并后的输入送入“Language Model”进行最终处理。
+
+图中无代码、SQL、终端输出或表格内容；仅为架构/流程图，未标注颜色含义、协议、延迟等额外元信息。

@@ -1,0 +1,52 @@
+图中内容为一段 JSON 格式的文本（非图像，实为代码/数据结构截图），采用语法高亮显示（绿色为字符串键名与部分值，粉色为数字与部分字符串值，灰色为注释）。全文如下，已按原格式完整转写：
+
+```json
+{
+  "id": "chatcmpl-xxxx",
+  "object": "chat.completion",
+  "created": 1735689600,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "生成的回复内容"
+      },
+      "finish_reason": "stop"  # stop=正常结束, length=令牌数超限, function_call=触发函数调用
+    }
+  ],
+  "usage": {  # 令牌消耗统计
+    "prompt_tokens": 50,
+    "completion_tokens": 80,
+    "total_tokens": 130
+  }
+}
+```
+
+关键信息提取如下：
+
+- **顶层字段**：
+  - `"id"`：值为 `"chatcmpl-xxxx"`（请求唯一标识）
+  - `"object"`：值为 `"chat.completion"`（对象类型）
+  - `"created"`：值为 `1735689600`（Unix 时间戳，对应 2025-01-01 00:00:00 UTC）
+  - `"model"`：值为 `"gpt-3.5-turbo-0125"`（所用模型名称）
+  - `"choices"`：数组，含 1 个元素（即一个生成结果）
+  - `"usage"`：对象，含令牌消耗统计
+
+- **`choices[0]` 内容**：
+  - `"index"`：`0`（结果序号）
+  - `"message"`：对象，含：
+    - `"role"`：`"assistant"`
+    - `"content"`：`"生成的回复内容"`
+  - `"finish_reason"`：`"stop"`，后附注释说明三种可能取值含义：
+    - `stop` = 正常结束  
+    - `length` = 令牌数超限  
+    - `function_call` = 触发函数调用
+
+- **`usage` 字段**（注释：`# 令牌消耗统计`）：
+  - `"prompt_tokens"`：`50`
+  - `"completion_tokens"`：`80`
+  - `"total_tokens"`：`130`
+
+无图形元素、节点或流向；仅为结构化数据文本。

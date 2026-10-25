@@ -1,0 +1,5831 @@
+{
+ "file": "01提示词工程.pptx",
+ "count": 96,
+ "w": 13.333333333333334,
+ "h": 7.5,
+ "slides": [
+  {
+   "slide": 1,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "通义千问大模型接入",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 2,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型的接入",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 11",
+     "type": "TEXT_BOX (17)",
+     "text": "本地部署：Ollama",
+     "level": [
+      0
+     ],
+     "top": 3.36,
+     "left": 1.89
+    },
+    {
+     "name": "文本框 12",
+     "type": "TEXT_BOX (17)",
+     "text": "Qwen\nDeepSeek\n…\n1.5b、7b、8b、32b…",
+     "level": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 3.8,
+     "left": 2.26
+    },
+    {
+     "name": "文本框 17",
+     "type": "TEXT_BOX (17)",
+     "text": "云端大模型：阿里云百炼平台",
+     "level": [
+      0
+     ],
+     "top": 3.36,
+     "left": 6.92
+    },
+    {
+     "name": "文本框 18",
+     "type": "TEXT_BOX (17)",
+     "text": "Qwen\nDeepSeek\n…\n满参数 + 免费额度",
+     "level": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 3.8,
+     "left": 8.01
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "002-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "002-02.png",
+     "sha1": "0f37815b12aac9f69ffbe38673f9b08995761bdb",
+     "ext": "png",
+     "bytes": 38871,
+     "px_w": 256,
+     "px_h": 256,
+     "shape_w_in": 1.97,
+     "shape_h_in": 1.97,
+     "top_in": 1.39,
+     "left_in": 2.22
+    },
+    {
+     "idx": 3,
+     "filename": "002-03.png",
+     "sha1": "4e517c4f6ea3449ae21157ecf9ca8db3b3b07da5",
+     "ext": "png",
+     "bytes": 12108,
+     "px_w": 714,
+     "px_h": 152,
+     "shape_w_in": 3.72,
+     "shape_h_in": 0.79,
+     "top_in": 2.26,
+     "left_in": 6.98
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 3,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型调用准备",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "接入通义千问大模型：进入阿里云的百炼大模型平台， 完成注册，登录，实名（使用支付宝扫一下）。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "003-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "003-02.png",
+     "sha1": "5af4b17d67af469302d0e05441a367acbdf0d05e",
+     "ext": "png",
+     "bytes": 721462,
+     "px_w": 2870,
+     "px_h": 1458,
+     "shape_w_in": 10.05,
+     "shape_h_in": 5.11,
+     "top_in": 1.94,
+     "left_in": 1.23
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 4,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型调用准备",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "创建API KEY：",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "004-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "004-02.png",
+     "sha1": "29f0a36689734e4585da64e4d78f282b10560786",
+     "ext": "png",
+     "bytes": 149305,
+     "px_w": 2878,
+     "px_h": 512,
+     "shape_w_in": 11.93,
+     "shape_h_in": 2.12,
+     "top_in": 2.57,
+     "left_in": 0.52
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 5,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型调用准备",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "安装SDK测试代码：\n# 基于pip安装openai库\npip install openai\n\n如图所示，获取测试代码",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "005-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "005-02.png",
+     "sha1": "6c6188fd208df384e1c539d0c03ffcafcda45c58",
+     "ext": "png",
+     "bytes": 359250,
+     "px_w": 1938,
+     "px_h": 1462,
+     "shape_w_in": 6.89,
+     "shape_h_in": 5.2,
+     "top_in": 1.39,
+     "left_in": 4.3
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 6,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型调用准备",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "验证：复制并指向官方提供的调试代码",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "006-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "006-02.png",
+     "sha1": "a3225849e99d46c90fab1c1cbba3b07a520d5c68",
+     "ext": "png",
+     "bytes": 132730,
+     "px_w": 1376,
+     "px_h": 690,
+     "shape_w_in": 9.56,
+     "shape_h_in": 4.79,
+     "top_in": 1.7,
+     "left_in": 1.89
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 7,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型调用准备",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "安全优化：为避免在代码中明文出现APIKEY，可以使用dotenv库改造代码隐藏APIKEY",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "007-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "007-02.png",
+     "sha1": "8a1f535e3167036e75389b1567abd1476a8bee71",
+     "ext": "png",
+     "bytes": 149353,
+     "px_w": 1376,
+     "px_h": 804,
+     "shape_w_in": 7.88,
+     "shape_h_in": 4.6,
+     "top_in": 1.86,
+     "left_in": 2.65
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 8,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "技术准备",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "前文代码的messages是一个list，内嵌了多个字典。可以发现字典的结构是：{‘role’: ... , ‘content’: ...}\n其中role表示的是角色，content表示的是内容。\n在chat 大语言模型中，user、assistant、system 是三种核心角色，它们的定位和功能不同，共同构成对话的上下文结构。",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "008-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 2,
+     "filename": "008-02.png",
+     "sha1": "d2b2435aab968bbf784c1e9d4bce8f24b8638e00",
+     "ext": "png",
+     "bytes": 379934,
+     "px_w": 1380,
+     "px_h": 1272,
+     "shape_w_in": 5.38,
+     "shape_h_in": 4.96,
+     "top_in": 2.33,
+     "left_in": 0.6
+    },
+    {
+     "idx": 3,
+     "filename": "008-03.png",
+     "sha1": "d387dc563097273e5324a4a27b930b1d5ada5744",
+     "ext": "png",
+     "bytes": 125940,
+     "px_w": 479,
+     "px_h": 307,
+     "shape_w_in": 4.85,
+     "shape_h_in": 3.11,
+     "top_in": 2.96,
+     "left_in": 6.59
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 9,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用云端大模型",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 10,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用云端大模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "通过代码调用阿里云百炼平台上的模型很简单，仅需要：\n阿里云百炼平台上，创建API-KEY\n通过pip为Python程序提供 OpenAI 库: pip install openai\n编写代码测试（可从百炼平台官网复制代码，直接执行）\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "010-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 11,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "通过代码调用阿里云百炼平台大模型，主要动作\n准备好API-KEY\n安装openai库\n复制官网示例代码并执行（可在代码中替换需要调用的模型）",
+     "level": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 12,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "使用环境变量保护APIKEY",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 13,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用云端大模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "如下代码，将APIKEY明文显示在代码中，是有很大的安全隐患的。我们可以通过环境变量来隐藏明文APIKEY。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "import os\u000bfrom openai import OpenAI\u000b\u000bclient = OpenAI(\u000b    # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key=\"sk-xxx\",\u000b    api_key=\"sk-c482ad493b4347a9863bad0014354abe\",\u000b    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\",\u000b)\u000bcompletion = client.chat.completions.create(\u000b    model=\"deepseek-v3\",\u000b    messages=[\u000b        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\u000b        {\"role\": \"user\", \"content\": \"你是谁，能做什么？\"},\u000b    ],\u000b    stream=True\u000b)\u000bfor chunk in completion:\u000b    print(chunk.choices[0].delta.content, end=\"\", flush=True)",
+     "level": [
+      0
+     ],
+     "top": 1.86,
+     "left": 0.6
+    },
+    {
+     "name": "矩形 6",
+     "type": "AUTO_SHAPE (1)",
+     "text": "OPENAI_API_KEY",
+     "level": [
+      0
+     ],
+     "top": 2.69,
+     "left": 8.78
+    },
+    {
+     "name": "矩形 7",
+     "type": "AUTO_SHAPE (1)",
+     "text": "DASHSCOPE_API_KEY",
+     "level": [
+      0
+     ],
+     "top": 4.21,
+     "left": 8.78
+    },
+    {
+     "name": "文本框 8",
+     "type": "TEXT_BOX (17)",
+     "text": "用于openai库，记录APIKEY",
+     "level": [
+      0
+     ],
+     "top": 3.31,
+     "left": 8.68
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "用于langchain库（后续学习）",
+     "level": [
+      0
+     ],
+     "top": 4.83,
+     "left": 8.55
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "013-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 14,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "将APIKEY暴露在代码中是不合理的\n可以通过环境变量：OPENAI_API_KEY和DASHSCOPE_API_KEY记录值，代码会自动读取变量从而获取值\n\nWindows系统通过图形化界面配置环境变量\nMac系统在终端内修改 .zshrc 文件添加环境变量\nexport OPENAI_API_KEY=xxx\nexport DASHSCOPE_API_KEY=xxx\n配置完成后，重启PyCharm生效（如不生效可以重启电脑）",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 15,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama简介",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 16,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama简介",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "为了避免未来阿里云免费额度到期或不提供免费活动导致的无法开发，课程额外补充：\n基于Ollama部署本地模型，供代码调用。\nPS：此为备用方案，课程主体还是基于阿里云百炼平台做开发。\n\nollama：是一款旨在简化大型语言模型本地部署和运行过程的开源软件。\n\nollama提供了一个轻量级、易于扩展的框架，让开发者能够在本地机器上轻松构建和管理LLMs（大型语言模型）\n通过ollama，开发者可以导入和定制自己的模型，无需关注复杂的底层实现细节。\n网址：https://ollama.com\n\n简单来说可以认为是阿里云百炼平台的本地版，在自己电脑上部署和运行大模型，由自己电脑的硬件提供算力支撑模型运行。\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "016-01.png",
+     "sha1": "dc21f0f68127e62a672028f1930e3754e15b847e",
+     "ext": "png",
+     "bytes": 54905,
+     "px_w": 398,
+     "px_h": 763,
+     "shape_w_in": 2.94,
+     "shape_h_in": 5.64,
+     "top_in": 1.25,
+     "left_in": 9.42
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 17,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama模型库",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "ollama 支持多种开源模型，涵盖文本生成、代码生成、多模态推理等场景。用户可以根据需求选择合适的模型，并通过简单的命令行操作在本地运行。\nollama 官方模型库: https://ollama.com/library\n",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "017-01.png",
+     "sha1": "c2fe93ff54abd1057080b759ad101086d9db6bfd",
+     "ext": "png",
+     "bytes": 121885,
+     "px_w": 2535,
+     "px_h": 1311,
+     "shape_w_in": 8.39,
+     "shape_h_in": 4.34,
+     "top_in": 2.57,
+     "left_in": 0.68
+    },
+    {
+     "idx": 2,
+     "filename": "017-02.png",
+     "sha1": "54c3b7ae9b1642ba77f5c2eb04535fa5752dd959",
+     "ext": "png",
+     "bytes": 44012,
+     "px_w": 513,
+     "px_h": 513,
+     "shape_w_in": 2.33,
+     "shape_h_in": 2.33,
+     "top_in": 4.84,
+     "left_in": 11.0
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 18,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama介绍",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 28",
+     "type": "TEXT_BOX (17)",
+     "text": "Ollama",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 30",
+     "type": "TEXT_BOX (17)",
+     "text": "命令行访问",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 33",
+     "type": "TEXT_BOX (17)",
+     "text": "Restful API接口",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "立方体 31",
+     "type": "AUTO_SHAPE (1)",
+     "text": "模型",
+     "level": [
+      0
+     ],
+     "top": 0.0,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "deepseek-r1",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "立方体 29",
+     "type": "AUTO_SHAPE (1)",
+     "text": "模型",
+     "level": [
+      0
+     ],
+     "top": 0.0,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 12",
+     "type": "TEXT_BOX (17)",
+     "text": "qwen",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 13",
+     "type": "TEXT_BOX (17)",
+     "text": "大规模预训练语言模型",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.0
+    },
+    {
+     "name": "立方体 21",
+     "type": "AUTO_SHAPE (1)",
+     "text": "模型",
+     "level": [
+      0
+     ],
+     "top": 0.0,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "LIama",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "立方体 23",
+     "type": "AUTO_SHAPE (1)",
+     "text": "模型",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.0
+    },
+    {
+     "name": "文本框 16",
+     "type": "TEXT_BOX (17)",
+     "text": "Phi-4",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.0
+    },
+    {
+     "name": "立方体 25",
+     "type": "AUTO_SHAPE (1)",
+     "text": "模型",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.0
+    },
+    {
+     "name": "文本框 18",
+     "type": "TEXT_BOX (17)",
+     "text": "Mistral",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.0
+    },
+    {
+     "name": "立方体 27",
+     "type": "AUTO_SHAPE (1)",
+     "text": "...",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    },
+    {
+     "name": "文本框 22",
+     "type": "TEXT_BOX (17)",
+     "text": "...",
+     "level": [
+      0
+     ],
+     "top": 0.01,
+     "left": 0.01
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "018-01.png",
+     "sha1": "37f24fcbfb58c5bc22b2235def4f8d3496f0eeaa",
+     "ext": "png",
+     "bytes": 7487,
+     "px_w": 181,
+     "px_h": 256,
+     "shape_w_in": 0.0,
+     "shape_h_in": 0.0,
+     "top_in": 0.0,
+     "left_in": 0.01
+    },
+    {
+     "idx": 2,
+     "filename": "018-02.png",
+     "sha1": "451781e8c443ff4b50bb7db799acb65fb027d6c6",
+     "ext": "png",
+     "bytes": 25451,
+     "px_w": 1267,
+     "px_h": 379,
+     "shape_w_in": 0.01,
+     "shape_h_in": 0.0,
+     "top_in": 0.0,
+     "left_in": 0.01
+    },
+    {
+     "idx": 3,
+     "filename": "018-03.png",
+     "sha1": "82af416c0832149662f26dfc3654cf03c6486a58",
+     "ext": "png",
+     "bytes": 48206,
+     "px_w": 1666,
+     "px_h": 332,
+     "shape_w_in": 0.01,
+     "shape_h_in": 0.0,
+     "top_in": 0.01,
+     "left_in": 0.01
+    },
+    {
+     "idx": 4,
+     "filename": "018-04.png",
+     "sha1": "8485360e00cd81d855305fcd1c85ae7b322c29a6",
+     "ext": "png",
+     "bytes": 47122,
+     "px_w": 443,
+     "px_h": 443,
+     "shape_w_in": 2.02,
+     "shape_h_in": 2.02,
+     "top_in": 5.17,
+     "left_in": 11.42
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 19,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "1.ollama是什么?\n是一款旨在简化大型语言模型本地部署和运行过程的开源软件。\n\n2.如何查看ollama支持的模型?\n通过ollama 官方模型库: https://ollama.com/library\n\ndeepseek-r1,qwen等模型均有提供",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 20,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "Windows/Mac系统部署Ollama",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 21,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama的部署",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama的部署还是很简单的，只需要进入官方网站点击Download按钮下载安装。\n\n安装完成后，通过命令：\nollama run 模型名称\n即可运行对应的模型，并在命令行内做交互。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "021-01.png",
+     "sha1": "dc21f0f68127e62a672028f1930e3754e15b847e",
+     "ext": "png",
+     "bytes": 54905,
+     "px_w": 398,
+     "px_h": 763,
+     "shape_w_in": 2.94,
+     "shape_h_in": 5.64,
+     "top_in": 1.25,
+     "left_in": 9.42
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 22,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama部署：在官网下载并安装客户端即可。\n蒸馏模型就是对标准大模型核心技能的学习，并进行瘦身，从而获得更低的性能要求。 简单来说蒸馏模型就是标准大模型的学生，学到了老师的核心本领，但没有老师强。根据参数量的不同，参数量越大，蒸馏模型学到老师核心本领就越扎实，性能越好。\n参数量选择：\n集显：1.5b左右\n4G独显：8b以内\n8G独显：14b以内\n…具体可以自己试一试\n参数量越大对硬件要求越高，如果硬件能力不足，模型运算和吐字速度会下降。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 23,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama的基础命令",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 24,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Ollama的部署",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "完成Ollama的部署和使用后，后续如果要管理电脑中的模型，可以使用Ollama命令。\n\n主要介绍如下几个命令：\nollama list：列出当前已下载的模型\nollama pull 模型名称：联网下载指定的模型\nollama run 模型名称：运行指定的模型（如不存在会先下载）\nollama –-help：查看其它可用的命令帮助\n\n\nPS：上述命令操作，请先运行Ollama\nPS：上述命令操作，Windows系统和Mac系统通用",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "024-01.png",
+     "sha1": "dc21f0f68127e62a672028f1930e3754e15b847e",
+     "ext": "png",
+     "bytes": 54905,
+     "px_w": 398,
+     "px_h": 763,
+     "shape_w_in": 2.94,
+     "shape_h_in": 5.64,
+     "top_in": 1.25,
+     "left_in": 9.42
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 25,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用Ollama的本地模型",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《前置准备》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 26,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用Ollama的本地模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "使用代码调用Ollama的本地模型还是很简单的，只需要将原有代码进行简单改动即可。\n\n\n\n\n\n\n\n\n\n\n\n将base_url改为：http://localhost:11434/v1\n将model改为对应本地模型名称，如：qwen3:4b",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai import OpenAI\u000b\u000bclient = OpenAI(\u000b    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\",\u000b)\u000bcompletion = client.chat.completions.create(\u000b    model=\"deepseek-v3\",\u000b    messages=[\u000b        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\u000b        {\"role\": \"user\", \"content\": \"你是谁，能做什么？\"},\u000b    ],\u000b    stream=True\u000b)\u000bfor chunk in completion:\u000b    print(chunk.choices[0].delta.content, end=\"\", flush=True)\n ",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.62,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "026-01.png",
+     "sha1": "68f2b7139dba613f2ef5c250693b9e0d45cdf69f",
+     "ext": "png",
+     "bytes": 90176,
+     "px_w": 548,
+     "px_h": 548,
+     "shape_w_in": 2.49,
+     "shape_h_in": 2.49,
+     "top_in": 5.01,
+     "left_in": 11.0
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 27,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的基础使用",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《Python OpenAI库入门》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 28,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的基础使用",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库是OpenAI官方推出的Python SDK，核心作用是让开发者能简单、高效地调用 OpenAI 的各类 API（如 GPT 聊天、DALL・E 绘图、语音转文字等），无需手动处理 HTTP 请求、身份验证等底层细节。\n由于其发布较早且比较易用，现如今许多模型服务商（如阿里云百炼平台）均兼容OpenAI SDK的调用。\n",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "矩形 10",
+     "type": "AUTO_SHAPE (1)",
+     "text": "获取客户端对象",
+     "level": [
+      0
+     ],
+     "top": 3.24,
+     "left": 1.78
+    },
+    {
+     "name": "矩形 11",
+     "type": "AUTO_SHAPE (1)",
+     "text": "调用模型",
+     "level": [
+      0
+     ],
+     "top": 3.24,
+     "left": 5.33
+    },
+    {
+     "name": "矩形 12",
+     "type": "AUTO_SHAPE (1)",
+     "text": "处理结果",
+     "level": [
+      0
+     ],
+     "top": 3.24,
+     "left": 8.87
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "028-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 29,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的基础使用",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "矩形 10",
+     "type": "AUTO_SHAPE (1)",
+     "text": "获取客户端对象",
+     "level": [
+      0
+     ],
+     "top": 1.09,
+     "left": 0.56
+    },
+    {
+     "name": "文本框 8",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai import OpenAI\n \nclient: OpenAI = OpenAI(\n    api_key=\"your_api_key_here\", \n    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"\n)",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.22,
+     "left": 0.56
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "主要是用如上2个参数：\napi_key：模型服务商提供的APIKEY密钥\nbase_url：模型服务商的API接入地址\n主要基于此参数来切换不同的模型服务商（如OpenAI、阿里云、腾讯云等）",
+     "level": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "top": 4.3,
+     "left": 0.56
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "029-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 30,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的基础使用",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "client.chat.completions.create创建ChatCompletion对象\n\n主要参数有2个：\nmodel：选择所用模型，如代码的qwen3-max\nmessages：提供给模型的消息\n类型：list，可以包含多个字典消息\n每个字典消息包含2个key\nrole：角色\ncontent：内容\n\nsystem角色：设定助手的整体行为、角色和规则，为对话提供上下文框架（如指定助手身份、回答风格、核心要求），是全局的背景设定，影响后续所有交互。\nassistant角色：代表 AI 助手的回答，可以在代码中认为设定\nuser角色：代表用户，发送问题、指令或需求\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.19,
+     "left": 6.35
+    },
+    {
+     "name": "矩形 2",
+     "type": "AUTO_SHAPE (1)",
+     "text": "调用模型",
+     "level": [
+      0
+     ],
+     "top": 1.08,
+     "left": 0.46
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai.types.chat.chat_completion import ChatCompletion\nresponse: ChatCompletion = client.chat.completions.create(\n    model=\"qwen3-max\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"你是一个Python编程专家。\"}, \n        {\"role\": \"assistant\", \"content\": \"我是一个Python编程专家。请问有什么可以帮助您的吗？\"},\n        {\"role\": \"user\", \"content\": \"for循环输出1到5的数字\"}\n    ]\n) ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.19,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "030-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.1,
+     "shape_h_in": 1.1,
+     "top_in": 6.11,
+     "left_in": 12.18
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 31,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的基础使用",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "可以通过",
+     "level": [
+      0
+     ],
+     "top": 3.12,
+     "left": 7.11
+    },
+    {
+     "name": "矩形 3",
+     "type": "AUTO_SHAPE (1)",
+     "text": "处理结果",
+     "level": [
+      0
+     ],
+     "top": 0.99,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 10",
+     "type": "TEXT_BOX (17)",
+     "text": "response变量就是ChatCompletion对象，其包含信息如下所示",
+     "level": [
+      0
+     ],
+     "top": 1.26,
+     "left": 2.81
+    },
+    {
+     "name": "文本框 12",
+     "type": "TEXT_BOX (17)",
+     "text": "print(response.choices[0].message.content)",
+     "level": [
+      0
+     ],
+     "top": 3.48,
+     "left": 7.11
+    },
+    {
+     "name": "文本框 13",
+     "type": "TEXT_BOX (17)",
+     "text": "输出模型给出的回答信息",
+     "level": [
+      0
+     ],
+     "top": 3.93,
+     "left": 7.11
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "031-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.1,
+     "shape_h_in": 1.1,
+     "top_in": 6.11,
+     "left_in": 12.18
+    },
+    {
+     "idx": 2,
+     "filename": "031-02.png",
+     "sha1": "315620601529f05796fee34f28ba3b0a0d16608c",
+     "ext": "png",
+     "bytes": 100678,
+     "px_w": 1378,
+     "px_h": 854,
+     "shape_w_in": 6.6,
+     "shape_h_in": 4.09,
+     "top_in": 2.02,
+     "left_in": 0.45
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 32,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的基础使用",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "矩形 3",
+     "type": "AUTO_SHAPE (1)",
+     "text": "完整的基础代码",
+     "level": [
+      0
+     ],
+     "top": 0.99,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai import OpenAI\nfrom openai.types.chat.chat_completion import ChatCompletion\n \nclient: OpenAI = OpenAI( \n    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"\n)\n \nresponse: ChatCompletion = client.chat.completions.create(\n    model=\"qwen3-max\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"你是一个Python编程专家。\"}, \n        {\"role\": \"assistant\", \"content\": \"我是一个Python编程专家。请问有什么可以帮助您的吗？\"},\n        {\"role\": \"user\", \"content\": \"for循环输出1到5的数字\"}\n    ]\n)\n \nprint(response.choices[0].message.content)",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.13,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "032-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.1,
+     "shape_h_in": 1.1,
+     "top_in": 6.11,
+     "left_in": 12.18
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 33,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库是OpenAI公司发布的Python SDK，方便与编程调用其产品，现许多模型服务商都兼容OpenAI SDK的调用。\n\n使用主要就3个流程：\n创建客户端对象（OpenAI类对象）\n和模型对话（ client.chat.completions.create ），可以提供3个角色使用\nsystem：设定模型的行为和规则\nassistant：设定模型的回答，由用户设定\nuser：用户的提问\n处理结果：response.choices[0].message.content",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 34,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的流式输出",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《Python OpenAI库入门》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 35,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库的流式输出",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "可以设定结果输出为stream模式（流式输出），获得更好的使用体验。\n开启流式输出主要就2步：\n在client.chat.completions.create()调用模型的时候设定参数：stream=True\nfor循环response对象，并在循环内输出内容\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai import OpenAI\nfrom openai.types.chat.chat_completion import ChatCompletion\n \nclient: OpenAI = OpenAI( \n    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"\n)\n \nresponse: ChatCompletion = client.chat.completions.create(\n    model=\"qwen3-max\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"你是一个Python编程专家。\"}, \n        {\"role\": \"assistant\", \"content\": \"我是一个Python编程专家。请问有什么可以帮助您的吗？\"},\n        {\"role\": \"user\", \"content\": \"for循环输出1到5的数字\"}\n    ], \n    stream=True     # 开启流式输出功能\n)\n \nfor chunk in response:\n    if chunk.choices[0].delta.content:\n        print(chunk.choices[0].delta.content, end='', flush=True)",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.85,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "035-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 36,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库\n附带历史消息调用模型",
+     "level": [
+      0,
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《Python OpenAI库入门》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 37,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "OpenAI库附带历史消息调用模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "调用模型传入的参数messages，其要求是list对象，即表明其支持非常多的消息在内。\n我们可以基于此，将历史消息填入，让模型知晓对话的上下文，更好的回答",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 6",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai import OpenAI\u000b\u000b# 1. 获取client对象，OpenAI类对象\u000bclient = OpenAI(\u000b    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"\u000b)\u000b\u000b# 2. 调用模型\u000bresponse = client.chat.completions.create(\u000b    model=\"qwen3-max\",\u000b    messages=[\u000b        {\"role\": \"system\", \"content\": \"你是AI助理，回答很简洁\"},\u000b        {\"role\": \"user\", \"content\": \"小明有2条宠物狗\"},\u000b        {\"role\": \"assistant\", \"content\": \"好的\"},\u000b        {\"role\": \"user\", \"content\": \"小红有3只宠物猫\"},\u000b        {\"role\": \"assistant\", \"content\": \"好的\"},\u000b        {\"role\": \"user\", \"content\": \"总共有几个宠物？\"}\u000b    ],\u000b    stream=True     # 开启了流式输出的功能\u000b)\u000b\u000b# 3. 处理结果\u000b# print(response.choices[0].message.content)\u000bfor chunk in response:\u000b    print(\u000b        chunk.choices[0].delta.content,\u000b        end=\" \",        # 每一段之间以空格分隔\u000b        flush=True      # 立刻刷新缓冲区\u000b    )",
+     "level": [
+      0
+     ],
+     "top": 1.95,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 38,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "我们可以在调用模型的时候，通过：\n在messages的list内，组织历史消息提供给模型\n\nPS：当前的历史消息是一次性的，如果是生产系统可以将消息保存到文件、数据库等持久化工具内，需要的时候提取使用\n后续学习LangChain库，会学习短期记忆和长期记忆的使用方法。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 39,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM介绍",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 40,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM介绍",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "大语言模型 (英文：Large Language Model，缩写LLM) 是一种人工智能模型, 旨在理解和生成人类语言. 大语言模型可以处理多种自然语言任务，如文本分类、问答、翻译、对话等等.",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "040-01.png",
+     "sha1": "1321599e67ca6cd3b9be3078eecbf0983f5d8bd4",
+     "ext": "png",
+     "bytes": 364893,
+     "px_w": 661,
+     "px_h": 520,
+     "shape_w_in": 5.41,
+     "shape_h_in": 4.26,
+     "top_in": 2.02,
+     "left_in": 0.68
+    },
+    {
+     "idx": 2,
+     "filename": "040-02.png",
+     "sha1": "b6bc891c8316f36cf3d4b4d3828c4471ca5a2f7d",
+     "ext": "png",
+     "bytes": 162403,
+     "px_w": 1400,
+     "px_h": 538,
+     "shape_w_in": 6.39,
+     "shape_h_in": 2.45,
+     "top_in": 2.92,
+     "left_in": 6.51
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 41,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "语言模型 (Language Model, LM)",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "语言模型（Language Model）旨在建模词汇序列的生成概率，提升机器的语言智能水平，使机器能够模拟人类说话、写作的模式进行自动文本输出。\n\n通俗理解: 用来计算一个句子的概率的模型，也就是判断一句话是否是人话的概率.\n标准定义：对于某个句子序列, 如S = {W1, W2, W3, …, Wn}, 语言模型就是计算该序列发生的概率, 即P(S). 如果给定的词序列符合语用习惯, 则给出高概率, 否则给出低概率.\n\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "语言模型技术的发展四阶段",
+     "level": [
+      0
+     ],
+     "top": 3.91,
+     "left": 7.77
+    },
+    {
+     "name": "矩形 6",
+     "type": "AUTO_SHAPE (1)",
+     "text": "基于规则和统计的语言模型",
+     "level": [
+      0
+     ],
+     "top": 4.38,
+     "left": 8.56
+    },
+    {
+     "name": "矩形 7",
+     "type": "AUTO_SHAPE (1)",
+     "text": "神经语言模型",
+     "level": [
+      0
+     ],
+     "top": 5.09,
+     "left": 8.56
+    },
+    {
+     "name": "矩形 8",
+     "type": "AUTO_SHAPE (1)",
+     "text": "预训练语言模型",
+     "level": [
+      0
+     ],
+     "top": 5.8,
+     "left": 8.56
+    },
+    {
+     "name": "矩形 9",
+     "type": "AUTO_SHAPE (1)",
+     "text": "大语言模型",
+     "level": [
+      0
+     ],
+     "top": 6.51,
+     "left": 8.56
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "041-01.png",
+     "sha1": "676e2caa05e62e001721a4b26f6f9927a97c0f1c",
+     "ext": "png",
+     "bytes": 1900505,
+     "px_w": 2730,
+     "px_h": 1535,
+     "shape_w_in": 6.4,
+     "shape_h_in": 3.6,
+     "top_in": 3.51,
+     "left_in": 0.68
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 42,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM主要类别架构",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM本身基于transformer架构。自2017年，attention is all you need诞生起，原始的transformer模型为不同领域的模型提供了灵感和启发。\n基于原始的Transformer框架，衍生出了一系列模型，一些模型仅仅使用encoder或decoder，有些模型同时使用encoder+decoder。\n\n\n\n\n\n\n\n\n\nLLM分类一般分为三种：自编码模型（encoder）、自回归模型(decoder)和序列到序列模型(encoder-decoder)。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "042-01.png",
+     "sha1": "43964880cf9161552c0b76f086c82ee4322745a7",
+     "ext": "png",
+     "bytes": 180516,
+     "px_w": 1167,
+     "px_h": 448,
+     "shape_w_in": 9.39,
+     "shape_h_in": 3.61,
+     "top_in": 2.57,
+     "left_in": 1.97
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 43,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "自编码模型 (AutoEncoder model，AE)",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "AE模型，代表作BERT，其特点为：Encoder-Only, 基本原理：是在输入中随机MASK掉一部分单词，根据上下文预测这个词。AE模型通常用于内容理解任务，比如自然语言理解（NLU）中的分类任务：情感分析、提取式问答。\n代表模型 BERT",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "043-01.png",
+     "sha1": "39752551cd3fcbb9a46e061352d229be46331ee7",
+     "ext": "png",
+     "bytes": 496077,
+     "px_w": 1518,
+     "px_h": 610,
+     "shape_w_in": 10.54,
+     "shape_h_in": 4.24,
+     "top_in": 2.25,
+     "left_in": 1.36
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 44,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "自回归模型 (Autoregressive model，AR)",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "AR模型，代表作GPT，其特点为：Decoder-Only，基本原理：从左往右学习的模型，只能利用上文或者下文的信息，比如：AR模型从一系列time steps中学习，并将上一步的结果作为回归模型的输入，以预测下一个time step的值。\nAR模型通常用于生成式任务，在长文本的生成能力很强，比如自然语言生成（NLG）领域的任务：摘要、翻译或抽象问答。\n代表模型 GPT",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "044-01.png",
+     "sha1": "39752551cd3fcbb9a46e061352d229be46331ee7",
+     "ext": "png",
+     "bytes": 496077,
+     "px_w": 1518,
+     "px_h": 610,
+     "shape_w_in": 10.54,
+     "shape_h_in": 4.24,
+     "top_in": 2.8,
+     "left_in": 1.36
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 45,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "序列到序列（Sequence to Sequence Model）",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "encoder-decoder模型同时使用编码器和解码器。它将每个task视作序列到序列的转换/生成（比如，文本到文本，文本到图像或者图像到文本的多模态任务）。对于文本分类任务来说，编码器将文本作为输入，解码器生成文本标签。\nEncoder-decoder模型通常用于需要内容理解和生成的任务，比如机器翻译。\n代表模型T5",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "045-01.png",
+     "sha1": "3db9e32dab02ea3a4c380d41ae642310c70db877",
+     "ext": "png",
+     "bytes": 140776,
+     "px_w": 721,
+     "px_h": 245,
+     "shape_w_in": 7.51,
+     "shape_h_in": 2.55,
+     "top_in": 2.8,
+     "left_in": 2.87
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 46,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "大语言模型 (英文：Large Language Model，缩写LLM) 是一种人工智能模型, 旨在理解和生成人类语言.\n\n语言模型技术的发展四阶段：\n基于规则和统计的语言模型\n神经语言模型\n预训练语言模型\n大语言模型\n\n大语言模型主要分为3类：自编码模型（encoder，代表：BERT）、自回归模型(decoder，代表：GPT)和序列到序列模型(encoder-decoder，代表：T5)。\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 47,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "主流LLM介绍",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 48,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM主流大模型类别",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "随着ChatGPT迅速火爆，引发了大模型的时代变革，国内外各大公司也快速跟进生成式AI市场，近百款大模型发布及应用。\n目前，比较流行的开源的大语言模型主要以下几种：LLaMA大模型、ChatGLM大模型、Qwen大模型、DeepSeek大模型\n",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [
+    {
+     "name": "表格 3",
+     "rows": [
+      [
+       "模型大小",
+       "训练显存需求",
+       "推理显存需求",
+       "CPU内存需求",
+       "计算资源",
+       "训练时间",
+       "多GPU需求",
+       "推荐使用场景"
+      ],
+      [
+       "7B",
+       "20-24GB (单卡)",
+       "10-14GB (FP16)",
+       "16-32GB",
+       "单卡（A100/A6000）",
+       "数天至数周",
+       "可选（单卡/双卡）",
+       "中小企业应用部署"
+      ],
+      [
+       "13B",
+       "40-48GB (双卡)",
+       "20-26GB (FP16)",
+       "32-64GB",
+       "双卡（A100 40G）",
+       "1-2周",
+       "双卡以上",
+       "企业级应用、中等负载任务"
+      ],
+      [
+       "32B",
+       "160-200GB (多卡)",
+       "64-70GB (FP16)",
+       "64-128GB",
+       "4-8卡（A100/H100）",
+       "2-4周",
+       "必需（4+卡）",
+       "复杂NLP任务、云端服务"
+      ],
+      [
+       "70B",
+       "400GB+ (多卡集群)",
+       "140GB+ (FP16)",
+       "128-256GB",
+       "8-16卡（H100集群）",
+       "1-3个月",
+       "必需（16+卡）",
+       "超大规模任务、行业解决方案"
+      ],
+      [
+       "304B更大",
+       "1.5TB+ (分布式)",
+       "600GB+ (需量化)",
+       "512GB+",
+       "数百卡（超算集群）",
+       "数月以上",
+       "必需（百卡级）",
+       "国家/科研级超级计算"
+      ]
+     ]
+    }
+   ],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 49,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLaMA模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLaMA（Large Language Model Meta AI），由 Meta AI 于2023年发布的一个开放且高效的大型基础语言模型，共有 7B、13B、33B、65B（650 亿）四种版本。\n",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "AUTO_SHAPE (1)",
+     "text": "LLaMA训练数据是以英语为主的拉丁语系，另外还包含了来自 GitHub 的代码数据。\n训练数据以英文为主，不包含中韩日文，所有训练数据都是开源的。\n其中LLaMA-65B 和 LLaMA-33B 是在 1.4万亿 (1.4T) 个 token上训练的\n而最小的模型 LLaMA-7B 和LLaMA-13B 是在 1万亿 (1T) 个 token 上训练的。",
+     "level": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.25,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "049-01.png",
+     "sha1": "18c4c710f3e1a3b12c0283ce70f3225c3d653f49",
+     "ext": "png",
+     "bytes": 769993,
+     "px_w": 788,
+     "px_h": 788,
+     "shape_w_in": 4.55,
+     "shape_h_in": 4.55,
+     "top_in": 2.1,
+     "left_in": 7.85
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 50,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "ChatGLM模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "ChatGLM 是清华大学提出的一个开源、支持中英双语的对话语言模型。\n\n\n\n该模型使用了和 ChatGPT 相似的技术\n经过约 1T 标识符的中英双语训练(中英文比例为 1:1)\n辅以监督微调、反馈自助、人类反馈强化学习等技术的加持\n62 亿参数的 ChatGLM-6B 已经能生成相当符合人类偏好的回答。\n\n\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "050-01.png",
+     "sha1": "60151b7063d1d2f997665d77f2c941ddba59ae5c",
+     "ext": "png",
+     "bytes": 462678,
+     "px_w": 1064,
+     "px_h": 664,
+     "shape_w_in": 4.83,
+     "shape_h_in": 3.02,
+     "top_in": 2.33,
+     "left_in": 7.61
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 51,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Qwen模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "通义千问是由阿里云自主研发的大模型，用于理解和分析用户输入的自然语言，以及图片、音频、视频等多模态数据。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Qwen模型也是 Decoder-only架构，但结合前人的工作做了一些改进，比如：\n\n位置编码：使用 RoPE（Rotary Positional Embedding），增强长文本建模能力。\n归一化层：采用 RMSNorm，替代传统 LayerNorm，提升训练稳定性。\n激活函数：使用 SwiGLU，相比 GeLU 能更好地提取特征。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.49,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "051-01.png",
+     "sha1": "7c472bf68028b65cc9a118837d82a56c788d9fb7",
+     "ext": "png",
+     "bytes": 546061,
+     "px_w": 1280,
+     "px_h": 720,
+     "shape_w_in": 6.84,
+     "shape_h_in": 3.85,
+     "top_in": 2.25,
+     "left_in": 6.19
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 52,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "DeepSeek模型",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "DeepSeek 模型是由杭州深度求索人工智能基础技术研究有限公司开发的一系列人工智能模型。该系列模型以 Transformer 架构为基础，核心采用创新的 DeepSeekMoE（混合专家）与 MLA（多头潜在注意力）技术路线，覆盖通用语言、代码、视觉、数学等多个领域.",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "052-01.png",
+     "sha1": "04d97608a1f4dee35d210847be9af6c79a0b40e5",
+     "ext": "png",
+     "bytes": 261324,
+     "px_w": 1644,
+     "px_h": 922,
+     "shape_w_in": 8.61,
+     "shape_h_in": 4.83,
+     "top_in": 2.1,
+     "left_in": 2.26
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 53,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "主流的开源大模型主要有：\nLLaMA，Meta AI 2023发布，偏向英语系\nChatGLM，清华发布，类ChatGPT\nQwen，阿里发布，时下流行\nDeepSeek，深度求索发布",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 54,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "大模型prompt工程指南",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 1",
+     "type": "TEXT_BOX (17)",
+     "text": "了解什么是提示词工程\n掌握提示工程的设计技巧",
+     "level": [
+      0,
+      0
+     ],
+     "top": 4.32,
+     "left": 7.14
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 55,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词工程概念",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示工程（Prompt Engineering），也称为 In-Context Prompting，是指在不更新模型权重的情况下如何与大模型交互以引导其行为以获得所需结果的方法。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "在人工智能领域，Prompt指的是用户给大型语言模型发出的指令。\n\n例如，“「讲个笑话」”、“「用Python编个贪吃蛇游戏」”、“「写封情书」\"等。\n虽然看似简单，但实际上，Prompt的设计对于模型的结果影响很大。\n因此如何设计prompt，进而与模型更好的交互，是研究人员必备的必不可少的技能（提示工程）。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.62,
+     "left": 5.96
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "055-01.png",
+     "sha1": "6bd5b44f2a385c2d62c288e9cf5c34a793856f5c",
+     "ext": "png",
+     "bytes": 1740918,
+     "px_w": 2730,
+     "px_h": 1535,
+     "shape_w_in": 4.8,
+     "shape_h_in": 2.7,
+     "top_in": 2.4,
+     "left_in": 0.6
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 56,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词技巧",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "任何Prompt技巧，都不如清晰的表达你的需求。这就类似人与人沟通，如果话说不明白，不可能让别人理解你的思想。因此，写出清晰的指令，是核心。\n\n技巧1：详细的描述",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "云形标注 38",
+     "type": "AUTO_SHAPE (1)",
+     "text": "写一封情书",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 2.7
+    },
+    {
+     "name": "云形标注 6",
+     "type": "AUTO_SHAPE (1)",
+     "text": "用一些温柔的话语写一封情书，来表达我对你的仰慕和思念。最后，我要求书写字体数要不低于500个字",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 5.1
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "056-01.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.53,
+     "shape_h_in": 2.53,
+     "top_in": 3.12,
+     "left_in": 1.0
+    },
+    {
+     "idx": 2,
+     "filename": "056-02.png",
+     "sha1": "3de3f5ca61002005e5d21f26e3b7a6ed33c8be21",
+     "ext": "png",
+     "bytes": 17085,
+     "px_w": 512,
+     "px_h": 512,
+     "shape_w_in": 1.0,
+     "shape_h_in": 1.0,
+     "top_in": 3.75,
+     "left_in": 2.47
+    },
+    {
+     "idx": 3,
+     "filename": "056-03.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 4,
+     "filename": "056-04.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.55,
+     "shape_h_in": 2.55,
+     "top_in": 2.96,
+     "left_in": 10.21
+    },
+    {
+     "idx": 5,
+     "filename": "056-05.png",
+     "sha1": "e4e1e45320b9705a6c7c35d2be68177f7ce36fc6",
+     "ext": "png",
+     "bytes": 17679,
+     "px_w": 512,
+     "px_h": 512,
+     "shape_w_in": 1.0,
+     "shape_h_in": 1.0,
+     "top_in": 3.99,
+     "left_in": 9.82
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 57,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词技巧",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "任何Prompt技巧，都不如清晰的表达你的需求。这就类似人与人沟通，如果话说不明白，不可能让别人理解你的思想。因此，写出清晰的指令，是核心。\n\n技巧2：让模型充当某个角色",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "云形标注 38",
+     "type": "AUTO_SHAPE (1)",
+     "text": "我需要你充当一个AI算法面试官的角色，要求你自主的对我进行AI面试过程中常考的面试题，你可以一次说一个问题，然后我回答完，你再出第二道题",
+     "level": [
+      0
+     ],
+     "top": 2.33,
+     "left": 3.53
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "057-01.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.53,
+     "shape_h_in": 2.53,
+     "top_in": 3.12,
+     "left_in": 1.0
+    },
+    {
+     "idx": 2,
+     "filename": "057-02.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 58,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词技巧",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "技巧3：使用分隔符标明输入的不同部分\n中括号、XML标签、三引号等分隔符可以帮助划分要区别对待的文本，也可以帮助模型更好的理解文本内容。常用''''''把内容框起来",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "云形标注 38",
+     "type": "AUTO_SHAPE (1)",
+     "text": "用20个字符总结由三引号分割的文本。\"\"\"在此插入文本\"\"\"",
+     "level": [
+      0
+     ],
+     "top": 2.33,
+     "left": 3.53
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "058-01.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.53,
+     "shape_h_in": 2.53,
+     "top_in": 3.12,
+     "left_in": 1.0
+    },
+    {
+     "idx": 2,
+     "filename": "058-02.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 59,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词技巧",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "技巧4：对任务指定步骤\n对于可以拆分的任务可以尽量拆开，最好能为其指定一系列步骤，明确步骤可以让模型更容易实现它们。",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "云形标注 38",
+     "type": "AUTO_SHAPE (1)",
+     "text": "利用下面分步情况来响应用户的输入。",
+     "level": [
+      0
+     ],
+     "top": 2.33,
+     "left": 3.53
+    },
+    {
+     "name": "云形标注 3",
+     "type": "AUTO_SHAPE (1)",
+     "text": "步骤1: \"\"\"\"用户输入文本\"\"\"\"，用一句话总结这段文本，并加上前缀\"Summary\".",
+     "level": [
+      0
+     ],
+     "top": 3.59,
+     "left": 3.53
+    },
+    {
+     "name": "云形标注 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "步骤2: 将步骤1中的摘要翻译成英语，并添加前缀\"翻译：\"",
+     "level": [
+      0
+     ],
+     "top": 4.85,
+     "left": 3.6
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "059-01.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.53,
+     "shape_h_in": 2.53,
+     "top_in": 3.12,
+     "left_in": 1.0
+    },
+    {
+     "idx": 2,
+     "filename": "059-02.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 60,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词技巧",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "技巧5：提供例子\n本质类似于few-shot leaning。先扔给大模型举例，然后让模型按照例子来输出",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "云形标注 38",
+     "type": "AUTO_SHAPE (1)",
+     "text": "按照这句评论文本的格式：'\"\"用户输入文本\"\"'，帮我创造新的样本",
+     "level": [
+      0
+     ],
+     "top": 3.04,
+     "left": 3.53
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "060-01.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.53,
+     "shape_h_in": 2.53,
+     "top_in": 3.12,
+     "left_in": 1.0
+    },
+    {
+     "idx": 2,
+     "filename": "060-02.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 61,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词技巧",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "基于文本文档，辅助大模型问答，降低模型\"幻觉\"（一本正经的胡说八道）问题。\n即使用参考文本作答 经典的知识库用法，让大模型使用我们提供的信息来组成答案。",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "云形标注 38",
+     "type": "AUTO_SHAPE (1)",
+     "text": "根据下文中三重引号引起来的文章来回答问题。如果在文章中找不到答案，请写“我找不到答案”，不要自己造答案。\n\"\"\"<在此插入文档>\"\"\"\"\"\"<在此插入文档>\"\"\" 问题：<在此插入问题>",
+     "level": [
+      0,
+      0
+     ],
+     "top": 3.04,
+     "left": 3.53
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "061-01.png",
+     "sha1": "271457c73c065de8b2cc05696f6ec5b4e9acb852",
+     "ext": "png",
+     "bytes": 41741,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 2.53,
+     "shape_h_in": 2.53,
+     "top_in": 3.12,
+     "left_in": 1.0
+    },
+    {
+     "idx": 2,
+     "filename": "061-02.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    },
+    {
+     "idx": 3,
+     "filename": "061-03.png",
+     "sha1": "8b20b60803f12319771834e76279ee3761b8eec4",
+     "ext": "png",
+     "bytes": 59469,
+     "px_w": 358,
+     "px_h": 158,
+     "shape_w_in": 2.49,
+     "shape_h_in": 1.1,
+     "top_in": 5.95,
+     "left_in": 13.52
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 62,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词工程就是更好的向模型提问的技巧。\n大模型本身是一种很简单的结构，即：用户输入，模型输出。\n用更详细、更清晰、有逻辑、有参考的提问，获得期望中的回答效果\n不管是RAG还是Agent智能体亦或是其它围绕模型的各类复杂的开发工作，本质上都可以简单总结为在提示词上下功夫。\n\n提示词优化是所有大模型应用开发的基础必修课，一个好的提示词，甚至能让基础模型的输出效果媲美经过简单微调的模型。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.9,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 63,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词实战案例介绍",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 1",
+     "type": "TEXT_BOX (17)",
+     "text": "了解案例的背景和整体任务\n掌握Zero-shot、Few-shot的思想",
+     "level": [
+      0,
+      0
+     ],
+     "top": 4.32,
+     "left": 7.14
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 64,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "实战案例背景",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "当前金融领域信息化发展的时代,金融数据大量激增,许多投资者和研究者试图通过对这些数据进行深度分析而获得一些有效的决策和帮助,尽可能减少决策失误带来的损失。\n所以,针对金融数据的分析方法研究是目前十分有益且热门的话题。\n\n当前案例主要有三大业务场景实现：\n基于大模型完成：金融文本分类\n基于大模型完成：金融文本信息抽取\n基于大模型完成：金融文本匹配\n\n大模型选择：Qwen在线大模型（阿里云通义千问 qwen3-max）\n采用方法：基于Few-Shot + Zero-Shot的思想，设计prompt（提示词）, 进而应用大模型完成相应的任务\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "064-01.png",
+     "sha1": "03c07ffebf5d64b511d60aa7f2c6a2d8682e92d1",
+     "ext": "png",
+     "bytes": 229398,
+     "px_w": 1000,
+     "px_h": 1000,
+     "shape_w_in": 1.62,
+     "shape_h_in": 1.62,
+     "top_in": 5.59,
+     "left_in": 11.66
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 65,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Zero-shot思想",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "Zero-shot学习（Zero-shot Learning）是指在训练阶段不存在与测试阶段完全相同的类别，但是模型可以使用训练过的知识来推广到测试集中的新类别上。\n这种能力被称为“零样本”学习，因为模型在训练时从未见过测试集中的新类别，在模型训练和提示词优化中均有体现。\n",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "在模型训练中：\n已知马（四脚兽）、虎（有条纹）、熊猫（黑白色）的特征，但未训练过斑马的数据（不认识）\n\n告知模型：斑马是四脚兽、有黑白色的条纹\n模型可以在已知数据中进行推理，从而识别斑马。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.67,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 8",
+     "type": "TEXT_BOX (17)",
+     "text": "在提示词优化中：\n\nZero-shot思想用于基于已训练的能力，不提供任何示例，仅通过语言去描述任务的要求、目标和约束，让模型直接生成结果。\n\n简单来说就是“用语言定义任务，解放（信任）模型的预训练知识”\n\n\n比如：\n请判断””包围的用户评论中的情感倾向，输出 正面 或 负面。\n”这款代餐鸡胸肉饱腹感很强，吃起来也不柴，很推荐！”",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.67,
+     "left": 6.81
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "065-01.png",
+     "sha1": "5b5faa700d4330c385dfce8ff8e91bae21f9c5c2",
+     "ext": "png",
+     "bytes": 278492,
+     "px_w": 707,
+     "px_h": 439,
+     "shape_w_in": 4.05,
+     "shape_h_in": 2.52,
+     "top_in": 4.32,
+     "left_in": 1.14
+    },
+    {
+     "idx": 2,
+     "filename": "065-02.png",
+     "sha1": "a8e7d6696a96cf7ed1e29ddcad9fb321dc0c7d74",
+     "ext": "png",
+     "bytes": 20911,
+     "px_w": 409,
+     "px_h": 409,
+     "shape_w_in": 1.86,
+     "shape_h_in": 1.86,
+     "top_in": 5.64,
+     "left_in": 11.71
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 66,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Few-shot思想",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "Few-shot学习（Few-shot Learning）是指少样本学习，当模型在学习了一定类别的大量数据后，对于新的类别，只需要少量的样本就能快速学习，对应的有one-shot learning，单样本学习，也算样本少到为一的情况下的一种few-shot learning。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "在模型训练中（相似度判断方法）：\n基于少量企鹅样本并结合相识度判断，推论未知图片内含“企鹅”",
+     "level": [
+      0,
+      0
+     ],
+     "top": 2.11,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "在提示词优化中：\n\nFew-shot主要用于基于少量示例，让模型参考示例回答。\n\n简单来说就是“用示例定义任务，在模型的预训练知识的基础上，提升模型回答的对齐精度（比如参考示例的格式）”\n\n\n比如：\n请抽取产品名称和核心卖点2个字段，格式为Json，我提供2个示例。\n示例1：MacBookPro高效节能，性能强大，适合牛马工作使用\n输出：{“产品名称”: “MacBookPro”, “产品卖点”: “高效节能，性能强大”}\n示例2：联想笔记本拥有RTX4060独立显卡，畅玩游戏，丝滑流畅\n输出：{“产品名称”: “联想笔记本”, “产品卖点”: “畅玩游戏，丝滑流畅”}\n请处理：华为MatepadPro，高清大屏，长效续航，你的好帮手。\n\n{“产品名称”: “华为MatepadPro”, “产品卖点”: “高清大屏，长效续航”}",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.11,
+     "left": 6.85
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "066-01.png",
+     "sha1": "12a7d73286567c7984c72d1c3397bd08b6516873",
+     "ext": "png",
+     "bytes": 12607,
+     "px_w": 253,
+     "px_h": 253,
+     "shape_w_in": 1.15,
+     "shape_h_in": 1.15,
+     "top_in": 6.12,
+     "left_in": 12.39
+    },
+    {
+     "idx": 2,
+     "filename": "066-02.png",
+     "sha1": "2f30f155e5f057fb65a13f17bbd30ee4917902ca",
+     "ext": "png",
+     "bytes": 601440,
+     "px_w": 1035,
+     "px_h": 860,
+     "shape_w_in": 4.7,
+     "shape_h_in": 3.91,
+     "top_in": 2.9,
+     "left_in": 0.52
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 67,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词工程实战的业务需求是在金融业务内完成：\n文本分类\n信息抽取\n文本匹配\n共3个任务目标，通过zero-shot、few-shot思想设计提示词完成。\n\n在模型训练层面：\nZero-shot：零样本，基于模型训练阶段学习的属性/语义关联，去迁移到未知的新类别\nFew-shot：少样本，基于少量样本，快速泛化识别新样本\n\n在提示词优化层面：\nZero-shot：无提示，语言描述任务，依赖模型预训练知识回答\nFew-shot：给与模型少量示例，引导模型对齐示例输出结果",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.55,
+     "left": 5.76
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 68,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词实战案例\nLLM实现金融文本分类",
+     "level": [
+      0,
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 1",
+     "type": "TEXT_BOX (17)",
+     "text": "掌握Fewshot方式下prompt的设计方式\n掌握利用LLM实现文本分类的代码",
+     "level": [
+      0,
+      0
+     ],
+     "top": 4.32,
+     "left": 7.14
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 69,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM文本分类任务介绍",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "下面几段文本来自某平台发布的金融领域文本：\n1.\"今日，央行发布公告宣布降低利率，以刺激经济增长。这一降息举措将影响贷款利率，并在未来几个季度内对金融市场产生影响。\",\n2.\"ABC公司今日发布公告称，已成功完成对XYZ公司股权的收购交易。本次交易是ABC公司在扩大业务范围、加强市场竞争力方面的重要举措。据悉，此次收购将进一步巩固ABC公司在行业中的地位，并为未来业务发展提供更广阔的发展空间。详情请见公司官方网站公告栏\",\n3.\"公司资产负债表显示，公司偿债能力强劲，现金流充足，为未来投资和扩张提供了坚实的财务基础。\",\n4.\"最新的分析报告指出，可再生能源行业预计将在未来几年经历持续增长，投资者应该关注这一领域的投资机会\",\n\n我们的目的是期望模型能够帮助我们识别出这4段话中，每一句话描述的是一个什么类型的报告。\n\n即期望的输出结果为：['新闻报道', '公司公告', '财务公告 '分析师报告']",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "069-01.png",
+     "sha1": "7f623780b89400d41a7c871e6b857908b1363242",
+     "ext": "png",
+     "bytes": 40035,
+     "px_w": 566,
+     "px_h": 566,
+     "shape_w_in": 2.57,
+     "shape_h_in": 2.57,
+     "top_in": 4.69,
+     "left_in": 11.08
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 70,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Prompt设计",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "对于大模型来讲，prompt 的设计非常重要，一个 明确 的 prompt 能够帮助我们更好从大模型中获得我们想要的结果。\n在该任务的 prompt 设计中，我们主要考虑 2 点：\n需要向模型解释什么叫作「文本分类任务」\n需要让模型按照我们指定的格式输出\n为了让模型知道什么叫做「文本分类」，我们借用 FewShot 的方式，给模型展示一些正确的例子：\n\nUser: \"今日，股市经历了一轮震荡，受到宏观经济数据和全球贸易紧张局势的影响。投资者密切关注美联储可能的政策调整，以适应市场的不确定性。\" 是['新闻报道', '公司公告', '财务公告 '分析师报告']里的什么类别？ \nBot: 新闻报道 \nUser: \"本公司年度财务报告显示，去年公司实现了稳步增长的盈利，同时资产负债表呈现强劲的状况。经济环境的稳定和管理层的有效战略执行为公司的健康发展奠定了基础。\"是['新闻报道', '公司公告', '财务公告 '分析师报告']里的什么类别？ \nBot: 财务报告 \n\n其中，User 代表我们输入给模型的句子，Bot 代表模型的回复内容。\n注意：上述例子中 Bot 的部分也是由人工输入的，其目的是希望看到在看到类似 User 中的句子时，模型应当做出类似 Bot 的回答。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 71,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "分类任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "实现llm_classification.py代码脚本文件，主要包含：init_prompts()和qwen_model() 2个核心函数\n导入工具包：",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "from openai import OpenAI\u000b\u000b# 1. 获取client对象，OpenAI类对象\u000bclient = OpenAI(\u000b    base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"\u000b)\u000b\u000bexamples_data = {       # 示例数据\u000b    '新闻报道': '今日，股市经历了一轮震荡，受到宏观经济数据和全球贸易紧张局势的影响。投资者密切关注美联储可能的政策调整，以适应市场的不确定性。',\u000b    '财务报告': '本公司年度财务报告显示，去年公司实现了稳步增长的盈利，同时资产负债表呈现强劲的状况。经济环境的稳定和管理层的有效战略执行为公司的健康发展奠定了基础。',\u000b    '公司公告': '本公司高兴地宣布成功完成最新一轮并购交易，收购了一家在人工智能领域领先的公司。这一战略举措将有助于扩大我们的业务领域，提高市场竞争力',\u000b    '分析师报告': '最新的行业分析报告指出，科技公司的创新将成为未来增长的主要推动力。云计算、人工智能和数字化转型被认为是引领行业发展的关键因素，投资者应关注这些趋势'\u000b}\u000b# 分类列表\u000bexamples_types = ['新闻报道', '财务报道', '公司公告', '分析师报告']\u000b\u000b# 提问数据\u000bquestions = [\u000b    \"今日，央行发布公告宣布降低利率，以刺激经济增长。这一降息举措将影响贷款利率，并在未来几个季度内对金融市场产生影响。\",\u000b    \"ABC公司今日发布公告称，已成功完成对XYZ公司股权的收购交易。本次交易是ABC公司在扩大业务范围、加强市场竞争力方面的重要举措。据悉，此次收购将进一步巩固ABC公司在行业中的地位，并为未来业务发展提供更广阔的发展空间。详情请见公司官方网站公告栏\",\u000b    \"公司资产负债表显示，公司偿债能力强劲，现金流充足，为未来投资和扩张提供了坚实的财务基础。\",\u000b    \"最新的分析报告指出，可再生能源行业预计将在未来几年经历持续增长，投资者应该关注这一领域的投资机会\",\u000b    \"小明喜欢小新哟\"\u000b]",
+     "level": [
+      0
+     ],
+     "top": 1.94,
+     "left": 0.53
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "071-01.png",
+     "sha1": "22bc2d7b5b664a3f27e6b83810e1683c85b4f335",
+     "ext": "png",
+     "bytes": 26755,
+     "px_w": 409,
+     "px_h": 409,
+     "shape_w_in": 1.86,
+     "shape_h_in": 1.86,
+     "top_in": 5.4,
+     "left_in": 11.55
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 72,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "分类任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "构建init_prompts()函数，将准备好的示例数据，添加到list中，作为历史对话消息存在，基于FewShot模式提示模型",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "def init_prompt(examples):\u000b    prompt_list = [\u000b        {\"role\": \"system\", \"content\": f\"你是一个金融专家，需要对输入的金融领域文本进行分析，将类型归类到examples_types，不在这四类的数据，输出'不清楚类型'，以下是几个示例分类：\"}\u000b    ]\u000b\u000b    for class_type, example_text in examples.items():\u000b        prompt_list.append({\"role\": \"user\", \"content\": example_text})\u000b        prompt_list.append({\"role\": \"assistant\", \"content\": class_type})\u000b\u000b    return prompt_list\n ",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.78,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "072-01.png",
+     "sha1": "8c92f6c1c2d8c7864039c39c386edbd3a924c7f5",
+     "ext": "png",
+     "bytes": 32651,
+     "px_w": 513,
+     "px_h": 513,
+     "shape_w_in": 2.33,
+     "shape_h_in": 2.33,
+     "top_in": 5.1,
+     "left_in": 11.31
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 73,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "分类任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "调用模型",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "if __name__ == '__main__':\u000b    messages = init_prompt(examples_data)\u000b\u000b    for q in questions:\u000b        response = client.chat.completions.create(\u000b            model=\"qwen3-max\",\u000b            messages=messages + [{\"role\": \"user\", \"content\": f\"请分析如下句子是什么类别：{q}\"}],\u000b            stream=False\u000b        )\u000b\u000b        print(response.choices[0].message.content)\n ",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.7,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "073-01.png",
+     "sha1": "907ad19089942c31fc4c55226d7bdaf3b8331a4b",
+     "ext": "png",
+     "bytes": 14434,
+     "px_w": 403,
+     "px_h": 209,
+     "shape_w_in": 3.49,
+     "shape_h_in": 1.81,
+     "top_in": 5.25,
+     "left_in": 1.86
+    },
+    {
+     "idx": 2,
+     "filename": "073-02.png",
+     "sha1": "0c74af75097017e4bb7206de7ca8426d5a73c8f5",
+     "ext": "png",
+     "bytes": 49944,
+     "px_w": 553,
+     "px_h": 553,
+     "shape_w_in": 2.52,
+     "shape_h_in": 2.52,
+     "top_in": 4.8,
+     "left_in": 11.0
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 74,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "Json数据格式",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 75,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Json数据格式",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，易于人阅读和编写，同时也易于机器解析和生成。\nJson是带有格式的字符串，主要用于数据交换，即程序和程序之间的信息互传，使用Json会更加方便，如下示例：",
+     "level": [
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 6",
+     "type": "TEXT_BOX (17)",
+     "text": "Text文本",
+     "level": [
+      0
+     ],
+     "top": 3.22,
+     "left": 1.23
+    },
+    {
+     "name": "文本框 8",
+     "type": "TEXT_BOX (17)",
+     "text": "非结构化\n抽取信息不方便",
+     "level": [
+      0,
+      0
+     ],
+     "top": 3.6,
+     "left": 1.23
+    },
+    {
+     "name": "文本框 12",
+     "type": "TEXT_BOX (17)",
+     "text": "CSV（固定分隔符）文本",
+     "level": [
+      0
+     ],
+     "top": 5.41,
+     "left": 0.17
+    },
+    {
+     "name": "文本框 13",
+     "type": "TEXT_BOX (17)",
+     "text": "结构化\n抽取信息方便\n\n数据不含Schema，有一定风险",
+     "level": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 5.8,
+     "left": 1.23
+    },
+    {
+     "name": "文本框 17",
+     "type": "TEXT_BOX (17)",
+     "text": "Json格式文本",
+     "level": [
+      0
+     ],
+     "top": 5.55,
+     "left": 4.59
+    },
+    {
+     "name": "文本框 18",
+     "type": "TEXT_BOX (17)",
+     "text": "结构化\n抽取信息方便\n每条数据都包含Schema\n\n空间占用大",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 3.36,
+     "left": 7.94
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "075-01.png",
+     "sha1": "9ee6d7d46b1b4e5aa5a96fe1fe5cb009c4094f47",
+     "ext": "png",
+     "bytes": 19886,
+     "px_w": 362,
+     "px_h": 105,
+     "shape_w_in": 2.67,
+     "shape_h_in": 0.77,
+     "top_in": 2.41,
+     "left_in": 0.52
+    },
+    {
+     "idx": 2,
+     "filename": "075-02.png",
+     "sha1": "73e97f4a2e1d3bb84fa40cb9bb8f81372f73e9c9",
+     "ext": "png",
+     "bytes": 11615,
+     "px_w": 254,
+     "px_h": 105,
+     "shape_w_in": 1.81,
+     "shape_h_in": 0.75,
+     "top_in": 4.64,
+     "left_in": 0.95
+    },
+    {
+     "idx": 3,
+     "filename": "075-03.png",
+     "sha1": "7212e81e1419c3af3e817f1b4425caeebe24587f",
+     "ext": "png",
+     "bytes": 43164,
+     "px_w": 403,
+     "px_h": 524,
+     "shape_w_in": 2.37,
+     "shape_h_in": 3.09,
+     "top_in": 2.45,
+     "left_in": 5.09
+    },
+    {
+     "idx": 4,
+     "filename": "075-04.png",
+     "sha1": "81c2bec2156ea14ebdccb82eb41a37553bc8fb85",
+     "ext": "png",
+     "bytes": 26374,
+     "px_w": 496,
+     "px_h": 496,
+     "shape_w_in": 2.25,
+     "shape_h_in": 2.25,
+     "top_in": 5.16,
+     "left_in": 11.1
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 76,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Json数据格式",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "Json主要有2种结构：Json对象和Json数组",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 22",
+     "type": "TEXT_BOX (17)",
+     "text": "{\n    “key\": value, \n    “key\": value\n}",
+     "level": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.35,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 23",
+     "type": "TEXT_BOX (17)",
+     "text": "key必须是字符串\nvalue可以是：\n数字\n字符串\n列表\nJson对象或Json数组",
+     "level": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+     ],
+     "top": 2.25,
+     "left": 2.89
+    },
+    {
+     "name": "文本框 27",
+     "type": "TEXT_BOX (17)",
+     "text": "{\u000b    \"age\": 11, \u000b    \"name\": \"周杰轮\", \u000b    \"hobby\": [\"唱\", \"跳\", \"rap\"], \u000b    \"other\": {\u000b        \"身高\": 172, \u000b        \"体重\": 68\u000b    }\u000b}",
+     "level": [
+      0
+     ],
+     "top": 4.03,
+     "left": 0.53
+    },
+    {
+     "name": "矩形 28",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Json对象",
+     "level": [
+      0
+     ],
+     "top": 1.76,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 29",
+     "type": "TEXT_BOX (17)",
+     "text": "[{}, {}, {}, …]",
+     "level": [
+      0
+     ],
+     "top": 2.24,
+     "left": 7.32
+    },
+    {
+     "name": "文本框 30",
+     "type": "TEXT_BOX (17)",
+     "text": "即一堆Json对象的组合体",
+     "level": [
+      0
+     ],
+     "top": 2.31,
+     "left": 9.58
+    },
+    {
+     "name": "矩形 31",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Json数组",
+     "level": [
+      0
+     ],
+     "top": 1.65,
+     "left": 7.32
+    },
+    {
+     "name": "文本框 33",
+     "type": "TEXT_BOX (17)",
+     "text": "[\u000b    {\"name\": \"周杰轮\", \"age\": 11}, \u000b    {\"name\": \"蔡依临\", \"age\": 12}, \u000b    {\"name\": \"小明\", \"age\": 16}\u000b]",
+     "level": [
+      0
+     ],
+     "top": 3.07,
+     "left": 7.32
+    },
+    {
+     "name": "文本框 34",
+     "type": "TEXT_BOX (17)",
+     "text": "Json对象 => Python字典\nJson数组 => Python列表内含多个字典\n\nJson在Python中，就是\n字典和列表套字典的字符串表现形式。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 5.27,
+     "left": 7.21
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "076-01.png",
+     "sha1": "c4719fce90e59fc7cf293a2886ae42c5b601cc1d",
+     "ext": "png",
+     "bytes": 57980,
+     "px_w": 566,
+     "px_h": 566,
+     "shape_w_in": 2.57,
+     "shape_h_in": 2.57,
+     "top_in": 4.71,
+     "left_in": 11.18
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 77,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Python中使用Json",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "Python中使用Json主要完成：\n将Python字典、列表转换为Json字符串\n读取Json字符串，转换为Python字典或列表\n\n主要使用Python内置的json库\n\njson.dumps(字典或列表, ensure_ascii=False)：将字典或列表转换为Json字符串\nensure_ascii参数确保中文能正常显示\n返回值：Json字符串\njson.loads(json字符串)：将Json字符串转换为Python字典或列表\n返回值：Python字典 或 Python列表",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "077-01.png",
+     "sha1": "c4719fce90e59fc7cf293a2886ae42c5b601cc1d",
+     "ext": "png",
+     "bytes": 57980,
+     "px_w": 566,
+     "px_h": 566,
+     "shape_w_in": 2.57,
+     "shape_h_in": 2.57,
+     "top_in": 4.71,
+     "left_in": 11.18
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 78,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Json是一种带有格式的字符串，可以很好的记录数据和结构\n便于不同程序之间数据交互\n\nJson作为字符串，其内容和Python的数据结构可以有所对应。\nJson对象  Python字典\n\n\n\n\nJson数组  Python列表（内含多个字典）\n\n\n\nimport json\njson.dumps(字典或列表, ensure_ascii=False)\n将Python数据结构转为Json字符串\njson.loads(json字符串)\n将Json字符串转为Python数据结构",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+     ],
+     "top": 0.83,
+     "left": 5.49
+    },
+    {
+     "name": "文本框 2",
+     "type": "TEXT_BOX (17)",
+     "text": "{\u000b    \"age\": 11, \u000b    \"name\": \"周杰轮\", \u000b    \"hobby\": [\"唱\", \"跳\", \"rap\"], \u000b    \"other\": {\u000b        \"身高\": 172, \u000b        \"体重\": 68\u000b    }\u000b}",
+     "level": [
+      0
+     ],
+     "top": 2.13,
+     "left": 6.04
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "[\u000b    {\"name\": \"周杰轮\", \"age\": 11}, \u000b    {\"name\": \"蔡依临\", \"age\": 12}, \u000b    {\"name\": \"小明\", \"age\": 16}\u000b]",
+     "level": [
+      0
+     ],
+     "top": 4.14,
+     "left": 6.07
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 79,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词实战案例\nLLM实现金融文本信息抽取",
+     "level": [
+      0,
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 80,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM信息抽取任务介绍",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "首先，我们定义信息抽取的Schema：\n\n\n\n\n下面几段文本来自某平台发布的股票信息：\n\n\n\n\n\n我们的目的是期望模型能够帮助我们识别出这2段话中的SPO三元组信息。",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "# 定义不同实体下的具备属性\nschema = {\n    '金融': ['日期', '股票名称', '开盘价', '收盘价', '成交量'],\n}\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.62,
+     "left": 0.6
+    },
+    {
+     "name": "文本框 6",
+     "type": "TEXT_BOX (17)",
+     "text": "1.'2023-02-15，寓意吉祥的节日，股票佰笃[BD]美股开盘价10美元，虽然经历了波动，但最终以13美元收盘，成交量微幅增加至460,000，投资者情绪较为平稳。',\n2.'2023-04-05，市场迎来轻松氛围，股票盘古(0021)开盘价23元，尽管经历了波动，但最终以26美元收盘，成交量缩小至310,000，投资者保持观望态度。',\n ",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 3.67,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "080-01.png",
+     "sha1": "46f8dd813091102c782dc2f2e38c2b1f73388dd8",
+     "ext": "png",
+     "bytes": 42043,
+     "px_w": 559,
+     "px_h": 559,
+     "shape_w_in": 2.54,
+     "shape_h_in": 2.54,
+     "top_in": 5.08,
+     "left_in": 10.82
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 81,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Prompt设计",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "在该任务的 prompt 设计中，我们主要考虑 2 点：\n需要向模型解释什么叫作「信息抽取任务」\n需要让模型按照我们指定的格式（json）输出\n为了让模型知道什么叫做「信息抽取」，我们借用 FewShot 的方式，先给模型展示几个正确的例子：\n\nUser:'2023-01-10，股市震荡。股票古哥-D[EOOE]美股今日开盘价100美元，一度飙升至105美元，随后回落至98美元，最终以102美元收盘，成交量达到520000。'。提取上述句子中“金融”('日期', '股票名称', '开盘价', '收盘价', '成交量')类型的实体，并按照JSON格式输出，上述句子中没有的信息用['原文中未提及']来表示，多个值之间用','分隔。\nBot: {'日期': ['2023-01-10'],'股票名称': ['古哥-D[EOOE]美股'],'开盘价': ['100美元'], '收盘价': ['102美元'],成交量': ['520000']} ... \n\n其中，User 代表我们输入给模型的句子，Bot 代表模型的回复内容。\n注意：上述例子中 Bot 的部分也是由人工输入的，其目的是希望看到在看到类似 User 中的句子时，模型应当做出类似 Bot 的回答。\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "081-01.png",
+     "sha1": "4dc64aec333976d9404c7be717c1175c060dfa21",
+     "ext": "png",
+     "bytes": 37057,
+     "px_w": 559,
+     "px_h": 559,
+     "shape_w_in": 2.54,
+     "shape_h_in": 2.54,
+     "top_in": 4.96,
+     "left_in": 11.63
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 82,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "信息抽取任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "本次信息抽取任务实现的主要过程：构造prompt -> 对句子做分类 -> 进行信息抽取\n导入必备的工具包：\n",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "from dotenv import load_dotenv\nimport openai\nimport json\nimport re\nimport os\n### 加载环境变量\nload_dotenv()\n# 定义不同实体下的具备属性\nschema = {\n    '金融': ['日期', '股票名称', '开盘价', '收盘价', '成交量'],\n}\nIE_PATTERN = \"{}\\n\\n提取上述句子中{}的实体，并按照JSON格式输出，上述句子中不存在的信息用['原文中未提及']来表示，多个值之间用','分隔。\"\n# 提供一些例子供模型参考\nie_examples = {\n        '金融': [\n                    {\n                        'content': '2023-01-10，股市震荡。股票古哥-D[EOOE]美股今日开盘价100美元，一度飙升至105美元，随后回落至98美元，最终以102美元收盘，成交量达到520000。',\n                        'answers': {\n                                        '日期': ['2023-01-10'],\n                                        '股票名称': ['古哥-D[EOOE]美股'],\n                                        '开盘价': ['100美元'],\n                                        '收盘价': ['102美元'],\n                                        '成交量': ['520000'],\n                            }\n                    }\n        ]\n}\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 2.1,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 83,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "信息抽取任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "构建init_prompts()函数:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "# 2 构建函数，进行prompt设计\ndef init_prompt(ie_examples):\n    '''\n    构建实体提取提示词\n    :param ie_examples:\n    :return:\n    '''\n    history = [\n        {'role': 'system', 'content': \"现在你需要帮助我完成信息抽取任务，当我给你一个句子时，你需要帮我抽取出句子中实体信息，并按照JSON的格式输出，上述句子中没有的信息用['原文中未提及']来表示，多个值之间用','分隔。\"}\n    ]\n    for example_cls, examples in ie_examples.items():\n        for example in examples:\n            history.append({'role': 'user', 'content': IE_PATTERN.format(example['content'], schema[example_cls])})\n            history.append({'role':'assistant','content':json.dumps(example['answers'])})\n    return  history\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.78,
+     "left": 0.53
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 84,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "信息抽取任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "构建clean_response()函数:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "def clean_response(response: str):\n    \"\"\"\n    后处理模型输出。\n    Args:\n        response (str): _description_\n    \"\"\"\n    if '```json' in response:\n        res = re.findall(r'```json(.*?)```', response)\n        if len(res) and res[0]:\n            response = res[0]\n        response.replace('、', ',')\n    try:\n        return json.loads(response)\n    except:\n        return response\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.7,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 85,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "信息抽取任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "构建qwen_model()函数:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "def qwen_model(prompt, client, history=[]):\n    '''\n    构建qwen模型推理\n    :param prompt:\n    :param client:\n    :param history:\n    :return:\n    '''\n    completion = client.chat.completions.create(\n        model=os.getenv(\"model\"),\n        messages=history+[{'role': 'user', 'content': prompt}]\n    )\n    resp = completion.choices[0].message.content\n    return  resp\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.78,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 86,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "信息抽取任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用和结果展示:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "if __name__ == '__main__':\n    history = init_prompt(ie_examples)\n    for sentence in sentences:\n        resp=qwen_model(IE_PATTERN.format(sentence, schema['金融']), client, history)\n        print(resp)\n        print(clean_response(resp))\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.86,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "086-01.png",
+     "sha1": "ef0e92325dcbeeac5943c5abd8a15d459a4e4bf9",
+     "ext": "png",
+     "bytes": 23172,
+     "px_w": 632,
+     "px_h": 425,
+     "shape_w_in": 6.58,
+     "shape_h_in": 4.43,
+     "top_in": 1.86,
+     "left_in": 6.19
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 87,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "彩票信息抽取作业",
+     "level": [
+      0
+     ],
+     "top": 0.73,
+     "left": 1.57
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "有如下5条文本，需要抽取信息：\n2025年第100期，开好红球22 21 06 01 03 11 篮球 07，一等奖中奖为2注。\n2025101期，有3注1等奖，10注2等奖，开号篮球11，中奖红球3、5、7、11、12、16。\n期待经过通过模型抽取信息得到如下结果：\n{“期数”: “2025100”，”中奖号码”: [1, 3, 6, 11, 21, 22, 7], “一等奖”: “2注”}\n{“期数”: “2025101”，”中奖号码”: [3, 5, 7, 11, 12, 16, 11], “一等奖”: “3注”}\n\n请设计Prompt，基于FewShot，对模型做示例的提示，得到需要的结果。\n\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.55,
+     "left": 1.57
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 88,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词实战案例\nLLM实现金融文本匹配",
+     "level": [
+      0,
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 89,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "LLM信息文本匹配任务介绍",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "首先，我们构造几个短文本对：\n\n\n\n\n我们期望模型能够帮我们识别出成对的句子中，2句话是否是有关联的。\n我们期望模型输出的结果为：\n\n\n\n\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.26,
+     "left": 0.45
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "1.('股票市场今日大涨，投资者乐观。', '持续上涨的市场让投资者感到满意。'),\n2.('油价大幅下跌，能源公司面临挑战。', '未来智能城市的建设趋势愈发明显。'),\n3.('利率上升，影响房地产市场。', '高利率对房地产有一定冲击。'),",
+     "level": [
+      0,
+      0,
+      0
+     ],
+     "top": 1.94,
+     "left": 0.6
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "['是', '不是', '是']",
+     "level": [
+      0
+     ],
+     "top": 3.99,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "089-01.png",
+     "sha1": "53827f47e15360627cd5b7e4f16fb5f5f11ba078",
+     "ext": "png",
+     "bytes": 48892,
+     "px_w": 624,
+     "px_h": 624,
+     "shape_w_in": 2.83,
+     "shape_h_in": 2.83,
+     "top_in": 4.67,
+     "left_in": 11.5
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 90,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "Prompt设计",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "在该任务的 prompt 设计中，我们主要考虑 2 点：\n需要向模型解释什么叫作「文本匹配任务」\n需要让模型按照我们指定的格式输出\n为了让模型知道什么叫做「文本匹配任务」，我们借用 FewShot 的方式，先给模型展示几个正确的例子：\nUser: \n句子一: 公司ABC发布了季度财报，显示盈利增长。\\n\n句子二: 财报披露，公司ABC利润上升 \nBot: 是 \n\nUser:\n句子一: 黄金价格下跌，投资者抛售。\\n\n句子二: 外汇市场交易额创下新高 \nBot: 不是 ... \n\n其中，User 代表我们输入给模型的句子，Bot 代表模型的回复内容。\n注意：上述例子中 Bot 的部分也是由人工输入的，其目的是希望看到在看到类似 User 中的句子时，模型应当做出类似 Bot 的回答。\n\n\n\n",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "090-01.png",
+     "sha1": "d7cc65ca3b647ada3dff4ad21bf1300b4c7a869a",
+     "ext": "png",
+     "bytes": 32667,
+     "px_w": 507,
+     "px_h": 507,
+     "shape_w_in": 2.31,
+     "shape_h_in": 2.31,
+     "top_in": 4.62,
+     "left_in": 10.67
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 91,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "文本匹配任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "导入必备的工具包:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "\"\"\"\n利用 Qwen LLM 进行文本匹配\n\"\"\"\n# 1 导入必备的工具包\nfrom dotenv import load_dotenv\nfrom openai import OpenAI\nimport json\nimport re\nimport os\n# 提供相似，不相似的语义匹配例子\nexamples = {\n    '是': [\n        ('公司ABC发布了季度财报，显示盈利增长。', '财报披露，公司ABC利润上升。'),\n    ],\n    '不是': [\n        ('黄金价格下跌，投资者抛售。', '外汇市场交易额创下新高。'),\n        ('央行降息，刺激经济增长。', '新能源技术的创新。')\n    ]\n}\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.62,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 92,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "文本匹配任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "构建init_prompts()函数:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "# 2 构建函数，进行prompt设计（描述清楚任务及输出格式）\ndef init_prompt(examples):\n    '''\n    定义匹配的history\n    :param examples:\n    :return:\n    '''\n    history = [\n        {'role': 'system', 'content': '判断2个句子语义是否相似，相似句子返回是，不相似句子返回不是，不要其他回答'},\n    ]\n    for label,example in examples.items():\n        for sentence_pair in example:\n            history.append({'role': 'user', 'content': \"句子一：{}\\n句子二：{}\\n 是否是语义相同的句子？\".format(sentence_pair[0], sentence_pair[1])})\n            history.append({'role': 'assistant', 'content': label})\n    return  history\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.62,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 93,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "文本匹配任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "构建qwen_model()函数:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 3",
+     "type": "TEXT_BOX (17)",
+     "text": "def qwen_model(prompt, client, history=[]):\n    '''\n    qwen模型推理\n    '''\n    completion = client.chat.completions.create(\n        model=os.getenv(\"model\"),\n        messages=history+[{'role': 'user', 'content': prompt}]\n    )\n    return completion.choices[0].message.content\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.7,
+     "left": 0.6
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 94,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "文本匹配任务代码实现",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用和结果打印展示:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "if __name__ == '__main__':\n    history = init_prompt(examples)\n    for pairs in sentence_pairs:\n        print(pairs)\n        prompt = \"句子一：{}\\n句子二：{}\\n 是否是语义相同的句子？\".format(pairs[0], pairs[1])\n        response = qwen_model(prompt, client, history)\n        print(response)\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.62,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "094-01.png",
+     "sha1": "567c9c807f0594588d1141a720d89a57942cd081",
+     "ext": "png",
+     "bytes": 11586,
+     "px_w": 576,
+     "px_h": 182,
+     "shape_w_in": 6.0,
+     "shape_h_in": 1.9,
+     "top_in": 4.22,
+     "left_in": 0.52
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 95,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "课后作业",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本框 7",
+     "type": "TEXT_BOX (17)",
+     "text": "当前章节：《提示词工程》",
+     "level": [
+      0
+     ],
+     "top": 4.28,
+     "left": 1.01
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.62
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.21,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 96,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "提示词优化作业",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "代码调用和结果打印展示:",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 4",
+     "type": "TEXT_BOX (17)",
+     "text": "if __name__ == '__main__':\n    history = init_prompt(examples)\n    for pairs in sentence_pairs:\n        print(pairs)\n        prompt = \"句子一：{}\\n句子二：{}\\n 是否是语义相同的句子？\".format(pairs[0], pairs[1])\n        response = qwen_model(prompt, client, history)\n        print(response)\n ",
+     "level": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "top": 1.62,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "096-01.png",
+     "sha1": "567c9c807f0594588d1141a720d89a57942cd081",
+     "ext": "png",
+     "bytes": 11586,
+     "px_w": 576,
+     "px_h": 182,
+     "shape_w_in": 6.0,
+     "shape_h_in": 1.9,
+     "top_in": 4.22,
+     "left_in": 0.52
+    }
+   ],
+   "notes": "",
+   "errors": []
+  }
+ ]
+}

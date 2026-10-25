@@ -1,0 +1,32 @@
+这是一张流程图，描述了文档处理并生成嵌入（embeddings）的流程。图中所有文字和关键信息如下：
+
+**图中全部文字：**
+- Document  
+- Text Splitter  
+- Segments  
+- Embedding Model  
+- Embeddings  
+- Embedding Store  
+
+**节点类型与形状说明（依图示）：**
+- “Document”：文档形状（底部波浪线矩形），表示输入源。
+- “Text Splitter”：矩形框，表示处理模块。
+- “Segments”：多层堆叠的文档形状（表示多个分段），表示中间产物。
+- “Embedding Model”：矩形框，表示模型处理模块。
+- “Embeddings”：多层堆叠的文档形状（表示多个嵌入向量），表示模型输出。
+- “Embedding Store”：圆柱体形状，表示存储组件。
+
+**数据流向（箭头连接关系）：**
+1. 从 **Document** → **Text Splitter**（单向箭头）
+2. 从 **Text Splitter** → **Segments**（单向箭头）
+3. 从 **Segments** → **Embedding Model**（单向箭头）
+4. 从 **Embedding Model** → **Embeddings**（单向箭头）
+5. 从 **Segments** → **Embedding Store**（向下单向箭头）
+6. 从 **Embeddings** → **Embedding Store**（向下单向箭头）
+
+即：  
+- 文档经文本分割器切分为多个Segments；  
+- Segments被送入Embedding Model生成Embeddings；  
+- Segments和Embeddings均最终存入Embedding Store。
+
+图中无其他标注、颜色差异（除统一蓝色边框/填充外）、注释或额外符号。

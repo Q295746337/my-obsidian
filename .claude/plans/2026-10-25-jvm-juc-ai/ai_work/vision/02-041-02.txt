@@ -1,0 +1,13 @@
+该图像为一个表格，共4行4列，表头为“方式”、“LLMs大语言模型”、“聊天模型”、“文本嵌入模型”。表格内容如下（完整转写）：
+
+| 方式 | LLMs大语言模型 | 聊天模型 | 文本嵌入模型 |
+|------|----------------|----------|--------------|
+| 阿里云千问 | `from langchain_community.llms.tongyi import Tongyi` | `from langchain_community.chat_models.tongyi import ChatTongyi` | `from langchain_community.embeddings import DashScopeEmbeddings` |
+| Ollama本地模型 | `from langchain_ollama import OllamaLLM` | `from langchain_ollama import ChatOllama` | `from langchain_ollama import OllamaEmbeddings` |
+| 方法 | `invoke`批量 / stream流式 | `invoke`批量 / stream流式 | `embed_query`单次转换 / `embed_documents`批量转换 |
+
+关键信息：
+- 表格按“方式”分类，列出三种模型接入方式：阿里云千问、Ollama本地模型、方法（调用方式）。
+- 每种方式对应三类模型的Python导入语句（含模块路径与类名），其中“文本嵌入模型”列中阿里云千问使用的是`DashScopeEmbeddings`（未显式提及tongyi前缀，但模块路径为`langchain_community.embeddings`）。
+- “方法”行说明了三类模型通用的调用方式：LLMs和聊天模型均支持`invoke`的批量与stream流式调用；文本嵌入模型支持`embed_query`（单次）和`embed_documents`（批量）两种转换方法。
+- 所有代码均为Python import语句或方法名描述，无额外注释或标点（除斜杠分隔外）。

@@ -1,0 +1,82 @@
+该图为一个系统架构/模块依赖关系图，采用黑底白框风格，包含多个虚线边框的逻辑分组区域、独立组件及连接箭头。以下为**严格按图中内容转写**的文字与结构描述：
+
+---
+
+### 一、图中全部文字（逐字转录）
+
+1. **左侧虚线框内**：
+   - `def get_retriever`
+   - `返回检索器用于加入链`
+
+2. **中央偏左独立圆柱体**（数据库图标）：
+   - `Chroma`
+   - `向量库`
+
+3. **中央主虚线框内**（核心逻辑模块组）：
+   - `self.vector_service`
+   - `self.prompt_template`
+   - `self.chat_model`
+   - `self.chain` （该框为橙色填充、加粗边框，突出显示）
+   - `def __get_chain()`
+   - `获得执行链`
+
+4. **上方独立矩形框**：
+   - `streamlit 聊天UI`
+
+5. **右上角独立矩形框**：
+   - `WEB网页`
+
+6. **右侧虚线框内**（消息管理模块）：
+   - `def add_messages`
+   - `def messages`
+   - `def clear`
+
+7. **连接线上标注**：
+   - `invoke`（位于从 `self.chain` 指向 `streamlit 聊天UI` 的箭头上）
+
+---
+
+### 二、节点与连接关系（仅依据图中箭头与布局）
+
+#### （1）左侧区域
+- 一个虚线框，内含 `def get_retriever` 及其说明“返回检索器用于加入链”。
+- 从此虚线框引出一条**无标签实线箭头**，指向中央主虚线框内的 `self.vector_service`。
+
+#### （2）Chroma 向量库
+- 圆柱形图标，标有 `Chroma` 和 `向量库`。
+- 从此图标引出一条**无标签实线箭头**，指向 `self.vector_service`。
+
+#### （3）中央主虚线框（核心链构建区）
+内部包含五个组件，其中四个为矩形框，一个为函数定义框：
+- `self.vector_service`：接收来自左侧 `get_retriever` 和 `Chroma` 的输入；输出箭头指向 `self.chain`。
+- `self.prompt_template`：输出箭头指向 `self.chain`。
+- `self.chat_model`：输出箭头指向 `self.chain`。
+- `self.chain`（橙色高亮）：接收来自 `self.vector_service`、`self.prompt_template`、`self.chat_model` 的输入；另有一条向上箭头指向 `streamlit 聊天UI`，线上标注 `invoke`；还有一条从下方 `def __get_chain()` 指向它的箭头。
+- `def __get_chain()`（下方矩形框）：标注“获得执行链”，其输出箭头指向 `self.chain`。
+
+> 注：图中未显示 `self.chain` 有向外输出到右侧消息模块的直接连线；但右侧虚线框与中央主框在水平方向并列，无显式连接线。
+
+#### （4）顶部 UI 层
+- `streamlit 聊天UI`：接收来自 `self.chain` 的 `invoke` 调用（单向箭头）。
+- `WEB网页`：位于右上角，独立存在，**图中无任何箭头连接至或出自该框**。
+
+#### （5）右侧消息管理虚线框
+- 包含三个函数定义：
+  - `def add_messages`
+  - `def messages`
+  - `def clear`
+- 此虚线框**未与图中其他任何组件通过箭头连接**，仅为并列展示。
+
+---
+
+### 三、关键信息总结（仅基于图示）
+
+- 系统核心是 `self.chain`，它由 `vector_service`、`prompt_template`、`chat_model` 三者组合而成，并可通过 `__get_chain()` 方法获取。
+- `get_retriever` 用于提供检索器，注入到 `vector_service` 中；`Chroma` 作为向量库为 `vector_service` 提供数据支持。
+- `self.chain` 通过 `invoke` 被 `streamlit 聊天UI` 调用，实现前端交互。
+- `WEB网页` 与右侧消息函数（`add_messages` / `messages` / `clear`）在图中处于孤立位置，无显式依赖或调用关系。
+- 所有模块均以 `self.` 前缀命名，暗示属于同一类实例的方法或属性；函数定义使用 Python `def` 语法。
+
+--- 
+
+⚠️ 注意：图中无颜色语义说明（除 `self.chain` 为橙色外），无时序顺序标识（如数字编号），无错误处理路径，无数据库查询语句或代码片段。以上描述完全基于图像可见元素。

@@ -1,0 +1,39 @@
+该图为一张类继承/依赖关系图（非标准UML，但结构类似），背景为黑色，节点为带边框的矩形框，文字为白色或黑色，不同颜色可能表示不同模块或层级。图中无箭头连线，但通过水平对齐和垂直排列暗示层级或归属关系。
+
+以下为图中全部文字内容，按从左到右、从上到下的视觉顺序列出，并标注其所在位置与样式特征：
+
+**左侧列（浅蓝色/浅绿色背景）：**
+1. `PromptTemplate` —— 浅蓝色背景，黑色文字
+2. `FewShotPromptTemplate` —— 浅蓝色背景
+3. `ChatPromptTemplate` —— 浅蓝色背景
+4. `Tongyi` —— 浅绿色背景
+5. `ChatTongyi` —— 浅绿色背景
+
+**中间偏左列（白色背景，黑色文字）：**
+6. `StringPromptTemplate`
+7. `BaseChatPromptTemplate`
+8. `BaseLLM`
+9. `BaseChatModel`
+
+**中间列（白色背景，黑色文字）：**
+10. `BasePromptTemplate`
+11. `BaseLanguageModel`
+
+**右侧列（红色/白色背景）：**
+12. `Runnable` —— 粉红色/浅红色背景，黑色文字，边框为深红色
+13. `RunnableSerializable` —— 白色背景，黑色文字
+
+**关键信息总结：**
+- 图中共有 13 个独立文本框。
+- 无任何连接线、箭头或流程指示；仅靠空间布局暗示关系。
+- 颜色分组：
+  - 浅蓝色：3 个以 `*PromptTemplate` 结尾的类（`PromptTemplate`, `FewShotPromptTemplate`, `ChatPromptTemplate`）
+  - 浅绿色：2 个含 `Tongyi` 的类（`Tongyi`, `ChatTongyi`）
+  - 白色（多数）：基础抽象类/基类（如 `Base*` 系列、`StringPromptTemplate` 等）
+  - 红色系：`Runnable`（突出显示），以及 `RunnableSerializable`
+- 命名模式明显体现面向对象设计中的继承/组合关系倾向：
+  - `*Template` → 可能继承自 `BasePromptTemplate` 或 `StringPromptTemplate`
+  - `BaseLLM` / `BaseChatModel` / `BaseLanguageModel` 表明模型基类
+  - `Tongyi` 和 `ChatTongyi` 可能是具体实现（如阿里通义系列）
+
+注意：图中未提供任何连线、注释或说明文字，因此无法确定确切的继承方向或依赖关系，仅能依据命名惯例和布局推测逻辑分组。

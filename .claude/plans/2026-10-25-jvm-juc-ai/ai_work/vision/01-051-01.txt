@@ -1,0 +1,211 @@
+该图为一个深度学习模型架构图，整体结构分为左侧主干（Qwen2 主干）、中间的 Decoder layer（解码器层）模块、右侧的 Attn（注意力机制）子模块，以及左下角的 MLP 子模块。各部分通过虚线框分组，箭头表示数据流向。
+
+以下为图中全部文字及关键信息的完整转写与结构说明：
+
+---
+
+### 一、左侧主干：**Qwen2 主干**
+（由虚线框包围，标注“Qwen2 主干”）
+
+- **Text**（蓝色矩形）  
+  → **Tokenizer**（绿色矩形）  
+  → **Input_ids**（蓝色矩形）
+
+- **Input_ids** 同时输入至：
+  - **Embedding**（绿色矩形）
+  - （另有一条虚线箭头指向右侧 Decoder layer 的 Hidden_states 输入，但未标注名称；实际从图中看，Input_ids → Embedding 是主路径）
+
+- **Embedding**  
+  → **Hidden_states**（蓝色矩形）
+
+- **Hidden_states**  
+  → **Layers**（橙色矩形）  
+  → **RMSNorm**（灰色矩形）
+
+- **RMSNorm** 输出分两路：
+  1. 向下 → **Linear**（蓝色矩形）  
+     → **Loss**（蓝色矩形）  
+     → **output**（蓝色矩形）
+  2. 向右 → 进入 **Decoder layer** 模块（箭头指向其第一个 Hidden_states 输入）
+
+- 右侧并列一组虚线框（绿色虚线），内含：
+  - **Layers1**（橙色矩形）
+  - **Layers..**（橙色矩形）
+  - **Layersn**（橙色矩形）  
+  （三者垂直排列，无连接箭头，仅作为示意，可能表示多层堆叠）
+
+---
+
+### 二、左下角子模块：**MLP**
+（虚线框内，标注“MLP”）
+
+- 输入：**HS**（蓝色矩形）  
+  分两路：
+  - 上路：→ **Linear**（橙色矩形） → **Act**（灰色矩形） → **×**（蓝色圆形乘号节点）
+  - 下路：→ **Linear**（绿色矩形） → **HS**（黄色矩形） → **Linear**（黄色矩形） → **HS**（蓝色矩形）
+
+- **×** 节点接收两路输入：
+  - 来自 Act 的输出
+  - 来自下方 Linear → HS → Linear 的输出（即黄色 HS → 黄色 Linear → 蓝色 HS）
+  → 输出至 **HS**（蓝色矩形，即该 MLP 模块最终输出）
+
+> 注：图中“HS”在 MLP 内部多次出现，颜色不同可能表示不同阶段或副本；最终输出为蓝色 HS。
+
+---
+
+### 三、中间模块：**Decoder layer**
+（虚线框内，标题“Decoder layer”）
+
+包含两个重复结构（上下对称），每层含残差连接（residual）和 RMSNorm + Attention / MLP 组合：
+
+#### 第一层（上部）：
+- 输入：**Hidden_states**（蓝色矩形）  
+  → 分两路：
+    1. 直接 → **residual**（蓝色矩形）
+    2. → **RMSNorm**（灰色矩形）  
+       → **Attention**（黄色矩形）  
+       → **Hidden_states**（蓝色矩形）  
+       → **+**（蓝色圆形加号节点）
+
+- **+** 节点接收：
+  - 来自 Attention 的 Hidden_states
+  - 来自 residual 的输出  
+  → 输出至下一阶段的 **Hidden_states**
+
+#### 第二层（下部）：
+- 输入：**Hidden_states**（蓝色矩形）  
+  → 分两路：
+    1. 直接 → **residual**（蓝色矩形）
+    2. → **RMSNorm**（灰色矩形）  
+       → **MLP**（橙色矩形）  
+       → **Hidden_states**（蓝色矩形）  
+       → **+**（蓝色圆形加号节点）
+
+- **+** 节点接收：
+  - 来自 MLP 的 Hidden_states
+  - 来自 residual 的输出  
+  → 输出至最终 **Hidden_states**（蓝色矩形）
+
+> 注意：第一层的 Attention 输出后接 +，其结果又作为第二层的输入 Hidden_states；图中用斜向箭头连接第一层 + 输出 → 第二层 Hidden_states 输入。
+
+此外，有两条长斜箭头：
+- 从 Qwen2 主干的 RMSNorm 输出 → Decoder layer 第一层的 Hidden_states 输入
+- 从 Decoder layer 最终 Hidden_states 输出 → 右侧 Attn 模块的 Hidden_states 输入（具体为 Attn 中第一个 Hidden_states 节点）
+
+---
+
+### 四、右侧模块：**Attn**
+（虚线框内，标题“Attn”）
+
+输入包括：
+- **Hidden_states**（蓝色矩形）——来自 Decoder layer 输出
+- **Attention_mask**（蓝色矩形）
+
+流程如下：
+
+1. **Hidden_states** 分三路：
+   - → **Query**（橙色矩形）
+   - → **Key**（绿色矩形）
+   - → **Value**（黄色矩形）
+
+2. **Query**, **Key**, **Value** → **Apply_rotary_pos_emb**（蓝色矩形）
+
+3. **Apply_rotary_pos_emb** 输出分两路：
+   - → **Query**（橙色矩形）
+   - → **Key**（绿色矩形）
+
+4. 上述 Query & Key → **Repeat_kv**（蓝色矩形）
+
+5. **Repeat_kv** 输出分两路：
+   - → **Query**（橙色矩形）
+   - → **Key**（绿色矩形）
+
+6. 上述 Query & Key → **Dot_attn**（橙色平行四边形）
+
+7. **Dot_attn** → **Attention_weight**（蓝色矩形）
+
+8. **Attention_weight** 与 **Attention_mask**（蓝色矩形）共同输入至 **+**（蓝色圆形加号节点）
+
+9. **+** → **Softmax**（灰色矩形）
+
+10. **Softmax** → **Matmul**（蓝色矩形）
+
+11. **Matmul** 接收另一输入：**Value**（黄色矩形，来自最上方的 Value 分支，经长线连接至此）
+
+12. **Matmul** → **O_Linear**（蓝色矩形）  
+    → **Output**（蓝色矩形）
+
+> 补充细节：
+> - 图中 “Value” 从顶部直接连到 Matmul，未经过 rotary 或 repeat_kv。
+> - 所有 Query/Key 路径均经过 Apply_rotary_pos_emb 和 Repeat_kv，体现 RoPE 与 KV 缓存重复操作。
+> - Dot_attn 为点积注意力核心计算；Attention_mask 与 Attention_weight 相加后 Softmax，符合带掩码的注意力实现。
+
+---
+
+### 五、其他标注与连接
+
+- 多处使用 **copy** 标签标注在箭头上，表示复制操作（如 Hidden_states → residual 的连线标有 “copy”）。
+- 所有矩形节点颜色含义（根据图中一致用法推测）：
+  - 蓝色：通用张量/状态（如 Hidden_states, Input_ids, Output）
+  - 绿色：嵌入/键相关（Embedding, Key）
+  - 橙色：查询/激活/中间计算（Query, Linear, Dot_attn, Act）
+  - 黄色：值/线性层（Value, Linear）
+  - 灰色：归一化/激活函数（RMSNorm, Softmax, Act）
+  - 橙色平行四边形：特殊操作（Dot_attn）
+
+- 箭头均为单向实线箭头，表示数据流方向；虚线框为逻辑分组；虚线箭头（如从 Input_ids 到 Decoder layer）为辅助示意连接，非主干流程。
+
+---
+
+### 总结关键信息列表（纯文字提取）：
+
+```
+Text
+Tokenizer
+Input_ids
+Qwen2 主干
+Embedding
+Hidden_states
+Layers
+RMSNorm
+Linear
+Loss
+output
+Layers1
+Layers..
+Layersn
+MLP
+HS
+Linear (橙)
+Act
+×
+Linear (绿)
+Linear (黄)
+HS (黄)
+HS (蓝)
+Decoder layer
+Hidden_states
+copy
+residual
+RMSNorm
+Attention
++
+MLP
+Attn
+Hidden_states
+Attention_mask
+Query
+Key
+Value
+Apply_rotary_pos_emb
+Repeat_kv
+Dot_attn
+Attention_weight
++
+Softmax
+Matmul
+O_Linear
+Output
+```
+
+图中无代码、SQL、终端输出或表格，仅为模型架构流程图。所有内容已按图示完整转写，未添加外部知识。

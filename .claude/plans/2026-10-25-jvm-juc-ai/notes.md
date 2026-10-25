@@ -1,0 +1,54 @@
+# Notes: JVM / JUC / AI 整理
+
+## 盘点结果
+
+| 文件夹 | 文件 | 规模 | 图片 | 备注 |
+|---|---|---:|---:|---|
+| JVM | 5 docx | 1,132 段、114 表、约 37k 字 | 410 | 类加载/字节码表格多 |
+| JUC | 4 docx | 2,044 段、36 表、约 58k 字 | 731 | 图片极多，需去装饰/重复 |
+| AI | 4 pptx + 1 txt | 352 页、约 77k 字 | 300 | PPT 为主，按 A/B/C 判断 |
+
+## JVM 源文件
+
+- `JVM/0_引言.docx`
+- `JVM/1_内存结构.docx`
+- `JVM/2_垃圾回收.docx`
+- `JVM/3_类加载与字节码技术.docx`
+- `JVM/4_内存模型.docx`
+
+## JUC 源文件
+
+- `JUC/并发编程.docx`
+- `JUC/并发编程_原理.docx`
+- `JUC/并发编程_应用.docx`
+- `JUC/并发编程_模式.docx`
+
+## AI 源文件
+
+- `AI/01提示词工程.pptx`
+- `AI/02大模型RAG开发.pptx`
+- `AI/03RAG项目.pptx`
+- `AI/LangChain4J+通义千问大模型应用开发(志愿填报大师).pptx`
+- 另有 1 个 txt
+
+## 已确认的工具与规则
+
+- `python-docx`、`python-pptx` 可用。
+- 视觉模型：`QWEN_MODEL=qwen3-vl-plus python vision.py --provider qwen <图片> <提示>`
+- 默认 `qwen-vl-max` 会 404，必须用 `qwen3-vl-plus`。
+- PPT 图片 A/B/C 规则见方法论第十七节。
+- 图片文件统一放到 `D:\Java\data\<模块>\<笔记名>\`，引用 `file:///D:/Java/data/...`。
+
+## 每个模块的最低交付
+
+- 模块索引 1 篇
+- 内容笔记 N 篇（JVM 5、JUC 4、AI 4）
+- 所有笔记：1 个 H1、非空“相关笔记”、无断链、无缺图
+- 图片目录与引用一一对应；0 未引用图片
+- 源文件保留，验收后再决定归档/删除
+
+## 待确认/风险
+
+- JUC 与 `JavaSE/12-多线程/12-JUC并发.md` 有重叠：以 `JUC/` 为主笔记，旧笔记加“完整课程见 JUC 索引”的提示，不直接删除。
+- JVM/JUC docx 图片多，需按“知识性图片”保留，装饰图/重复图跳过。
+- AI PPT 页数多，视觉模型只处理 A/B 档，避免全量识别。

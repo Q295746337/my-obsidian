@@ -1,0 +1,3092 @@
+# 04-LangChain4J与通义千问 (LangChain4J+通义千问大模型应用开发(志愿填报大师).pptx) slides=132 size=13.333333333333334x7.5
+
+===== SLIDE 1 =====
+[文本框 2] lv=0,0,0,0,0,0 pos=(10.66,2.8)
+  0
+  1
+  2
+  3
+  4
+  0
+[文本框 3] lv=0,0,0,0,0,0 pos=(8.16,2.8)
+  0
+  2
+  5
+  8
+  9
+  1
+[文本框 4] lv=0,0,0,0,0,0 pos=(2.79,2.8)
+  0
+  4
+  6
+  9
+  2
+  0
+[文本框 5] lv=0,0,0,0,0,0 pos=(9.41,-8.28)
+  3
+  2
+  5
+  8
+  9
+  0
+[文本框 6] lv=0,0,0,0,0,0 pos=(5.48,2.8)
+  0
+  3
+  4
+  7
+  8
+  2
+[文本框 7] lv=0,0,0,0,0,0 pos=(6.72,-8.28)
+  1
+  8
+  5
+  4
+  2
+  0
+[文本框 8] lv=0,0,0,0,0,0 pos=(4.23,-8.27)
+  2
+  9
+  7
+  6
+  1
+  0
+[文本框 12] lv=0,0,0,0,0,0 pos=(1.44,-8.28)
+  2
+  9
+  7
+  6
+  1
+  0
+
+===== SLIDE 2 =====
+[文本框 8] lv=0 pos=(6.44,8.23)
+  ChatGPT
+[IMG 01] 002-01.png 2000x1125px 24712B shape=13.33x7.5in pos=(0.0,0.0) sha=e202fa9040
+[IMG 02] 002-02.png 469x481px 119662B shape=1.35x1.39in pos=(4.72,7.85) sha=2e999e7d50
+
+===== SLIDE 3 =====
+[文本框 7] lv=0 pos=(6.44,4.89)
+  ChatGPT
+[IMG 01] 003-01.png 2000x1125px 24712B shape=7.42x4.17in pos=(2.84,0.77) sha=e202fa9040
+[IMG 02] 003-02.png 469x481px 119662B shape=1.35x1.39in pos=(4.72,4.52) sha=2e999e7d50
+
+===== SLIDE 4 =====
+[文本框 17] lv=0 pos=(0.39,2.72)
+  AI图片：Stable Diffusion
+[文本框 37] lv=0 pos=(0.54,5.14)
+  AI对话：文心一言
+[文本框 47] lv=0 pos=(0.72,0.98)
+  AI对话：ChatGPT
+[文本框 30] lv=0 pos=(8.13,1.98)
+  AI视频：DeepBrain AI
+[文本框 35] lv=0 pos=(4.63,5.43)
+  代码生成：Cursor
+[文本框 10] lv=0 pos=(7.25,6.46)
+  代码生成：CodeWhisperer
+[文本框 11] lv=0 pos=(5.93,4.45)
+  多模态：Bard
+[文本框 12] lv=0 pos=(1.12,6.5)
+  AI音乐：Stable Audio
+[文本框 13] lv=0 pos=(9.52,5.59)
+  AI图片：Canva AI
+[文本框 14] lv=0 pos=(9.21,4.49)
+  AI文档：Notion AI
+[文本框 21] lv=0 pos=(5.97,3.09)
+  AI工具：ChatPDF
+[文本框 22] lv=0 pos=(9.61,3.48)
+  AI教育：Socratic
+[文本框 23] lv=0 pos=(1.66,3.74)
+  AI科研：Wolfram Alpha
+[文本框 24] lv=0 pos=(9.04,1.04)
+  AI游戏：Inworld AI
+[文本框 26] lv=0 pos=(4.61,0.61)
+  AI机器人：Zapier AI
+[文本框 28] lv=0 pos=(3.57,1.73)
+  AI金融：AntGPT
+[IMG 01] 004-01.jpg 1764x992px 1598140B shape=13.33x7.5in pos=(0.0,0.0) sha=8e85825227
+
+===== SLIDE 5 =====
+[IMG 01] 005-01.png 1996x1294px 380258B shape=6.08x3.94in pos=(0.03,0.0) sha=8ee2507da1
+[IMG 02] 005-02.png 1812x1195px 789450B shape=7.01x4.62in pos=(1.96,0.0) sha=4240bb8544
+[IMG 03] 005-03.png 1909x1385px 1058113B shape=7.2x4.62in pos=(4.42,0.0) sha=7805d366f9
+[IMG 04] 005-04.png 1837x1265px 581367B shape=6.73x4.63in pos=(6.6,0.0) sha=48ee00d776
+[IMG 05] 005-05.png 1684x1140px 518912B shape=6.58x4.45in pos=(0.0,3.1) sha=78b47c7563
+[IMG 06] 005-06.png 2191x1393px 844584B shape=6.91x4.39in pos=(1.96,3.16) sha=5c7736ba69
+[IMG 07] 005-07.png 1810x1251px 695169B shape=7.13x4.93in pos=(4.39,3.1) sha=ef1824d197
+[IMG 08] 005-08.png 1812x1195px 789450B shape=7.01x4.62in pos=(6.6,3.1) sha=4240bb8544
+
+===== SLIDE 6 =====
+[椭圆 54] lv=0 pos=(1.25,5.63)
+  新零售
+[椭圆 55] lv=0,0 pos=(10.26,5.61)
+  物流
+  运输
+[椭圆 56] lv=0,0 pos=(2.87,4.32)
+  企业
+  服务
+[椭圆 57] lv=0 pos=(12.11,5.46)
+  教育
+[椭圆 58] lv=0 pos=(3.57,3.19)
+  游戏
+[椭圆 59] lv=0 pos=(3.99,5.18)
+  电信
+[椭圆 60] lv=0 pos=(8.63,4.96)
+  出行
+[椭圆 61] lv=0 pos=(9.42,2.93)
+  社交
+[椭圆 62] lv=0 pos=(1.58,3.84)
+  旅游
+[椭圆 2047] lv=0 pos=(7.71,3.34)
+  工具
+[椭圆 2048] lv=0 pos=(2.56,5.47)
+  区块链
+[椭圆 2050] lv=0 pos=(4.52,4.13)
+  物联网
+[椭圆 2051] lv=0,0 pos=(11.11,4.18)
+  广告
+  营销
+[椭圆 2052] lv=0 pos=(6.1,2.28)
+  汽车后市场
+[椭圆 2053] lv=0 pos=(6.68,3.98)
+  房地产
+[椭圆 2054] lv=0 pos=(5.49,3.3)
+  金融
+[椭圆 2055] lv=0,0 pos=(9.45,4.0)
+  数据
+  服务
+[文本框 2056] lv=0 pos=(5.55,5.07)
+  行业覆盖率91%
+[文本框 2241] lv=0 pos=(10.57,0.99)
+  25亿
+[文本框 2242] lv=0 pos=(9.81,1.59)
+  全球25亿Java服务在运行
+[文本框 2246] lv=0 pos=(10.4,0.99)
+  90%+
+[文本框 2247] lv=0 pos=(9.81,1.59)
+  后端编程语言中占比90%
+[文本框 2251] lv=0 pos=(10.57,0.99)
+  29年
+[文本框 2252] lv=0 pos=(9.81,1.59)
+  上线29年 生命力依旧旺盛
+[文本框 2256] lv=0 pos=(10.56,0.99)
+  No.1
+[文本框 2257] lv=0 pos=(9.81,1.59)
+  83次TIOBE排行No.1
+
+===== SLIDE 7 =====
+[文本框 370] lv=0 pos=(-5.67,2.89)
+  Python
+
+===== SLIDE 8 =====
+[文本框 370] lv=0 pos=(2.71,2.89)
+  Python
+[Title] lv=0 pos=(0.73,-1.56)
+  传统Java应用AI化面临的问题
+[IMG 01] 008-01.png 677x483px 10345B shape=4.51x3.22in pos=(-7.04,1.98) sha=d05c701264
+[IMG 02] 008-02.png 674x483px 8935B shape=4.49x3.22in pos=(19.04,1.98) sha=77116f7cf4
+
+===== SLIDE 9 =====
+[Title] lv=0 pos=(0.73,0.76)
+  传统Java应用AI化面临的问题
+[IMG 01] 009-01.png 677x483px 10345B shape=4.51x3.22in pos=(1.7,2.32) sha=d05c701264
+[IMG 02] 009-02.png 674x483px 8935B shape=4.49x3.22in pos=(7.78,2.32) sha=77116f7cf4
+
+===== SLIDE 10 =====
+[Title] lv=0 pos=(0.73,-2.96)
+  传统Java应用AI化面临的问题
+[文本框 2] lv=0 pos=(3.85,2.86)
+  LangChain4j
+[文本框 7] lv=0 pos=(-4.1,5.36)
+  Spring AI
+[IMG 01] 010-01.png 473x473px 65601B shape=4.27x4.27in pos=(-5.32,2.21) sha=8dcfad0ab8
+[IMG 02] 010-02.png 388x388px 9362B shape=2.4x2.4in pos=(-4.1,2.21) sha=4e8831bff1
+
+===== SLIDE 11 =====
+[Title] lv=0 pos=(0.73,-2.96)
+  传统Java应用AI化面临的问题
+[文本框 8] lv=0 pos=(2.73,5.36)
+  Spring AI
+[文本框 10] lv=0 pos=(7.81,5.36)
+  LangChain4j
+[IMG 01] 011-01.png 473x473px 65601B shape=4.27x4.27in pos=(-5.32,2.21) sha=8dcfad0ab8
+[IMG 02] 011-02.png 1600x1600px 341029B shape=3.54x3.54in pos=(7.49,1.64) sha=30393ec7ad
+[IMG 03] 011-03.png 388x388px 9362B shape=2.4x2.4in pos=(2.73,2.21) sha=4e8831bff1
+
+===== SLIDE 12 =====
+[Title] lv=0 pos=(0.73,-2.96)
+  传统Java应用AI化面临的问题
+[文本框 6] lv=0 pos=(5.01,2.86)
+  LangChain4j
+[文本框 9] lv=0 pos=(-4.1,5.36)
+  Spring AI
+[IMG 01] 012-01.png 473x473px 65601B shape=4.27x4.27in pos=(-5.32,2.21) sha=8dcfad0ab8
+[IMG 02] 012-02.png 163x166px 30317B shape=1.7x1.73in pos=(3.31,2.6) sha=921868a975
+[IMG 03] 012-03.png 388x388px 9362B shape=2.4x2.4in pos=(-4.1,2.21) sha=4e8831bff1
+[IMG 04] 012-04.png 677x483px 10345B shape=4.51x3.22in pos=(-7.04,1.98) sha=d05c701264
+[IMG 05] 012-05.png 674x483px 8935B shape=4.49x3.22in pos=(19.04,1.98) sha=77116f7cf4
+
+===== SLIDE 13 =====
+[Title] lv=0 pos=(0.73,0.76)
+  传统Java应用AI化面临的问题
+[IMG 01] 013-01.png 677x483px 10345B shape=4.51x3.22in pos=(1.7,2.32) sha=d05c701264
+[IMG 02] 013-02.png 674x483px 8935B shape=4.49x3.22in pos=(7.78,2.32) sha=77116f7cf4
+
+===== SLIDE 14 =====
+[标题 3] lv=0 pos=(0.72,2.43)
+  大模型应用开发
+[文本占位符 4] lv=0 pos=(0.72,3.92)
+  LangChain4J+通义千问
+
+===== SLIDE 15 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  学习要求
+[Bullet1] lv=0 pos=(7.16,1.56)
+  必须掌握：SpringBoot+Mybatis
+[Number1] lv=0 pos=(5.82,1.41)
+  1
+[Bullet2] lv=0 pos=(7.06,5.5)
+  熟练使用：IDEA+Maven
+[Number2] lv=0 pos=(7.27,3.42)
+  2
+[Number3] lv=0 pos=(5.72,5.35)
+  3
+[Bullet3] lv=0 pos=(8.57,3.58)
+  初步了解：Docker+Redis+MySql
+[椭圆 22] lv=0,0 pos=(4.48,3.33)
+  JDK
+  17
+[IMG 01] 015-01.png 1000x1000px 77610B shape=3.85x3.85in pos=(1.01,1.9) sha=5d9f8c350a
+
+===== SLIDE 16 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  课程内容
+[文本框 3] lv=0 pos=(1.46,1.96)
+  1
+[文本框 4] lv=0 pos=(1.42,2.88)
+  认识AI
+[文本框 6] lv=0 pos=(5.52,1.96)
+  2
+[文本框 7] lv=0 pos=(5.48,2.88)
+  大模型使用
+[文本框 9] lv=0 pos=(9.47,1.96)
+  3
+[文本框 10] lv=0 pos=(9.43,2.88)
+  LangChain4J
+[PA-文本框 27] lv=0,0,0,0 pos=(1.45,3.76)
+  内容：
+  AI的发展
+  常见大模型
+  AI市场分布
+[PA-文本框 28] lv=0,0,0,0 pos=(1.45,4.96)
+  目标：
+  了解AI和大模型关系
+  知道常见的大模型
+  了解AI的市场发展，找准自己的定位
+[PA-文本框 29] lv=0,0,0,0 pos=(5.52,3.76)
+  内容：
+  模型部署
+  模型调用
+  模型常见参数
+[PA-文本框 53] lv=0,0,0,0,0 pos=(5.52,4.96)
+  目标：
+  了解部署方式的区别
+  学会Ollama部署模型
+  学会http方式调用大模型
+  理解调用大模型常见的请求参数和响应数据
+[PA-文本框 54] lv=0,0 pos=(9.51,3.76)
+  内容：
+  AI志愿填报顾问
+[PA-文本框 55] lv=0,0,0,0,0,0,0 pos=(9.52,4.96)
+  目标：
+  LangChain4J的基本使用
+  阻塞式/流式调用大模型
+  会话记忆
+  向量模型、向量数据库
+  搭建RAG知识库
+  Tools工具调用
+
+===== SLIDE 17 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  课程收获
+[!!椭圆 11] lv=0 pos=(9.83,2.52)
+  解决大模型应用开发的常见问题
+[!!椭圆 8] lv=0 pos=(1.6,2.52)
+  掌握LangChain4j的基本使用
+[!!椭圆 9] lv=0 pos=(5.72,2.52)
+  掌握大模型应用开发的常见技术方案
+
+===== SLIDE 18 =====
+[标题 3] lv=0 pos=(0.72,2.43)
+  大模型应用开发
+[文本占位符 4] lv=0 pos=(0.72,3.92)
+  LangChain4J+通义千问
+
+===== SLIDE 19 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  认识AI
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  01
+[文本占位符 3] lv=0,0 pos=(6.95,3.2)
+  AI发展史
+  AI市场分布
+
+===== SLIDE 20 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  AI，人工智能（Artificial Intelligence），使机器能够像人类一样思考、学习和解决问题的技术。
+[内容占位符 1] lv=0 pos=(0.63,1.64)
+  1950年，图灵测试
+[文本框 6] lv=0 pos=(1.81,4.26)
+  人的智能
+[文本框 12] lv=0 pos=(2.53,6.22)
+  被测试者(机器)
+[文本框 13] lv=0 pos=(5.91,6.32)
+  测试者
+[文本框 14] lv=0 pos=(8.6,6.21)
+  被测试者(人)
+[IMG 01] 020-01.png 1178x546px 259562B shape=9.58x4.44in pos=(1.52,2.33) sha=f59c094733
+[IMG 02] 020-02.png 120x25px 535B shape=1.25x0.26in pos=(5.86,6.32) sha=253e0bfa5a
+[IMG 03] 020-03.png 120x25px 535B shape=1.25x0.26in pos=(2.89,6.32) sha=253e0bfa5a
+[IMG 04] 020-04.png 120x25px 535B shape=1.25x0.26in pos=(8.34,6.32) sha=253e0bfa5a
+[IMG 05] 020-05.png 384x384px 5044B shape=0.73x0.73in pos=(2.39,3.08) sha=56a62289e5
+[IMG 06] 020-06.png 384x384px 5044B shape=0.73x0.73in pos=(9.5,3.08) sha=56a62289e5
+[IMG 07] 020-07.png 384x384px 5044B shape=0.73x0.73in pos=(2.39,3.07) sha=56a62289e5
+
+===== SLIDE 21 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  AI，人工智能（Artificial Intelligence），使机器能够像人类一样思考、学习和解决问题的技术。
+[Number1] lv=0 pos=(8.36,4.16)
+  神经网络
+[Number2] lv=0 pos=(4.74,4.16)
+  连接主义
+[Number3] lv=0 pos=(1.1,4.16)
+  符号主义
+
+===== SLIDE 22 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number3] lv=0 pos=(0.76,1.27)
+  符号主义
+[内容占位符 1] lv=0,0,0 pos=(0.76,1.84)
+  1.将现实抽象为符号
+  2.设置规则
+  3.执行
+[内容占位符 1] lv=0 pos=(4.45,1.84)
+  天晴：A       打篮球：B      打游戏：C
+[椭圆 3] lv=0 pos=(5.74,3.75)
+  A
+[椭圆 9] lv=0 pos=(4.64,5.32)
+  B
+[椭圆 10] lv=0 pos=(7.06,5.32)
+  C
+[文本框 18] lv=0 pos=(4.98,4.58)
+  true
+[文本框 20] lv=0 pos=(6.55,4.57)
+  false
+[内容占位符 1] lv=0 pos=(4.45,2.44)
+  如果A，执行B，否则执行C
+[IMG 01] 022-01.jpg 2000x2000px 221345B shape=2.35x2.35in pos=(0.84,3.75) sha=c5fd9abfe9
+
+===== SLIDE 23 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[文本框 26] lv=0 pos=(4.7,4.57)
+  树突(接收信息)
+[文本框 30] lv=0 pos=(6.93,4.84)
+  轴突(传递信息)
+[文本框 32] lv=0 pos=(9.56,2.04)
+  突触(连接其它神经元，输出信息)
+[文本框 38] lv=0 pos=(7.53,1.86)
+  细胞体
+[IMG 01] 023-01.png 907x593px 310654B shape=5.1x3.33in pos=(4.99,1.58) sha=8b15cd188c
+[IMG 02] 023-02.png 2400x1880px 1718838B shape=3.19x2.5in pos=(0.44,2.34) sha=f9cf932c01
+
+===== SLIDE 24 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[IMG 01] 024-01.png 2400x1880px 1718838B shape=3.19x2.5in pos=(0.44,2.34) sha=f9cf932c01
+[IMG 02] 024-02.png 2366x2198px 4015302B shape=7.17x6.66in pos=(4.72,0.37) sha=e5c4dd001e
+
+===== SLIDE 25 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[文本框 13] lv=0 pos=(12.26,3.69)
+  猫
+[IMG 01] 025-01.jpg 2000x2000px 221345B shape=2.35x2.35in pos=(0.35,2.8) sha=c5fd9abfe9
+[IMG 02] 025-02.jpg 5472x3072px 887120B shape=0.8x0.45in pos=(3.14,3.75) sha=c08f8d6ed4
+[IMG 03] 025-03.png 2366x2198px 4015302B shape=7.17x6.66in pos=(4.72,0.37) sha=e5c4dd001e
+
+===== SLIDE 26 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[流程图: 接点 21] lv=0 pos=(9.34,3.0)
+  激活函数
+[文本框 23] lv=0 pos=(8.17,4.33)
+  权重
+[文本框 24] lv=0 pos=(6.91,5.27)
+  输入
+[文本框 25] lv=0 pos=(8.65,1.83)
+  感知机模型
+[文本框 26] lv=0 pos=(9.77,5.27)
+  输出
+[文本框 35] lv=0 pos=(0.1,5.12)
+  树突(接收信息)
+[文本框 39] lv=0 pos=(2.64,5.33)
+  轴突(传递信息)
+[文本框 41] lv=0 pos=(5.27,2.53)
+  突触(输出)
+[IMG 01] 026-01.png 907x593px 310654B shape=5.1x3.33in pos=(0.69,2.06) sha=8b15cd188c
+
+===== SLIDE 27 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[流程图: 接点 33] lv=0 pos=(9.34,2.73)
+  激活函数
+[文本框 42] lv=0 pos=(8.17,4.06)
+  权重
+[文本框 44] lv=0 pos=(1.73,2.13)
+  颜色
+[文本框 45] lv=0 pos=(0.92,4.81)
+  味道
+[文本框 46] lv=0 pos=(3.27,4.26)
+  形状
+[文本框 47] lv=0 pos=(6.91,4.99)
+  输入
+[文本框 48] lv=0 pos=(9.77,4.99)
+  输出
+[IMG 01] 027-01.png 252x227px 51019B shape=2.62x2.36in pos=(0.92,2.35) sha=3bf973cdab
+
+===== SLIDE 28 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[流程图: 接点 21] lv=0 pos=(9.36,3.1)
+  激活函数
+[文本框 24] lv=0 pos=(1.73,2.13)
+  颜色
+[文本框 25] lv=0 pos=(0.92,4.81)
+  味道
+[文本框 26] lv=0 pos=(3.27,4.26)
+  形状
+[文本框 57] lv=0 pos=(5.98,0.76)
+  红色
+[文本框 58] lv=0 pos=(5.98,1.59)
+  黄色
+[文本框 59] lv=0 pos=(5.98,2.41)
+  蓝色
+[文本框 60] lv=0 pos=(5.98,3.23)
+  圆形
+[文本框 61] lv=0 pos=(5.98,4.06)
+  长条
+[文本框 62] lv=0 pos=(5.98,4.88)
+  甜的
+[文本框 63] lv=0 pos=(5.98,5.7)
+  酸的
+[文本框 64] lv=0 pos=(5.98,6.53)
+  苦的
+[文本框 65] lv=0 pos=(7.7,0.65)
+  0
+[文本框 66] lv=0 pos=(7.7,1.47)
+  1
+[文本框 67] lv=0 pos=(7.7,2.28)
+  0
+[文本框 68] lv=0 pos=(7.7,3.12)
+  0
+[文本框 69] lv=0 pos=(7.7,3.93)
+  1
+[文本框 70] lv=0 pos=(7.7,4.75)
+  1
+[文本框 71] lv=0 pos=(7.7,5.57)
+  0
+[文本框 72] lv=0 pos=(7.7,6.39)
+  0
+[IMG 01] 028-01.png 252x227px 51019B shape=2.62x2.36in pos=(0.92,2.35) sha=3bf973cdab
+
+===== SLIDE 29 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[流程图: 接点 47] lv=0 pos=(9.36,3.1)
+  总分
+[文本框 74] lv=0 pos=(1.73,2.13)
+  颜色
+[文本框 75] lv=0 pos=(0.92,4.81)
+  味道
+[文本框 76] lv=0 pos=(3.27,4.26)
+  形状
+[文本框 92] lv=0 pos=(5.98,0.76)
+  红色
+[文本框 93] lv=0 pos=(5.98,1.59)
+  黄色
+[文本框 94] lv=0 pos=(5.98,2.41)
+  蓝色
+[文本框 95] lv=0 pos=(5.98,3.23)
+  圆形
+[文本框 96] lv=0 pos=(5.98,4.06)
+  长条
+[文本框 97] lv=0 pos=(5.98,4.88)
+  甜的
+[文本框 98] lv=0 pos=(5.98,5.7)
+  酸的
+[文本框 99] lv=0 pos=(5.98,6.53)
+  苦的
+[文本框 100] lv=0 pos=(7.7,0.65)
+  0
+[文本框 101] lv=0 pos=(7.7,1.47)
+  1
+[文本框 102] lv=0 pos=(7.7,2.28)
+  0
+[文本框 103] lv=0 pos=(7.7,3.12)
+  0
+[文本框 104] lv=0 pos=(7.7,3.93)
+  1
+[文本框 105] lv=0 pos=(7.7,4.75)
+  1
+[文本框 106] lv=0 pos=(7.7,5.57)
+  0
+[文本框 107] lv=0 pos=(7.7,6.39)
+  0
+[文本框 108] lv=0 pos=(10.47,4.59)
+  3
+[IMG 01] 029-01.png 252x227px 51019B shape=2.62x2.36in pos=(0.92,2.35) sha=3bf973cdab
+
+===== SLIDE 30 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[流程图: 接点 47] lv=0 pos=(9.36,3.1)
+  总分
+[文本框 74] lv=0 pos=(1.73,2.13)
+  颜色
+[文本框 75] lv=0 pos=(0.92,4.81)
+  味道
+[文本框 76] lv=0 pos=(3.27,4.26)
+  形状
+[文本框 92] lv=0 pos=(5.98,0.76)
+  红色
+[文本框 93] lv=0 pos=(5.98,1.59)
+  黄色
+[文本框 94] lv=0 pos=(5.98,2.41)
+  蓝色
+[文本框 95] lv=0 pos=(5.98,3.23)
+  圆形
+[文本框 96] lv=0 pos=(5.98,4.06)
+  长条
+[文本框 97] lv=0 pos=(5.98,4.88)
+  甜的
+[文本框 98] lv=0 pos=(5.98,5.7)
+  酸的
+[文本框 99] lv=0 pos=(5.98,6.53)
+  苦的
+[文本框 100] lv=0 pos=(7.53,0.65)
+  0.8
+[文本框 101] lv=0 pos=(7.55,1.47)
+  0.2
+[文本框 102] lv=0 pos=(7.7,2.28)
+  0
+[文本框 103] lv=0 pos=(7.7,3.12)
+  1
+[文本框 104] lv=0 pos=(7.7,3.93)
+  0
+[文本框 105] lv=0 pos=(7.7,4.75)
+  1
+[文本框 106] lv=0 pos=(7.7,5.57)
+  0
+[文本框 107] lv=0 pos=(7.7,6.39)
+  0
+[文本框 108] lv=0 pos=(10.47,4.59)
+  3
+[Number2] lv=0 pos=(0.69,1.05)
+  连接主义
+[IMG 01] 030-01.png 252x227px 51019B shape=2.62x2.36in pos=(0.92,2.35) sha=3bf973cdab
+
+===== SLIDE 31 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[矩形 53] lv=0 pos=(2.27,2.11)
+  x1
+[矩形 54] lv=0 pos=(2.27,3.19)
+  x2
+[矩形 55] lv=0 pos=(2.27,5.21)
+  xN
+[文本框 65] lv=0 pos=(2.37,4.27)
+  …
+[文本框 66] lv=0 pos=(4.28,4.28)
+  …
+[文本框 116] lv=0 pos=(6.06,4.28)
+  …
+[文本框 129] lv=0 pos=(8.8,4.27)
+  …
+[文本框 130] lv=0 pos=(6.63,2.11)
+  …
+[文本框 131] lv=0 pos=(6.63,3.19)
+  …
+[文本框 132] lv=0 pos=(6.63,4.26)
+  …
+[文本框 133] lv=0 pos=(6.63,5.13)
+  …
+[文本框 137] lv=0 pos=(10.54,2.12)
+  z1
+[文本框 138] lv=0 pos=(10.54,3.14)
+  z2
+[文本框 139] lv=0 pos=(10.54,5.17)
+  zM
+[文本框 140] lv=0 pos=(2.19,6.09)
+  输入
+[文本框 141] lv=0 pos=(10.44,6.09)
+  输出
+[文本框 142] lv=0 pos=(5.68,1.79)
+  Layer2
+[文本框 143] lv=0 pos=(4.07,1.79)
+  Layer1
+[文本框 144] lv=0 pos=(8.42,1.79)
+  LayerK
+[文本框 146] lv=0 pos=(6.23,6.09)
+  隐藏层
+[文本框 147] lv=0 pos=(5.62,1.06)
+  多层感知机
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+
+===== SLIDE 32 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[流程图: 接点 79] lv=0 pos=(6.32,2.73)
+  激活函数
+[文本框 81] lv=0 pos=(7.31,4.34)
+  偏置(阈值)
+[文本框 82] lv=0 pos=(3.89,4.99)
+  输入
+[文本框 83] lv=0 pos=(6.75,4.99)
+  输出
+[文本框 84] lv=0 pos=(5.32,4.22)
+  权重
+[文本框 85] lv=0 pos=(0.7,6.23)
+  每个神经元上使用的权重和阈值: 参数
+[文本框 86] lv=0 pos=(0.7,6.69)
+  每个神经元上的参数数量 = 权重数量 + 1
+
+===== SLIDE 33 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[矩形 53] lv=0 pos=(2.27,2.11)
+  x1
+[矩形 54] lv=0 pos=(2.27,3.19)
+  x2
+[矩形 55] lv=0 pos=(2.27,5.21)
+  xN
+[文本框 65] lv=0 pos=(2.37,4.27)
+  …
+[文本框 66] lv=0 pos=(4.28,4.28)
+  …
+[文本框 116] lv=0 pos=(6.06,4.28)
+  …
+[文本框 129] lv=0 pos=(8.8,4.27)
+  …
+[文本框 130] lv=0 pos=(6.63,2.11)
+  …
+[文本框 131] lv=0 pos=(6.63,3.19)
+  …
+[文本框 132] lv=0 pos=(6.63,4.26)
+  …
+[文本框 133] lv=0 pos=(6.63,5.13)
+  …
+[文本框 137] lv=0 pos=(10.54,2.12)
+  z1
+[文本框 138] lv=0 pos=(10.54,3.14)
+  z2
+[文本框 139] lv=0 pos=(10.54,5.17)
+  zM
+[文本框 140] lv=0 pos=(2.19,6.09)
+  输入
+[文本框 141] lv=0 pos=(10.44,6.09)
+  输出
+[文本框 142] lv=0 pos=(5.68,1.79)
+  Layer2
+[文本框 143] lv=0 pos=(4.07,1.79)
+  Layer1
+[文本框 144] lv=0 pos=(8.42,1.79)
+  LayerK
+[文本框 146] lv=0 pos=(6.23,6.09)
+  隐藏层
+[文本框 147] lv=0 pos=(5.62,1.06)
+  多层感知机
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+
+===== SLIDE 34 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[矩形 53] lv=0 pos=(5.58,2.37)
+  x1
+[矩形 54] lv=0 pos=(5.58,3.03)
+  x2
+[矩形 55] lv=0 pos=(5.58,4.26)
+  xN
+[文本框 65] lv=0 pos=(5.64,3.68)
+  …
+[文本框 66] lv=0 pos=(6.8,3.7)
+  …
+[文本框 116] lv=0 pos=(7.89,3.7)
+  …
+[文本框 129] lv=0 pos=(9.56,3.69)
+  …
+[文本框 130] lv=0 pos=(8.24,2.37)
+  …
+[文本框 131] lv=0 pos=(8.24,3.03)
+  …
+[文本框 132] lv=0 pos=(8.24,3.68)
+  …
+[文本框 133] lv=0 pos=(8.24,4.21)
+  …
+[文本框 137] lv=0 pos=(10.62,2.37)
+  z1
+[文本框 138] lv=0 pos=(10.62,3.0)
+  z2
+[文本框 139] lv=0 pos=(10.62,4.23)
+  zM
+[文本框 140] lv=0 pos=(5.53,4.79)
+  输入
+[文本框 141] lv=0 pos=(10.56,4.79)
+  输出
+[文本框 146] lv=0 pos=(8.0,4.79)
+  隐藏层
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[矩形 3] lv=0 pos=(5.53,2.33)
+  代码（软件）
+[矩形: 圆角 97] lv=0 pos=(2.39,2.63)
+  Data
+[矩形: 圆角 98] lv=0 pos=(2.39,3.23)
+  Data
+[矩形: 圆角 99] lv=0 pos=(2.39,3.83)
+  Data
+[矩形: 圆角 100] lv=0 pos=(2.39,4.43)
+  Data
+[矩形: 圆角 101] lv=0 pos=(3.33,2.63)
+  Data
+[矩形: 圆角 102] lv=0 pos=(3.33,3.23)
+  Data
+[矩形: 圆角 103] lv=0 pos=(3.33,3.83)
+  Data
+[矩形: 圆角 104] lv=0 pos=(3.33,4.43)
+  Data
+
+===== SLIDE 35 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[矩形 79] lv=0 pos=(5.58,2.37)
+  x1
+[矩形 80] lv=0 pos=(5.58,3.03)
+  x2
+[矩形 81] lv=0 pos=(5.58,4.26)
+  xN
+[文本框 91] lv=0 pos=(5.64,3.68)
+  …
+[文本框 92] lv=0 pos=(6.8,3.7)
+  …
+[文本框 147] lv=0 pos=(7.89,3.7)
+  …
+[文本框 161] lv=0 pos=(9.56,3.69)
+  …
+[文本框 162] lv=0 pos=(8.24,2.37)
+  …
+[文本框 163] lv=0 pos=(8.24,3.03)
+  …
+[文本框 164] lv=0 pos=(8.24,3.68)
+  …
+[文本框 165] lv=0 pos=(8.24,4.21)
+  …
+[文本框 169] lv=0 pos=(10.62,2.37)
+  z1
+[文本框 170] lv=0 pos=(10.62,3.0)
+  z2
+[文本框 171] lv=0 pos=(10.62,4.23)
+  zM
+[文本框 172] lv=0 pos=(5.53,4.79)
+  输入
+[文本框 173] lv=0 pos=(10.56,4.79)
+  输出
+[文本框 175] lv=0 pos=(8.0,4.79)
+  隐藏层
+[矩形 176] lv=0 pos=(5.53,2.33)
+  代码（软件模型）
+
+===== SLIDE 36 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[IMG 01] 036-01.png 662x191px 60671B shape=3.91x1.13in pos=(4.71,3.19) sha=8a0023c3cc
+
+===== SLIDE 37 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[矩形 76] lv=0 pos=(2.26,2.08)
+  x1
+[矩形 77] lv=0 pos=(2.26,3.05)
+  x2
+[矩形 78] lv=0 pos=(2.26,4.87)
+  xN
+[文本框 88] lv=0 pos=(2.35,4.02)
+  …
+[文本框 89] lv=0 pos=(4.07,4.04)
+  …
+[文本框 142] lv=0 pos=(5.68,4.04)
+  …
+[文本框 158] lv=0 pos=(8.15,4.03)
+  …
+[文本框 159] lv=0 pos=(6.19,2.08)
+  …
+[文本框 160] lv=0 pos=(6.19,3.05)
+  …
+[文本框 161] lv=0 pos=(6.19,4.02)
+  …
+[文本框 162] lv=0 pos=(6.19,4.8)
+  …
+[文本框 166] lv=0 pos=(9.72,2.09)
+  z1
+[文本框 167] lv=0 pos=(9.72,3.01)
+  z2
+[文本框 168] lv=0 pos=(9.72,4.84)
+  zM
+[文本框 169] lv=0 pos=(2.19,5.66)
+  输入
+[文本框 170] lv=0 pos=(9.63,5.66)
+  输出
+[文本框 175] lv=0 pos=(5.83,5.66)
+  隐藏层
+[IMG 01] 037-01.png 662x191px 60671B shape=1.48x0.43in pos=(0.74,1.6) sha=8a0023c3cc
+
+===== SLIDE 38 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[矩形 76] lv=0 pos=(2.26,2.08)
+  x1
+[矩形 77] lv=0 pos=(2.26,3.05)
+  x2
+[矩形 78] lv=0 pos=(2.26,5.62)
+  xN
+[文本框 88] lv=0 pos=(2.35,4.02)
+  …
+[文本框 89] lv=0 pos=(4.07,4.04)
+  …
+[文本框 142] lv=0 pos=(5.68,4.04)
+  …
+[文本框 158] lv=0 pos=(10.16,4.03)
+  …
+[文本框 159] lv=0 pos=(6.19,2.08)
+  …
+[文本框 160] lv=0 pos=(6.19,3.05)
+  …
+[文本框 161] lv=0 pos=(6.19,4.02)
+  …
+[文本框 162] lv=0 pos=(6.19,5.54)
+  …
+[文本框 166] lv=0 pos=(11.73,2.09)
+  z1
+[文本框 167] lv=0 pos=(11.73,3.01)
+  z2
+[文本框 168] lv=0 pos=(11.73,5.58)
+  zM
+[文本框 169] lv=0 pos=(2.19,6.41)
+  输入
+[文本框 170] lv=0 pos=(11.64,6.41)
+  输出
+[文本框 175] lv=0 pos=(6.79,6.41)
+  隐藏层
+[文本框 61] lv=0 pos=(6.7,2.08)
+  …
+[文本框 62] lv=0 pos=(6.7,3.05)
+  …
+[文本框 63] lv=0 pos=(6.7,4.02)
+  …
+[文本框 64] lv=0 pos=(6.7,5.54)
+  …
+[文本框 65] lv=0 pos=(7.15,2.08)
+  …
+[文本框 66] lv=0 pos=(7.15,3.05)
+  …
+[文本框 67] lv=0 pos=(7.15,4.02)
+  …
+[文本框 68] lv=0 pos=(7.15,5.55)
+  …
+[文本框 69] lv=0 pos=(7.62,2.08)
+  …
+[文本框 70] lv=0 pos=(7.62,3.05)
+  …
+[文本框 71] lv=0 pos=(7.62,4.02)
+  …
+[文本框 72] lv=0 pos=(7.62,5.55)
+  …
+[文本框 97] lv=0 pos=(8.09,2.08)
+  …
+[文本框 98] lv=0 pos=(8.08,3.05)
+  …
+[文本框 99] lv=0 pos=(8.08,4.02)
+  …
+[文本框 100] lv=0 pos=(8.09,5.55)
+  …
+[文本框 101] lv=0 pos=(2.35,4.38)
+  …
+[文本框 102] lv=0 pos=(4.07,4.4)
+  …
+[文本框 103] lv=0 pos=(5.68,4.4)
+  …
+[文本框 104] lv=0 pos=(10.16,4.39)
+  …
+[文本框 110] lv=0 pos=(6.19,4.37)
+  …
+[文本框 111] lv=0 pos=(6.7,4.37)
+  …
+[文本框 112] lv=0 pos=(7.15,4.38)
+  …
+[文本框 113] lv=0 pos=(7.62,4.38)
+  …
+[文本框 114] lv=0 pos=(8.08,4.38)
+  …
+[文本框 115] lv=0 pos=(2.35,4.75)
+  …
+[文本框 116] lv=0 pos=(4.07,4.77)
+  …
+[文本框 117] lv=0 pos=(5.68,4.77)
+  …
+[文本框 118] lv=0 pos=(10.16,4.76)
+  …
+[文本框 119] lv=0 pos=(6.19,4.74)
+  …
+[文本框 120] lv=0 pos=(6.7,4.74)
+  …
+[文本框 121] lv=0 pos=(7.15,4.75)
+  …
+[文本框 122] lv=0 pos=(7.62,4.75)
+  …
+[文本框 123] lv=0 pos=(8.08,4.75)
+  …
+[文本框 13] lv=0 pos=(7.79,1.59)
+  大力出奇迹！
+[文本框 14] lv=0 pos=(2.93,1.62)
+  参数规模：10B->100B
+[IMG 01] 038-01.png 662x191px 60671B shape=1.48x0.43in pos=(0.74,1.6) sha=8a0023c3cc
+
+===== SLIDE 39 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[Number1] lv=0 pos=(0.7,1.06)
+  神经网络
+[MG-文本框 3] lv=0 pos=(-0.0,2.84)
+  2022年11月30日
+[MG-文本框 3] lv=0 pos=(-0.0,4.81)
+  GPT 升级到了 3.5版本
+[MG-文本框 3] lv=0 pos=(-0.0,6.02)
+  OpenAI发布了基于GPT-3.5的AI对话产品ChatGPT
+[文本框 2] lv=0 pos=(9.33,4.69)
+  大模型
+[IMG 01] 039-01.png 662x191px 60671B shape=1.48x0.43in pos=(0.74,1.6) sha=8a0023c3cc
+[IMG 02] 039-02.png 698x698px 11803B shape=0.81x0.81in pos=(2.81,6.3) sha=4d7f73c436
+
+===== SLIDE 40 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI的发展史
+[文本框 7] lv=0 pos=(2.05,2.63)
+  Qwen
+[文本框 19] lv=0 pos=(1.21,4.38)
+  Ernie
+[文本框 22] lv=0 pos=(10.49,2.45)
+  Llma
+[文本框 27] lv=0 pos=(11.08,4.29)
+  Grok
+[文本框 31] lv=0 pos=(2.76,1.39)
+  ChatGLM
+[文本框 35] lv=0 pos=(8.9,1.39)
+  Cloude
+[矩形 32] lv=0 pos=(2.46,5.76)
+  文本生成
+[矩形 39] lv=0 pos=(2.46,6.14)
+  图片生成
+[矩形 40] lv=0 pos=(2.46,6.52)
+  视频生成
+[矩形 41] lv=0 pos=(2.46,6.88)
+  音频合成
+[矩形 43] lv=0 pos=(9.48,5.76)
+  音频理解
+[矩形 44] lv=0 pos=(9.48,6.14)
+  视频理解
+[矩形 45] lv=0 pos=(9.48,6.52)
+  图片处理
+[矩形 46] lv=0 pos=(9.48,6.88)
+  语音识别
+[IMG 01] 040-01.png 698x698px 11803B shape=0.81x0.81in pos=(2.81,6.3) sha=4d7f73c436
+[IMG 02] 040-02.png 667x546px 272538B shape=7.64x5.88in pos=(2.83,1.39) sha=7c72db78bb
+[IMG 03] 040-03.jpg 2475x2475px 279457B shape=0.65x0.65in pos=(2.83,2.52) sha=7a07f4557d
+[IMG 04] 040-04.png 698x698px 83637B shape=0.57x0.64in pos=(9.48,4.72) sha=235016dd6a
+[IMG 05] 040-05.jpg 2696x2000px 136827B shape=0.8x0.59in pos=(9.85,2.38) sha=6e33bf4322
+[IMG 06] 040-06.jpg 4096x2340px 175815B shape=0.71x0.4in pos=(10.4,4.3) sha=391277e911
+[IMG 07] 040-07.png 180x136px 22648B shape=0.88x0.67in pos=(3.92,1.3) sha=136e7138c9
+[IMG 08] 040-08.png 502x476px 79031B shape=0.63x0.59in pos=(8.22,1.29) sha=c478a50be0
+[IMG 09] 040-09.png 698x698px 11803B shape=0.81x0.81in pos=(9.83,6.3) sha=4d7f73c436
+
+===== SLIDE 41 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  认识AI
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  01
+[文本占位符 3] lv=0,0 pos=(6.95,3.2)
+  AI发展史
+  AI市场分布
+
+===== SLIDE 42 =====
+[矩形 39] lv=0 pos=(0.76,1.28)
+  智能应用
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI市场分布
+[矩形 23] lv=0 pos=(0.76,5.93)
+  基础算力
+[矩形 38] lv=0 pos=(0.76,4.15)
+  核心算法
+[椭圆 41] lv=0 pos=(2.31,1.81)
+  新零售
+[椭圆 42] lv=0,0 pos=(8.99,2.93)
+  物流
+  运输
+[椭圆 43] lv=0,0 pos=(2.85,2.99)
+  企业
+  服务
+[椭圆 44] lv=0 pos=(11.03,1.85)
+  教育
+[椭圆 45] lv=0 pos=(3.55,1.86)
+  游戏
+[椭圆 46] lv=0 pos=(6.03,2.66)
+  电信
+[椭圆 47] lv=0 pos=(8.0,1.88)
+  出行
+[椭圆 48] lv=0 pos=(9.43,1.86)
+  社交
+[椭圆 49] lv=0 pos=(1.32,2.53)
+  旅游
+[椭圆 50] lv=0 pos=(6.44,1.61)
+  工具
+[椭圆 51] lv=0 pos=(4.5,2.8)
+  物联网
+[椭圆 52] lv=0,0 pos=(10.48,2.92)
+  广告
+  营销
+[椭圆 54] lv=0 pos=(7.5,2.85)
+  房地产
+[椭圆 55] lv=0 pos=(4.81,1.74)
+  金融
+[文本框 2] lv=0,0 pos=(4.57,6.0)
+  英伟达、超威、寒武纪
+  亚马逊、阿里云、微软
+[文本框 3] lv=0 pos=(4.16,4.78)
+  OpenAI、深度求索、Meta、Google
+
+===== SLIDE 43 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI市场分布
+[矩形 25] lv=0 pos=(6.5,2.07)
+  大模型(软件)
+[IMG 01] 043-01.png 384x384px 4002B shape=1.5x1.5in pos=(0.94,2.7) sha=25bc1da70d
+
+===== SLIDE 44 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  AI市场分布
+[矩形 25] lv=0 pos=(10.51,2.07)
+  大模型(软件)
+[矩形 7] lv=0 pos=(6.36,2.07)
+  传统软件
+[文本框 16] lv=0 pos=(8.54,5.36)
+  智能应用(Agent)
+[椭圆 21] lv=0 pos=(0.82,5.84)
+  新零售
+[椭圆 22] lv=0,0 pos=(8.41,6.6)
+  物流
+  运输
+[椭圆 23] lv=0,0 pos=(2.29,6.6)
+  企业
+  服务
+[椭圆 24] lv=0 pos=(9.92,5.84)
+  教育
+[椭圆 27] lv=0 pos=(2.33,5.84)
+  游戏
+[椭圆 28] lv=0 pos=(5.37,6.6)
+  电信
+[椭圆 29] lv=0 pos=(6.89,5.84)
+  出行
+[椭圆 30] lv=0 pos=(8.41,5.84)
+  社交
+[椭圆 32] lv=0 pos=(5.37,5.84)
+  工具
+[椭圆 33] lv=0 pos=(3.85,6.6)
+  物联网
+[椭圆 34] lv=0,0 pos=(9.92,6.6)
+  广告
+  营销
+[椭圆 36] lv=0 pos=(6.89,6.6)
+  房地产
+[椭圆 37] lv=0 pos=(3.85,5.84)
+  金融
+[椭圆 39] lv=0 pos=(0.82,6.6)
+  旅游
+[IMG 01] 044-01.png 384x384px 4002B shape=1.5x1.5in pos=(0.94,2.7) sha=25bc1da70d
+
+===== SLIDE 45 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  大模型使用
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  02
+[文本占位符 3] lv=0,0 pos=(6.95,3.2)
+  大模型部署
+  大模型调用
+
+===== SLIDE 46 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  大模型部署
+[IMG 01] 046-01.png 3568x1420px 37961B shape=8.84x3.52in pos=(1.18,2.09) sha=e2326df649
+
+===== SLIDE 47 =====
+[标题 1] lv=0 pos=(0.63,0.37)
+  大模型部署
+[内容占位符 5] lv=0 pos=(0.63,1.18)
+  自己部署
+[内容占位符 5] lv=0 pos=(0.63,4.67)
+  他人部署
+[内容占位符 5] lv=0 pos=(1.03,1.76)
+  云服务器部署
+[内容占位符 5] lv=0 pos=(1.03,3.09)
+  本地机器部署
+[内容占位符 5] lv=0 pos=(1.44,2.25)
+  优势：前期成本低，维护简单
+[内容占位符 5] lv=0 pos=(1.44,2.63)
+  劣势：数据不安全，长期使用成本高
+[内容占位符 5] lv=0 pos=(1.44,3.52)
+  优势：数据安全；长期成本低
+[内容占位符 5] lv=0 pos=(1.44,3.9)
+  劣势：初期成本高，维护困难
+[内容占位符 5] lv=0 pos=(1.44,5.57)
+  优势：无需部署
+[内容占位符 5] lv=0 pos=(1.44,5.95)
+  劣势：数据不安全，长期成本高
+[文本框 21] lv=0 pos=(7.27,4.98)
+  API接口
+[IMG 01] 047-01.png 113x24px 3118B shape=1.18x0.25in pos=(1.22,5.22) sha=e1262c0ae0
+[IMG 02] 047-02.png 104x27px 2328B shape=1.08x0.28in pos=(2.77,5.19) sha=77bcda3cf9
+[IMG 03] 047-03.png 156x37px 4640B shape=1.13x0.27in pos=(4.24,5.2) sha=ba46ae25c7
+[IMG 04] 047-04.png 122x33px 2638B shape=1.04x0.28in pos=(5.74,5.19) sha=a12dcab758
+
+===== SLIDE 48 =====
+[矩形 12] lv=0 pos=(1.75,2.23)
+  本机
+[标题 1] lv=0 pos=(0.63,0.37)
+  大模型部署-自己部署(本机)
+[矩形 22] lv=0 pos=(9.16,3.0)
+  大模型(软件)
+[文本框 15] lv=0 pos=(1.9,2.8)
+  Python解释器
+[文本框 23] lv=0 pos=(3.38,2.8)
+  安装依赖
+[文本框 24] lv=0 pos=(4.35,2.8)
+  手动下载模型
+[文本框 25] lv=0 pos=(5.72,2.8)
+  编写脚本
+[矩形 26] lv=0 pos=(8.51,3.38)
+  Ollama、LM Studio一键下载、运行大模型
+
+===== SLIDE 49 =====
+[内容占位符 1] lv=0,0 pos=(0.63,1.05)
+  Ollama是一种用于快速下载、部署、管理大模型的工具，官网地址：https://ollama.com
+  
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型部署-自己部署(本机)
+[IMG 01] 049-01.png 1312x780px 69532B shape=0.39x0.23in pos=(7.25,1.41) sha=af5272096b
+[IMG 02] 049-02.png 1312x780px 69532B shape=8.49x5.02in pos=(2.26,1.83) sha=af5272096b
+
+===== SLIDE 50 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型部署-自己部署(本机)
+[内容占位符 1] lv=0,0 pos=(0.63,1.05)
+  Ollama是一种用于快速下载、部署、管理大模型的工具，官网地址：https://ollama.com
+  
+[IMG 01] 050-01.png 1312x780px 69532B shape=8.49x0.69in pos=(2.26,1.83) sha=af5272096b
+[IMG 02] 050-02.png 843x471px 24013B shape=7.03x3.93in pos=(2.87,3.08) sha=7c2c4adbc4
+
+===== SLIDE 51 =====
+[文本占位符 2] lv=0,1,0,1,0,1 pos=(4.39,1.49)
+  大模型部署方式
+  自己部署、他人部署(三方平台)
+  本机部署（Ollama）
+  参考资料中的笔记完成
+  使用Apifox访问大模型
+  Ollama默认端口11434，后续详细讲解
+
+===== SLIDE 52 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型部署-阿里云百炼
+[内容占位符 1] lv=0,0,0,0 pos=(0.63,1.91)
+  1.登录阿里云 https://www.aliyun.com/
+  2.开通 大模型服务平台百炼  服务
+  3.申请百炼平台 API-KEY
+  4.选择模型并使用
+[IMG 01] 052-01.png 113x24px 3118B shape=1.18x0.25in pos=(0.63,1.41) sha=e1262c0ae0
+[IMG 02] 052-02.png 104x27px 2328B shape=1.08x0.28in pos=(2.19,1.38) sha=77bcda3cf9
+[IMG 03] 052-03.png 156x37px 4640B shape=1.13x0.27in pos=(3.65,1.39) sha=ba46ae25c7
+[IMG 04] 052-04.png 122x33px 2638B shape=1.04x0.28in pos=(5.15,1.38) sha=a12dcab758
+
+===== SLIDE 53 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  大模型使用
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  02
+[文本占位符 3] lv=0,0 pos=(6.95,3.2)
+  大模型部署
+  大模型调用
+
+===== SLIDE 54 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型调用-常见参数
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  使用大模型需要传递的参数，在百炼平台给出了详细说明，并且不同平台的核心参数，基本都一致
+[IMG 01] 054-01.png 1919x885px 182571B shape=11.95x5.51in pos=(0.77,1.65) sha=42d75ce13b
+
+===== SLIDE 55 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型调用-常见参数
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  使用大模型需要传递的参数，在访问大模型时都需要在请求体中以json的形式进行传递
+[文本框 7] lv=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 pos=(0.85,1.81)
+  {
+      "model": "qwen-plus",
+      "messages": [
+          {
+              "role": "system",
+              "content": "你是东哥的助手小月月"
+          },
+          {
+              "role": "user", 
+              "content": "你是谁？"
+          },
+          {
+              "role": "assistant",
+              "content": "您好，有什么可以帮助您？"
+          }
+      ],
+      "stream": true, 
+      "enable_search": true
+  }
+[文本框 11] lv=0 pos=(5.72,1.72)
+  model: 告诉平台，当前调用哪个模型
+[文本框 12] lv=0 pos=(5.72,2.1)
+  messages: 发送给模型的数据，模型会根据这些数据给出合适的响应
+[文本框 13] lv=0 pos=(6.96,2.47)
+  content: 消息内容
+[文本框 14] lv=0,0,0,0 pos=(6.96,2.81)
+  role: 消息角色(类型)
+        - user: 用户消息
+        - system: 系统消息
+        - assistant：模型响应消息
+[文本框 15] lv=0,0 pos=(5.72,4.34)
+  stream: 调用方式
+          - true: 非阻塞调用(流式调用)        - false: 阻塞调用(一次性响应),默认值
+[文本框 17] lv=0,0,0 pos=(5.72,5.71)
+  enable_search: 联网搜索，启用后，模型会将搜索结果作为参考信息
+                 - true: 开启
+                 - false: 关闭(默认)
+[文本框 21] lv=0 pos=(-2.56,2.23)
+  西北大学是211吗?
+[文本框 23] lv=0 pos=(-5.85,2.72)
+  是
+[文本框 25] lv=0 pos=(-1.98,3.13)
+  是985吗?
+[文本框 28] lv=0 pos=(10.88,4.29)
+  东哥帅不帅?
+[文本框 29] lv=0,0,0 pos=(5.79,4.81)
+  作为一个AI助手, 我并不能直接判断东哥帅不帅, 
+  你可以提供给我更多有关东哥的信息,我帮你把
+  把关
+[IMG 01] 055-01.png 805x799px 42660B shape=5.6x5.56in pos=(5.64,1.65) sha=cad69c0430
+[IMG 02] 055-02.png 802x800px 42552B shape=5.56x5.54in pos=(5.68,1.65) sha=e4c588ea6f
+[IMG 03] 055-03.png 834x770px 22252B shape=6.01x5.56in pos=(0.76,1.63) sha=028dd196bd
+[IMG 04] 055-04.png 827x776px 23564B shape=5.98x5.57in pos=(6.71,1.65) sha=1cd7a64c3d
+
+===== SLIDE 56 =====
+[文本占位符 2] lv=0,0,1,0,1,0,1,1 pos=(4.39,1.49)
+  model
+  messages
+  role: user/system/assistant
+  stream
+  默认为false
+  enbale_search
+  默认为false
+  
+
+===== SLIDE 57 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型调用-响应数据
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  在与大模型交互的过程中，大模型响应的数据是json格式的数据
+[IMG 01] 057-01.png 1920x905px 140955B shape=11.66x5.5in pos=(0.78,1.65) sha=d9bc06a7db
+
+===== SLIDE 58 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  大模型调用-响应数据
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  在与大模型交互的过程中，大模型响应的数据是json格式的数据
+[文本框 19] lv=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 pos=(0.76,1.58)
+  {
+      "choices": [
+          {
+              "message": {
+                  "role": "assistant",
+                  “content”: “我是通义千问，阿里巴巴…"
+              },
+              "finish_reason": "stop",
+              "index": 0
+          }
+      ],
+      "object": "chat.completion",
+      "usage": {
+          "prompt_tokens": 22,
+          "completion_tokens": 80,
+          "total_tokens": 102, 
+      },
+      "created": 1748068508,
+      "system_fingerprint": null,
+      "model": "qwen-plus",
+      "id": "chatcmpl-99f8d040-0f49-955b-943a-21c83"
+  }
+[文本框 21] lv=0,0,0,0 pos=(5.6,1.72)
+  choices: 模型生成的内容数组，可以包含一条或多条内容
+           - message: 本次调用模型输出的消息
+           - finish_reason: 自然结束(stop)，生成内容过长(length)
+           - index: 当前内容在choices数组中的索引
+[文本框 22] lv=0 pos=(5.6,3.06)
+  object: 始终为chat.completion, 无需关注
+[文本框 23] lv=0,0,0,0 pos=(5.6,3.56)
+  usage: 本次对话过程中使用的token信息
+         - prompt_tokens: 用户的输入转换成token的个数
+         - completion_tokens: 模型生成的回复转换成token的个数
+         - total_tokens: 用户输入和模型生成的总token个数
+[文本框 24] lv=0 pos=(5.6,5.02)
+  created: 本次会话被创建时的时间戳
+[文本框 25] lv=0 pos=(5.6,5.41)
+  system_fingerprint: 固定为null，无需关注
+[文本框 26] lv=0 pos=(5.6,5.78)
+  model: 本次会话使用的模型名称
+[文本框 27] lv=0 pos=(5.6,6.17)
+  id: 本次调用的唯一标识符
+[文本框 4] lv=0,0 pos=(-5.83,2.33)
+  在大语言模型中，Token 是大模型处理文本的基本单位，
+  可以理解为模型“看得懂”的最小文本片段
+[文本框 15] lv=0,0 pos=(-5.83,3.13)
+  用户输入的内容都需要转换成token，才能让大模型
+  更好的处理
+[文本框 16] lv=0,0 pos=(-5.83,3.93)
+  英文： 一个token ≈ 4个字符
+  中文：一个汉字 ≈ 1~2个token
+
+===== SLIDE 59 =====
+[文本占位符 1] lv=0 pos=(6.69,2.7)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.93)
+  03
+
+===== SLIDE 60 =====
+[IMG 01] 060-01.png 1826x953px 119351B shape=12.44x6.49in pos=(0.45,0.61) sha=51925d9a40
+
+===== SLIDE 61 =====
+[文本框 5] lv=0 pos=(8.17,5.1)
+  Spring AI
+[文本框 6] lv=0 pos=(2.41,5.1)
+  LangChain4j
+[文本框 8] lv=0 pos=(2.62,6.27)
+  https://docs.langchain4j.dev/
+[IMG 01] 061-01.png 1600x1600px 374264B shape=3.54x3.54in pos=(2.09,1.38) sha=ea8ec0836b
+[IMG 02] 061-02.png 388x388px 8633B shape=2.4x2.4in pos=(8.17,1.95) sha=29e0b09f41
+[IMG 03] 061-03.png 289x229px 54066B shape=4.98x3.95in pos=(6.88,1.78) sha=78159994a9
+
+===== SLIDE 62 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,0 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  Tools工具
+
+===== SLIDE 63 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,1,1,1,1,1,1,0,0 pos=(6.95,3.2)
+  会话功能
+  快速入门
+  Spring整合LangChain4j
+  AiServices工具类
+  流式调用
+  消息注解
+  会话记忆
+  RAG知识库
+  Tools工具
+
+===== SLIDE 64 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-快速入门
+[内容占位符 1] lv=0,0,0 pos=(0.76,1.13)
+  1.引入Langchian4j依赖
+  2.构建OpenAiChatModel对象 
+  3.调用chat方法与大模型交互
+[Rectangle 1] lv=0 pos=(6.17,1.63)
+  <dependency>  <groupId>dev.langchain4j</groupId>  <artifactId>langchain4j-open-ai</artifactId>  <version>1.0.1</version></dependency>
+[Rectangle 2] lv=0 pos=(6.01,3.91)
+  OpenAiChatModel model  = OpenAiChatModel.builder()        .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")        .apiKey(System.getenv("API-KEY"))        .modelName("qwen-plus")        .build();
+[Rectangle 3] lv=0 pos=(6.1,6.21)
+  String result = model.chat("东哥帅不帅");System.out.println(result);
+
+===== SLIDE 65 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-快速入门
+[内容占位符 1] lv=0 pos=(0.76,1.13)
+  打印日志信息
+[Rectangle 1] lv=0 pos=(6.09,1.56)
+  <dependency>  <groupId>ch.qos.logback</groupId>  <artifactId>logback-classic</artifactId>  <version>1.5.18</version></dependency>
+[Rectangle 3] lv=0 pos=(6.09,3.93)
+  OpenAiChatModel model  = OpenAiChatModel.builder()        .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")        .apiKey(System.getenv("API-KEY"))        .modelName("qwen-plus")        .logRequests(true)        .logResponses(true)        .build();
+
+===== SLIDE 66 =====
+[文本占位符 2] lv=0,0,1,0,0 pos=(4.39,1.49)
+  引入langchain4j-open-ai依赖
+  构建OpenAIChatModel对象
+  配置url、api-key、模型名称
+  调用chat方法完成对话
+  引入logback依赖，并设置logRequests和logResponses
+
+===== SLIDE 67 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,1,1,1,1,1,1,0,0 pos=(6.95,3.2)
+  会话功能
+  快速入门
+  Spring整合LangChain4j
+  AiServices工具类
+  流式调用
+  消息注解
+  会话记忆
+  RAG知识库
+  Tools工具
+
+===== SLIDE 68 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-Spring整合LangChain4j
+[内容占位符 1] lv=0,0,0,0 pos=(0.76,1.13)
+  1.构建springboot项目
+  2.引入起步依赖
+  3.application.yml中配置大模型
+  4.开发接口，调用大模型
+[Rectangle 1] lv=0 pos=(6.01,1.64)
+  <dependency>    <groupId>dev.langchain4j</groupId>    <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>    <version>1.0.1-beta6</version></dependency>
+[Rectangle 2] lv=0 pos=(6.09,3.79)
+  langchain4j:  open-ai:    chat-model:      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1      api-key: ${API-KEY}      model-name: qwen-plus
+[Rectangle 3] lv=0 pos=(0.94,4.11)
+  @RestControllerpublic class ChatController {    @Autowired    private OpenAiChatModel model;    @RequestMapping("/chat")    public String chat(String message){        String result = model.chat(message);        return result;    }}
+
+===== SLIDE 69 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-Spring整合LangChain4j
+[内容占位符 1] lv=0 pos=(0.76,1.13)
+  打印日志
+[Rectangle 1] lv=0,0 pos=(6.17,1.7)
+  langchain4j:  open-ai:    chat-model:      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1      api-key: ${API-KEY}      model-name: qwen-plus      log-requests: true      log-responses: true
+  logging:  level:    dev.langchain4j: debug
+
+===== SLIDE 70 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,1,1,1,1,1,1,0,0 pos=(6.95,3.2)
+  会话功能
+  快速入门
+  Spring整合LangChain4j
+  AiServices工具类
+  流式调用
+  消息注解
+  会话记忆
+  RAG知识库
+  Tools工具
+
+===== SLIDE 71 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-AiServices工具类
+[Rectangle 3] lv=0 pos=(4.4,2.43)
+  @RestControllerpublic class ChatController {    @Autowired    private OpenAiChatModel model;    @RequestMapping("/chat")    public String chat(String message){        String result = model.chat(message);        return result;    }}
+
+===== SLIDE 72 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-AiServices工具类
+[矩形: 圆角 1] lv=0 pos=(4.58,3.49)
+  OpenAIChatModel model
+[矩形 7] lv=0 pos=(8.58,2.37)
+  大模型(软件)
+[文本框 11] lv=0,0,0 pos=(2.41,3.15)
+  会话记忆
+  Rag知识库
+  Tools工具
+
+===== SLIDE 73 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-AiServices工具类
+[内容占位符 1] lv=0,0,0,0 pos=(0.76,1.13)
+  1.引入依赖
+  2.声明接口
+  3.使用AiServices为接口创建代理对象
+  4.在Controller中注入并使用
+[Rectangle 1] lv=0 pos=(6.01,1.68)
+  public interface ConsultantService {       //用于聊天的方法,message为用户输入的内容    public String chat(String message);}
+[Rectangle 2] lv=0 pos=(6.1,1.57)
+  <dependency>    <groupId>dev.langchain4j</groupId>    <artifactId>langchain4j-spring-boot-starter</artifactId>    <version>1.0.1-beta6</version></dependency>
+[Rectangle 4] lv=0 pos=(6.1,4.88)
+  @Configurationpublic class CommonConfig {    @Autowired    private OpenAiChatModel model;    @Bean    public ConsultantService consultantService() {        ConsultantService cs = AiServices.builder(ConsultantService.class)                .chatModel(model)                .build();        return cs;    }}
+[Rectangle 5] lv=0 pos=(0.94,4.08)
+  @RestControllerpublic class ChatController {    @Autowired    private ConsultantService consultantService;    @RequestMapping("/chat")    public String chat(String message){        String result = consultantService.chat(message);        return result;    }}
+
+===== SLIDE 74 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-AiServices工具类
+[内容占位符 1] lv=0 pos=(0.76,1.13)
+  声明式使用
+[Rectangle 1] lv=0 pos=(6.1,5.22)
+  public interface ConsultantService {       //用于聊天的方法,message为用户输入的内容    public String chat(String message);}
+[Rectangle 3] lv=0 pos=(6.1,4.43)
+  @AiService(        wiringMode = AiServiceWiringMode.EXPLICIT,        chatModel = "openAiChatModel")
+
+===== SLIDE 75 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,1,1,1,1,1,1,0,0 pos=(6.95,3.2)
+  会话功能
+  快速入门
+  Spring整合LangChain4j
+  AiServices工具类
+  流式调用
+  消息注解
+  会话记忆
+  RAG知识库
+  Tools工具
+
+===== SLIDE 76 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-流式调用
+[内容占位符 1] lv=0,0,0,0 pos=(0.76,1.13)
+  1.引入依赖
+  2.配置流式模型对象
+  3.切换接口中方法的返回值类型
+  4.修改Controller中的代码
+[Rectangle 1] lv=0 pos=(6.25,1.2)
+  <dependency>    <groupId>org.springframework.boot</groupId>    <artifactId>spring-boot-starter-webflux</artifactId></dependency><dependency>    <groupId>dev.langchain4j</groupId>    <artifactId>langchain4j-reactor</artifactId>    <version>1.0.1-beta6</version></dependency>
+[Rectangle 2] lv=0 pos=(6.17,4.53)
+  langchain4j:  open-ai:    streaming-chat-model:      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1      api-key: ${API-KEY}      model-name: qwen-plus      log-requests: true      log-responses: true
+[Rectangle 3] lv=0 pos=(0.86,5.06)
+  public interface ConsultantService {    public Flux<String> chat(String message);}
+[Rectangle 4] lv=0 pos=(0.85,4.2)
+  @AiService(        wiringMode = AiServiceWiringMode.EXPLICIT,        chatModel = "openAiChatModel",        streamingChatModel = "openAistreamingChatModel")
+
+===== SLIDE 77 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-流式调用
+[内容占位符 1] lv=0 pos=(0.76,1.13)
+  对接前端页面
+[IMG 01] 077-01.png 657x178px 10096B shape=6.84x1.85in pos=(4.81,1.36) sha=d0e8eac179
+[IMG 02] 077-02.png 434x239px 10976B shape=4.52x2.49in pos=(4.81,3.44) sha=98cca8539f
+
+===== SLIDE 78 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,1,1,1,1,1,1,0,0 pos=(6.95,3.2)
+  会话功能
+  快速入门
+  Spring整合LangChain4j
+  AiServices工具类
+  流式调用
+  消息注解
+  会话记忆
+  RAG知识库
+  Tools工具
+
+===== SLIDE 79 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-消息注解
+[IMG 01] 079-01.png 768x764px 40353B shape=6.09x6.06in pos=(3.1,1.07) sha=6b77fe50c7
+
+===== SLIDE 80 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-消息注解
+[内容占位符 1] lv=0,0 pos=(0.76,1.13)
+  @SystemMessage
+  @UserMessage
+[Rectangle 1] lv=0 pos=(6.1,1.74)
+  @SystemMessage(“你是东哥的助手小月月，温柔貌美又多金。")public Flux<String> chat(String message);
+[Rectangle 2] lv=0 pos=(6.1,2.6)
+  @SystemMessage(fromResource = "system.txt")public Flux<String> chat(String message);
+[Rectangle 4] lv=0 pos=(6.07,4.08)
+  @UserMessage("你是东哥的助手小月月，温柔貌美又多金。{{it}}")public Flux<String> chat(String message);
+[Rectangle 5] lv=0 pos=(6.1,4.88)
+  @UserMessage("你是东哥的助手小月月，温柔貌美又多金。{{msg}}")public Flux<String> chat(@V("msg") String message);
+
+===== SLIDE 81 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,1,1,1,1,1,1,0,0 pos=(6.95,3.2)
+  会话功能
+  快速入门
+  Spring整合LangChain4j
+  AiServices工具类
+  流式调用
+  消息注解
+  会话记忆
+  RAG知识库
+  Tools工具
+
+===== SLIDE 82 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  大模型是不具备记忆能力的，要想让大模型记住之前聊天的内容，唯一的办法就是把之前聊天的内容与新的提示词一起发给大模型。
+[IMG 01] 082-01.png 683x556px 34814B shape=6.55x5.33in pos=(2.95,2.08) sha=45a9fc5389
+
+===== SLIDE 83 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  大模型是不具备记忆能力的，要想让大模型记住之前聊天的内容，唯一的办法就是把之前聊天的内容与新的提示词一起发给大模型。
+[矩形 5] lv=0 pos=(0.73,2.5)
+  浏览器
+[矩形 8] lv=0 pos=(4.68,2.5)
+  Web后端
+[矩形 9] lv=0 pos=(10.29,2.51)
+  大模型
+[矩形 12] lv=0 pos=(5.06,4.97)
+  存储对象
+[文本框 16] lv=0 pos=(1.51,2.94)
+  西北大学是211吗?
+[文本框 20] lv=0 pos=(1.51,2.94)
+  西北大学是211吗?
+[文本框 22] lv=0 pos=(5.13,5.27)
+  西北大学是211吗?
+[文本框 26] lv=0 pos=(10.29,3.59)
+  是的
+[文本框 29] lv=0 pos=(5.13,5.54)
+  是的
+[文本框 32] lv=0 pos=(2.04,4.24)
+  是985吗?
+[文本框 34] lv=0 pos=(2.04,4.24)
+  是985吗?
+[文本框 36] lv=0 pos=(5.13,5.81)
+  是985吗?
+[文本框 37] lv=0 pos=(5.13,5.27)
+  西北大学是211吗?
+[文本框 38] lv=0 pos=(10.29,2.94)
+  西北大学是211吗?
+[文本框 40] lv=0 pos=(5.06,3.62)
+  是的
+[文本框 41] lv=0 pos=(5.06,3.62)
+  是的
+[文本框 43] lv=0 pos=(5.13,5.27)
+  西北大学是211吗?
+[文本框 44] lv=0 pos=(5.13,5.54)
+  是的
+[文本框 45] lv=0 pos=(5.13,5.81)
+  是985吗?
+[文本框 55] lv=0 pos=(10.56,4.04)
+  西北大学是211吗?
+[文本框 56] lv=0 pos=(10.56,4.3)
+  是的
+[文本框 57] lv=0 pos=(10.56,4.57)
+  是985吗?
+
+===== SLIDE 84 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆
+[内容占位符 1] lv=0,0 pos=(0.76,1.13)
+  1.定义会话记忆对象
+  2.配置会话记忆对象
+[Rectangle 2] lv=0 pos=(6.1,1.2)
+  public interface ChatMemory {       Object id();//记忆存储对象的唯一标识    void add(ChatMessage var1);//添加一条会话记忆    List<ChatMessage> messages();//获取所有会话记忆    void clear();//清除所有会话记忆}
+[Rectangle 5] lv=0 pos=(6.1,4.99)
+  @Beanpublic ChatMemory chatMemory() {    return MessageWindowChatMemory.builder()            .maxMessages(20)            .build();}
+[Rectangle 6] lv=0 pos=(0.79,3.97)
+  @AiService(        wiringMode = AiServiceWiringMode.EXPLICIT,        chatModel = "openAiChatModel",        streamingChatModel = "openAiStreamingChatModel",        chatMemory = "chatMemory")public interface ConsultantService {    @SystemMessage(fromResource = "system.txt")    public Flux<String> chat(String message);}
+[IMG 01] 084-01.png 485x74px 7544B shape=5.05x0.77in pos=(5.91,3.66) sha=d5ff308a46
+
+===== SLIDE 85 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆隔离
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  刚才我们做的会话记忆，所有会话使用的是同一个记忆存储对象，因此不同会话之间的记忆并没有做到隔离
+[Rectangle 2] lv=0 pos=(6.1,1.2)
+  public interface ChatMemory {       Object id();//记忆存储对象的唯一标识    void add(ChatMessage var1);//添加一条会话记忆    List<ChatMessage> messages();//获取所有会话记忆    void clear();//清除所有会话记忆}
+[Rectangle 5] lv=0 pos=(6.1,4.99)
+  @Beanpublic ChatMemory chatMemory() {    return MessageWindowChatMemory.builder()            .maxMessages(20)            .build();}
+
+===== SLIDE 86 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆隔离
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  刚才我们做的会话记忆，多次会话使用的是同一个记忆存储对象，因此多次会话之间的记忆并没有做到隔离
+[矩形 4] lv=0 pos=(8.76,2.97)
+  ChatMemory     1, messages
+[矩形 15] lv=0 pos=(8.76,5.46)
+  ChatMemory     2, messages
+[文本框 26] lv=0 pos=(3.89,2.74)
+  memoryId=1&message=aaaa
+[文本框 39] lv=0 pos=(3.89,4.86)
+  memoryId=2&message=bbbb
+[文本框 48] lv=0 pos=(3.89,5.65)
+  memoryId=2&message=cccc
+[IMG 01] 086-01.png 420x411px 10932B shape=2.71x2.65in pos=(0.82,1.75) sha=f8899c971b
+[IMG 02] 086-02.png 422x414px 11252B shape=2.71x2.66in pos=(0.82,4.46) sha=c3e46c95eb
+[IMG 03] 086-03.png 148x55px 2244B shape=1.02x0.38in pos=(2.43,5.46) sha=184a3df712
+
+===== SLIDE 87 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆隔离
+[内容占位符 1] lv=0,0,0,0,0 pos=(0.48,1.13)
+  1.定义会话记忆对象提供者
+  2.配置会话记忆对象提供者
+  3.ConsultantService接口方法中添加参数memoryId
+  4.Controller中chat接口接收memoryId
+  5.前端页面请求时传递memoryId
+[Rectangle 1] lv=0 pos=(6.1,1.45)
+  @Beanpublic ChatMemoryProvider chatMemoryProvider() {    ChatMemoryProvider chatMemoryProvider = new ChatMemoryProvider() {        @Override        public ChatMemory get(Object memoryId) {            return MessageWindowChatMemory.builder()                    .id(memoryId)                    .maxMessages(20)                    .build();        }    };    return chatMemoryProvider;}
+[Rectangle 2] lv=0 pos=(6.15,5.26)
+  @AiService(        wiringMode = AiServiceWiringMode.EXPLICIT,        chatModel = "openAiChatModel",        streamingChatModel = "openAiStreamingChatModel",        chatMemory = "chatMemory",        chatMemoryProvider = "chatMemoryProvider")
+[Rectangle 4] lv=0 pos=(0.79,4.53)
+  public interface ConsultantService {    @SystemMessage(fromResource = "system.txt")    public Flux<String> chat(            @MemoryId String memoryId            , @UserMessage String message    );}
+
+===== SLIDE 88 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆持久化
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  刚才我们做的会话记忆，只要后端重启，会话记忆就没有了
+[Rectangle 2] lv=0 pos=(0.92,1.87)
+  public class MessageWindowChatMemory implements ChatMemory {    private final String id;    private final ChatMemoryStore store;    public void add(ChatMessage message) {        this.store.updateMessages(this.id, messages);    }    public List<ChatMessage> messages() {        return this.store.getMessages(this.id);    }    public void clear() {        this.store.deleteMessages(this.id);    }}
+[Rectangle 3] lv=0 pos=(6.32,3.37)
+  return MessageWindowChatMemory.builder()        .id(memoryId)        .maxMessages(20)        .build();
+[Rectangle 5] lv=0 pos=(7.22,1.55)
+  public interface ChatMemoryStore {    List<ChatMessage> getMessages(Object memoryId);    void updateMessages(Object memoryId,                         List<ChatMessage> messages);    void deleteMessages(Object memoryId);}
+[Rectangle 7] lv=0 pos=(7.1,4.29)
+  class SingleSlotChatMemoryStore implements ChatMemoryStore {    private List<ChatMessage> messages = new ArrayList();    public List<ChatMessage> getMessages(Object memoryId) {        return this.messages;    }    public void updateMessages(Object memoryId,                               List<ChatMessage> messages) {        this.messages = messages;    }    public void deleteMessages(Object memoryId) {        this.messages = new ArrayList();    }}
+[IMG 01] 088-01.png 497x71px 9991B shape=5.18x0.74in pos=(7.1,3.53) sha=916dd38ffa
+
+===== SLIDE 89 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆持久化-redis
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  刚才我们做的会话记忆，只要后端重启，会话记忆就没有了
+[Rectangle 5] lv=0 pos=(7.22,1.55)
+  public interface ChatMemoryStore {    List<ChatMessage> getMessages(Object memoryId);    void updateMessages(Object memoryId,                         List<ChatMessage> messages);    void deleteMessages(Object memoryId);}
+[Rectangle 1] lv=0 pos=(0.86,3.88)
+  public class RedisChatMemoryStore implements ChatMemoryStore {     @Override     public List<ChatMessage> getMessages(Object o) {              //TODO 从redis中获取数据        return List.of();     }     @Override     public void updateMessages(Object o, List<ChatMessage> list) {             //TODO 更新redis中数据   }     @Override     public void deleteMessages(Object o) {             //TODO 删除redis中数据   }}
+[IMG 01] 089-01.png 271x228px 47338B shape=2.82x2.38in pos=(8.56,1.68) sha=c97cfa5c84
+[IMG 02] 089-02.png 289x228px 65734B shape=3.01x2.38in pos=(8.46,4.39) sha=76a982d0a3
+
+===== SLIDE 90 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  会话功能-会话记忆持久化-redis
+[内容占位符 1] lv=0,0,0,0,0 pos=(0.48,1.13)
+  1.准备redis环境
+  2.引入redis起步依赖
+  3.配置redis连接信息
+  4.提供ChatMemoryStore实现类
+  5.配置ChatMemoryStore
+[Rectangle 1] lv=0 pos=(6.15,1.09)
+  <dependency>    <groupId>org.springframework.boot</groupId>    <artifactId>spring-boot-starter-data-redis</artifactId></dependency>
+[Rectangle 2] lv=0 pos=(6.15,3.54)
+  spring:  data:    redis:      host: localhost      port: 6379
+[Rectangle 3] lv=0 pos=(6.15,5.86)
+  public class RedisChatMemoryStore implements ChatMemoryStore {        //TODO 重写 getMessages() 、updateMessages() 、deleteMessages() 方法    }
+[Rectangle 4] lv=0 pos=(6.15,5.65)
+  @Repository
+[Rectangle 7] lv=0 pos=(0.77,4.47)
+  public ChatMemory get(Object memoryId) {    return MessageWindowChatMemory.builder()            .id(memoryId)            .maxMessages(20)            .chatMemoryStore(store)            .build();}
+[文本框 54] lv=0 pos=(5.97,1.1)
+  docker run --name redis -d -p 6379:6379 redis
+
+===== SLIDE 91 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,0 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  Tools工具
+
+===== SLIDE 92 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,1,1,1,0 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  原理
+  快速入门
+  核心API
+  Tools工具
+
+===== SLIDE 93 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[圆柱体 63] lv=0,0 pos=(11.05,2.94)
+  通用训练数据
+  2023/10
+[圆柱体 64] lv=0 pos=(11.05,4.36)
+  专业领域数据
+[IMG 01] 093-01.png 1864x1054px 76624B shape=8.29x4.69in pos=(2.11,1.81) sha=87c37f941c
+
+===== SLIDE 94 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[IMG 01] 094-01.png 2408x1562px 144488B shape=8.47x5.5in pos=(2.1,1.81) sha=6f3419fa47
+
+===== SLIDE 95 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[圆柱体 1] lv=0 pos=(5.51,2.97)
+  知识库
+
+===== SLIDE 96 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[圆柱体 1] lv=0 pos=(2.24,2.97)
+  知识库
+[文本框 4] lv=0,0 pos=(4.95,3.75)
+  向量数据库：    Milvus、Chroma、Pinecone
+      RedisSearch(Reids)、pgvector(PostgreSQL)
+
+===== SLIDE 97 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  向量：是数学和物理学中表示大小和方向的量
+[内容占位符 1] lv=0,1,1,1,0,1 pos=(0.63,1.81)
+  几何表示
+  有向线段，向量可以用一条带箭头的线段表示，线段的长度表示大小，箭头的方向表示方向。
+  
+                                        
+  代数表示
+  坐标表示，在直角坐标系中，向量可以用一组坐标来表示。
+[文本框 12] lv=0 pos=(3.49,3.49)
+  A
+[文本框 14] lv=0 pos=(6.64,3.5)
+  B
+[文本框 18] lv=0 pos=(4.83,3.04)
+  AB
+[文本框 39] lv=0 pos=(3.66,3.28)
+  V
+[文本框 49] lv=0 pos=(5.44,6.86)
+  x
+[文本框 51] lv=0 pos=(3.57,5.34)
+  y
+[文本框 53] lv=0 pos=(5.62,5.87)
+  V=(1,2)
+
+===== SLIDE 98 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  向量余弦相似度，用于表示坐标系中两个点之间的距离远近
+[文本框 39] lv=0 pos=(3.66,3.28)
+  V
+[文本框 49] lv=0 pos=(4.91,5.0)
+  x
+[文本框 51] lv=0 pos=(0.63,1.79)
+  y
+[文本框 53] lv=0 pos=(5.62,5.87)
+  V=(1,2)
+[文本框 43] lv=0 pos=(3.66,3.28)
+  U
+[文本框 46] lv=0 pos=(5.62,5.87)
+  U=(2,1)
+[文本框 56] lv=0 pos=(1.08,4.91)
+  θ
+[文本框 31] lv=0 pos=(3.65,6.72)
+  cosθ(向量余弦相似度)=       =                    = 1
+[文本框 32] lv=0 pos=(6.73,6.58)
+  V·U
+[文本框 62] lv=0 pos=(6.53,6.9)
+  |V||U|
+[文本框 66] lv=0 pos=(8.61,6.57)
+  1*1+2*2
+[文本框 70] lv=0 pos=(8.13,7.03)
+  1²+2²
+[文本框 73] lv=0 pos=(9.67,7.01)
+  2²+1²
+[文本框 75] lv=0 pos=(9.06,7.0)
+  *
+[文本框 77] lv=0 pos=(5.39,3.22)
+  假设：U点和V点重合，也就是
+[文本框 79] lv=0 pos=(5.62,5.87)
+  V=(1,2)
+[文本框 85] lv=0 pos=(5.62,5.87)
+  U=(1,2)
+[文本框 89] lv=0 pos=(3.65,6.72)
+  cosθ(向量余弦相似度)=       =                    = 0.8
+[文本框 90] lv=0 pos=(6.73,6.58)
+  V·U
+[文本框 92] lv=0 pos=(6.53,6.9)
+  |V||U|
+[文本框 94] lv=0 pos=(8.61,6.57)
+  1*2+2*1
+[文本框 97] lv=0 pos=(8.13,7.03)
+  1²+2²
+[文本框 101] lv=0 pos=(9.67,7.03)
+  2²+1²
+[文本框 99] lv=0 pos=(9.06,7.0)
+  *
+[文本框 103] lv=0 pos=(5.28,4.82)
+  假设：
+[文本框 108] lv=0 pos=(5.62,5.87)
+  A=(0,2)
+[文本框 106] lv=0 pos=(5.62,5.87)
+  B=(2,0)
+[文本框 112] lv=0 pos=(3.66,3.28)
+  A
+[文本框 115] lv=0 pos=(3.66,3.28)
+  B
+[文本框 123] lv=0 pos=(3.65,6.72)
+  cosθ(向量余弦相似度)=       =                    = 0
+[文本框 124] lv=0 pos=(6.73,6.58)
+  V·U
+[文本框 126] lv=0 pos=(6.53,6.9)
+  |V||U|
+[文本框 128] lv=0 pos=(8.61,6.57)
+  0*2+2*0
+[文本框 131] lv=0 pos=(8.13,7.03)
+  0²+2²
+[文本框 135] lv=0 pos=(9.67,7.01)
+  2²+0²
+[文本框 133] lv=0 pos=(9.06,7.0)
+  *
+[文本框 136] lv=0,0 pos=(5.3,6.44)
+  在第一象限中， cosθ(向量余弦相似度)的取值范围为（0,1）
+  余弦相似度越大，说明向量方向越接近，两点之间的距离越小
+[文本框 1] lv=0 pos=(0.8,6.64)
+  二维向量
+[IMG 01] 098-01.png 127x39px 696B shape=1.32x0.41in pos=(7.8,6.93) sha=dabe007957
+[IMG 02] 098-02.png 127x39px 696B shape=1.32x0.41in pos=(9.34,6.94) sha=dabe007957
+[IMG 03] 098-03.png 127x39px 696B shape=1.32x0.41in pos=(7.8,6.96) sha=dabe007957
+[IMG 04] 098-04.png 127x39px 696B shape=1.32x0.41in pos=(9.34,6.96) sha=dabe007957
+[IMG 05] 098-05.png 127x39px 696B shape=1.32x0.41in pos=(7.8,6.93) sha=dabe007957
+[IMG 06] 098-06.png 127x39px 696B shape=1.32x0.41in pos=(9.34,6.94) sha=dabe007957
+
+===== SLIDE 99 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  向量余弦相似度，用于表示坐标系中两个点之间的距离远近
+[内容占位符 1] lv=0,0,0,0 pos=(1.36,1.89)
+  二维向量：V=(v1,v2)
+  三维向量：V=(v1,v2,v3)
+  四维向量：V=(v1,v2,v3,v4)
+  N维向量：V=(v1,v2,v3…vn)
+[文本框 118] lv=0 pos=(3.65,6.72)
+  cosθ(向量余弦相似度)=
+[文本框 119] lv=0 pos=(6.73,6.58)
+  V·U
+[文本框 137] lv=0 pos=(6.53,6.9)
+  |V||U|
+[文本框 147] lv=0 pos=(5.23,3.23)
+  余弦相似度越大，向量方向越接近，两点之间的距离越小
+
+===== SLIDE 100 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[圆柱体 1] lv=0 pos=(2.24,2.97)
+  知识库
+[文本框 4] lv=0,0 pos=(4.95,3.75)
+  向量数据库：    Milvus、Chroma、Pinecone
+      RedisSearch(Reids)、pgvector(PostgreSQL)
+
+===== SLIDE 101 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[IMG 01] 101-01.png 940x575px 62708B shape=9.45x5.78in pos=(1.61,1.65) sha=adc5a0f77c
+
+===== SLIDE 102 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[矩形: 折角 1] lv=0,0,0,0,0 pos=(0.74,1.54)
+  我爱上班
+  上班真好
+  我爱工作
+  拒绝加班
+  我要躺平
+[矩形 10] lv=0 pos=(6.08,1.76)
+  我爱上班
+[矩形 12] lv=0 pos=(6.08,2.09)
+  上班真好
+[矩形 13] lv=0 pos=(6.08,2.41)
+  我爱工作
+[矩形 14] lv=0 pos=(6.08,2.74)
+  拒绝加班
+[矩形 15] lv=0 pos=(6.08,3.06)
+  我要躺平
+[文本框 21] lv=0 pos=(8.48,3.59)
+  我爱上班
+[矩形 31] lv=0 pos=(9.65,3.53)
+  .21
+[矩形 32] lv=0 pos=(9.95,3.53)
+  -.5
+[矩形 33] lv=0 pos=(10.24,3.53)
+  .1
+[矩形 34] lv=0 pos=(10.54,3.53)
+  ...
+[矩形 35] lv=0 pos=(10.84,3.53)
+  ...
+[矩形 36] lv=0 pos=(11.14,3.53)
+  ...
+[矩形 37] lv=0 pos=(11.44,3.53)
+  ...
+[矩形 38] lv=0 pos=(11.73,3.53)
+  .27
+[文本框 22] lv=0 pos=(8.48,3.98)
+  上班真好
+[矩形 39] lv=0 pos=(9.65,3.92)
+  .18
+[矩形 40] lv=0 pos=(9.95,3.92)
+  -.4
+[矩形 41] lv=0 pos=(10.24,3.92)
+  .2
+[矩形 42] lv=0 pos=(10.54,3.92)
+  ...
+[矩形 43] lv=0 pos=(10.84,3.92)
+  ...
+[矩形 44] lv=0 pos=(11.14,3.92)
+  ...
+[矩形 45] lv=0 pos=(11.44,3.92)
+  ...
+[矩形 46] lv=0 pos=(11.73,3.92)
+  .4
+[文本框 23] lv=0 pos=(8.48,4.39)
+  我爱工作
+[矩形 47] lv=0 pos=(9.65,4.34)
+  .19
+[矩形 48] lv=0 pos=(9.95,4.34)
+  -.3
+[矩形 49] lv=0 pos=(10.24,4.34)
+  .1
+[矩形 50] lv=0 pos=(10.54,4.34)
+  ...
+[矩形 51] lv=0 pos=(10.84,4.34)
+  ...
+[矩形 52] lv=0 pos=(11.14,4.34)
+  ...
+[矩形 53] lv=0 pos=(11.44,4.34)
+  ...
+[矩形 54] lv=0 pos=(11.73,4.34)
+  .4
+[文本框 24] lv=0 pos=(8.48,4.76)
+  拒绝加班
+[矩形 55] lv=0 pos=(9.65,4.72)
+  .8
+[矩形 56] lv=0 pos=(9.95,4.72)
+  .1
+[矩形 57] lv=0 pos=(10.24,4.72)
+  -.3
+[矩形 58] lv=0 pos=(10.54,4.72)
+  ...
+[矩形 60] lv=0 pos=(10.84,4.72)
+  ...
+[矩形 61] lv=0 pos=(11.14,4.72)
+  ...
+[矩形 62] lv=0 pos=(11.44,4.72)
+  ...
+[矩形 63] lv=0 pos=(11.73,4.72)
+  .6
+[文本框 25] lv=0 pos=(8.48,5.15)
+  我要躺平
+[矩形 64] lv=0 pos=(9.65,5.11)
+  .7
+[矩形 65] lv=0 pos=(9.95,5.11)
+  .1
+[矩形 66] lv=0 pos=(10.24,5.11)
+  -.4
+[矩形 67] lv=0 pos=(10.54,5.11)
+  ...
+[矩形 68] lv=0 pos=(10.84,5.11)
+  ...
+[矩形 69] lv=0 pos=(11.14,5.11)
+  ...
+[矩形 70] lv=0 pos=(11.44,5.11)
+  ...
+[矩形 71] lv=0 pos=(11.73,5.11)
+  .7
+[矩形 91] lv=0 pos=(5.05,5.55)
+  .21
+[矩形 92] lv=0 pos=(5.35,5.55)
+  -.5
+[矩形 93] lv=0 pos=(5.65,5.55)
+  .1
+[矩形 94] lv=0 pos=(5.95,5.55)
+  ...
+[矩形 95] lv=0 pos=(6.25,5.55)
+  ...
+[矩形 96] lv=0 pos=(6.55,5.55)
+  ...
+[矩形 97] lv=0 pos=(6.84,5.55)
+  ...
+[矩形 98] lv=0 pos=(7.13,5.55)
+  .27
+[矩形 99] lv=0 pos=(7.53,5.56)
+  我爱上班
+[矩形 100] lv=0 pos=(5.05,5.88)
+  .18
+[矩形 101] lv=0 pos=(5.35,5.88)
+  -.4
+[矩形 102] lv=0 pos=(5.65,5.88)
+  .2
+[矩形 103] lv=0 pos=(5.95,5.88)
+  ...
+[矩形 104] lv=0 pos=(6.25,5.88)
+  ...
+[矩形 105] lv=0 pos=(6.55,5.88)
+  ...
+[矩形 106] lv=0 pos=(6.84,5.88)
+  ...
+[矩形 107] lv=0 pos=(7.13,5.88)
+  .4
+[矩形 108] lv=0 pos=(7.54,5.9)
+  上班真好
+[矩形 109] lv=0 pos=(5.06,6.22)
+  .19
+[矩形 110] lv=0 pos=(5.36,6.22)
+  -.3
+[矩形 111] lv=0 pos=(5.66,6.22)
+  .1
+[矩形 112] lv=0 pos=(5.96,6.22)
+  ...
+[矩形 113] lv=0 pos=(6.26,6.22)
+  ...
+[矩形 114] lv=0 pos=(6.55,6.22)
+  ...
+[矩形 115] lv=0 pos=(6.85,6.22)
+  ...
+[矩形 116] lv=0 pos=(7.14,6.22)
+  .4
+[矩形 138] lv=0 pos=(7.54,6.25)
+  我爱工作
+[矩形 117] lv=0 pos=(5.06,6.56)
+  .8
+[矩形 118] lv=0 pos=(5.36,6.56)
+  .1
+[矩形 119] lv=0 pos=(5.66,6.56)
+  -.3
+[矩形 120] lv=0 pos=(5.96,6.56)
+  ...
+[矩形 121] lv=0 pos=(6.26,6.56)
+  ...
+[矩形 122] lv=0 pos=(6.55,6.56)
+  ...
+[矩形 123] lv=0 pos=(6.85,6.56)
+  ...
+[矩形 124] lv=0 pos=(7.14,6.56)
+  .6
+[矩形 139] lv=0 pos=(7.54,6.57)
+  拒绝加班
+[矩形 125] lv=0 pos=(5.06,6.9)
+  .7
+[矩形 126] lv=0 pos=(5.36,6.9)
+  .1
+[矩形 127] lv=0 pos=(5.66,6.9)
+  -.4
+[矩形 128] lv=0 pos=(5.96,6.9)
+  ...
+[矩形 129] lv=0 pos=(6.26,6.9)
+  ...
+[矩形 130] lv=0 pos=(6.55,6.9)
+  ...
+[矩形 131] lv=0 pos=(6.85,6.9)
+  ...
+[矩形 132] lv=0 pos=(7.14,6.9)
+  .7
+[矩形 140] lv=0 pos=(7.54,6.9)
+  我要躺平
+[IMG 01] 102-01.png 161x105px 5777B shape=1.68x1.09in pos=(3.32,2.02) sha=417d3e0732
+[IMG 02] 102-02.png 160x107px 7771B shape=1.67x1.11in pos=(8.94,2.01) sha=1314f6b8f4
+
+===== SLIDE 103 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[IMG 01] 103-01.png 958x276px 43306B shape=9.98x2.88in pos=(1.68,2.31) sha=a44a52c4df
+
+===== SLIDE 104 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-原理
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  RAG, Retrieval Augmented Generation, 检索增强生成。通过检索外部知识库的方式增强大模型的生成能力
+[对话气泡: 圆角矩形 4] lv=0 pos=(0.85,3.05)
+  你爱上班吗？
+[矩形 17] lv=0 pos=(5.05,5.55)
+  .21
+[矩形 18] lv=0 pos=(5.35,5.55)
+  -.5
+[矩形 19] lv=0 pos=(5.65,5.55)
+  .2
+[矩形 20] lv=0 pos=(5.95,5.55)
+  ...
+[矩形 21] lv=0 pos=(6.25,5.55)
+  ...
+[矩形 22] lv=0 pos=(6.55,5.55)
+  ...
+[矩形 23] lv=0 pos=(6.84,5.55)
+  ...
+[矩形 24] lv=0 pos=(7.13,5.55)
+  .23
+[矩形 28] lv=0 pos=(5.05,5.55)
+  .21
+[矩形 29] lv=0 pos=(5.35,5.55)
+  -.5
+[矩形 30] lv=0 pos=(5.65,5.55)
+  .1
+[矩形 31] lv=0 pos=(5.95,5.55)
+  ...
+[矩形 32] lv=0 pos=(6.25,5.55)
+  ...
+[矩形 33] lv=0 pos=(6.55,5.55)
+  ...
+[矩形 34] lv=0 pos=(6.84,5.55)
+  ...
+[矩形 35] lv=0 pos=(7.13,5.55)
+  .27
+[矩形 36] lv=0 pos=(7.53,5.56)
+  我爱上班
+[矩形 38] lv=0 pos=(5.05,5.88)
+  .18
+[矩形 39] lv=0 pos=(5.35,5.88)
+  -.4
+[矩形 40] lv=0 pos=(5.65,5.88)
+  .2
+[矩形 41] lv=0 pos=(5.95,5.88)
+  ...
+[矩形 42] lv=0 pos=(6.25,5.88)
+  ...
+[矩形 43] lv=0 pos=(6.55,5.88)
+  ...
+[矩形 44] lv=0 pos=(6.84,5.88)
+  ...
+[矩形 45] lv=0 pos=(7.13,5.88)
+  .4
+[矩形 46] lv=0 pos=(7.54,5.9)
+  上班真好
+[矩形 48] lv=0 pos=(5.06,6.22)
+  .19
+[矩形 49] lv=0 pos=(5.36,6.22)
+  -.3
+[矩形 50] lv=0 pos=(5.66,6.22)
+  .1
+[矩形 51] lv=0 pos=(5.96,6.22)
+  ...
+[矩形 52] lv=0 pos=(6.26,6.22)
+  ...
+[矩形 53] lv=0 pos=(6.55,6.22)
+  ...
+[矩形 54] lv=0 pos=(6.85,6.22)
+  ...
+[矩形 55] lv=0 pos=(7.14,6.22)
+  .4
+[矩形 56] lv=0 pos=(7.54,6.25)
+  我爱工作
+[矩形 58] lv=0 pos=(5.06,6.56)
+  .8
+[矩形 60] lv=0 pos=(5.36,6.56)
+  .1
+[矩形 61] lv=0 pos=(5.66,6.56)
+  -.3
+[矩形 62] lv=0 pos=(5.96,6.56)
+  ...
+[矩形 63] lv=0 pos=(6.26,6.56)
+  ...
+[矩形 64] lv=0 pos=(6.55,6.56)
+  ...
+[矩形 65] lv=0 pos=(6.85,6.56)
+  ...
+[矩形 66] lv=0 pos=(7.14,6.56)
+  .6
+[矩形 67] lv=0 pos=(7.54,6.57)
+  拒绝加班
+[矩形 69] lv=0 pos=(5.06,6.9)
+  .7
+[矩形 70] lv=0 pos=(5.36,6.9)
+  .1
+[矩形 71] lv=0 pos=(5.66,6.9)
+  -.4
+[矩形 72] lv=0 pos=(5.96,6.9)
+  ...
+[矩形 73] lv=0 pos=(6.26,6.9)
+  ...
+[矩形 74] lv=0 pos=(6.55,6.9)
+  ...
+[矩形 75] lv=0 pos=(6.85,6.9)
+  ...
+[矩形 76] lv=0 pos=(7.14,6.9)
+  .7
+[矩形 77] lv=0 pos=(7.54,6.9)
+  我要躺平
+[文本框 79] lv=0,0,0,0,0 pos=(5.03,3.9)
+  0.8
+  0.6
+  0.7
+  0.3
+  0.2
+[文本框 80] lv=0 pos=(0.63,6.56)
+  余弦相似度越大，说明向量方向越接近，两点之间的距离越小
+[文本框 81] lv=0 pos=(0.63,6.97)
+  由于RAG中，向量都是由文本转换过来的，不同文本对应的向量余弦相似度越大，距离越近，文本相似度越高
+[文本框 82] lv=0 pos=(5.01,5.99)
+  >0.5
+[矩形 83] lv=0 pos=(10.46,4.37)
+  我爱上班
+[矩形 84] lv=0 pos=(10.47,4.71)
+  上班真好
+[矩形 85] lv=0 pos=(10.46,5.07)
+  我爱工作
+[矩形 95] lv=0,0 pos=(11.58,3.05)
+  新提
+  示词
+[IMG 01] 104-01.png 107x75px 4829B shape=1.11x0.78in pos=(0.85,4.48) sha=6614600bdb
+
+===== SLIDE 105 =====
+[文本占位符 2] lv=0,0,1,1 pos=(4.39,1.49)
+  两个向量的余弦相似度越高，说明向量对应的文本相似度越高
+  向量数据库使用流程
+  借助于向量模型，把文档知识数据向量化后存储到向量数据库
+  用户输入的内容，借助于向量模型转化为向量后，与数据库中的向量通过计算余弦相似度的方式，找出相似度比较高的文本片段
+
+===== SLIDE 106 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,1,1,1,0 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  原理
+  快速入门
+  核心API
+  Tools工具
+
+===== SLIDE 107 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-快速入门
+[内容占位符 1] lv=0,1,1,1,1,0,1,1 pos=(0.48,1.13)
+  存储(构建向量数据库操作对象)
+  引入依赖
+  加载知识数据文档
+  构建向量数据库操作对象
+  把文档切割、向量化并存储到向量数据库中
+  检索(构建向量数据库检索对象)
+  构建向量数据库检索对象
+  配置向量数据库检索对象
+[Rectangle 1] lv=0 pos=(6.16,1.24)
+  <dependency>    <groupId>dev.langchain4j</groupId>    <artifactId>langchain4j-easy-rag</artifactId>    <version>1.0.1-beta6</version></dependency>
+[Rectangle 2] lv=0 pos=(5.98,2.83)
+  List<Document> documents = ClassPathDocumentLoader.loadDocuments(“文档路径");
+[Rectangle 4] lv=0 pos=(5.98,3.23)
+  InMemoryEmbeddingStore<TextSegment> store = new InMemoryEmbeddingStore<>();
+[Rectangle 5] lv=0 pos=(5.98,3.62)
+  EmbeddingStoreIngestor ingestor = EmbeddingStoreIngestor.builder()        .embeddingStore(store)        .build();ingestor.ingest(documents);
+[Rectangle 6] lv=0 pos=(5.98,4.93)
+  EmbeddingStoreContentRetriever.builder()        .embeddingStore(store)        .maxResults(3)        .minScore(0.6)        .build();
+[Rectangle 7] lv=0 pos=(5.98,6.25)
+  @AiService(        wiringMode = AiServiceWiringMode.EXPLICIT,        contentRetriever = "retriever")
+
+===== SLIDE 108 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,1,1,1,0 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  原理
+  快速入门
+  核心API
+  Tools工具
+
+===== SLIDE 109 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[矩形: 折角 3] lv=0 pos=(1.09,1.53)
+  文档
+[矩形: 折角 16] lv=0 pos=(1.26,1.7)
+  文档
+[矩形: 折角 17] lv=0 pos=(1.43,1.86)
+  文档
+[矩形 13] lv=0,0 pos=(3.07,1.7)
+  文档加载器
+  Document Loader
+[矩形 23] lv=0,0 pos=(3.07,2.53)
+  文档解析器
+  Document Parser
+[矩形 27] lv=0,0 pos=(5.8,1.86)
+  文档
+  Document
+[矩形 30] lv=0,0 pos=(7.26,1.71)
+  文档分割器
+  Document Splitter
+[矩形: 剪去对角 20] lv=0,0 pos=(9.55,1.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 32] lv=0,0 pos=(9.72,1.7)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 33] lv=0,0 pos=(9.89,1.86)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 34] lv=0,0 pos=(10.05,2.03)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 35] lv=0,0 pos=(10.22,2.2)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 36] lv=0,0 pos=(10.39,2.36)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 37] lv=0,0 pos=(10.55,2.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 38] lv=0,0 pos=(10.72,2.7)
+  文本片段
+  TextSegment
+[矩形 55] lv=0,0 pos=(9.26,4.91)
+  向量模型
+  EmbeddingModel
+[平行四边形 49] lv=0,0 pos=(6.22,4.45)
+  向量
+  Embedding
+[平行四边形 58] lv=0,0 pos=(6.39,4.61)
+  向量
+  Embedding
+[平行四边形 59] lv=0,0 pos=(6.55,4.78)
+  向量
+  Embedding
+[平行四边形 60] lv=0,0 pos=(6.72,4.95)
+  向量
+  Embedding
+[平行四边形 61] lv=0,0 pos=(6.89,5.11)
+  向量
+  Embedding
+[平行四边形 62] lv=0,0 pos=(7.05,5.28)
+  向量
+  Embedding
+[平行四边形 63] lv=0,0 pos=(7.22,5.45)
+  向量
+  Embedding
+[矩形 67] lv=0 pos=(3.85,4.9)
+  向量数据库操作对象EmbeddingStore
+[流程图: 磁盘 53] lv=0 pos=(1.09,5.03)
+  向量数据库
+[任意多边形: 形状 80] lv=0 pos=(2.95,1.35)
+  EmbeddingStoreIngestor
+
+===== SLIDE 110 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  文档加载器，用于把磁盘或者网络中的数据加载进程序
+[内容占位符 1] lv=0,0,0,0 pos=(0.63,1.81)
+  FileSystemDocumentLoader, 根据本地磁盘绝对路径加载
+  ClassPathDocumentLoader，相对于类路径加载
+  UrlDocumentLoader，根据url路径加载
+  ……
+
+===== SLIDE 111 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[矩形: 折角 3] lv=0 pos=(1.09,1.53)
+  文档
+[矩形: 折角 16] lv=0 pos=(1.26,1.7)
+  文档
+[矩形: 折角 17] lv=0 pos=(1.43,1.86)
+  文档
+[矩形 13] lv=0,0 pos=(3.07,1.7)
+  文档加载器
+  Document Loader
+[矩形 23] lv=0,0 pos=(3.07,2.53)
+  文档解析器
+  Document Parser
+[矩形 27] lv=0,0 pos=(5.8,1.86)
+  文档
+  Document
+[矩形 30] lv=0,0 pos=(7.26,1.71)
+  文档分割器
+  Document Splitter
+[矩形: 剪去对角 20] lv=0,0 pos=(9.55,1.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 32] lv=0,0 pos=(9.72,1.7)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 33] lv=0,0 pos=(9.89,1.86)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 34] lv=0,0 pos=(10.05,2.03)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 35] lv=0,0 pos=(10.22,2.2)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 36] lv=0,0 pos=(10.39,2.36)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 37] lv=0,0 pos=(10.55,2.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 38] lv=0,0 pos=(10.72,2.7)
+  文本片段
+  TextSegment
+[矩形 55] lv=0,0 pos=(9.26,4.91)
+  向量模型
+  EmbeddingModel
+[平行四边形 49] lv=0,0 pos=(6.22,4.45)
+  向量
+  Embedding
+[平行四边形 58] lv=0,0 pos=(6.39,4.61)
+  向量
+  Embedding
+[平行四边形 59] lv=0,0 pos=(6.55,4.78)
+  向量
+  Embedding
+[平行四边形 60] lv=0,0 pos=(6.72,4.95)
+  向量
+  Embedding
+[平行四边形 61] lv=0,0 pos=(6.89,5.11)
+  向量
+  Embedding
+[平行四边形 62] lv=0,0 pos=(7.05,5.28)
+  向量
+  Embedding
+[平行四边形 63] lv=0,0 pos=(7.22,5.45)
+  向量
+  Embedding
+[矩形 67] lv=0 pos=(3.85,4.9)
+  向量数据库操作对象EmbeddingStore
+[流程图: 磁盘 53] lv=0 pos=(1.09,5.03)
+  向量数据库
+[任意多边形: 形状 80] lv=0 pos=(2.95,1.35)
+  EmbeddingStoreIngestor
+
+===== SLIDE 112 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  文档解析器，用于解析使用文档加载器加载进内存的内容，把非纯文本数据转化成纯文本
+[内容占位符 1] lv=0,0,0,0 pos=(0.63,1.77)
+  TextDocumentParser，解析纯文本格式的文件
+  ApachePdfBoxDocumentParser，解析pdf格式文件
+  ApachePoiDocumentParser，解析微软的office文件，例如DOC、PPT、XLS
+  ApacheTikaDocumentParser（默认），几乎可以解析所有格式的文件
+[内容占位符 1] lv=0,0,0 pos=(0.63,4.55)
+  1.准备pdf格式的数据
+  2.引入依赖
+  3.指定解析器
+[Rectangle 1] lv=0 pos=(3.97,5.21)
+  <dependency>    <groupId>dev.langchain4j</groupId>    <artifactId>langchain4j-document-parser-apache-pdfbox</artifactId>    <version>1.0.1-beta6</version></dependency>
+[Rectangle 2] lv=0 pos=(3.79,6.81)
+  ClassPathDocumentLoader.loadDocuments(“文档路径",new ApachePdfBoxDocumentParser());
+
+===== SLIDE 113 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[矩形: 折角 3] lv=0 pos=(1.09,1.53)
+  文档
+[矩形: 折角 16] lv=0 pos=(1.26,1.7)
+  文档
+[矩形: 折角 17] lv=0 pos=(1.43,1.86)
+  文档
+[矩形 13] lv=0,0 pos=(3.07,1.7)
+  文档加载器
+  Document Loader
+[矩形 23] lv=0,0 pos=(3.07,2.53)
+  文档解析器
+  Document Parser
+[矩形 27] lv=0,0 pos=(5.8,1.86)
+  文档
+  Document
+[矩形 30] lv=0,0 pos=(7.26,1.71)
+  文档分割器
+  Document Splitter
+[矩形: 剪去对角 20] lv=0,0 pos=(9.55,1.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 32] lv=0,0 pos=(9.72,1.7)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 33] lv=0,0 pos=(9.89,1.86)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 34] lv=0,0 pos=(10.05,2.03)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 35] lv=0,0 pos=(10.22,2.2)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 36] lv=0,0 pos=(10.39,2.36)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 37] lv=0,0 pos=(10.55,2.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 38] lv=0,0 pos=(10.72,2.7)
+  文本片段
+  TextSegment
+[矩形 55] lv=0,0 pos=(9.26,4.91)
+  向量模型
+  EmbeddingModel
+[平行四边形 49] lv=0,0 pos=(6.22,4.45)
+  向量
+  Embedding
+[平行四边形 58] lv=0,0 pos=(6.39,4.61)
+  向量
+  Embedding
+[平行四边形 59] lv=0,0 pos=(6.55,4.78)
+  向量
+  Embedding
+[平行四边形 60] lv=0,0 pos=(6.72,4.95)
+  向量
+  Embedding
+[平行四边形 61] lv=0,0 pos=(6.89,5.11)
+  向量
+  Embedding
+[平行四边形 62] lv=0,0 pos=(7.05,5.28)
+  向量
+  Embedding
+[平行四边形 63] lv=0,0 pos=(7.22,5.45)
+  向量
+  Embedding
+[矩形 67] lv=0 pos=(3.85,4.9)
+  向量数据库操作对象EmbeddingStore
+[流程图: 磁盘 53] lv=0 pos=(1.09,5.03)
+  向量数据库
+[任意多边形: 形状 80] lv=0 pos=(2.95,1.35)
+  EmbeddingStoreIngestor
+
+===== SLIDE 114 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  文档分割器，用于把一个大的文档，切割成一个一个的小片段
+[内容占位符 1] lv=0,0,0,0,0,0,0 pos=(0.63,1.77)
+  DocuemntByParagraphSplitter，按照段落分割文本
+  DocumentByLineSplitter，按照行分割文本
+  DocumentBySentenceSplitter，按照句子分割文本
+  DocumentByWordSplitter，按照词分割文本
+  DocumentByCharacterSplitter，按照固定数量的字符分割文本
+  DocumentByRegexSplitter，按照正则表达式分割文本
+  DocumentSplitters.recursive(…)(默认)，递归分割器,优先段落分割，再按照行分割，再按照句子分割，再按照词分割
+[矩形 3] lv=0 pos=(7.72,5.44)
+  文本片段:最大300个字符
+[文本框 21] lv=0 pos=(2.47,6.16)
+  300
+[IMG 01] 114-01.png 771x556px 88935B shape=5.34x3.85in pos=(7.81,1.2) sha=7e97e805cd
+[IMG 02] 114-02.png 520x59px 35526B shape=5.42x0.61in pos=(7.79,6.47) sha=922d19c1d4
+[IMG 03] 114-03.png 519x47px 19291B shape=5.41x0.49in pos=(7.81,5.86) sha=1d19545ad9
+[IMG 04] 114-04.png 519x61px 26932B shape=5.41x0.64in pos=(7.8,7.2) sha=005f916437
+
+===== SLIDE 115 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  文档分割器，用于把一个大的文档，切割成一个一个的小片段
+[内容占位符 1] lv=0,0 pos=(1.01,1.77)
+  构建文本分割器对象
+  设置文本分割器对象
+[Rectangle 1] lv=0,0,0,0 pos=(4.4,1.94)
+  DocumentSplitter documentSplitter = DocumentSplitters.recursive(
+  		每个片段最大容纳的字符, 
+  		两个片段之间重叠字符的个数
+  	);
+[Rectangle 2] lv=0 pos=(4.4,3.23)
+  EmbeddingStoreIngestor ingestor = EmbeddingStoreIngestor.builder()        .embeddingStore(store)        .documentSplitter(documentSplitter)        .build();
+[矩形 7] lv=0 pos=(7.72,5.44)
+  纵观人类文明史，那些真正推动历史前进的人物，往往不是标准答案的复述者，而是敢于质疑、勇于创新的思想者。爱因斯坦在专利局做着小职员的工作时，没有被既定的物理定律束缚，而是让思想乘着光速的翅膀，最终颠覆了牛顿的经典物理学体系。
+[矩形 8] lv=0 pos=(7.72,5.44)
+  文本片段:最大300个字符
+[矩形 10] lv=0 pos=(7.72,5.44)
+  高考，这个被赋予太多意义的词汇，如同一座横亘在青春之路上的大山。我们习惯将高考比作独木桥，仿佛千万人只能挤过那唯一的通道。然而，教育的真谛不在于将所有人塑造成相同的模样，而在于让每个人都能在知识的密林中找到属于自己的小径。高考不是终点，而是起点；不是标准答案的复制，而是独特生命的绽放。
+[矩形 11] lv=0 pos=(7.72,5.44)
+  文本片段:最大300个字符
+[矩形 13] lv=0 pos=(7.72,5.44)
+  高考不是终点，而是起点；不是标准答案的复制，而是独特生命的绽放。纵观人类文明史，那些真正推动历史前进的人物，往往不是标准答案的复述者，而是敢于质疑、勇于创新的思想者。爱因斯坦在专利局做着小职员的工作时，没有被既定的物理定律束缚，而是让思想乘着光速的翅膀，最终颠覆了牛顿的经典物理学体系。
+[矩形 15] lv=0 pos=(7.72,5.44)
+  文本片段:最大300个字符
+
+===== SLIDE 116 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[矩形: 折角 3] lv=0 pos=(1.09,1.53)
+  文档
+[矩形: 折角 16] lv=0 pos=(1.26,1.7)
+  文档
+[矩形: 折角 17] lv=0 pos=(1.43,1.86)
+  文档
+[矩形 13] lv=0,0 pos=(3.07,1.7)
+  文档加载器
+  Document Loader
+[矩形 23] lv=0,0 pos=(3.07,2.53)
+  文档解析器
+  Document Parser
+[矩形 27] lv=0,0 pos=(5.8,1.86)
+  文档
+  Document
+[矩形 30] lv=0,0 pos=(7.26,1.71)
+  文档分割器
+  Document Splitter
+[矩形: 剪去对角 20] lv=0,0 pos=(9.55,1.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 32] lv=0,0 pos=(9.72,1.7)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 33] lv=0,0 pos=(9.89,1.86)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 34] lv=0,0 pos=(10.05,2.03)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 35] lv=0,0 pos=(10.22,2.2)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 36] lv=0,0 pos=(10.39,2.36)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 37] lv=0,0 pos=(10.55,2.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 38] lv=0,0 pos=(10.72,2.7)
+  文本片段
+  TextSegment
+[矩形 55] lv=0,0 pos=(9.26,4.91)
+  向量模型
+  EmbeddingModel
+[平行四边形 49] lv=0,0 pos=(6.22,4.45)
+  向量
+  Embedding
+[平行四边形 58] lv=0,0 pos=(6.39,4.61)
+  向量
+  Embedding
+[平行四边形 59] lv=0,0 pos=(6.55,4.78)
+  向量
+  Embedding
+[平行四边形 60] lv=0,0 pos=(6.72,4.95)
+  向量
+  Embedding
+[平行四边形 61] lv=0,0 pos=(6.89,5.11)
+  向量
+  Embedding
+[平行四边形 62] lv=0,0 pos=(7.05,5.28)
+  向量
+  Embedding
+[平行四边形 63] lv=0,0 pos=(7.22,5.45)
+  向量
+  Embedding
+[矩形 67] lv=0 pos=(3.85,4.9)
+  向量数据库操作对象EmbeddingStore
+[流程图: 磁盘 53] lv=0 pos=(1.09,5.03)
+  向量数据库
+[任意多边形: 形状 80] lv=0 pos=(2.95,1.35)
+  EmbeddingStoreIngestor
+
+===== SLIDE 117 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  向量模型，用于把文档分割后的片段向量化或者查询时把用户输入的内容向量化
+[Rectangle 1] lv=0 pos=(0.68,1.81)
+  public interface EmbeddingModel {    default Response<Embedding> embed(String text) {        return this.embed(TextSegment.from(text));    }    default Response<Embedding> embed(TextSegment textSegment) {    }    Response<List<Embedding>> embedAll(List<TextSegment> texts);    default int dimension() {        return ((Embedding)this.embed("test").content()).dimension();    }}
+[IMG 01] 117-01.png 485x166px 15608B shape=5.05x1.73in pos=(7.19,1.81) sha=e1c014a53a
+
+===== SLIDE 118 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  向量模型，用于把文档分割后的片段向量化或者查询时把用户输入的内容向量化
+[内容占位符 1] lv=0,0 pos=(1.01,1.77)
+  配置向量模型信息
+  设置EmbeddingModel
+[Rectangle 1] lv=0 pos=(0.57,3.31)
+  langchain4j:  open-ai:    embedding-model:      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1      api-key: ${API-KEY}      model-name: text-embedding-v3      log-requests: true      log-responses: true
+[Rectangle 3] lv=0 pos=(1.01,3.74)
+  EmbeddingStoreIngestor.builder()        .embeddingStore(store)        .documentSplitter(documentSplitter)        .embeddingModel(embeddingModel)        .build();
+[Rectangle 4] lv=0 pos=(1.04,5.3)
+  EmbeddingStoreContentRetriever.builder()        .embeddingStore(store)        .embeddingModel(embeddingModel)        .maxResults(3)        .minScore(0.6)        .build();
+[IMG 01] 118-01.png 1270x777px 160662B shape=6.42x3.93in pos=(6.5,1.77) sha=af042aeaed
+
+===== SLIDE 119 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[矩形: 折角 3] lv=0 pos=(1.09,1.53)
+  文档
+[矩形: 折角 16] lv=0 pos=(1.26,1.7)
+  文档
+[矩形: 折角 17] lv=0 pos=(1.43,1.86)
+  文档
+[矩形 13] lv=0,0 pos=(3.07,1.7)
+  文档加载器
+  Document Loader
+[矩形 23] lv=0,0 pos=(3.07,2.53)
+  文档解析器
+  Document Parser
+[矩形 27] lv=0,0 pos=(5.8,1.86)
+  文档
+  Document
+[矩形 30] lv=0,0 pos=(7.26,1.71)
+  文档分割器
+  Document Splitter
+[矩形: 剪去对角 20] lv=0,0 pos=(9.55,1.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 32] lv=0,0 pos=(9.72,1.7)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 33] lv=0,0 pos=(9.89,1.86)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 34] lv=0,0 pos=(10.05,2.03)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 35] lv=0,0 pos=(10.22,2.2)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 36] lv=0,0 pos=(10.39,2.36)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 37] lv=0,0 pos=(10.55,2.53)
+  文本片段
+  TextSegment
+[矩形: 剪去对角 38] lv=0,0 pos=(10.72,2.7)
+  文本片段
+  TextSegment
+[矩形 55] lv=0,0 pos=(9.26,4.91)
+  向量模型
+  EmbeddingModel
+[平行四边形 49] lv=0,0 pos=(6.22,4.45)
+  向量
+  Embedding
+[平行四边形 58] lv=0,0 pos=(6.39,4.61)
+  向量
+  Embedding
+[平行四边形 59] lv=0,0 pos=(6.55,4.78)
+  向量
+  Embedding
+[平行四边形 60] lv=0,0 pos=(6.72,4.95)
+  向量
+  Embedding
+[平行四边形 61] lv=0,0 pos=(6.89,5.11)
+  向量
+  Embedding
+[平行四边形 62] lv=0,0 pos=(7.05,5.28)
+  向量
+  Embedding
+[平行四边形 63] lv=0,0 pos=(7.22,5.45)
+  向量
+  Embedding
+[矩形 67] lv=0 pos=(3.85,4.9)
+  向量数据库操作对象EmbeddingStore
+[流程图: 磁盘 53] lv=0 pos=(1.09,5.03)
+  向量数据库
+[任意多边形: 形状 80] lv=0 pos=(2.95,1.35)
+  EmbeddingStoreIngestor
+
+===== SLIDE 120 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  EmbeddingStore，用于操作向量数据库（添加、检索）
+[Rectangle 1] lv=0 pos=(0.8,1.86)
+  public interface EmbeddingStore<Embedded> {    String add(Embedding embedding);    void add(String text, Embedding embedding);    String add(Embedding embedding, Embedded embedded);    List<String> addAll(List<Embedding> embeddings);    EmbeddingSearchResult<Embedded> search(EmbeddingSearchRequest request);}
+[文本框 30] lv=0,0 pos=(0.8,6.12)
+  向量数据库：    Milvus、Chroma、Pinecone
+      RedisSearch(Reids)、pgvector(PostgreSQL)
+[IMG 01] 120-01.png 574x45px 7054B shape=7.18x0.56in pos=(0.8,5.4) sha=c7556088c4
+
+===== SLIDE 121 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  RAG知识库-核心API
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  EmbeddingStore，用于操作向量数据库（添加、检索）
+[内容占位符 1] lv=0,0,0,0 pos=(1.01,1.49)
+  准备向量数据库
+  引入依赖
+  配置向量数据库信息
+  注入RedisEmbeddingStore并使用
+[文本框 8] lv=0,0,0 pos=(5.26,1.69)
+  docker stop redis # 停止原有的redis镜像
+  docker rm redis #删除原有的redis镜像
+  docker run --name redis-vector -d -p 6379:6379 redislabs/redisearch
+[Rectangle 1] lv=0 pos=(5.81,3.07)
+  <dependency>    <groupId>dev.langchain4j</groupId>    <artifactId>langchain4j-community-redis-spring-boot-starter</artifactId>    <version>1.0.1-beta6</version></dependency>
+[Rectangle 2] lv=0 pos=(5.88,5.03)
+  langchain4j:  community:    redis:      host: localhost      port: 6379
+[Rectangle 3] lv=0 pos=(0.76,4.31)
+  EmbeddingStoreIngestor.builder()        .embeddingStore(store)        .documentSplitter(documentSplitter)        .embeddingModel(embeddingModel)        .build();
+[Rectangle 4] lv=0 pos=(0.79,5.87)
+  EmbeddingStoreContentRetriever.builder()        .embeddingStore(store)        .embeddingModel(embeddingModel)        .maxResults(3)        .minScore(0.6)        .build();
+
+===== SLIDE 122 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,0 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  Tools工具
+
+===== SLIDE 123 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,0,1,1,1,1 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  Tools工具
+  准备工作
+  原理
+  实现
+  
+
+===== SLIDE 124 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  Tools工具-准备工作
+[文本框 30] lv=0 pos=(6.67,5.63)
+  获取用户信息，通过一对一电话沟通的方式促成报名
+[流程图: 磁盘 31] lv=0,0,0 pos=(8.82,2.75)
+  Mysql
+  
+  reservattion
+[IMG 01] 124-01.png 769x826px 45005B shape=5.79x6.22in pos=(0.87,1.08) sha=4faf47d381
+[IMG 02] 124-02.png 1418x61px 14278B shape=11.75x0.51in pos=(0.87,4.18) sha=439a035f2b
+[IMG 03] 124-03.png 773x330px 34160B shape=5.79x2.47in pos=(0.87,3.56) sha=a215af4a84
+[IMG 04] 124-04.png 1386x33px 12321B shape=11.75x0.28in pos=(0.87,6.29) sha=04f3f46dd3
+
+===== SLIDE 125 =====
+[Rectangle 1] lv=0 pos=(4.03,3.68)
+  <dependency>    <groupId>org.projectlombok</groupId>    <artifactId>lombok</artifactId></dependency><dependency>    <groupId>org.mybatis.spring.boot</groupId>    <artifactId>mybatis-spring-boot-starter</artifactId>    <version>3.0.3</version></dependency><dependency>    <groupId>com.mysql</groupId>    <artifactId>mysql-connector-j</artifactId></dependency>
+[Rectangle 3] lv=0,0 pos=(8.69,3.68)
+  spring:  datasource:    username: root    password: 1234    url: jdbc:mysql://localhost:3307/gk?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true    driver-class-name: com.mysql.cj.jdbc.Driver
+  mybatis:  configuration:    map-underscore-to-camel-case: true
+[标题 2] lv=0 pos=(0.63,0.37)
+  Tools工具-准备工作
+[内容占位符 1] lv=0 pos=(0.63,1.05)
+  准备工作：开发一个预约信息服务，可以读写MySql中预约表中的信息
+[内容占位符 1] lv=0,0,0,0,0,0,0 pos=(1.01,1.77)
+  准备数据库环境
+  引入依赖
+  配置连接信息
+  准备实体类
+  开发Mapper
+  开发Service
+  完成测试
+[文本框 11] lv=0 pos=(4.03,1.89)
+  docker run --name mysql -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql
+[IMG 01] 125-01.png 623x105px 8118B shape=6.49x1.09in pos=(4.03,2.32) sha=ef1c957448
+[IMG 02] 125-02.png 289x228px 59409B shape=3.01x2.38in pos=(4.03,4.02) sha=943da96191
+
+===== SLIDE 126 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,0,1,1,1,1 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  Tools工具
+  准备工作
+  原理
+  实现
+  
+
+===== SLIDE 127 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  Tools工具-原理
+[Rectangle 1] lv=0 pos=(7.68,2.27)
+  @Servicepublic class ReservationService {    @Autowired    private ReservationMapper reservationMapper;    public void insert(Reservation reservation) {        reservationMapper.insert(reservation);    }    public Reservation findByPhone(String phone) {        return reservationMapper.findByPhone(phone);    }}
+[文本框 12] lv=0 pos=(7.68,6.49)
+  Function Calling
+[IMG 01] 127-01.png 777x833px 82512B shape=5.74x6.15in pos=(0.77,1.08) sha=ab2f996012
+
+===== SLIDE 128 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  Tools工具-原理
+[矩形 3] lv=0,0,0 pos=(5.98,2.05)
+  方法名称
+  方法作用
+  方法入参
+[IMG 01] 128-01.png 2650x1562px 185213B shape=9.09x5.36in pos=(2.04,1.33) sha=8d799c65f4
+
+===== SLIDE 129 =====
+[文本占位符 1] lv=0 pos=(6.69,2.41)
+  LangChain4j
+[文本占位符 2] lv=0 pos=(5.01,2.76)
+  03
+[文本占位符 3] lv=0,0,0,1,1,1,1 pos=(6.95,3.2)
+  会话功能
+  RAG知识库
+  Tools工具
+  准备工作
+  原理
+  实现
+  
+
+===== SLIDE 130 =====
+[标题 2] lv=0 pos=(0.63,0.37)
+  Tools工具-实现
+[内容占位符 1] lv=0,0 pos=(0.63,1.16)
+  准备工具方法
+  配置工具方法
+[Rectangle 1] lv=0 pos=(1.09,2.22)
+  @Componentpublic class ReservationTool {       @Autowired       private ReservationService reservationService;       @Tool("添加志愿指导服务预约")    public void addReservation(            @P("考生姓名") String name,            @P("考生性别") String gender,            @P("考生电话") String phone,            @P("沟通时间") LocalDateTime communicationTime,            @P("考生所在省份") String province,            @P("考生预估分数") Integer estimatedScore){           reservationService.insert(new Reservation(null, name, gender, phone, communicationTime, province, estimatedScore));      }       @Tool("根据考生电话查询考生预约详情")    public Reservation findReservation(@P("考生电话") String phone){          return reservationService.findByPhone(phone);       }}
+[Rectangle 2] lv=0 pos=(3.38,1.16)
+  @AiService(        wiringMode = AiServiceWiringMode.EXPLICIT,        tools = "reservationTool")
+
+===== SLIDE 131 =====
+
+===== SLIDE 132 =====
+[IMG 01] 132-01.jpg 1920x1080px 241609B shape=13.33x7.5in pos=(0.0,0.0) sha=e0031256f8

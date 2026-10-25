@@ -1,0 +1,68 @@
+图中内容为一段 Python 代码，无图形元素（非架构图/流程图/时序图），仅含纯文本代码。以下为**完整、逐行转写**的全部文字内容（包括行号、空行、注释与代码）：
+
+```
+1  import json, os
+2  from langchain.core.messages import messages_from_dict, message_to_dict
+3  
+4  class FileChatMessageHistory(BaseChatMessageHistory):
+5      storage_path: str
+6      session_id: str
+7      @property
+8      def messages(self) -> list[BaseMessage]:
+9          try:
+10             with open(
+11                 os.path.join(self.storage_path, self.session_id),
+12                 "r",
+13                 encoding="utf-8",
+14             ) as f:
+15                 messages_data = json.load(f)
+16                 return messages_from_dict(messages_data)
+17         except FileNotFoundError:
+18             return []
+19  
+20     def add_messages(self, messages: Sequence[BaseMessage]) -> None:
+21         all_messages = list(self.messages)  # Existing messages
+22         all_messages.extend(messages)      # Add new messages
+23  
+24         serialized = [message_to_dict(message) for message in all_messages]
+25         file_path = os.path.join(self.storage_path, self.session_id)
+26         os.makedirs(os.path.dirname(file_path), exist_ok=True)
+27         with open(file_path, "w", encoding="utf-8") as f:
+28             json.dump(serialized, f)
+29  
+30     def clear(self) -> None:
+31         file_path = os.path.join(self.storage_path, self.session_id)
+32         os.makedirs(os.path.dirname(file_path), exist_ok=True)
+33         with open(file_path, "w", encoding="utf-8") as f:
+34             json.dump([], f)
+```
+
+**关键信息提取：**
+
+- **类名**：`FileChatMessageHistory`，继承自 `BaseChatMessageHistory`
+- **属性类型注解**：
+  - `storage_path: str`
+  - `session_id: str`
+- **方法**：
+  1. `messages`（`@property`）：
+     - 尝试从文件 `os.path.join(storage_path, session_id)` 读取 JSON 数据；
+     - 使用 `json.load` 解析后调用 `messages_from_dict` 转为 `list[BaseMessage]`；
+     - 若文件不存在（`FileNotFoundError`），返回空列表 `[]`。
+  2. `add_messages(messages: Sequence[BaseMessage]) -> None`：
+     - 获取当前所有消息（通过 `self.messages`）；
+     - 将新消息 `messages` 追加到现有消息列表；
+     - 将全部消息序列化为字典列表（`message_to_dict`）；
+     - 确保目录存在（`os.makedirs(..., exist_ok=True)`）；
+     - 写入 JSON 文件（覆盖原内容）。
+  3. `clear() -> None`：
+     - 清空消息历史：写入空列表 `[]` 到同一文件路径；
+     - 同样确保目录存在。
+- **导入模块/函数**：
+  - `import json, os`
+  - `from langchain.core.messages import messages_from_dict, message_to_dict`
+- **类型提示**：
+  - `list[BaseMessage]`
+  - `Sequence[BaseMessage]`
+  - （隐含 `BaseChatMessageHistory`, `BaseMessage` 来自 langchain）
+
+无其他图形、箭头、注释框或额外说明。

@@ -1,0 +1,1038 @@
+{
+ "file": "03RAG项目.pptx",
+ "count": 10,
+ "w": 13.333333333333334,
+ "h": 7.5,
+ "slides": [
+  {
+   "slide": 1,
+   "texts": [
+    {
+     "name": "文本占位符 3",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目简介",
+     "level": [
+      0
+     ],
+     "top": 3.2,
+     "left": 7.06
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "PLACEHOLDER (14)",
+     "text": "AI大模型",
+     "level": [
+      0
+     ],
+     "top": 2.41,
+     "left": 0.37
+    },
+    {
+     "name": "文本框 5",
+     "type": "TEXT_BOX (17)",
+     "text": "Part : RAG实战项目",
+     "level": [
+      0
+     ],
+     "top": 4.62,
+     "left": 1.02
+    },
+    {
+     "name": "文本占位符 4",
+     "type": "AUTO_SHAPE (1)",
+     "text": "RAG与智能体开发",
+     "level": [
+      0
+     ],
+     "top": 3.29,
+     "left": 0.37
+    }
+   ],
+   "tables": [],
+   "images": [],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 2,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "RAG回顾",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "RAG即检索、增强和生成，其主要分为2条线：\n离线处理：向私有知识库（向量存储）源源不断添加私有知识文档。\n向知识库添加来自未来的知识文档（基于模型训练完成时间）\n向模型添加私有知识文档\n给出模型参考资料，规避模型幻觉（一本正经的胡说八道）\n在线处理：用户提问会先基于私有知识库做检索，获取参考资料，同步组装新提示词询问大模型获取结果。",
+     "level": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "002-01.png",
+     "sha1": "10dc9e113d23bda11ea0ef92bec14261e57b0f06",
+     "ext": "png",
+     "bytes": 528919,
+     "px_w": 2814,
+     "px_h": 1390,
+     "shape_w_in": 7.13,
+     "shape_h_in": 3.52,
+     "top_in": 3.44,
+     "left_in": 3.06
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 3,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "本次项目以\"某东商品衣服\"为例，以衣服属性构建本地知识。使用者可以自由更新本地知识，用户问题的答案也是基于本地知识生成的。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 6",
+     "type": "TEXT_BOX (17)",
+     "text": "离线流程",
+     "level": [
+      0
+     ],
+     "top": 1.89,
+     "left": 5.56
+    },
+    {
+     "name": "矩形 7",
+     "type": "AUTO_SHAPE (1)",
+     "text": "本地知识文件\n加载和读取",
+     "level": [
+      0,
+      0
+     ],
+     "top": 2.73,
+     "left": 7.22
+    },
+    {
+     "name": "矩形 8",
+     "type": "AUTO_SHAPE (1)",
+     "text": "文本切分",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 9.03
+    },
+    {
+     "name": "矩形 9",
+     "type": "AUTO_SHAPE (1)",
+     "text": "向量数据库",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 10.84
+    },
+    {
+     "name": "文本框 11",
+     "type": "TEXT_BOX (17)",
+     "text": "在线流程",
+     "level": [
+      0
+     ],
+     "top": 5.73,
+     "left": 5.56
+    },
+    {
+     "name": "矩形 12",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Query向量化",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 7.22
+    },
+    {
+     "name": "矩形 13",
+     "type": "AUTO_SHAPE (1)",
+     "text": "向量匹配",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 9.03
+    },
+    {
+     "name": "矩形 14",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Prompt工程",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 10.84
+    },
+    {
+     "name": "矩形 15",
+     "type": "AUTO_SHAPE (1)",
+     "text": "提交LLM生成答案",
+     "level": [
+      0
+     ],
+     "top": 4.85,
+     "left": 7.22
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "003-01.png",
+     "sha1": "10dc9e113d23bda11ea0ef92bec14261e57b0f06",
+     "ext": "png",
+     "bytes": 528919,
+     "px_w": 2814,
+     "px_h": 1390,
+     "shape_w_in": 6.43,
+     "shape_h_in": 3.18,
+     "top_in": 2.42,
+     "left_in": 0.6
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 4,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目主要会实现如下代码：",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "矩形 16",
+     "type": "AUTO_SHAPE (1)",
+     "text": "app_file_upload.py",
+     "level": [
+      0
+     ],
+     "top": 1.58,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 17",
+     "type": "TEXT_BOX (17)",
+     "text": "知识库更新主程序（streamlit）",
+     "level": [
+      0
+     ],
+     "top": 1.68,
+     "left": 7.13
+    },
+    {
+     "name": "矩形 18",
+     "type": "AUTO_SHAPE (1)",
+     "text": "app_qa.py",
+     "level": [
+      0
+     ],
+     "top": 2.29,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 19",
+     "type": "TEXT_BOX (17)",
+     "text": "项目主程序（streamlit），启动对话WEB页面",
+     "level": [
+      0
+     ],
+     "top": 2.38,
+     "left": 7.13
+    },
+    {
+     "name": "矩形 20",
+     "type": "AUTO_SHAPE (1)",
+     "text": "config_data.py",
+     "level": [
+      0
+     ],
+     "top": 3.0,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 21",
+     "type": "TEXT_BOX (17)",
+     "text": "配置文件",
+     "level": [
+      0
+     ],
+     "top": 3.09,
+     "left": 7.14
+    },
+    {
+     "name": "矩形 22",
+     "type": "AUTO_SHAPE (1)",
+     "text": "file_history_store.py",
+     "level": [
+      0
+     ],
+     "top": 3.71,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 23",
+     "type": "TEXT_BOX (17)",
+     "text": "长期会话记忆存储服务",
+     "level": [
+      0
+     ],
+     "top": 3.8,
+     "left": 7.14
+    },
+    {
+     "name": "矩形 24",
+     "type": "AUTO_SHAPE (1)",
+     "text": "knowledge_base.py",
+     "level": [
+      0
+     ],
+     "top": 4.42,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 25",
+     "type": "TEXT_BOX (17)",
+     "text": "知识库更新服务",
+     "level": [
+      0
+     ],
+     "top": 4.51,
+     "left": 7.14
+    },
+    {
+     "name": "矩形 5",
+     "type": "AUTO_SHAPE (1)",
+     "text": "rag.py",
+     "level": [
+      0
+     ],
+     "top": 5.13,
+     "left": 3.48
+    },
+    {
+     "name": "矩形 6",
+     "type": "AUTO_SHAPE (1)",
+     "text": "vector_stores.py",
+     "level": [
+      0
+     ],
+     "top": 5.84,
+     "left": 3.49
+    },
+    {
+     "name": "文本框 8",
+     "type": "TEXT_BOX (17)",
+     "text": "rag核心服务",
+     "level": [
+      0
+     ],
+     "top": 5.22,
+     "left": 7.13
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "向量存储服务",
+     "level": [
+      0
+     ],
+     "top": 5.93,
+     "left": 7.13
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "004-01.png",
+     "sha1": "94d928e6f4444efd8fc647b7b3ccdbb00e9d8006",
+     "ext": "png",
+     "bytes": 13606,
+     "px_w": 225,
+     "px_h": 385,
+     "shape_w_in": 2.34,
+     "shape_h_in": 4.01,
+     "top_in": 1.98,
+     "left_in": 0.6
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 5,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "005-01.png",
+     "sha1": "0de768c2c54e8ab446f4c02eefd9911438299876",
+     "ext": "png",
+     "bytes": 85670,
+     "px_w": 1492,
+     "px_h": 980,
+     "shape_w_in": 6.69,
+     "shape_h_in": 4.4,
+     "top_in": 1.55,
+     "left_in": 2.53
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 6,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "本次项目以\"某东商品衣服\"为例，以衣服属性构建本地知识。使用者可以自由更新本地知识，用户问题的答案也是基于本地知识生成的。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "文本框 6",
+     "type": "TEXT_BOX (17)",
+     "text": "离线流程",
+     "level": [
+      0
+     ],
+     "top": 1.89,
+     "left": 5.56
+    },
+    {
+     "name": "矩形 7",
+     "type": "AUTO_SHAPE (1)",
+     "text": "本地知识文件\n加载和读取",
+     "level": [
+      0,
+      0
+     ],
+     "top": 2.73,
+     "left": 7.22
+    },
+    {
+     "name": "矩形 8",
+     "type": "AUTO_SHAPE (1)",
+     "text": "文本切分",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 9.03
+    },
+    {
+     "name": "矩形 9",
+     "type": "AUTO_SHAPE (1)",
+     "text": "向量数据库",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 10.84
+    },
+    {
+     "name": "文本框 11",
+     "type": "TEXT_BOX (17)",
+     "text": "在线流程",
+     "level": [
+      0
+     ],
+     "top": 5.73,
+     "left": 5.56
+    },
+    {
+     "name": "矩形 12",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Query向量化",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 7.22
+    },
+    {
+     "name": "矩形 13",
+     "type": "AUTO_SHAPE (1)",
+     "text": "向量匹配",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 9.03
+    },
+    {
+     "name": "矩形 14",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Prompt工程",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 10.84
+    },
+    {
+     "name": "矩形 15",
+     "type": "AUTO_SHAPE (1)",
+     "text": "提交LLM生成答案",
+     "level": [
+      0
+     ],
+     "top": 4.85,
+     "left": 7.22
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "006-01.png",
+     "sha1": "10dc9e113d23bda11ea0ef92bec14261e57b0f06",
+     "ext": "png",
+     "bytes": 528919,
+     "px_w": 2814,
+     "px_h": 1390,
+     "shape_w_in": 6.43,
+     "shape_h_in": 3.18,
+     "top_in": 2.42,
+     "left_in": 0.6
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 7,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目主要会实现如下代码：",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "矩形 16",
+     "type": "AUTO_SHAPE (1)",
+     "text": "app_file_upload.py",
+     "level": [
+      0
+     ],
+     "top": 1.58,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 17",
+     "type": "TEXT_BOX (17)",
+     "text": "知识库更新主程序（streamlit）",
+     "level": [
+      0
+     ],
+     "top": 1.68,
+     "left": 7.13
+    },
+    {
+     "name": "矩形 18",
+     "type": "AUTO_SHAPE (1)",
+     "text": "app_qa.py",
+     "level": [
+      0
+     ],
+     "top": 2.29,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 19",
+     "type": "TEXT_BOX (17)",
+     "text": "项目主程序（streamlit），启动对话WEB页面",
+     "level": [
+      0
+     ],
+     "top": 2.38,
+     "left": 7.13
+    },
+    {
+     "name": "矩形 20",
+     "type": "AUTO_SHAPE (1)",
+     "text": "config_data.py",
+     "level": [
+      0
+     ],
+     "top": 3.0,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 21",
+     "type": "TEXT_BOX (17)",
+     "text": "配置文件",
+     "level": [
+      0
+     ],
+     "top": 3.09,
+     "left": 7.14
+    },
+    {
+     "name": "矩形 22",
+     "type": "AUTO_SHAPE (1)",
+     "text": "file_history_store.py",
+     "level": [
+      0
+     ],
+     "top": 3.71,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 23",
+     "type": "TEXT_BOX (17)",
+     "text": "长期会话记忆存储服务",
+     "level": [
+      0
+     ],
+     "top": 3.8,
+     "left": 7.14
+    },
+    {
+     "name": "矩形 24",
+     "type": "AUTO_SHAPE (1)",
+     "text": "knowledge_base.py",
+     "level": [
+      0
+     ],
+     "top": 4.42,
+     "left": 3.48
+    },
+    {
+     "name": "文本框 25",
+     "type": "TEXT_BOX (17)",
+     "text": "知识库更新服务",
+     "level": [
+      0
+     ],
+     "top": 4.51,
+     "left": 7.14
+    },
+    {
+     "name": "矩形 5",
+     "type": "AUTO_SHAPE (1)",
+     "text": "rag.py",
+     "level": [
+      0
+     ],
+     "top": 5.13,
+     "left": 3.48
+    },
+    {
+     "name": "矩形 6",
+     "type": "AUTO_SHAPE (1)",
+     "text": "vector_stores.py",
+     "level": [
+      0
+     ],
+     "top": 5.84,
+     "left": 3.49
+    },
+    {
+     "name": "文本框 8",
+     "type": "TEXT_BOX (17)",
+     "text": "rag核心服务",
+     "level": [
+      0
+     ],
+     "top": 5.22,
+     "left": 7.13
+    },
+    {
+     "name": "文本框 9",
+     "type": "TEXT_BOX (17)",
+     "text": "向量存储服务",
+     "level": [
+      0
+     ],
+     "top": 5.93,
+     "left": 7.13
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "007-01.png",
+     "sha1": "94d928e6f4444efd8fc647b7b3ccdbb00e9d8006",
+     "ext": "png",
+     "bytes": 13606,
+     "px_w": 225,
+     "px_h": 385,
+     "shape_w_in": 2.34,
+     "shape_h_in": 4.01,
+     "top_in": 1.98,
+     "left_in": 0.6
+    },
+    {
+     "idx": 2,
+     "filename": "007-02.png",
+     "sha1": "c0264dc7cfa7640a878fe770462623e9ac131f4f",
+     "ext": "png",
+     "bytes": 56975,
+     "px_w": 884,
+     "px_h": 363,
+     "shape_w_in": 10.9,
+     "shape_h_in": 4.48,
+     "top_in": 1.64,
+     "left_in": 13.7
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 8,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "离线流程：",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "矩形 16",
+     "type": "AUTO_SHAPE (1)",
+     "text": "app_file_upload.py",
+     "level": [
+      0
+     ],
+     "top": 6.12,
+     "left": 2.76
+    },
+    {
+     "name": "矩形 20",
+     "type": "AUTO_SHAPE (1)",
+     "text": "config_data.py",
+     "level": [
+      0
+     ],
+     "top": 6.73,
+     "left": 5.1
+    },
+    {
+     "name": "矩形 24",
+     "type": "AUTO_SHAPE (1)",
+     "text": "knowledge_base.py",
+     "level": [
+      0
+     ],
+     "top": 6.14,
+     "left": 7.06
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "008-01.png",
+     "sha1": "94d928e6f4444efd8fc647b7b3ccdbb00e9d8006",
+     "ext": "png",
+     "bytes": 13606,
+     "px_w": 225,
+     "px_h": 385,
+     "shape_w_in": 2.34,
+     "shape_h_in": 4.01,
+     "top_in": 1.98,
+     "left_in": -2.61
+    },
+    {
+     "idx": 2,
+     "filename": "008-02.png",
+     "sha1": "c0264dc7cfa7640a878fe770462623e9ac131f4f",
+     "ext": "png",
+     "bytes": 56975,
+     "px_w": 884,
+     "px_h": 363,
+     "shape_w_in": 10.9,
+     "shape_h_in": 4.48,
+     "top_in": 1.64,
+     "left_in": 1.39
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 9,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "本次项目以\"某东商品衣服\"为例，以衣服属性构建本地知识。使用者可以自由更新本地知识，用户问题的答案也是基于本地知识生成的。",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    },
+    {
+     "name": "矩形 7",
+     "type": "AUTO_SHAPE (1)",
+     "text": "本地知识文件\n加载和读取",
+     "level": [
+      0,
+      0
+     ],
+     "top": 2.73,
+     "left": 7.22
+    },
+    {
+     "name": "矩形 8",
+     "type": "AUTO_SHAPE (1)",
+     "text": "文本切分",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 9.03
+    },
+    {
+     "name": "矩形 9",
+     "type": "AUTO_SHAPE (1)",
+     "text": "向量数据库",
+     "level": [
+      0
+     ],
+     "top": 2.73,
+     "left": 10.84
+    },
+    {
+     "name": "文本框 11",
+     "type": "TEXT_BOX (17)",
+     "text": "在线流程",
+     "level": [
+      0
+     ],
+     "top": 5.73,
+     "left": 5.56
+    },
+    {
+     "name": "矩形 12",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Query向量化",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 7.22
+    },
+    {
+     "name": "矩形 13",
+     "type": "AUTO_SHAPE (1)",
+     "text": "向量匹配",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 9.03
+    },
+    {
+     "name": "矩形 14",
+     "type": "AUTO_SHAPE (1)",
+     "text": "Prompt工程",
+     "level": [
+      0
+     ],
+     "top": 4.06,
+     "left": 10.84
+    },
+    {
+     "name": "矩形 15",
+     "type": "AUTO_SHAPE (1)",
+     "text": "提交LLM生成答案",
+     "level": [
+      0
+     ],
+     "top": 4.85,
+     "left": 7.22
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "009-01.png",
+     "sha1": "10dc9e113d23bda11ea0ef92bec14261e57b0f06",
+     "ext": "png",
+     "bytes": 528919,
+     "px_w": 2814,
+     "px_h": 1390,
+     "shape_w_in": 6.43,
+     "shape_h_in": 3.18,
+     "top_in": 2.42,
+     "left_in": 0.6
+    }
+   ],
+   "notes": "",
+   "errors": []
+  },
+  {
+   "slide": 10,
+   "texts": [
+    {
+     "name": "文本占位符 1",
+     "type": "PLACEHOLDER (14)",
+     "text": "项目需求和思路",
+     "level": [
+      0
+     ],
+     "top": 0.37,
+     "left": 0.45
+    },
+    {
+     "name": "文本占位符 2",
+     "type": "PLACEHOLDER (14)",
+     "text": "在线流程：",
+     "level": [
+      0
+     ],
+     "top": 1.23,
+     "left": 0.52
+    }
+   ],
+   "tables": [],
+   "images": [
+    {
+     "idx": 1,
+     "filename": "010-01.png",
+     "sha1": "d993fecffa169dcb26d0cd98ae4acd2793a2cd78",
+     "ext": "png",
+     "bytes": 210923,
+     "px_w": 2028,
+     "px_h": 993,
+     "shape_w_in": 10.69,
+     "shape_h_in": 5.23,
+     "top_in": 1.45,
+     "left_in": 0.84
+    }
+   ],
+   "notes": "",
+   "errors": []
+  }
+ ]
+}
