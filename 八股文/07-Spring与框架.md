@@ -21,7 +21,6 @@ public class OrderService {
         paymentProcessor.charge();
     }
 }
-
 ```
 **IOC解耦示例**
 
@@ -34,7 +33,6 @@ public class OrderService {
         paymentProcessor.charge();
     }
 }
-
 ```
 **如果要更换实现类，在这修改**
 
@@ -46,7 +44,6 @@ public class AppConfig {
         return new WechatPayProcessor(); //修改这行代码， 更换实现
     }
 }
-
 ```
 
 ## Spring AOP
@@ -210,7 +207,6 @@ public class FeatureConfig {
         // 仅当  Kafka Producer 类存在时注册该  Bean
     }
 }
-
 ```
 
 ![SpringBoot 自动装配原理](file:///D:/Java/data/八股文/07-Spring与框架/96f513224212.png)
@@ -477,7 +473,7 @@ public class MyService{
         }catch(Exception e){
             logger.error(e);
         }
-    }
+}
 }
 
 ```
@@ -500,7 +496,6 @@ private void doInternal(){
 System.out.println("Doing internal work...");
 }
 }
-
 ```
 
 以上， 如果发生 非RuntimeException的异常，则事务不会回滚， 即导致事务失效。所以需要指定为(rollbackFor =Exception.class)

@@ -182,7 +182,7 @@ select * from t_user where id + 1 = 10;
 ```sql
 select * from t_user where phone = 1300000001;
 -- MySQL 在遇到字符串和数字比较的时候，会自动把字符串转为数字，然后再进行比较。
--- 因此相当于    select * from t_user where CAST(phone AS signed int) = 0001; 130000
+-- 因此相当于    select * from t_user where CAST(phone AS signed int) = 1300000001;
 
 ```
 
@@ -514,7 +514,7 @@ InnoDB 和 MyISAM 是 MySQL 中比较常用的两个存储引擎
 
 MyISAM 适合查询以及插入为主的应用主要区别：
 
-|  | InnoDB | MyISAM |
+| 对比项 | InnoDB | MyISAM |
 | --- | --- | --- |
 | 事务 | 支持 | 不支持 |
 | 外键 | 支持 | 不支持 |

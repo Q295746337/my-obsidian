@@ -59,7 +59,6 @@ public class JoinDemo {
         System.out.println("A 线程继续执行");
     }
 }
-
 ```
 
 **CountDownLatch**
@@ -87,7 +86,6 @@ public class CountDownLatchDemo {
         System.out.println("A 线程继续执行");
     }
 }
-
 ```
 
 方法三： CompletableFuture
@@ -106,7 +104,6 @@ public class CompletableFutureDemo {
         System.out.println("A 线程继续执行");
     }
 }
-
 ```
 
 ## 线程池
@@ -358,10 +355,9 @@ public class ThreadLocal<T>{
                 super(k);
                 value = v;
             }
-        }
+}
     }
 }
-
 ```
 
 强引用: Java中默认的引用类型， 一个对象如果具有强引用那么只要这种引用还存在就不会被回收。比如String str = new String("Hello ThreadLocal"); 其中 str 就是一个强引用， 当然， 一旦强引用出了其作用域，那么强引用随着方法弹出线程栈，那么它所指向的对象将在合适的时机被JVM垃圾收集器回收
@@ -460,7 +456,7 @@ ReentrantLock 提供了比 synchronized 关键字更灵活的锁机制， 支持
 
 ReentrantLock 和 Synchronized 的比较
 
-|  | ReentrantLock | Synchronized |
+| 对比项 | ReentrantLock | Synchronized |
 | --- | --- | --- |
 | 特性 | JDK提供的一个类 | Java内置关键字 |
 | 实现层面 | 在JDK代码层面实现 | 在JVM层面(操作系统)层面实现 |
@@ -637,77 +633,94 @@ public class Main {
         Thread thread1 = new Thread(new Seq(1));
         thread.start();
         thread1.start();
-        static class Seq implements Runnable {
-            private final int index;
-            public Seq(int index) {
-                this.index = index;
-            }
-            @Override
-            public void run() {
-                // Run方法只要执行结束了 ,线程就结束了
-                while (count < MAX) {
-                    // 同步代码块 ,一个时刻只能有一个线程获取到锁
-                    synchronized (LOCK) {
-                        // 获取到锁就进来判断， 当前是否轮到该线程打印
-                        while (count % 2 != index) {
-                            // 不是当前线程打印 ,那么就让当前线程去wait,它会自动释放锁 ,所以其他线程可以进来
-                            try {
-                                LOCK.wait();
-                                // 当线程被唤醒时，会尝试重新进入synchronized代码块
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            // 是当前线程打印 , 但count>MAX
-                            if (count > MAX) {
-                                LOCK.notifyAll();
-                                return;
-                            }
-                            System.out.println("Thread-" + index + ":" + count);
-                            count++;
-                            LOCK.notifyAll();
-                        }
-                    }
-                }
-            }
+    }
+    static class Seq implements Runnable {
+        private final int index;
+        public Seq(int index) {
+            this.index = index;
         }
-        public class Main {
-            private static final Object LOCK = new Object();
-            private static volatile int count = 0;
-            private static final int MAX = 100;
-            public static void main(String [] args) {
-                Thread thread = new Thread(new Seq(0));
-                Thread thread1 = new Thread(new Seq(1));
-                Thread thread2 = new Thread(new Seq(2));
-                thread.start();
-                thread1.start();
-                thread2.start();
-                static class Seq implements Runnable {
-                    private final int index;
-                    public Seq(int index) {
-                        this.index = index;
+        @Override
+        public void run() {
+            // Run方法只要执行结束了 ,线程就结束了
+            while (count < MAX) {
+                // 同步代码块 ,一个时刻只能有一个线程获取到锁
+                synchronized (LOCK) {
+                    // 获取到锁就进来判断， 当前是否轮到该线程打印
+                    while (count % 2 != index) {
+                        // 不是当前线程打印 ,那么就让当前线程去wait,它会自动释放锁 ,所以其他线程可以进来
+                        try {
+                            LOCK.wait();
+                            // 当线程被唤醒时，会尝试重新进入synchronized代码块
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+}
+                    // 是当前线程打印 , 但count>MAX
+                    if (count > MAX) {
+                        LOCK.notifyAll();
+                        return;
                     }
-                    @Override
-                    public void run() {
-                        // Run方法只要执行结束了 ,线程就结束了
-                        while (count < MAX) {
-                            // 同步代码块 ,一个时刻只能有一个线程获取到锁
-                            synchronized (LOCK) {
-                                // 获取到锁就进来判断， 当前是否轮到该线程打印
-                                while (count % 3 != index) {
-                                    // 不是当前线程打印 ,那么就让当前线程去wait,它会自动释放锁 ,所以其他线程可以进来
-                                    try {
-                                        LOCK.wait();
-                                        // 当线程被唤醒时，会尝试重新进入synchronized代码块
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                    // 是当前线程打印 , 但count>MAX
-                                    if (count > MAX) {
-                                        LOCK.notifyAll();
-                                        return;
-                                    }
-                                    System.out.println("Thread-" + index + ":" + count);
-                                    count++;LOCK.notifyAll();}}}}}
+                    System.out.println("Thread-" + index + ":" + count);
+                    count++;
+                    LOCK.notifyAll();
+                }
+}
+        }
+}
+}
+
+```
+
+![多线程交替打印1-100](file:///D:/Java/data/八股文/02-JUC并发/9d53299c746f.png)
+
+![多线程交替打印1-100](file:///D:/Java/data/八股文/02-JUC并发/751bc247222e.png)
+
+```java
+public class Main {
+    private static final Object LOCK = new Object();
+    private static volatile int count = 0;
+    private static final int MAX = 100;
+    public static void main(String [] args) {
+        Thread thread = new Thread(new Seq(0));
+        Thread thread1 = new Thread(new Seq(1));
+        Thread thread2 = new Thread(new Seq(2));
+        thread.start();
+        thread1.start();
+        thread2.start();
+    }
+    static class Seq implements Runnable {
+        private final int index;
+        public Seq(int index) {
+            this.index = index;
+        }
+        @Override
+        public void run() {
+            // Run方法只要执行结束了 ,线程就结束了
+            while (count < MAX) {
+                // 同步代码块 ,一个时刻只能有一个线程获取到锁
+                synchronized (LOCK) {
+                    // 获取到锁就进来判断， 当前是否轮到该线程打印
+                    while (count % 3 != index) {
+                        // 不是当前线程打印 ,那么就让当前线程去wait,它会自动释放锁 ,所以其他线程可以进来
+                        try {
+                            LOCK.wait();
+                            // 当线程被唤醒时，会尝试重新进入synchronized代码块
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+}
+                    // 是当前线程打印 , 但count>MAX
+                    if (count > MAX) {
+                        LOCK.notifyAll();
+                        return;
+                    }
+                    System.out.println("Thread-" + index + ":" + count);
+                    count++;LOCK.notifyAll();
+                }
+}
+        }
+}
+}
 
 ```
 
@@ -737,7 +750,7 @@ public class Printer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+}
 }
 
 ```

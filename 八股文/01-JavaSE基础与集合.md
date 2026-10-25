@@ -226,7 +226,7 @@ Cglib 动态代理
 - 如果目标类是被 final 修饰的，则不能使用 Cglib 代理， 因为 Cglib 是通过继承的方式实现代理
 - 调用时会被代理类拦截，相当于调用到代理类的方法， 方法内执行增强逻辑， 再直接调用父类对应的目标方法
 
-|  | JDK动态代理 | Cglib动态代理 |
+| 对比项 | JDK动态代理 | Cglib动态代理 |
 | --- | --- | --- |
 | 原理 | 基于接口生成代理类 | 基于继承生成代理类 |
 | 生成代理类速度 | 快 | 慢 |
@@ -501,7 +501,7 @@ public class FinallyExample {
         } finally {
             System.out.println("执行  finally 代码 .");
         }
-    }
+}
 }
 
 ```
@@ -518,7 +518,7 @@ public class FinallyExample {
         } finally {
             System.out.println("执行  finally 代码 .");
         }
-    }
+}
 }
 
 ```
