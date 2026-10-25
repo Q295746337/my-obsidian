@@ -17,4 +17,4 @@ aliases:
 
 ---
 
-> 📎 [[JavaSE/JavaSE 索引|JavaSE]] · [[JavaWeb/JavaWeb 索引|JavaWeb]] · [[MySQL/MySQL 索引|MySQL]] · [[Redis/Redis 索引|Redis]] · [[SSM框架/SSM框架 索引|SSM框架]]
+> 📎 [[JavaSE/JavaSE 索引|JavaSE]] · [[JavaWeb/JavaWeb 索引|JavaWeb]] · [[MySQL/MySQL 索引|MySQL]] · [[Redis/Redis 索引|Redis]] · [[SSM框架/SSM框架 索引|SSM框架]] · [[检索/检索中心|检索中心]]
