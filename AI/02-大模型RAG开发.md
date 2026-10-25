@@ -9,7 +9,7 @@ aliases:
 
 > 来源：`AI/02大模型RAG开发.pptx`（114 页）。本笔记按“RAG 原理 → 向量与相似度 → LangChain 组件 → 文档入库 → 检索生成”的主线整理。原 PPT 在 `RunnablePassthrough` 处结束，尚未给出完整的检索链代码，相关缺口在文末标注。
 >
-> 前置：[[01-提示词工程]]；完整项目落地：[[03-RAG项目]]；Java 技术栈的同类实现：[[04-LangChain4J与通义千问]]。
+> 前置：[[01-提示词工程]]；完整项目落地：[[03-RAG项目]]；Java 技术栈的同类实现：[[04-LangChain4J与通义千问]]，其讲义级深化版为 [[05-LangChain4j核心]]。
 
 ## 1. RAG 要解决什么问题
 
@@ -932,6 +932,86 @@ print(res)
 
 > 待确认：原 PPT 在此处结束，没有给出 `RunnablePassthrough` 的完整用法和最终可运行的 RAG 链。上图中的 `reference_text` 拼接逻辑也会多出一个 `]`，实际使用时建议改为 `"\n\n".join(doc.page_content for doc in result)`。
 
+### 13.1 补充：RunnablePassthrough 与完整检索链（非原 PPT）
+
+> 补充（非原 PPT）：以下检索链在 PPT 结束后补写，用于补全 `RunnablePassthrough` 的用法和可直接运行的 RAG 链。
+
+`RunnablePassthrough` 是“原样透传输入”的 Runnable。RAG 链里常见两种写法：
+
+1. **字典分发**：`{"context": ..., "input": RunnablePassthrough()}`，同一个问题同时进入检索分支和原始输入分支。
+2. **`RunnablePassthrough.assign(...)`**：保留原输入，并追加一个新字段（例如 `context`）。
+
+完整的检索链可以写成：
+
+```python
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+
+retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+
+prompt = ChatPromptTemplate.from_template(
+    "请只依据下面的参考资料回答问题。\n"
+    "如果资料不足以回答，请明确说“资料中没有相关信息”，不要编造。\n\n"
+    "参考资料：\n{context}\n\n"
+    "问题：{input}"
+)
+
+
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+
+
+rag_chain = (
+    {
+        "context": retriever | format_docs,
+        "input": RunnablePassthrough(),
+    }
+    | prompt
+    | model
+    | StrOutputParser()
+)
+
+answer = rag_chain.invoke("怎么减肥？")
+print(answer)
+```
+
+等价的 `assign` 写法：
+
+```python
+rag_chain = (
+    RunnablePassthrough.assign(context=retriever | format_docs)
+    | prompt
+    | model
+    | StrOutputParser()
+)
+```
+
+链上各环节的类型流转：
+
+| 环节 | 输入 | 输出 |
+| --- | --- | --- |
+| 字典/`assign` | `str` | `{"context": str, "input": str}` |
+| `ChatPromptTemplate` | `dict` | `PromptValue` |
+| 聊天模型 | `PromptValue` | `AIMessage` |
+| `StrOutputParser` | `AIMessage` | `str` |
+
+流式执行：
+
+```python
+for chunk in rag_chain.stream("怎么减肥？"):
+    print(chunk, end="", flush=True)
+```
+
+关键点：
+
+- `retriever` 本身是 Runnable，`retriever | format_docs` 把 `list[Document]` 转成字符串。
+- `RunnablePassthrough` 不修改输入；`assign` 在保留原输入的基础上追加字段。
+- Prompt 中的变量名必须和字典 key 一致（`context`、`input`）。
+- 检索不到内容时 `context` 为空字符串，要靠 Prompt 约束模型“资料不足时明确说明”，避免幻觉。
+- 原 PPT 的 `reference_text` 用循环拼接且会多出一个 `]`，建议改用 `"\n\n".join(...)`。
+- 需要给答案附来源时，让检索分支同时返回原始 docs，再从 `doc.metadata["source"]` 取文件名。
+
 ## 14. 面试题与答案要点
 
 ### 14.1 RAG 的流程是什么？
@@ -976,8 +1056,6 @@ print(res)
 - `InMemoryChatMessageHistory` 重启即丢失，生产环境要持久化。
 - 文档加载器的 `load()` 可能一次占用大量内存，大文档用 `lazy_load()`。
 
-## 16. 相关笔记
-
 ---
 
-> 📎 **相关笔记**：[[01-提示词工程]] · [[03-RAG项目]] · [[04-LangChain4J与通义千问]] · [[AI/AI 索引|AI 索引]]
+> 📎 **相关笔记**：[[05-LangChain4j核心]] · [[03-RAG项目]] · [[AI/AI 索引|AI 索引]]

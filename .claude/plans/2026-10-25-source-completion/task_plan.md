@@ -14,10 +14,10 @@
 
 ## Phases
 
-- [ ] Phase 1：盘点新 PDF / 新笔记 / 新 AI 章节（基础盘点已完成）
-- [ ] Phase 2：并行处理 JUC 拆分+PDF补全、JVM PDF补全、AI 章节+补充、面试合并（面试已完成，其余进行中）
-- [ ] Phase 3：索引、别名、检索层、交叉链接整合（不更新图谱密度指标）
-- [ ] Phase 4：全库验收 + 交付报告
+- [x] Phase 1：盘点新 PDF / 新笔记 / 新 AI 章节（基础盘点已完成）
+- [x] Phase 2：并行处理 JUC 拆分+PDF补全、JVM PDF补全、AI 章节+补充、面试合并（全部完成）
+- [x] Phase 3：索引、别名、检索层、交叉链接整合（不更新图谱密度指标）
+- [x] Phase 4：全库验收 + 交付报告
 
 ## Decisions
 
@@ -46,4 +46,4 @@
 
 ## Status
 
-**Currently in Phase 2** — 面试已完成并自检；等待 JUC、JVM、AI 完成。
+**Completed** — 交付报告：[[源资料补全与JUC拆分报告-2026-10-25]]

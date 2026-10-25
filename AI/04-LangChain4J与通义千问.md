@@ -9,7 +9,7 @@ aliases:
 
 > 来源：`AI/LangChain4J+通义千问大模型应用开发(志愿填报大师).pptx`（132 页）。本笔记按“Java AI 化背景 → 大模型基础与调用 → LangChain4J 会话功能 → RAG 知识库 → Tools 工具调用”的主线整理。原 PPT 在第 130 页讲完 Tools 实现后结束，未展示完整的志愿填报项目整合；第 131 页为空，第 132 页为结束页。
 >
-> RAG 原理与 LangChain 版本：[[02-大模型RAG开发]]；Python 项目案例：[[03-RAG项目]]；提示词基础：[[01-提示词工程]]。
+> RAG 原理与 LangChain 版本：[[02-大模型RAG开发]]；Python 项目案例：[[03-RAG项目]]；提示词基础：[[01-提示词工程]]；同一课程的讲义级深化版：[[05-LangChain4j核心]]。
 
 ## 1. 课程定位与学习要求
 
@@ -910,6 +910,208 @@ public interface ConsultantService {
 }
 ```
 
+### 7.5 补充：Tools / Function Calling 完整实现要点（非原 PPT）
+
+> 补充（非原 PPT）：PPT 讲完 `@Tool` / `@P` 和 `@AiService(tools = ...)` 就结束了，没有给出建表、实体、Mapper、Service 的完整代码，也没有展开 Function Calling 的执行细节。下面按同一门课程的第三章讲义补齐一套可运行实现，并补充工程要点。
+
+#### 7.5.1 建表
+
+```sql
+create database if not exists gk;
+use gk;
+
+create table if not exists reservation
+(
+    id                 bigint      primary key auto_increment not null comment '主键ID',
+    name               varchar(50)  not null comment '考生姓名',
+    gender             varchar(2)   not null comment '考生性别',
+    phone              varchar(20)  not null comment '考生手机号',
+    communication_time datetime     not null comment '沟通时间',
+    province           varchar(32)  not null comment '考生所处的省份',
+    estimated_score    int          not null comment '考生预估分数'
+);
+```
+
+> 库名 `gk` 与第 7.2 节的数据源 URL 保持一致；如果你按第三章讲义建库，也可以把 URL 改成 `volunteer`，两处必须一致。
+
+#### 7.5.2 实体、Mapper、Service
+
+实体：
+
+```java
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Reservation {
+    private Long id;
+    private String name;
+    private String gender;
+    private String phone;
+    private LocalDateTime communicationTime;
+    private String province;
+    private Integer estimatedScore;
+}
+```
+
+Mapper：
+
+```java
+import com.itheima.consultant.pojo.Reservation;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+@Mapper
+public interface ReservationMapper {
+
+    @Insert("insert into reservation(name, gender, phone, communication_time, province, estimated_score) " +
+            "values(#{name}, #{gender}, #{phone}, #{communicationTime}, #{province}, #{estimatedScore})")
+    void insert(Reservation reservation);
+
+    @Select("select * from reservation where phone = #{phone}")
+    Reservation findByPhone(String phone);
+}
+```
+
+Service：
+
+```java
+import com.itheima.consultant.mapper.ReservationMapper;
+import com.itheima.consultant.pojo.Reservation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReservationService {
+    @Autowired
+    private ReservationMapper reservationMapper;
+
+    public void insert(Reservation reservation) {
+        reservationMapper.insert(reservation);
+    }
+
+    public Reservation findByPhone(String phone) {
+        return reservationMapper.findByPhone(phone);
+    }
+}
+```
+
+#### 7.5.3 完整 Tool 类
+
+```java
+import com.itheima.consultant.pojo.Reservation;
+import com.itheima.consultant.service.ReservationService;
+import dev.langchain4j.agent.tool.P;
+import dev.langchain4j.agent.tool.Tool;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+
+@Component
+public class ReservationTool {
+
+    @Autowired
+    private ReservationService reservationService;
+
+    @Tool("预约志愿填报服务")
+    public void addReservation(
+            @P("考生姓名") String name,
+            @P("考生性别") String gender,
+            @P("考生手机号") String phone,
+            @P("预约沟通时间,格式为: yyyy-MM-dd'T'HH:mm") String communicationTime,
+            @P("考生所在省份") String province,
+            @P("考生预估分数") Integer estimatedScore
+    ) {
+        Reservation reservation = new Reservation(
+                null,
+                name,
+                gender,
+                phone,
+                LocalDateTime.parse(communicationTime),
+                province,
+                estimatedScore);
+        reservationService.insert(reservation);
+    }
+
+    @Tool("根据考生手机号查询预约单")
+    public Reservation findReservation(@P("考生手机号") String phone) {
+        return reservationService.findByPhone(phone);
+    }
+}
+```
+
+#### 7.5.4 最终装配
+
+```java
+@AiService(
+        wiringMode = AiServiceWiringMode.EXPLICIT,
+        chatModel = "openAiChatModel",
+        streamingChatModel = "openAiStreamingChatModel",
+        chatMemoryProvider = "chatMemoryProvider",
+        contentRetriever = "contentRetriever",
+        tools = "reservationTool"
+)
+public interface ConsultantService {
+    @SystemMessage(fromResource = "system.txt")
+    Flux<String> chat(@MemoryId String memoryId, @UserMessage String message);
+}
+```
+
+Controller：
+
+```java
+@RestController
+public class ChatController {
+    @Autowired
+    private ConsultantService consultantService;
+
+    @RequestMapping(value = "/chat", produces = "text/html;charset=utf-8")
+    public Flux<String> chat(String memoryId, String message) {
+        return consultantService.chat(memoryId, message);
+    }
+}
+```
+
+#### 7.5.5 Function Calling 执行细节
+
+1. LangChain4j 通过反射读取 `@Tool` 的方法名、作用描述，以及 `@P` 的参数名、类型、描述，生成 JSON Schema，放进请求体的 `tools` 字段。
+2. 模型判断需要调用工具时，返回工具名和参数（`tool_calls`），而不是直接返回自然语言答案。
+3. LangChain4j 在本地调用对应方法，把返回值序列化后作为工具结果追加到消息列表。
+4. 再次请求模型；如果模型还要调用其他工具，继续循环，直到模型给出最终答案。
+5. 整个过程对业务代码透明：`ConsultantService.chat()` 仍然只返回 `Flux<String>`。
+
+打开 `log-requests` / `log-responses` 可以看到 `tools` 数组和 `tool_calls`，这是排查“模型为什么不调用工具”的第一手材料。
+
+#### 7.5.6 工程要点
+
+| 要点 | 说明 |
+| --- | --- |
+| 描述面向意图 | `@Tool` 写“什么时候用”，例如“预约志愿填报服务”，不要写内部实现细节 |
+| 参数描述完整 | 时间、枚举、单位、格式都要写进 `@P`；模型靠描述生成参数 |
+| 参数校验 | 手机号、分数、时间格式在工具方法内再校验一次，不能只依赖模型 |
+| 幂等 | 写库前可按手机号查重，避免模型重复调用造成重复预约 |
+| 返回值可序列化 | 返回 DTO、`Map` 或简单实体；避免懒加载代理和循环引用 |
+| 错误处理 | 工具抛异常时，把可读错误信息返回给模型，让它向用户解释或重试 |
+| 安全边界 | 不要暴露删库、转账、发邮件等高风险工具；高风险操作要二次确认 |
+| 多工具 | `tools` 可以配置多个 Bean，模型根据描述自行选择 |
+| 可选参数 | 较新版本可用 `@P(required = false)` 标记可选参数，具体以所用版本 API 为准 |
+| 时间类型 | 示例用 `String` 接收再 `LocalDateTime.parse`，避免模型生成的格式与 Jackson 反序列化冲突 |
+
+#### 7.5.7 测试建议
+
+- 先直接调用 `ReservationService`，确认数据库和 MyBatis 配置正确。
+- 再通过聊天接口说“我想预约”，观察日志中是否出现 `tool_calls`。
+- 验证模型是否收集齐六项信息；缺项时应继续追问，而不是调用工具。
+- 重复提交同一手机号，验证幂等逻辑。
+- 查询预约时，确认 `findReservation` 的返回结果能被模型正确转述。
+
 ## 8. 面试题与答案要点
 
 ### 8.1 LangChain4J 和直接调用 HTTP 有什么区别？
@@ -964,8 +1166,6 @@ public interface ConsultantService {
 - `EmbeddingStoreContentRetriever` 的 `maxResults` 和 `minScore` 会直接影响召回数量和质量，需要按业务调参。
 - PPT 第 131 页为空，第 132 页为结束页；课程未展示完整项目整合代码，实际项目需结合课程源码。
 
-## 10. 相关笔记
-
 ---
 
-> 📎 **相关笔记**：[[02-大模型RAG开发]] · [[03-RAG项目]] · [[01-提示词工程]] · [[AI/AI 索引|AI 索引]]
+> 📎 **相关笔记**：[[05-LangChain4j核心]] · [[02-大模型RAG开发]] · [[AI/AI 索引|AI 索引]]
