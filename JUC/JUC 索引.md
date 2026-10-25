@@ -24,4 +24,4 @@ aliases:
 
 ---
 
-> 📎 **相关笔记**：[[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE]] · [[JVM/JVM 索引|JVM]] · [[检索/检索中心|检索中心]]
+> 📎 **相关笔记**：[[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE]] · [[JVM/JVM 索引|JVM]] · [[JVM/05-线程池面试专题|线程池面试专题]] · [[检索/检索中心|检索中心]]
