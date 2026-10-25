@@ -240,23 +240,22 @@ MySQL主从复制的核心就是  二进制日志，具体的过程如下：
 #### 2.3.2 主库配置
 
 
-## 1. 修改配置文件  /etc/my.cnf
+##### 1. 修改配置文件 /etc/my.cnf
 
 
-```sql
-server-id=
-read-only=
+```ini
+# mysql 服务ID，保证整个集群环境中唯一，取值范围：1 – 2^32-1，默认为 1
+server-id=1
+# 是否只读，1 代表只读，0 代表读写
+read-only=0
+# 忽略的数据，指不需要同步的数据库
+# binlog-ignore-db=mysql
+# 指定同步的数据库
+# binlog-do-db=db01
 ```
 
-#mysql 服务ID，保证整个集群环境中唯一，取值范围：1 – 232-1，默认为
-#是否只读,1 代表只读, 0 代表读写
-#忽略的数据, 指不需要同步的数据库
-#binlog-ignore-db=mysql
-#指定同步的数据库
-#binlog-do-db=db01
 
-
-## 2. 重启MySQL服务器
+##### 2. 重启MySQL服务器
 
 
 ```sql
@@ -264,7 +263,7 @@ systemctl  restart  mysqld
 ```
 
 
-## 3. 登录mysql，创建远程连接的账号，并授予主从复制权限
+##### 3. 登录 MySQL，创建远程连接账号并授予主从复制权限
 
 
 ```sql
@@ -273,7 +272,7 @@ GRANT  REPLICATION  SLAVE  ON  *.*  TO  'itcast '@ '% ';
 ```
 
 
-## 4. 通过指令，查看二进制日志坐标
+##### 4. 通过指令查看二进制日志坐标
 
 
 ```sql
@@ -299,19 +298,18 @@ binlog_ignore_db : 指定不需要同步的数据库
 #### 2.3.3 从库配置
 
 
-## MySQL 运维篇 · 1. 修改配置文件  /etc/my.cnf
+##### 1. 修改配置文件 /etc/my.cnf
 
 
-```sql
-server-id=
+```ini
+# mysql 服务ID，保证整个集群环境中唯一，取值范围：1 – 2^32-1，和主库不一样即可
+server-id=2
+# 是否只读，1 代表只读，0 代表读写
 read-only=1
 ```
 
-#mysql 服务ID，保证整个集群环境中唯一，取值范围：1 – 2^32-1，和主库不一样即可
-#是否只读,1 代表只读, 0 代表读写
 
-
-## 2. 重新启动MySQL服务
+##### 2. 重新启动 MySQL 服务
 
 
 ```sql
@@ -319,7 +317,7 @@ systemctl  restart  mysqld
 ```
 
 
-## 3. 登录mysql，设置主库配置
+##### 3. 登录 MySQL，设置主库配置
 
 
 ```sql
@@ -343,18 +341,22 @@ CHANGE MASTER TO MASTER_HOST= '192.168.200.200 ', MASTER_USER= 'itcast ', MASTER
 | SOURCE  LOG  FILE | binlog日志文件名 | MASTER  LOG  FILE |
 | SOURCE  LOG  POS | binlog日志文件位置 | MASTER  LOG  POS |
 
-## 4. 开启同步操作
+##### 4. 开启同步操作
 
 
-start replica ; #8.0.22之后
-start  slave ;  #8.0.22之前
+```sql
+start replica;  # 8.0.22 之后
+start slave;    # 8.0.22 之前
+```
 
 
-## 5. 查看主从同步状态
+##### 5. 查看主从同步状态
 
 
-show replica  status ;  #8.0.22之后
-show  slave  status ;   #8.0.22之前
+```sql
+show replica status;  # 8.0.22 之后
+show slave status;    # 8.0.22 之前
+```
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image17.jpeg)
@@ -363,7 +365,7 @@ show  slave  status ;   #8.0.22之前
 #### 2.3.4 测试
 
 
-## 1. 在主库  192.168.200.200 上创建数据库、表，并插入数据
+##### 1. 在主库 192.168.200.200 上创建数据库、表并插入数据
 
 
 ```sql
@@ -375,16 +377,18 @@ sex varchar (1)
 ```
 
 
-## 2. 在从库  192.168.200.201 中查询数据，验证主从是否同步
+##### 2. 在从库 192.168.200.201 中查询数据，验证主从是否同步
+
+在从库执行查询，确认主从数据已同步。
 
 
-## 3. 分库分表
+### 3. 分库分表
 
 
-### 3.1 介绍
+#### 3.1 介绍
 
 
-#### 3.1.1 问题分析
+##### 3.1.1 问题分析
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image18.jpeg)
@@ -408,7 +412,7 @@ sex varchar (1)
 分库分表的中心思想都是将数据分散存储，使得单一数据库/表的数据量变小来缓解单一数据库的性能问题，从而达到提升数据库性能的目的。
 
 
-#### 3.1.2 拆分策略
+##### 3.1.2 拆分策略
 
 
 分库分表的形式，主要是两种：垂直拆分和水平拆分。而拆分的粒度，  一般又分为分库和分表，所以组成的拆分策略最终如下：
@@ -417,10 +421,10 @@ sex varchar (1)
 ![](file:///D:/Java/data/MySQL/运维篇/image20.jpeg)
 
 
-#### 3.1.3 垂直拆分
+##### 3.1.3 垂直拆分
 
 
-## 1. 垂直分库
+###### 1. 垂直分库
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image21.jpeg)
@@ -446,6 +450,8 @@ sex varchar (1)
 ![](file:///D:/Java/data/MySQL/运维篇/image25.png)
 
 
+###### 2. 垂直分表
+
 垂直分表：以字段为依据，根据字段属性将不同字段拆分到不同表中。
 
 
@@ -461,10 +467,10 @@ sex varchar (1)
 所有表的并集是全量数据。
 
 
-#### 3.1.4 水平拆分
+##### 3.1.4 水平拆分
 
 
-## 1. 水平分库
+###### 1. 水平分库
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image29.jpeg)
@@ -485,7 +491,7 @@ sex varchar (1)
 所有库的并集是全量数据。
 
 
-## 2. 水平分表
+###### 2. 水平分表
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image33.jpeg)
@@ -509,7 +515,7 @@ sex varchar (1)
 在业务系统中，为了缓解磁盘IO及CPU的性能瓶颈，到底是垂直拆分，还是水平拆分；具体是分库，还是分表，都需要根据具体的业务需求具体分析。
 
 
-#### 3.1.5 实现技术
+##### 3.1.5 实现技术
 
 
 shardingJDBC：基于AOP原理，在应用程序中对本地执行的SQL进行拦截，解析、改写、路由处理。需要自行编码配置实现，只支持java语言，性能较高。
@@ -524,10 +530,10 @@ MyCat：数据库分库分表中间件，不用调整代码即可实现分库分
 本次课程，我们选择了是MyCat数据库中间件，通过MyCat中间件来完成分库分表操作。
 
 
-### 3.2 MyCat概述
+#### 3.2 MyCat概述
 
 
-#### 3.2.1 介绍
+##### 3.2.1 介绍
 
 
 Mycat是开源的、活跃的、基于Java语言编写的MySQL数据库中间件。可以像使用mysql一样来使用mycat，对于开发人员来说根本感觉不到mycat的存在。
@@ -554,7 +560,7 @@ Mycat是开源的、活跃的、基于Java语言编写的MySQL数据库中间件
 社区活跃
 
 
-#### 3.2.2 下载
+##### 3.2.2 下载
 
 
 下载地址： http://dl.mycat.org.cn/
@@ -563,7 +569,7 @@ Mycat是开源的、活跃的、基于Java语言编写的MySQL数据库中间件
 ![](file:///D:/Java/data/MySQL/运维篇/image46.jpeg)
 
 
-#### 3.2.3 安装
+##### 3.2.3 安装
 
 
 Mycat是采用java语言开发的开源的数据库中间件，支持Windows和Linux运行环境，下面介绍MyCat的Linux中的环境搭建。我们需要在准备好的服务器中安装如下软件。
@@ -588,7 +594,7 @@ Mycat
 具体的安装步骤：  参考资料中提供的  《MyCat安装文档》即可，里面有详细的安装及配置步骤。
 
 
-#### 3.2.4 目录介绍
+##### 3.2.4 目录介绍
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image50.png)
@@ -606,7 +612,7 @@ lib：存放mycat的项目依赖包（jar）
 logs：存放mycat的日志文件
 
 
-#### 3.2.5 概念介绍
+##### 3.2.5 概念介绍
 
 
 在MyCat的整体结构中，分为两个部分：上面的逻辑结构、下面的物理结构。
@@ -621,10 +627,10 @@ logs：存放mycat的日志文件
 在后面讲解MyCat入门以及MyCat分片时，还会讲到上面所提到的概念。
 
 
-### 3.3 MyCat入门
+#### 3.3 MyCat入门
 
 
-#### 3.3.1 需求
+##### 3.3.1 需求
 
 
 由于  tb_order 表中数据量很大，磁盘IO及容量都到达了瓶颈，现在需要对  tb_order 表进行数据分片，分为三个数据节点，每一个节点主机位于不同的服务器上 , 具体的结构，参考下图：
@@ -633,7 +639,7 @@ logs：存放mycat的日志文件
 ![](file:///D:/Java/data/MySQL/运维篇/image52.png)
 
 
-#### 3.3.2 环境准备
+##### 3.3.2 环境准备
 
 
 准备3台服务器：
@@ -654,7 +660,7 @@ logs：存放mycat的日志文件
 并且在上述3台数据库中创建数据库  db01 。
 
 
-#### 3.3.3 配置
+##### 3.3.3 配置
 
 
 1). schema.xml
@@ -704,7 +710,7 @@ logs：存放mycat的日志文件
 DB01逻辑库是只读的。
 
 
-#### 3.3.4 测试
+##### 3.3.4 测试
 
 
 3.3.4.1 启动
@@ -804,10 +810,10 @@ INSERT INTO TB_ORDER (id,title) VALUES (15000001, 'goods15000001 ');
 为什么会出现这种现象，数据到底落在哪一个分片服务器到底是如何决定的呢？    这是由逻辑表配置时的一个参数  rule 决定的，而这个参数配置的就是分片规则，关于分片规则的配置，在后面的课程中会详细讲解。
 
 
-### 3.4 MyCat配置
+#### 3.4 MyCat配置
 
 
-#### 3.4.1 schema.xml
+##### 3.4.1 schema.xml
 
 
 schema.xml 作为MyCat中最重要的配置文件之一  , 涵盖了MyCat的逻辑库  、  逻辑表  、  分片规则、分片节点及数据源的配置。
@@ -924,7 +930,7 @@ writeType：写操作分发方式（0：写操作转发到第一个writeHost，�
 dbDriver：数据库驱动，支持  native、 jdbc
 
 
-#### 3.4.2 rule.xml
+##### 3.4.2 rule.xml
 
 
 rule.xml中定义所有拆分表的规则 , 在使用过程中可以灵活的使用分片算法 , 或者对同一个分片算法使用不同的参数 , 它让分片过程可配置化。主要包含两类标签：  tableRule、 Function。
@@ -933,7 +939,7 @@ rule.xml中定义所有拆分表的规则 , 在使用过程中可以灵活的使
 ![](file:///D:/Java/data/MySQL/运维篇/image86.jpeg)
 
 
-#### 3.4.3 server.xml
+##### 3.4.3 server.xml
 
 
 server.xml配置文件包含了MyCat的系统配置信息，主要有两个重要的标签：  system、user。
@@ -987,10 +993,10 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 在测试权限操作时，我们只需要将  privileges 标签的注释放开。   在  privileges 下的schema标签中配置的dml属性配置的是逻辑库的权限。   在privileges的schema下的table标签的dml属性中配置逻辑表的权限。
 
 
-### 3.5 MyCat分片
+#### 3.5 MyCat分片
 
 
-#### 3.5.1 垂直拆分
+##### 3.5.1 垂直拆分
 
 
 3.5.1.1 场景
@@ -1159,7 +1165,7 @@ SELECT order_id , payment ,receiver, province , city , area FROM tb_order_master
 5). 当在MyCat中更新全局表的时候，我们可以看到，所有分片节点中的数据都发生了变化，每个节点的全局表数据时刻保持一致。
 
 
-#### 3.5.2 水平拆分
+##### 3.5.2 水平拆分
 
 
 3.5.2.1 场景
@@ -1346,7 +1352,7 @@ VALUES ( '6 ', 'user ', 'find ', 'success ', 'java.lang.String ', '10001 ', '202
 18:30:31','{\"age\":\"200\",\"name\":\"TomCat\",\"gender\":\"0\"}','cn.itcast.co ntroller.UserController ', 'find ', '29 ',2);
 
 
-#### 3.5.3 分片规则
+##### 3.5.3 分片规则
 
 
 3.5.3.1 范围分片
@@ -2239,10 +2245,10 @@ insert into tb_monthpart (id,name,create_time) values
 ```
 
 
-### 3.6 MyCat管理及监控
+#### 3.6 MyCat管理及监控
 
 
-#### 3.6.1 MyCat原理
+##### 3.6.1 MyCat原理
 
 
 ![](file:///D:/Java/data/MySQL/运维篇/image119.jpeg)
@@ -2260,7 +2266,7 @@ Mycat-web 是  Mycat 可视化运维的管理和监控平台，弥补了  Mycat 
 点。Mycat-web 主要管理和监控  Mycat 的流量、连接、活动线程和内存等，具备   IP 白名单、邮件告警等模块，还可以统计  SQL 并分析慢  SQL 和高频   SQL 等。为优化  SQL 提供依据。
 
 
-#### 3.6.2 MyCat管理
+##### 3.6.2 MyCat管理
 
 
 Mycat默认开通2个端口，可以在server.xml中进行修改。
@@ -2290,7 +2296,7 @@ mysql   -h  192.168.200.
 | show @@sql | 查看执行的SQL |
 | show @@sql.sum | 查看执行的SQL统计 |
 
-#### 3.6.3 MyCat-eye
+##### 3.6.3 MyCat-eye
 
 
 3.6.3.1 介绍

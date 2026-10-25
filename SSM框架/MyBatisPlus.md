@@ -2468,6 +2468,8 @@ class Mybatisplus03DqlApplicationTests {
 
 #### 步骤1:创建一个Maven项目
 
+创建一个 Maven 项目，项目结构按 MyBatis-Plus 官方示例准备。
+
 #### 代码2:导入对应的jar包
 
 ```xml
