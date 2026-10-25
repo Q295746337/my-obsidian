@@ -74,7 +74,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 
 具体的统一结构如下：
 
-<img src="assets/image-20221130140132209.png" alt="image-20221130140132209" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221130140132209.png" alt="image-20221130140132209" style="zoom:80%;" />
 
 > 目录说明： 
 >
@@ -88,7 +88,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 
 - maven提供了标准的、跨平台(Linux、Windows、MacOS) 的自动化项目构建方式
 
-<img src="assets/image-20221130140247524.png" alt="image-20221130140247524" style="zoom:67%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221130140247524.png" alt="image-20221130140247524" style="zoom:67%;" />
 
 如上图所示我们开发了一套系统，代码需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，而Maven提供了一套简单的命令来完成项目构建。
 
@@ -228,7 +228,7 @@ Maven安装配置步骤：
 
 3). 复制之前新建的用来存储jar包的路径，替换掉<localRepository>标签体内容
 
-<img src="assets/2.gif" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/2.gif" style="zoom:80%;" />
 
 
 **3、配置阿里云私服**
@@ -267,14 +267,14 @@ Maven安装配置步骤：
 
 - MAVEN_HOME环境变量的值，设置为maven的解压安装目录
 
-<img src="assets/image-20220616102344350.png" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220616102344350.png" style="zoom:80%;" />
 
 
 2). 在Path中进行配置
 
 - PATH环境变量的值，设置为：%MAVEN_HOME%\bin
 
-<img src="assets/image-20220616102435856.png" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220616102435856.png" style="zoom:80%;" /> 
 
 
 3). 打开DOS命令提示符进行验证，出现如图所示表示安装成功
@@ -328,19 +328,19 @@ mvn -v
 
 - 选择 IDEA中 File  =>  close project
 
-<img src="assets/4.gif" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/4.gif" style="zoom:80%;" />
 
-<img src="assets/image-20220616104338612.png" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220616104338612.png" style="zoom:80%;" />
 
 
 2、打开 All settings , 选择 Build,Execution,Deployment  =>  Build Tools  =>  Maven
 
-<img src="assets/image-20220616104517726.png" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220616104517726.png" style="zoom:80%;" />
 
 
 3、配置工程的编译版本为11
 
-<img src="assets/image-20221201093737128.png" alt="image-20221201093737128" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201093737128.png" alt="image-20221201093737128" style="zoom:80%;" />
 
 这里所设置的maven的环境信息，并未指定任何一个project，此时设置的信息就属于全局配置信息。 以后，我们再创建project，默认就是使用我们全局配置的信息。
 
@@ -351,28 +351,28 @@ mvn -v
 
 1、创建一个空项目 
 
-<img src="assets/image-20221201095621738.png" alt="image-20221201095621738" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201095621738.png" alt="image-20221201095621738" style="zoom:80%;" />
 
-<img src="assets/image-20221201095600057.png" alt="image-20221201095600057" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201095600057.png" alt="image-20221201095600057" style="zoom:80%;" />
 
 
 2、创建模块，选择Maven，点击Next
 
-<img src="assets/image-20221201095831320.png" alt="image-20221201095831320" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201095831320.png" alt="image-20221201095831320" style="zoom:80%;" />
 
-<img src="assets/image-20221201100011799.png" alt="image-20221201100011799" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201100011799.png" alt="image-20221201100011799" style="zoom:80%;" />
 
 
 3、填写模块名称，坐标信息，点击finish，创建完成
 
-<img src="assets/image-20221201100502234.png" alt="image-20221201100502234" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201100502234.png" alt="image-20221201100502234" style="zoom:80%;" /> 
 
 
 4、在Maven工程下，创建HelloWorld类
 
-<img src="assets/image-20221201101603397.png" alt="image-20221201101603397" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201101603397.png" alt="image-20221201101603397" style="zoom:80%;" />
 
-<img src="assets/image-20221201101643427.png" alt="image-20221201101643427" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201101643427.png" alt="image-20221201101643427" style="zoom:80%;" />
 
 > - Maven项目的目录结构:
 >
@@ -466,7 +466,7 @@ Maven坐标主要组成
 
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201104320521.png)
 
-<img src="assets/image-20221201104906754.png" alt="image-20221201104906754" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201104906754.png" alt="image-20221201104906754" style="zoom:80%;" /> 
 
 > 说明：如果没有Maven面板，选择 View  =>  Appearance  =>  Tool Window Bars
 >
@@ -477,13 +477,13 @@ Maven坐标主要组成
 
 File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
-<img src="assets/image-20220823161727718.png" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220823161727718.png" style="zoom:80%;" />
 
 找到要导入工程的pom.xml
 
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201105532909.png)
 
-<img src="assets/image-20221201105845872.png" alt="image-20221201105845872" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201105845872.png" alt="image-20221201105845872" style="zoom:80%;" />
 
 
 ### 04. 依赖管理
@@ -532,17 +532,17 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 1. 利用中央仓库搜索的依赖坐标
 
-   <img src="assets/5.gif" style="zoom:80%;" />
+   <img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/5.gif" style="zoom:80%;" />
 
 
 2. 利用IDEA工具搜索依赖
 
-   <img src="assets/6.gif" style="zoom:80%;" />
+   <img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/6.gif" style="zoom:80%;" />
 
 
 3. 熟练上手maven后，快速导入依赖
 
-   <img src="assets/7.gif" style="zoom:80%;" />
+   <img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/7.gif" style="zoom:80%;" />
 
 
 #### 4.2 依赖传递
@@ -883,11 +883,11 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
 基于Spring官方骨架，创建SpringBoot工程。
 
-<img src="assets/image-20221201184702136.png" alt="image-20221201184702136" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201184702136.png" alt="image-20221201184702136" style="zoom:80%;" />
 
 基本信息描述完毕之后，勾选web开发相关依赖。
 
-<img src="assets/image-20221201184850248.png" alt="image-20221201184850248" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201184850248.png" alt="image-20221201184850248" style="zoom:80%;" />
 
 点击Finish之后，就会联网创建这个SpringBoot工程，创建好之后，结构如下：
 
@@ -900,11 +900,11 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
 在com.itheima这个包下创建一个子包controller
 
-<img src="assets/image-20221201190541295.png" alt="image-20221201190541295" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201190541295.png" alt="image-20221201190541295" style="zoom:80%;" />
 
 然后在controller包下新建一个类：HelloController
 
-<img src="assets/image-20221201190825439.png" alt="image-20221201190825439" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201190825439.png" alt="image-20221201190825439" style="zoom:80%;" />
 
 ```java
 package com.itheima.controller;
@@ -933,7 +933,7 @@ public class HelloController {
 
 打开浏览器，输入 `http://localhost:8080/hello`
 
-<img src="assets/image-20220823195048415.png" style="zoom:80%;" />
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220823195048415.png" style="zoom:80%;" />
 
 
 #### 1.3 Web分析
@@ -1517,7 +1517,7 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入：`http://12
 - 解决方案：换Tomcat端口号
   - 要想修改Tomcat启动的端口号，需要修改 conf/server.xml文件
 
-<img src="assets/image-20220825084017185.png" alt="image-20220825084017185" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220825084017185.png" alt="image-20220825084017185" style="zoom:80%;" /> 
 
 > 注: HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。
 

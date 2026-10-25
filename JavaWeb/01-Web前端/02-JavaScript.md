@@ -41,7 +41,7 @@
 
 - JavaScript：负责网页的行为（交互效果）。
 
-<img src="assets/image-20230309170412197.png" alt="image-20230309170412197" style="zoom:67%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309170412197.png" alt="image-20230309170412197" style="zoom:67%;" /> 
 
 
 当然了，随着技术的发展，我们为了更加快速的开发，现在也出现了很多前端开发的高级技术。例如：vue、elementui、Axios等等。
@@ -67,7 +67,7 @@
 
 下面展示的是一段html代码经过浏览器解析，呈现的效果如右图所示：
 
-<img src="assets/image-20230309172534138.png" alt="image-20230309172534138" style="zoom:80%;" />   
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309172534138.png" alt="image-20230309172534138" style="zoom:80%;" />   
 
 	
 
@@ -77,7 +77,7 @@
 
 下面展示的是一段 html代码 及 CSS样式 经过浏览器解析，呈现的效果如右图所示：
 
-<img src="assets/image-20230309172634388.png" alt="image-20230309172634388" style="zoom: 80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309172634388.png" alt="image-20230309172634388" style="zoom: 80%;" /> 
 
 	
 
@@ -120,7 +120,7 @@
 
 第四步：然后选中文件，鼠标右击，选择使用浏览器打开文件，浏览器呈现效果如下:
 
-<img src="assets/image-20230309173355794.png" alt="image-20230309173355794" style="zoom:67%;" />  
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309173355794.png" alt="image-20230309173355794" style="zoom:67%;" />  
 
 
 #### 2.1.2 总结
@@ -188,7 +188,7 @@
 
 ###### 2.3.1.1.1 分析
 
-<img src="assets/image-20230309223020809.png" alt="image-20230309223020809" style="zoom:67%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309223020809.png" alt="image-20230309223020809" style="zoom:67%;" /> 
 
  1). 第一部分，是一张图片，需要用到HTML中的图片标签 <img> 来实现。
 
@@ -587,7 +587,7 @@ B. 效果 : h1为一级标题，字体也是最大的 ； h6为六级标题，�
 
 ###### 2.3.2.1.1 分析
 
-<img src="assets/image-20230310084859695.png" alt="image-20230310084859695" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230310084859695.png" alt="image-20230310084859695" style="zoom:80%;" /> 
 
 整个正文部分的排版，主要分为这么四个部分：
 
@@ -760,11 +760,11 @@ B. 效果 : h1为一级标题，字体也是最大的 ； h6为六级标题，�
 
 - 盒子模型组成：内容区域（content）、内边距区域（padding）、边框区域（border）、外边距区域（margin）
 
-<img src="assets/image-20230310092820616.png" alt="image-20230310092820616" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230310092820616.png" alt="image-20230310092820616" style="zoom:80%;" /> 
 
 CSS盒子模型，其实和日常生活中的包装盒是非常类似的，就比如：
 
-<img src="assets/image-20230310093247265.png" alt="image-20230310093247265" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230310093247265.png" alt="image-20230310093247265" style="zoom:80%;" /> 
 
 盒子的大小，其实就包括三个部分： border、padding、content，而margin外边距是不包括在盒子之内的。
 
@@ -1056,7 +1056,7 @@ CSS盒子模型，其实和日常生活中的包装盒是非常类似的，就�
 
 那表单呢,在我们日常的上网的过程中,基本上每天都会遇到。比如，我们经常在访问网站时，出现的登录页面、注册页面、个人信息提交页面，其实都是一个一个的表单 。 当我们在这些表单中录入数据之后，一点击 "提交"，就会将表单中我们填写的数据采集到，并提交， 那其实这个数据呢，一般会提交到服务端，最终保存在数据库中 （后面的课程中会讲到）。
 
-<img src="assets/1668055779440.png" alt="1668055779440" style="zoom:80%;" /> <img src="assets/image-20230309175941128.png" alt="image-20230309175941128" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/1668055779440.png" alt="1668055779440" style="zoom:80%;" /> <img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309175941128.png" alt="image-20230309175941128" style="zoom:80%;" /> 
 
 
 那其实，上述的整个窗口是一个表单，而表单是一项一项的，这个我们称为表单项 或 表单元素。
@@ -1112,7 +1112,7 @@ CSS盒子模型，其实和日常生活中的包装盒是非常类似的，就�
 
 表单编写完毕之后，通过浏览器打开此表单，然后再表单项中录入值之后，点击提交，我们会看到表单的数据在url后面提交到服务端，格式为：?username=Tom&age=12。
 
-<img src="assets/image-20230309191725329.png" alt="image-20230309191725329" style="zoom:80%;" /> 
+<img src="file:///D:/Java/data/JavaWeb/01-Web前端基础/image-20230309191725329.png" alt="image-20230309191725329" style="zoom:80%;" /> 
 
 
 2). POST方式提交表单
