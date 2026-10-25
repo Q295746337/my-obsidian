@@ -1,3 +1,5 @@
+# 分布式锁-redission
+
 ## 5、分布式锁-redission
 
 ### 5.1 分布式锁-redission功能介绍
@@ -304,4 +306,3 @@ private void renewExpiration() {
 ---
 
 > 📎 **相关笔记**：[[Redis-入门篇]] · [[Redis/高级篇/高级-分布式缓存]]
-

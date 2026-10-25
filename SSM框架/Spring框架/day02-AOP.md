@@ -1,3 +1,5 @@
+# Spring AOP
+
 ## Spring_day02
 
 **今日目标**
@@ -2518,5 +2520,4 @@ public class AccountServiceTest {
 
 ---
 
-> 📎 **相关笔记**：
-
+> 📎 **相关笔记**：[[SSM框架/Spring框架/day01-IOC与DI|day01-IOC与DI]] · [[SSM框架/Spring框架/day03-事务|day03-事务]] · [[SSM框架/SSM框架 索引|SSM框架 索引]]

@@ -3056,5 +3056,4 @@ public class SpringMvcConfig {
 
 ---
 
-> 📎 **相关笔记**：
-
+> 📎 **相关笔记**：[[SSM框架/SpringMVC/day02-高级|day02-高级]] · [[SSM框架/SSM框架 索引|SSM框架 索引]]

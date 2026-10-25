@@ -1,3 +1,5 @@
+# InnoDB引擎
+
 ## 6. InnoDB引擎
 
 ### 6.1 逻辑存储结构
@@ -491,4 +493,3 @@ ReadView，那么既然ReadView都一样，  ReadView的版本链匹配规则也
 ---
 
 > 📎 **相关笔记**：[[MySQL-基础篇]] · [[MySQL-运维篇]] · [[MySQL 索引]]
-

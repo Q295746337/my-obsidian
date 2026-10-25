@@ -100,7 +100,6 @@ mysqlbinlog  [ 参数选项 ]  logfilename
 | 指令 | 含义 |
 | --- | --- |
 | reset master | 删除全部  binlog 日志，删除之后，日志编号，将从  binlog.000001重新开始 |
-| --- | --- |
 | purge master logs to'binlog.*' | 删除  * 编号之前的所有日志 |
 | purge master logs before 'yyyy-mm-dd hh24:mi:ss' | 删除日志为  "yyyy-mm-dd hh24:mi:ss" 之前产生的所有日志 |
 
@@ -211,13 +210,13 @@ MySQL主从复制的核心就是  二进制日志，具体的过程如下：
 从上图来看，复制分成三步：
 
 
-## 1. Master 主库在事务提交时，会把数据变更记录在二进制日志文件  Binlog 中。
+1. Master 主库在事务提交时，会把数据变更记录在二进制日志文件 Binlog 中。
 
 
-## 2. 从库读取主库的二进制日志文件  Binlog ，写入到从库的中继日志  Relay Log 。
+2. 从库读取主库的二进制日志文件 Binlog，写入到从库的中继日志 Relay Log。
 
 
-## 3.  slave重做中继日志中的事件，将改变反映它自己的数据。
+3. slave 重做中继日志中的事件，将改变反映它自己的数据。
 
 
 ### 2.3 搭建
@@ -272,8 +271,6 @@ systemctl  restart  mysqld
 CREATE  USER  'itcast '@ '% ' IDENTIFIED WITH mysql_native_password BY 'Root@123456 ';   #为 'itcast '@ '% ' 用户分配主从复制权限
 GRANT  REPLICATION  SLAVE  ON  *.*  TO  'itcast '@ '% ';
 ```
-
-#创建itcast用户，并设置密码，该用户可在任意主机连接该MySQL服务
 
 
 ## 4. 通过指令，查看二进制日志坐标
@@ -396,10 +393,10 @@ sex varchar (1)
 随着互联网及移动互联网的发展，应用系统的数据量也是成指数式增长，若采用单数据库进行数据存储，存在以下性能瓶颈：
 
 
-## 1.  IO瓶颈：热点数据太多，数据库缓存不足，产生大量磁盘IO，效率较低。  请求数据太多，带宽不够，网络IO瓶颈。
+1. IO 瓶颈：热点数据太多，数据库缓存不足，产生大量磁盘 IO，效率较低；请求数据太多，带宽不够，网络 IO 瓶颈。
 
 
-## 2.  CPU瓶颈：排序、分组、连接查询、聚合统计等SQL会耗费大量的CPU资源，请求数太多， CPU出现瓶颈。
+2. CPU 瓶颈：排序、分组、连接查询、聚合统计等 SQL 会耗费大量 CPU 资源，请求数太多时 CPU 出现瓶颈。
 
 
 为了解决上述问题，我们需要对数据库进行分库分表处理。
@@ -952,7 +949,6 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 | 属性 | 取值 | 含义 |
 | --- | --- | --- |
 | charset | utf8 | 设置Mycat的字符集 , 字符集需要与MySQL的字符集保持一致 |
-| --- | --- | --- |
 | nonePasswordLogin | 0,1 | 0为需要密码登陆、 1为不需要密码登陆  ,默认为0，设置为1则需要指定默认账户 |
 | useHandshakeV10 | 0,1 | 使用该选项主要的目的是为了能够兼容高版本的jdbc驱动 , 是否采用HandshakeV10Packet来与client进行通信 , 1:是 , 0:否 |
 | useSqlStat | 0,1 | 开启SQL实时统计 , 1 为开启   , 0 为关闭   ;开启之后 , MyCat会自动统计SQL语句的执行情况  ; mysql -h 127.0.0.1 -P 9066-u root -p 查看MyCat执行的SQL, 执行效率比较低的SQL , SQL的整体执行情况、读写比例等  ; show @@sql ; show@@sql.slow ; show @@sql.sum ; |
@@ -964,7 +960,6 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 | useCompression | 0,1 | 开启mysql压缩协议  , 0 : 关闭 , 1 : 开启 |
 | fakeMySQLVersion | 5.5,5.6 | 设置模拟的MySQL版本号 |
 | 属性 | 取值 | 含义 |
-| --- | --- | --- |
 | defaultSqlParser |  | 由于MyCat的最初版本使用了FoundationDB的SQL解析器 , 在MyCat1.3后增加了Druid解析器 , 所以要设置defaultSqlParser属性来指定默认的解析器; 解析器有两个  :druidparser 和  fdbparser, 在MyCat1.4之后 ,默认是druidparser, fdbparser已经废除了 |
 | processors | 1,2.... | 指定系统可用的线程数量 , 默认值为CPU核心x 每个核心运行线程数量; processors 会影响processorBufferPool,processorBufferLocalPercent,processorExecutor属性 , 所有 , 在性能调优时 , 可以适当地修改processors值 |
 | processorBufferChunk |  | 指定每次分配Socket Direct Buffer默认值为4096字节 , 也会影响BufferPool长度 ,如果一次性获取字节过多而导致buffer不够用 , 则会出现警告 , 可以调大该值 |
@@ -973,7 +968,6 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 | maxPacketSize |  | 指定MySQL协议可以携带的数据最大大小 , 默认值为16M |
 | idleTimeout | 30 | 指定连接的空闲时间的超时长度;如果超时 ,将关闭资源并回收 , 默认30分钟 |
 | 属性 | 取值 | 含义 |
-| --- | --- | --- |
 | tx Isolation | 1,2,3,4 | 初始化前端连接的事务隔离级别 ,默认为REPEATED_READ , 对应数字为3READ_UNCOMMITED=1;READ_COMMITTED=2; REPEATED_READ=3; SERIALIZABLE=4; |
 | sqlExecuteTimeout | 300 | 执行SQL的超时时间 , 如果SQL语句执行超时 ,将关闭连接; 默认300秒; |
 | serverPort | 8066 | 定义MyCat的使用端口 , 默认8066 |
@@ -1424,8 +1418,10 @@ rule.xml分片规则配置：
 1000M-1500M=2
 ```
 
-# range start-end ,data node index
-# K=1000,M=10000.
+```text
+range start-end ,data node index
+K=1000,M=10000.
+```
 
 
 含义： 0-500万之间的值，存储在0号数据节点(数据节点的索引从0开始) ；  500万-1000万之间的数据存储在1号数据节点  ；  1000万-1500万的数据节点存储在2号节点  ；
@@ -1843,14 +1839,18 @@ id=05-100000002 , 在此配置中代表根据id中从  startIndex=0，开始，�
 
 ```sql
 CREATE TABLE tb_app (
-id varchar (10) NOT NULL COMMENT 'ID ',
-PRIMARY KEY (`id`)
+    id varchar(10) NOT NULL COMMENT 'ID',
+    name varchar(200) DEFAULT NULL COMMENT '名称',
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-insert into tb_app (id,name) values ( '0000001 ', 'Testx00001 ');   insert into tb_app (id,name) values ( '0100001 ', 'Test100001 ');   insert into tb_app (id,name) values ( '0100002 ', 'Test200001 ');   insert into tb_app (id,name) values ( '0200001 ', 'Test300001 ');   insert into tb_app (id,name) values ( '0200002 ', 'TesT400001 ');
+
+insert into tb_app (id,name) values
+    ('0000001', 'Testx00001'),
+    ('0100001', 'Test100001'),
+    ('0100002', 'Test200001'),
+    ('0200001', 'Test300001'),
+    ('0200002', 'TesT400001');
 ```
-
-
-name varchar (200) DEFAULT NULL COMMENT '名称 ',
 
 
 3.5.3.6 固定分片hash算法
@@ -1961,15 +1961,17 @@ rule.xml中分片规则配置：
 
 ```sql
 CREATE TABLE tb_longhash (
-id int (11) NOT NULL COMMENT 'ID ',
-PRIMARY KEY (`id`)
+    id int(11) NOT NULL COMMENT 'ID',
+    name varchar(200) DEFAULT NULL COMMENT '名称',
+    firstChar char(1) COMMENT '首字母',
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-insert into tb_longhash (id,name,firstChar) values (1, '七匹狼 ', 'Q ');   insert into tb_longhash (id,name,firstChar) values (2, '八匹狼 ', 'B ');   insert into tb_longhash (id,name,firstChar) values (3, '九匹狼 ', 'J ');   insert into tb_longhash (id,name,firstChar) values (4, '十匹狼 ', 'S ');   insert into tb_longhash (id,name,firstChar) values (5, '六匹狼 ', 'L ');   insert into tb_longhash (id,name,firstChar) values (6, '五匹狼 ', 'W ');   insert into tb_longhash (id,name,firstChar) values (7, '四匹狼 ', 'S ');   insert into tb_longhash (id,name,firstChar) values (8, '三匹狼 ', 'S ');   insert into tb_longhash (id,name,firstChar) values (9, '两匹狼 ', 'L ');
+
+insert into tb_longhash (id,name,firstChar) values
+    (1, '七匹狼', 'Q'), (2, '八匹狼', 'B'), (3, '九匹狼', 'J'),
+    (4, '十匹狼', 'S'), (5, '六匹狼', 'L'), (6, '五匹狼', 'W'),
+    (7, '四匹狼', 'S'), (8, '三匹狼', 'S'), (9, '两匹狼', 'L');
 ```
-
-
-name varchar (200) DEFAULT NULL COMMENT '名称 ',
-firstChar char (1)  COMMENT '首字母 ',
 
 
 3.5.3.7 字符串hash解析算法
@@ -2128,13 +2130,17 @@ rule.xml中分片规则配置：
 
 ```sql
 create table tb_datepart (
-id   bigint  not null comment 'ID '  primary key,
-create   time date  null
-);   insert into tb_datepart (id,name ,create_time) values (1, 'Tom ', '2022-01-01 ');   insert into tb_datepart (id,name ,create_time) values (2, 'Cat ', '2022-01-10 ');   insert into tb_datepart (id,name ,create_time) values (3, 'Rose ', '2022-01-11 ');   insert into tb_datepart (id,name ,create_time) values (4, 'Coco ', '2022-01-20 ');   insert into tb_datepart (id,name ,create_time) values (5, 'Rose2 ', '2022-01-21 ');   insert into tb_datepart (id,name ,create_time) values (6, 'Coco2 ', '2022-01-30 ');   insert into tb_datepart (id,name ,create_time) values (7, 'Coco3 ', '2022-01-31 ');
+    id bigint not null comment 'ID' primary key,
+    create_time date null,
+    name varchar(100) null comment '姓名'
+);
+
+insert into tb_datepart (id,name,create_time) values
+    (1, 'Tom', '2022-01-01'), (2, 'Cat', '2022-01-10'),
+    (3, 'Rose', '2022-01-11'), (4, 'Coco', '2022-01-20'),
+    (5, 'Rose2', '2022-01-21'), (6, 'Coco2', '2022-01-30'),
+    (7, 'Coco3', '2022-01-31');
 ```
-
-
-name varchar (100) null comment '姓名 ',
 
 
 3.5.3.9 自然月分片
@@ -2217,13 +2223,18 @@ rule.xml中分片规则配置：
 
 ```sql
 create table tb_monthpart (
-id   bigint  not null comment 'ID '  primary key,
-create   time date  null
-);   insert into tb_monthpart (id,name ,create_time) values (1, 'Tom ', '2022-01-01 ');   insert into tb_monthpart (id,name ,create_time) values (2, 'Cat ', '2022-01-10 ');   insert into tb_monthpart (id,name ,create_time) values (3, 'Rose ', '2022-01-31 ');   insert into tb_monthpart (id,name ,create_time) values (4, 'Coco ', '2022-02-20 ');   insert into tb_monthpart (id,name ,create_time) values (5, 'Rose2 ', '2022-02-25 ');   insert into tb_monthpart (id,name ,create_time) values (6, 'Coco2 ', '2022-03-10 ');   insert into tb_monthpart (id,name ,create_time) values (7, 'Coco3 ', '2022-03-31 ');   insert into tb_monthpart (id,name ,create_time) values (8, 'Coco4 ', '2022-04-10 ');   insert into tb_monthpart (id,name ,create_time) values (9, 'Coco5 ', '2022-04-30 ');
+    id bigint not null comment 'ID' primary key,
+    create_time date null,
+    name varchar(100) null comment '姓名'
+);
+
+insert into tb_monthpart (id,name,create_time) values
+    (1, 'Tom', '2022-01-01'), (2, 'Cat', '2022-01-10'),
+    (3, 'Rose', '2022-01-31'), (4, 'Coco', '2022-02-20'),
+    (5, 'Rose2', '2022-02-25'), (6, 'Coco2', '2022-03-10'),
+    (7, 'Coco3', '2022-03-31'), (8, 'Coco4', '2022-04-10'),
+    (9, 'Coco5', '2022-04-30');
 ```
-
-
-name varchar (100) null comment '姓名 ',
 
 
 ### 3.6 MyCat管理及监控
@@ -2269,7 +2280,6 @@ mysql   -h  192.168.200.
 | 命令 | 含义 |
 | --- | --- |
 | show @@help | 查看Mycat管理工具帮助文档 |
-| --- | --- |
 | show @@version | 查看Mycat的版本 |
 | reload @@config | 重新加载Mycat的配置文件 |
 | show @@datasource | 查看Mycat的数据源信息 |
@@ -2443,28 +2453,42 @@ writeHost代表的是写操作对应的数据库， readHost代表的是读操�
 而仅仅配置好了writeHost以及readHost还不能完成读写分离，还需要配置一个非常重要的负责均衡的参数  balance，取值有4种，具体含义如下：
 
 
-| 参数值 | 含义 |  | --- | --- |
-| 0 | 不开启读写分离机制  , 所有读操作都发送到当前可用的writeHost上 |  |
-| 1 | 全部的readHost 与  备用的writeHost 都参与select 语句的负载均衡（主要针对于双主双从模式） |
+| 参数值 | 含义 |
 | --- | --- |
-| 2 | 所有的读写操作都随机在writeHost , readHost上分发 |
-| 3 | 所有的读请求随机分发到writeHost对应的readHost上执行 , writeHost不负担读压力 |
-| 所以，在一主一从模式的读写分离中， balance配置1或3都是可以完成读写分离的。 |  |
-| 4.3.2 server.xml配置配置root用户可以访问SHOPPING、 ITCAST 以及  ITCAST_RW逻辑库。 |  |
-| 1 | <user name="root" defaultAccount="true"> |
-| 2 | <property name="password">123456</property> |
-| 3 | <property name="schemas">SHOPPING,ITCAST,ITCAST_RW</property> |
-| 4 |  |
-| 5 | < !-- 表级 DML 权限设置 --> |
-| 6 | < !-- |
-| 7 | <privileges check="true"> |
-| 8 | <schema name="DB01" dml="0110" > |
-| 9 | <table name="TB_ORDER" dml="1110"></table> |
-| 10 | </schema> |
-| 11 | </privileges> |
-| 12 | --> |
-| 13 | </user> |
-| 4.3.3 测试配置完毕MyCat后，重新启动MyCat。 |  |
+| 0 | 不开启读写分离机制，所有读操作都发送到当前可用的 writeHost 上 |
+| 1 | 全部的 readHost 与备用的 writeHost 都参与 select 语句的负载均衡（主要针对双主双从模式） |
+| 2 | 所有的读写操作都随机在 writeHost、readHost 上分发 |
+| 3 | 所有的读请求随机分发到 writeHost 对应的 readHost 上执行，writeHost 不负担读压力 |
+
+所以，在一主一从模式的读写分离中，balance 配置 1 或 3 都是可以完成读写分离的。
+
+#### 4.3.2 server.xml 配置
+
+配置 root 用户可以访问 SHOPPING、ITCAST 以及 ITCAST_RW 逻辑库。
+
+```xml
+<user name="root" defaultAccount="true">
+    <property name="password">123456</property>
+    <property name="schemas">SHOPPING,ITCAST,ITCAST_RW</property>
+    <!-- 表级 DML 权限设置 -->
+    <!--
+    <privileges check="true">
+        <schema name="DB01" dml="0110">
+            <table name="TB_ORDER" dml="1110"></table>
+        </schema>
+    </privileges>
+    -->
+</user>
+```
+
+#### 4.3.3 测试
+
+配置完毕 MyCat 后，重新启动 MyCat。
+
+```bash
+bin/mycat stop
+bin/mycat start
+```
 
 bin/mycat stop
 
@@ -2560,8 +2584,6 @@ CREATE  USER  'itcast '@ '% ' IDENTIFIED WITH mysql_native_password BY 'Root@123
 GRANT  REPLICATION  SLAVE  ON  *.*  TO  'itcast '@ '% ';
 ```
 
-#创建itcast用户，并设置密码，该用户可在任意主机连接该MySQL服务
-
 
 通过指令，查看两台主库的二进制日志坐标
 
@@ -2608,8 +2630,6 @@ C. 创建账户并授权
 CREATE  USER  'itcast '@ '% ' IDENTIFIED WITH mysql_native_password BY 'Root@123456 ';   #为 'itcast '@ '% ' 用户分配主从复制权限
 GRANT  REPLICATION  SLAVE  ON  *.*  TO  'itcast '@ '% ';
 ```
-
-#创建itcast用户，并设置密码，该用户可在任意主机连接该MySQL服务
 
 
 通过指令，查看两台主库的二进制日志坐标

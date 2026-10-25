@@ -1,3 +1,5 @@
+# SpringMVC 高级
+
 ## SpringMVC_day02
 
 **今日内容**
@@ -2362,5 +2364,4 @@ afterCompletion:与配置顺序相反，可能不运行。
 
 ---
 
-> 📎 **相关笔记**：
-
+> 📎 **相关笔记**：[[SSM框架/SpringMVC/day01-基础|day01-基础]] · [[SSM框架/SSM框架 索引|SSM框架 索引]]

@@ -2488,5 +2488,4 @@ public class AppForDICollection {
 
 ---
 
-> 📎 **相关笔记**：
-
+> 📎 **相关笔记**：[[SSM框架/Spring框架/day02-AOP|day02-AOP]] · [[SSM框架/Spring框架/day03-事务|day03-事务]] · [[SSM框架/SSM框架 索引|SSM框架 索引]]

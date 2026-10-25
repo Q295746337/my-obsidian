@@ -1,14 +1,10 @@
-# Maven 的依赖管理是
+# Maven与SpringBoot入门
 
-[[08-Maven高级]]
-的前置基础。与SpringBoot 自动配置原理详见
-[[07-SpringBoot原理]]
-。入门
+> Maven 的依赖管理是 [[08-Maven高级]] 的前置基础。SpringBoot 自动配置原理详见 [[07-SpringBoot原理]]。
 
+## Maven
 
-# Maven
-
-## 课程内容
+### 课程内容
 
 > 1. 初识Maven
 > 2. Maven概述
@@ -20,9 +16,9 @@
 >
 
 
-## 01. Maven课程介绍
+### 01. Maven课程介绍
 
-### 1.1 课程安排
+#### 1.1 课程安排
 
 学习完前端Web开发技术后，我们即将开始学习后端Web开发技术。做为一名Java开发工程师，**后端Web开发技术是我们学习的重点**。
 
@@ -31,9 +27,9 @@
 后端Web开发技术的学习，我们会先学习Java项目的构建工具：Maven
 
 
-### 1.2 初识Maven
+#### 1.2 初识Maven
 
-#### 1.2.1 什么是Maven
+##### 1.2.1 什么是Maven
 
 Maven是Apache旗下的一个开源项目，是一款用于管理和构建java项目的工具。
 
@@ -44,7 +40,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 > 开源项目：https://www.apache.org/index.html#projects-list
 
 
-#### 1.2.2 Maven的作用
+##### 1.2.2 Maven的作用
 
 使用Maven能够做什么呢？
 
@@ -101,9 +97,9 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 综上所述，可以得到一个结论：**Maven是一款管理和构建java项目的工具**
 
 
-## 02. Maven概述
+### 02. Maven概述
 
-### 2.1 Maven介绍
+#### 2.1 Maven介绍
 
 Apache Maven是一个项目管理和构建工具，它基于项目对象模型(Project Object Model , 简称: POM)的概念，通过一小段描述信息来管理项目的构建、报告和文档。
 
@@ -116,7 +112,7 @@ Maven的作用：
 3. 标准的项目构建流程
 
 
-### 2.2 Maven模型
+#### 2.2 Maven模型
 
 * 项目对象模型 (Project Object Model)
 * 依赖管理模型(Dependency)
@@ -156,7 +152,7 @@ Maven的作用：
 > 答案：Maven仓库
 
 
-### 2.3 Maven仓库 
+#### 2.3 Maven仓库
 
 仓库：用于存储资源，管理各种jar包
 
@@ -180,11 +176,11 @@ Maven仓库分为：
 如果还可以搭建远程仓库(私服)，将来jar包的查找顺序则变为： 本地仓库 --> 远程仓库--> 中央仓库
 
 
-### 2.4 Maven安装
+#### 2.4 Maven安装
 
 认识了Maven后，我们就要开始使用Maven了，那么首先我们要进行Maven的下载与安装。
 
-#### 2.4.1 下载
+##### 2.4.1 下载
 
 下载地址：https://maven.apache.org/download.cgi
 
@@ -193,7 +189,7 @@ Maven仓库分为：
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220616100211209.png) 
 
 
-#### 2.4.2 安装步骤
+##### 2.4.2 安装步骤
 
 Maven安装配置步骤：
 
@@ -290,13 +286,13 @@ mvn -v
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220616102554143.png) 
 
 
-## 03. IDEA集成Maven
+### 03. IDEA集成Maven
 
 我们要想在IDEA中使用Maven进行项目构建，就需要在IDEA中集成Maven
 
-### 3.1 配置Maven环境 
+#### 3.1 配置Maven环境
 
-#### 3.1.1 当前工程设置 
+##### 3.1.1 当前工程设置
 
 1、选择 IDEA中 File  =>  Settings  =>  Build,Execution,Deployment  =>  Build Tools  =>  Maven
 
@@ -326,7 +322,7 @@ mvn -v
 
   
 
-#### 3.1.2 全局设置 
+##### 3.1.2 全局设置
 
 1、进入到IDEA欢迎页面
 
@@ -349,9 +345,9 @@ mvn -v
 这里所设置的maven的环境信息，并未指定任何一个project，此时设置的信息就属于全局配置信息。 以后，我们再创建project，默认就是使用我们全局配置的信息。
 
 
-### 3.2 Maven项目
+#### 3.2 Maven项目
 
-#### 3.2.1 创建Maven项目 
+##### 3.2.1 创建Maven项目
 
 1、创建一个空项目 
 
@@ -402,7 +398,7 @@ public class HelloWorld {
 ```
 
 
-#### 3.2.2 POM配置详解
+##### 3.2.2 POM配置详解
 
 POM (Project Object Model) ：指的是项目对象模型，用来描述当前的maven项目。
 
@@ -439,7 +435,7 @@ pom文件详解：
 - <packaging> ：maven项目的打包方式，通常设置为jar或war（默认值：jar）
 
 
-#### 3.2.3 Maven坐标详解
+##### 3.2.3 Maven坐标详解
 
 什么是坐标？
 
@@ -462,7 +458,7 @@ Maven坐标主要组成
 > * 我们的项目如果被其他的项目依赖时，也是需要坐标来引入的。
 
 
-### 3.3 导入Maven项目
+#### 3.3 导入Maven项目
 
 - **方式1：使用Maven面板，快速导入项目**
 
@@ -490,9 +486,9 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 <img src="assets/image-20221201105845872.png" alt="image-20221201105845872" style="zoom:80%;" />
 
 
-## 04. 依赖管理
+### 04. 依赖管理
 
-### 4.1 依赖配置
+#### 4.1 依赖配置
 
 依赖：指当前项目运行所需要的jar包。一个项目中可以引入多个依赖：
 
@@ -549,9 +545,9 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
    <img src="assets/7.gif" style="zoom:80%;" />
 
 
-### 4.2 依赖传递
+#### 4.2 依赖传递
 
-#### 4.2.1 依赖具有传递性
+##### 4.2.1 依赖具有传递性
 
 早期我们没有使用maven时，向项目中添加依赖的jar包，需要把所有的jar包都复制到项目工程下。如下图所示，需要logback-classic时，由于logback-classic又依赖了logback-core和slf4j，所以必须把这3个jar包全部复制到项目工程下
 
@@ -581,7 +577,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201115801806.png)
 
 
-#### 4.2.2 排除依赖
+##### 4.2.2 排除依赖
 
 问题：之前我们讲了依赖具有传递性。那么A依赖B，B依赖C，如果A不想将C依赖进来，是否可以做到？ 
 
@@ -622,7 +618,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
  
 
 
-### 4.3 依赖范围
+#### 4.3 依赖范围
 
 在项目中导入依赖的jar包后，默认情况下，可以在任何地方使用。
 
@@ -654,9 +650,9 @@ scope标签的取值范围：
 | runtime         | -          | Y            | Y                | jdbc驱动    |
 
 
-### 4.4 生命周期
+#### 4.4 生命周期
 
-#### 4.4.1 介绍
+##### 4.4.1 介绍
 
 Maven的生命周期就是为了对所有的构建过程进行抽象和统一。 描述了一次项目构建，经历哪些阶段。
 
@@ -711,7 +707,7 @@ IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具
 > 		clean不会运行，compile会运行。  因为compile与package属于同一套生命周期，而clean与package不属于同一套生命周期。
 
 
-#### 4.4.2 执行
+##### 4.4.2 执行
 
 在日常开发中，当我们要执行指定的生命周期时，有两种执行方式：
 
@@ -762,9 +758,9 @@ clean：
 
  
 
-## 05. 附录
+### 05. 附录
 
-### 5.1 更新依赖索引
+#### 5.1 更新依赖索引
 
 有时候给idea配置完maven仓库信息后，在idea中依然搜索不到仓库中的jar包。这是因为仓库中的jar包索引尚未更新到idea中。这个时候我们就需要更新idea中maven的索引了，具体做法如下：
 
@@ -773,7 +769,7 @@ clean：
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/1537786634456-1582625518984.png)
 
 
-### 5.2 清理maven仓库
+#### 5.2 清理maven仓库
 
 初始情况下，我们的本地仓库是没有任何jar包的，此时会从私服去下载（如果没有配置，就直接从中央仓库去下载），可能由于网络的原因，jar包下载不完全，这些不完整的jar包都是以lastUpdated结尾。此时，maven不会再重新帮你下载，需要你删除这些以lastUpdated结尾的文件，然后maven才会再次自动下载这些jar包。
 
@@ -809,9 +805,9 @@ pause
 ---
 
 
-# SpringBoot基础 
+## SpringBoot基础
 
-## 课程内容
+### 课程内容
 
 > 1. SpringBootWeb入门
 >
@@ -820,7 +816,7 @@ pause
 > 3. Web服务器-Tomcat
 
 
-## 前言
+### 前言
 
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221130095316032.png)
 
@@ -864,9 +860,9 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 接下来，我们就直接通过一个SpringBoot的web入门程序，让大家快速感受一下，基于SpringBoot进行Web开发的便捷性。
 
 
-## 1. SpringBootWeb快速入门
+### 1. SpringBootWeb快速入门
 
-### 1.1 需求
+#### 1.1 需求
 
 需求：基于SpringBoot的方式开发一个web应用，浏览器发起请求/hello后，给浏览器返回字符串 “Hello World ~”。
 
@@ -874,7 +870,7 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
  
 
-### 1.2 开发步骤
+#### 1.2 开发步骤
 
 第1步：创建SpringBoot工程项目
 
@@ -883,7 +879,7 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 第3步：测试运行
 
 
-#### 1.2.1 创建SpringBoot工程（需要联网）
+##### 1.2.1 创建SpringBoot工程（需要联网）
 
 基于Spring官方骨架，创建SpringBoot工程。
 
@@ -900,7 +896,7 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201185910596.png) 
 
 
-#### 1.2.2 定义请求处理类
+##### 1.2.2 定义请求处理类
 
 在com.itheima这个包下创建一个子包controller
 
@@ -927,7 +923,7 @@ public class HelloController {
 ```
 
 
-#### 1.2.3 运行测试
+##### 1.2.3 运行测试
 
 运行SpringBoot自动生成的引导类
 
@@ -940,7 +936,7 @@ public class HelloController {
 <img src="assets/image-20220823195048415.png" style="zoom:80%;" />
 
 
-### 1.3 Web分析
+#### 1.3 Web分析
 
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201224603497.png)
 
@@ -982,11 +978,11 @@ public class HelloController {
 > **答案：http协议**
 
 
-## 2. HTTP协议
+### 2. HTTP协议
 
-### 2.1 HTTP-概述
+#### 2.1 HTTP-概述
 
-#### 2.1.1 介绍
+##### 2.1.1 介绍
 
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220823200024507.png)
 
@@ -1015,7 +1011,7 @@ HTTP：Hyper Text Transfer Protocol(超文本传输协议)，规定了浏览器�
 **所以，我们学习HTTP主要就是学习请求和响应数据的具体格式内容。**
 
 
-#### 2.2.2 特点
+##### 2.2.2 特点
 
 我们刚才初步认识了HTTP协议，那么我们在看看HTTP协议有哪些特点：
 
@@ -1045,7 +1041,7 @@ HTTP：Hyper Text Transfer Protocol(超文本传输协议)，规定了浏览器�
   刚才提到HTTP协议是规定了请求和响应数据的格式，那具体的格式是什么呢?
 
 
-### 2.2 HTTP-请求协议
+#### 2.2 HTTP-请求协议
 
 浏览器和服务器是按照HTTP协议进行数据通信的。
 
@@ -1144,9 +1140,9 @@ GET请求和POST请求的区别：
 | 安全性       | 安全性低。原因：请求参数暴露在浏览器地址栏中。               | 安全性相对高         |
 
 
-### 2.3 HTTP-响应协议
+#### 2.3 HTTP-响应协议
 
-#### 2.3.1 格式介绍
+##### 2.3.1 格式介绍
 
 与HTTP的请求一样，HTTP响应的数据也分为3部分：**响应行**、**响应头** 、**响应体** 
 
@@ -1180,7 +1176,7 @@ GET请求和POST请求的区别：
   - 响应体和响应头之间有一个空行隔开（作用：用于标记响应头结束）
 
 
-#### 2.3.2 响应状态码
+##### 2.3.2 响应状态码
 
 | 状态码分类 | 说明                                                         |
 | ---------- | ------------------------------------------------------------ |
@@ -1199,7 +1195,7 @@ GET请求和POST请求的区别：
 * 500  Internal Server Error  服务端发生不可预期的错误
 
 
-### 2.4 HTTP-协议解析
+#### 2.4 HTTP-协议解析
 
 将资料中准备好的Demo工程，导入到我们的IDEA中，有一个Server.java类，这里面就是自定义的一个服务器代码，主要使用到的是`ServerSocket`和`Socket`
 
@@ -1316,11 +1312,11 @@ class Handler extends Thread {
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220824233452167.png) 
 
 
-## 3. WEB服务器-Tomcat
+### 3. WEB服务器-Tomcat
 
-### 3.1 简介
+#### 3.1 简介
 
-#### 3.1.1 服务器概述
+##### 3.1.1 服务器概述
 
 **服务器硬件**
 
@@ -1346,7 +1342,7 @@ class Handler extends Thread {
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/1530625192392.png)
 
 
-#### 3.1.2 Web服务器
+##### 3.1.2 Web服务器
 
 Web服务器是一个应用程序(软件)，对HTTP协议的操作进行封装，使得程序员不必直接对协议进行操作(不用程序员自己写代码去解析http协议规则)，让Web开发更加便捷。主要功能是"提供网上信息浏览服务"。
 
@@ -1401,7 +1397,7 @@ Tomcat就是一款软件，我们主要是以学习如何去使用为主。具�
 首选我们来认识下Tomcat。
 
 
-#### 3.1.3 Tomcat
+##### 3.1.3 Tomcat
 
 Tomcat服务器软件是一个免费的开源的web应用服务器。是Apache软件基金会的一个核心项目。由Apache，Sun和其他一些公司及个人共同开发而成。
 
@@ -1418,9 +1414,9 @@ Tomcat的官网: https://tomcat.apache.org/
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20220824233903517.png) 
 
 
-### 3.2 基本使用
+#### 3.2 基本使用
 
-#### 3.2.1 下载
+##### 3.2.1 下载
 
 直接从官方网站下载：https://tomcat.apache.org/download-90.cgi
 
@@ -1440,7 +1436,7 @@ Tomcat的软件程序  ：/资料/SpringbootWeb/apache-tomcat-9.0.27-windows-x64
  
 
 
-#### 3.2.2 安装与卸载
+##### 3.2.2 安装与卸载
 
 **安装:** Tomcat是绿色版，直接解压即安装
 
@@ -1463,7 +1459,7 @@ webapps：就是以后项目部署的目录
 **卸载：**卸载比较简单，可以直接删除目录即可
 
 
-#### 3.2.3 启动与关闭
+##### 3.2.3 启动与关闭
 
 **启动Tomcat** 
 
@@ -1503,7 +1499,7 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入：`http://12
 - 说明：如果按下Ctrl+C没有反映，可以多按几次
 
 
-#### 3.2.4 常见问题
+##### 3.2.4 常见问题
 
 **问题1：Tomcat启动时，窗口一闪而过**
 
@@ -1526,11 +1522,11 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入：`http://12
 > 注: HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。
 
 
-### 3.3 入门程序解析
+#### 3.3 入门程序解析
 
 关于web开发的基础知识，我们可以告一段落了。下面呢，我们在基于今天的核心技术点SpringBoot快速入门案例进行分析。
 
-#### 3.3.1 Spring官方骨架
+##### 3.3.1 Spring官方骨架
 
 之前我们创建的SpringBoot入门案例，是基于Spring官方提供的骨架实现的。
 
@@ -1563,7 +1559,7 @@ Spring官方生成的SpringBoot项目，怎么使用呢？
 > **结论：不论使用IDEA创建SpringBoot项目，还是直接在官方网站利用骨架生成SpringBoot项目，项目的结构和pom.xml文件中内容是相似的。**
 
 
-#### 3.3.2 起步依赖
+##### 3.3.2 起步依赖
 
 在我们之前讲解的SpringBoot快速入门案例中，同样也引用了：web依赖和test依赖
 
@@ -1593,7 +1589,7 @@ Spring的官方提供了很多现成的starter(起步依赖)，我们在开发�
 > 举例：当我们开发中需要使用redis数据库时，只需要在SpringBoot项目中，引入：spring-boot-starter-redis ，即可导入redis开发所需要的依赖。
 
 
-#### 3.3.2 SpringBoot父工程
+##### 3.3.2 SpringBoot父工程
 
 在我们之前开发的SpringBoot入门案例中，我们通过maven引入的依赖，是没有指定具体的依赖版本号的。
 
@@ -1607,7 +1603,7 @@ Spring的官方提供了很多现成的starter(起步依赖)，我们在开发�
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221202205318778.png)
 
 
-#### 3.3.3 内嵌Tomcat
+##### 3.3.3 内嵌Tomcat
 
 问题：为什么我们之前书写的SpringBoot入门程序中，并没有把程序部署到Tomcat的webapps目录下，也可以运行呢？
 

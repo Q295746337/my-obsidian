@@ -90,20 +90,6 @@
         "a": 1,
         "rgb": 10092543
       }
-    },
-    {
-      "query": "path:SpringBoot2/SpringBoot2 索引",
-      "color": {
-        "a": 1,
-        "rgb": 16766720
-      }
-    },
-    {
-      "query": "path:SpringBoot2",
-      "color": {
-        "a": 1,
-        "rgb": 10092543
-      }
     }
   ],
   "collapse-display": false,

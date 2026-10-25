@@ -1,6 +1,6 @@
-# 常用API
+# Math与System
 
-# 课程目标
+## 课程目标
 
 能够熟练使用Math类中的常见方法
 
@@ -14,9 +14,9 @@
 
 能够熟练使用BigDecimal 用于精确小数计算，在涉及到金钱的业务中替代 double，见 [[10-集合框架]] 的斗地主计分场景。类的常见方法
 
-# 1 Math类
+## 1 Math类
 
-## 1.1 概述
+### 1.1 概述
 
 > tips：了解内容
 
@@ -28,7 +28,6 @@ Math类所在包为java.lang包，因此在使用的时候不需要进行导包�
 
 Math类包含执行基本数字运算的方法，我们可以使用Math类完成基本的数学运算。
 
-
 要想使用Math类我们就需要先创建该类的对象，那么创建对象就需要借助于构造方法。因此我们就需要首先查看一下API文档，看看API文档中针对Math类有没有提供对应的构造方法。通过API文档来查看
 
 一下Math类的成员，如下所示：
@@ -39,11 +38,11 @@ Math类包含执行基本数字运算的方法，我们可以使用Math类完成
 
 定义了很多数学运算的方法，但是我们并不可能将所有的方法学习一遍，我们主要学习的就是一些常见的方法。
 
-## 1.2 常见方法
+### 1.2 常见方法
 
 > tips：重点讲解内容
 
-<font color="red" size="3">**常见方法介绍**</font>
+**常见方法介绍**
 
 我们要学习的Math的常见方法如下所示：
 
@@ -58,7 +57,7 @@ public static double pow (double a,double b)	// 计算a的b次幂的值
 public static double random()					// 返回一个[0.0,1.0)的随机值
 ```
 
-<font color="red" size="3">**案例演示**</font>
+**案例演示**
 
 接下来我们就来演示一些这些方法的执行效果，如下所示：
 
@@ -116,11 +115,10 @@ public class MathDemo01 {
 获取到的0-1之间的随机数为: 0.7322484131745958
 ```
 
-## 1.3 排序和查找算法不仅用在数组，
+### 1.3 排序和查找算法不仅用在数组，
 
 [[10-集合框架]]
 中 TreeMap 的底层红黑树就是自平衡二叉查找树。小题(质数)
-
 
 需求：
 
@@ -150,7 +148,7 @@ public class MathDemo2 {
 }
 ```
 
-## 1.4 算法小题(自幂数)
+### 1.4 算法小题(自幂数)
 
 自幂数，一个n位自然数等于自身各个数位上数字的n次幂之和
 
@@ -193,16 +191,15 @@ for (int i = 100; i <= 999; i++) {
 }
 ```
 
-## 1.5 课后练习
+### 1.5 课后练习
 
 要求2：（课后作业）证明没有两位的自幂数。
 
 要求3：（课后作业）分别统计有多少个四叶玫瑰数和五角星数。（答案：都是3个）
 
+## 2 System类
 
-# 2 System类
-
-## 2.1 概述
+### 2.1 概述
 
 > tips：了解内容
 
@@ -210,11 +207,9 @@ for (int i = 100; i <= 999; i++) {
 
  ![](file:///D:/Java/data/JavaSE/09-常用API/1576049347968.png) 
 
-
 System类所在包为java.lang包，因此在使用的时候不需要进行导包。并且System类被final修饰了，因此该类是不能被继承的。
 
 System包含了系统操作的一些常用的方法。比如获取当前时间所对应的毫秒值，再比如终止当前JVM等等。
-
 
 要想使用System类我们就需要先创建该类的对象，那么创建对象就需要借助于构造方法。因此我们就需要首先查看一下API文档，看看API文档中针对System类有没有提供对应的构造方法。通过API文档来
 
@@ -226,11 +221,11 @@ System包含了系统操作的一些常用的方法。比如获取当前时间�
 
 Class Summary内部类或者内部接口的描述）。
 
-## 2.2 常见方法
+### 2.2 常见方法
 
 > tips：重点讲解内容
 
-<font color="red" size="3">**常见方法介绍**</font>
+**常见方法介绍**
 
 我们要学习的System类中的常见方法如下所示：
 
@@ -240,11 +235,11 @@ public static void exit(int status)				// 终止当前正在运行的Java虚拟�
 public static native void arraycopy(Object src,  int  srcPos, Object dest, int destPos, int length); // 进行数值元素copy
 ```
 
-<font color="red" size="3">**案例演示**</font>
+**案例演示**
 
 接下来我们就来通过一些案例演示一下这些方法的特点。
 
-<font color="blue" size="2">**案例1**</font>：演示currentTimeMillis方法
+**案例1**：演示currentTimeMillis方法
 
 ```java
 public class SystemDemo01 {
@@ -312,7 +307,7 @@ public class SystemDemo2 {
 }
 ```
 
-<font color="blue" size="2">**案例2**</font>：演示exit方法
+**案例2**：演示exit方法
 
 ```java
 public class SystemDemo01 {
@@ -341,7 +336,7 @@ public class SystemDemo01 {
 
 此时可以看到在控制台只输出了"程序开始了..."，由于JVM终止了，因此输出"程序终止了..."这段代码没有被执行。
 
-<font color="blue" size="2">**案例3**</font>：演示arraycopy方法
+**案例3**：演示arraycopy方法
 
 方法参数说明：
 
@@ -540,7 +535,6 @@ class Person {
     }
 }
 
-
 class Student extends Person {
 
     public Student() {
@@ -552,15 +546,15 @@ class Student extends Person {
 }
 ```
 
-# 3 Runtime
+## 3 Runtime
 
-## 3.1 概述
+### 3.1 概述
 
 	Runtime表示Java中运行时对象，可以获取到程序运行时设计到的一些信息
 
-## 3.2 常见方法
+### 3.2 常见方法
 
-<font color="red" size="3">**常见方法介绍**</font>
+**常见方法介绍**
 
 我们要学习的Object类中的常见方法如下所示：
 
@@ -596,7 +590,6 @@ public class RunTimeDemo1 {
         //Runtime.getRuntime().exit(0);
         //System.out.println("看看我执行了吗?");
 
-
         //3.获得CPU的线程数
         System.out.println(Runtime.getRuntime().availableProcessors());//8
         //4.总内存大小,单位byte字节
@@ -615,13 +608,12 @@ public class RunTimeDemo1 {
         //-r: 关机并重启
         Runtime.getRuntime().exec("shutdown -s -t 3600");
 
-
     }
 }
 
 ```
 
-## 3.3 恶搞好基友
+### 3.3 恶搞好基友
 
 需求：
 
@@ -651,17 +643,13 @@ public class MyJframe extends JFrame implements ActionListener {
     JButton noBut = new JButton("不帅，有点磕碜");
     JButton dadBut = new JButton("饶了我吧！");
 
-
     //决定了上方的按钮是否展示
     boolean flag = false;
-
 
     public MyJframe() {
         initJFrame();
 
-
         initView();
-
 
         //显示
         this.setVisible(true);
@@ -678,11 +666,9 @@ public class MyJframe extends JFrame implements ActionListener {
             this.getContentPane().add(dadBut);
         }
 
-
         JLabel text = new JLabel("你觉得自己帅吗？");
         text.setFont(new Font("微软雅黑", 0, 30));
         text.setBounds(120, 150, 300, 50);
-
 
         yesBut.setBounds(200, 250, 100, 30);
         midBut.setBounds(200, 325, 100, 30);
@@ -744,7 +730,6 @@ public class MyJframe extends JFrame implements ActionListener {
             flag = true;
             initView();
 
-
         } else if (obj == noBut) {
             System.out.println("你的好基友点击了不帅");
 
@@ -796,9 +781,9 @@ public class MyJframe extends JFrame implements ActionListener {
 
 ```
 
-# 4 Object类
+## 4 Object类
 
-## 4.1 概述
+### 4.1 概述
 
 > tips：重点讲解内容
 
@@ -806,9 +791,7 @@ public class MyJframe extends JFrame implements ActionListener {
 
 ![](file:///D:/Java/data/JavaSE/09-常用API/1576053677194.png) 
 
-
 Object类所在包是java.lang包。Object 是类层次结构的根，每个类都可以将 Object 作为超类。所有类都直接或者间接的继承自该类；换句话说，该类所具备的方法，其他所有类都继承了。
-
 
 查看API文档我们可以看到，在Object类中提供了一个无参构造方法，如下所示：
 
@@ -816,11 +799,11 @@ Object类所在包是java.lang包。Object 是类层次结构的根，每个类�
 
 但是一般情况下我们很少去主动的创建Object类的对象，调用其对应的方法。更多的是创建Object类的某个子类对象，然后通过子类对象调用Object类中的方法。
 
-## 4.2 常见方法
+### 4.2 常见方法
 
 > tips：重点讲解内容
 
-<font color="red" size="3">**常见方法介绍**</font>
+**常见方法介绍**
 
 我们要学习的Object类中的常见方法如下所示：
 
@@ -830,11 +813,11 @@ public boolean equals(Object obj)		//比较两个对象地址值是否相等；t
 protected Object clone()    			//对象克隆
 ```
 
-<font color="red" size="3">**案例演示**</font>
+**案例演示**
 
 接下来我们就来通过一些案例演示一下这些方法的特点。
 
-<font color="blue" size="2">**案例1**</font>：演示toString方法
+**案例1**：演示toString方法
 
 实现步骤：
 
@@ -926,7 +909,6 @@ s1对象的字符串表现形式为：Student{name='itheima', age='14'}
 
 此时我们就可以清楚的查看Student的成员变量值，因此重写toString方法的意义就是以良好的格式，更方便的展示对象中的属性值
 
-
 我们再来查看一下如下代码的输出：
 
 ```java
@@ -955,7 +937,6 @@ System.out.println(s1.toString());
 
 因此后期为了方便进行测试，我们常常是通过输出语句直接输出一个对象的名称。
 
-
 小结：
 
 1. 在通过输出语句输出一个对象时，默认调用的就是toString()方法
@@ -963,7 +944,7 @@ System.out.println(s1.toString());
 3. toString方法的作用：以良好的格式，更方便的展示对象中的属性值
 4. 一般情况下Jdk所提供的类都会重写Object类中的toString方法
 
-<font color="blue" size="2">**案例2**</font>：演示equals方法
+**案例2**：演示equals方法
 
 实现步骤：
 
@@ -995,7 +976,6 @@ false
 ```
 
 因为"=="号比较的是对象的地址值，而我们通过new关键字创建了两个对象，它们的地址值是不相同的。因此比较结果就是false。
-
 
 我们尝试调用Object类中的equals方法进行比较，代码如下所示：
 
@@ -1071,7 +1051,7 @@ true
 1. 默认情况下equals方法比较的是对象的地址值
 2. 比较对象的地址值是没有意义的，因此一般情况下我们都会重写Object类中的equals方法
 
-<font color="blue" size="2">**案例2**</font>：对象克隆
+**案例2**：对象克隆
 
 	把A对象的属性值完全拷贝给B对象，也叫对象拷贝,对象复制
 
@@ -1125,7 +1105,6 @@ public class ObjectDemo4 {
         //System.out.println(u1);
         //System.out.println(u2);
 
-
         //以后一般会用第三方工具进行克隆
         //1.第三方写的代码导入到项目中
         //2.编写代码
@@ -1148,7 +1127,6 @@ package com.itheima.a04objectdemo;
 
 import java.util.StringJoiner;
 
-
 //Cloneable
 //如果一个接口里面没有抽象方法
 //表示当前的接口是一个标记性接口
@@ -1160,7 +1138,6 @@ public class User implements Cloneable {
     private String password;
     private String path;
     private int[] data;
-
 
     public User() {
     }
@@ -1267,7 +1244,6 @@ public class User implements Cloneable {
         return "角色编号为：" + id + "，用户名为：" + username + "密码为：" + password + ", 游戏图片为:" + path + ", 进度:" + arrToString();
     }
 
-
     public String arrToString() {
         StringJoiner sj = new StringJoiner(", ", "[", "]");
 
@@ -1300,10 +1276,9 @@ public class User implements Cloneable {
 
 ```
 
+## 5 Objects类
 
-# 5 Objects类
-
-## 5.1 概述
+### 5.1 概述
 
 > tips：了解内容
 
@@ -1315,18 +1290,17 @@ Objects类所在包是在java.util包下，因此在使用的时候需要进行�
 
 Objects类提供了一些对象常见操作的方法。比如判断对象是否相等，判断对象是否为null等等。
 
-
 接下来我们来查看一下API文档，看一下Objects类中的成员，如下所示：
 
 ![](file:///D:/Java/data/JavaSE/09-常用API/1576058659628.png) 
 
 我们可以发现Objects类中无无参构造方法，因此我们不能使用new关键字去创建Objects的对象。同时我们可以发现Objects类中所提供的方法都是静态的。因此我们可以通过类名直接去调用这些方法。
 
-## 5.2 常见方法
+### 5.2 常见方法
 
 > tips：重点讲解内容
 
-<font color="red" size="3">**常见方法介绍**</font>
+**常见方法介绍**
 
 我们要重点学习的Objects类中的常见方法如下所示：
 
@@ -1336,7 +1310,6 @@ public static boolean equals(Object a, Object b)			// 比较两个对象是否�
 public static boolean isNull(Object obj)					// 判断对象是否为null
 public static boolean nonNull(Object obj)					// 判断对象是否不为null
 ```
-
 
 我们要了解的Objects类中的常见方法如下所示：
 
@@ -1348,11 +1321,11 @@ public static <T> T requireNonNullElseGet(T obj, Supplier<? extends T> supplier)
 
 上述方法中的T可以理解为是Object类型。
 
-<font color="red" size="3">**案例演示**</font>
+**案例演示**
 
 接下来我们就来通过一些案例演示一下Objects类中的这些方法特点。
 
-<font color="blue" size="2">**案例1**</font>：演示重点学习方法
+**案例1**：演示重点学习方法
 
 实现步骤：
 
@@ -1447,7 +1420,7 @@ public class ObjectsDemo01 {
 }
 ```
 
-<font color="blue" size="2">**案例2**</font>：演示需要了解的方法
+**案例2**：演示需要了解的方法
 
 ```java
 public class ObjectsDemo02 {
@@ -1509,9 +1482,9 @@ public class ObjectsDemo02 {
 
 注：了解性的方法可以可以作为扩展视频进行下发。
 
-# 6 BigInteger类
+## 6 BigInteger类
 
-## 6.1 引入
+### 6.1 引入
 
 	平时在存储整数的时候，Java中默认是int类型，int类型有取值范围：-2147483648 ~ 2147483647。如果数字过大，我们可以使用long类型，但是如果long类型也表示不下怎么办呢？
 
@@ -1521,7 +1494,7 @@ public class ObjectsDemo02 {
 
 	基本上在内存撑爆之前，都无法达到这个上限。
 
-## 6.2  概述
+### 6.2  概述
 
 查看API文档，我们可以看到API文档中关于BigInteger类的定义如下：
 
@@ -1529,9 +1502,9 @@ public class ObjectsDemo02 {
 
 BigInteger所在包是在java.math包下，因此在使用的时候就需要进行导包。我们可以使用BigInteger类进行大整数的计算
 
-## 6.3 常见方法
+### 6.3 常见方法
 
-<font color="red" size="3">**构造方法**</font>
+**构造方法**
 
 ```java
 public BigInteger(int num, Random rnd) 		//获取随机大整数，范围：[0 ~ 2的num次方-1]
@@ -1549,8 +1522,7 @@ public static BigInteger valueOf(long val) 	//静态方法获取BigInteger的对
 * 对象一旦创建，BigInteger内部记录的值不能发生改变。
 * 只要进行计算都会产生一个新的BigInteger对象
 
-
-<font color="red" size="3">**常见成员方法**</font>
+**常见成员方法**
 
 BigDecimal类中使用最多的还是提供的进行四则运算的方法，如下：
 
@@ -1585,7 +1557,6 @@ public class BigIntegerDemo1 {
             细节:
             对象一旦创建里面的数据不能发生改变。
         */
-
 
         //1.获取一个随机的大整数
         /* Random r=new Random();
@@ -1623,11 +1594,9 @@ public class BigIntegerDemo1 {
         BigInteger bd6 = BigInteger.valueOf(16);
         System.out.println(bd5 == bd6);//true
 
-
         BigInteger bd7 = BigInteger.valueOf(17);
         BigInteger bd8 = BigInteger.valueOf(17);
         System.out.println(bd7 == bd8);//false
-
 
         //5.对象一旦创建内部的数据不能发生改变
         BigInteger bd9 =BigInteger.valueOf(1);
@@ -1684,7 +1653,6 @@ public class BigIntegerDemo2 {
         //6.max
         BigInteger bd5 = bd1.max(bd2);
 
-
         //7.转为int类型整数，超出范围数据有误
         /* BigInteger bd6 = BigInteger.valueOf(2147483647L);
          int i = bd6.intValue();
@@ -1699,8 +1667,7 @@ public class BigIntegerDemo2 {
 
 ```
 
-
-## 6.4 底层存储方式：
+### 6.4 底层存储方式：
 
 对于计算机而言，其实是没有数据类型的概念的，都是0101010101，数据类型是编程语言自己规定的，所以在实际存储的时候，先把具体的数字变成二进制，每32个bit为一组，存储在数组中。 
 
@@ -1716,10 +1683,9 @@ public class BigIntegerDemo2 {
 
 ![](file:///D:/Java/data/JavaSE/09-常用API/bigInteger的底层原理.png)
 
+## 7 BigDecimal类
 
-# 7 BigDecimal类
-
-## 7.1 引入
+### 7.1 引入
 
 首先我们来分析一下如下程序的执行结果：
 
@@ -1751,7 +1717,7 @@ public class BigDecimalDemo01 {
 
 趋近于这个十进数的二进制数据； 这样使用一个不太准确的数据进行运算的时候， 最终就会造成精度丢失；为了提高精度，Java就给我们提供了BigDecimal供我们进行数据运算。
 
-## 7.2 概述
+### 7.2 概述
 
 查看API文档，我们可以看到API文档中关于BigDecimal类的定义如下：
 
@@ -1759,9 +1725,9 @@ public class BigDecimalDemo01 {
 
 BigDecimal所在包是在java.math包下，因此在使用的时候就需要进行导包。我们可以使用BigDecimal类进行更加精准的数据计算。
 
-## 7.3 常见方法
+### 7.3 常见方法
 
-<font color="red" size="3">**构造方法**</font>
+**构造方法**
 
 要用BigDecimal类，那么就需要首先学习一下如何去创建BigDecimal的对象。通过查看API文档，我们可以发现Jdk中针对BigDecimal类提供了很多的构造方法，但是最常用的构造方法是：
 
@@ -1769,7 +1735,7 @@ BigDecimal所在包是在java.math包下，因此在使用的时候就需要进�
 
 了解完常见的构造方法以后，我们接下来就重点介绍一下常见的成员方法。
 
-<font color="red" size="3">**常见成员方法**</font>
+**常见成员方法**
 
 BigDecimal类中使用最多的还是提供的进行四则运算的方法，如下：
 
@@ -1782,7 +1748,7 @@ public BigDecimal divide(BigDecimal value)			// 触发运算
 
 接下来我们就来通过一些案例演示一下这些成员方法的使用。
 
-<font color="blue" size="2">**案例1**</font>：演示基本的四则运算
+**案例1**：演示基本的四则运算
 
 代码如下所示：
 
@@ -1817,7 +1783,7 @@ public class BigDecimalDemo01 {
 
 此时我们可以看到使用BigDecimal类来完成浮点数的计算不会存在损失精度的问题。
 
-<font color="blue" size="2">**案例2**</font>：演示除法的特殊情况
+**案例2**：演示除法的特殊情况
 
 如果使用BigDecimal类型的数据进行除法运算的时候，得到的结果是一个无限循环小数，那么就会报错：ArithmeticException。 如下代码所示：
 
@@ -1915,7 +1881,7 @@ public class BigDecimalDemo02 {
 
 小结：后期在进行两个数的除法运算的时候，我们常常使用的是可以设置取舍模式的divide方法。
 
-## 7.4 底层存储方式：
+### 7.4 底层存储方式：
 
 把数据看成字符串，遍历得到里面的每一个字符，把这些字符在ASCII码表上的值，都存储到数组中。
 
@@ -1923,5 +1889,4 @@ public class BigDecimalDemo02 {
 
 ---
 
-> 📎 **相关笔记**：
-
+> 📎 **相关笔记**：[[JavaSE/09-常用API/09-时间与包装类|09-时间与包装类]] · [[JavaSE/09-常用API/09-正则表达式|09-正则表达式]] · [[JavaSE/09-常用API/09-算法与Lambda|09-算法与Lambda]] · [[JavaSE/JavaSE 索引|JavaSE 索引]]

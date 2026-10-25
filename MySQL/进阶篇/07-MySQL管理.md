@@ -1,3 +1,5 @@
+# MySQL管理
+
 ## 7. MySQL管理
 
 ### 7.1 系统数据库
@@ -255,4 +257,3 @@ source /root/xxxxx.sql
 ---
 
 > 📎 **相关笔记**：[[MySQL-基础篇]] · [[MySQL-运维篇]] · [[MySQL 索引]]
-
