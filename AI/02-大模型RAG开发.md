@@ -1,3 +1,10 @@
+---
+aliases:
+  - RAG
+  - LangChain
+  - 向量数据库
+---
+
 # 大模型 RAG 开发（LangChain 篇）
 
 > 来源：`AI/02大模型RAG开发.pptx`（114 页）。本笔记按“RAG 原理 → 向量与相似度 → LangChain 组件 → 文档入库 → 检索生成”的主线整理。原 PPT 在 `RunnablePassthrough` 处结束，尚未给出完整的检索链代码，相关缺口在文末标注。

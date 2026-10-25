@@ -43,6 +43,41 @@
       }
     },
     {
+      "query": "path:JVM/JVM 索引",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "path:JUC/JUC 索引",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "path:AI/AI 索引",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "path:微服务/微服务 索引",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "path:面试/面试 索引",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
       "query": "path:JavaSE",
       "color": {
         "a": 1,
@@ -92,6 +127,41 @@
       }
     },
     {
+      "query": "path:JVM",
+      "color": {
+        "a": 1,
+        "rgb": 9133302
+      }
+    },
+    {
+      "query": "path:JUC",
+      "color": {
+        "a": 1,
+        "rgb": 15485081
+      }
+    },
+    {
+      "query": "path:AI",
+      "color": {
+        "a": 1,
+        "rgb": 440020
+      }
+    },
+    {
+      "query": "path:微服务",
+      "color": {
+        "a": 1,
+        "rgb": 8702998
+      }
+    },
+    {
+      "query": "path:面试",
+      "color": {
+        "a": 1,
+        "rgb": 6583435
+      }
+    },
+    {
       "query": "path:检索",
       "color": {
         "a": 1,
@@ -109,6 +179,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 120,
-  "scale": 0.2289428485106655,
+  "scale": 0.22894284851066538,
   "close": true
 }

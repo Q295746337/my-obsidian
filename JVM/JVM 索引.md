@@ -1,3 +1,10 @@
+---
+aliases:
+  - JVM
+  - Java虚拟机
+  - 虚拟机
+---
+
 # JVM 知识体系
 
 | 笔记 | 内容 |
@@ -10,4 +17,4 @@
 
 ---
 
-> 📎 [[JavaSE/JavaSE 索引|JavaSE 索引]] · [[JavaSE/12-多线程/12-JUC并发|JUC 并发]]
+> 📎 **相关笔记**：[[JUC/JUC 索引|JUC]] · [[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE]] · [[检索/检索中心|检索中心]]

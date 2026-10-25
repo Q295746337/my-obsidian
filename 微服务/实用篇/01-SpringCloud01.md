@@ -1,3 +1,10 @@
+---
+aliases:
+  - SpringCloud
+  - 服务治理
+  - Nacos
+---
+
 # SpringCloud 01：服务拆分与注册中心
 
 > 来源：`微服务/实用篇/day01-SpringCloud01/讲义/SpringCloud01.md`（只读原文）。本篇覆盖微服务架构演进、服务拆分与远程调用、Eureka、Ribbon、Nacos。

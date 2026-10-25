@@ -1,3 +1,10 @@
+---
+aliases:
+  - AI
+  - 大模型
+  - LLM
+---
+
 # AI 大模型应用开发索引
 
 本模块整理自 4 份课程 PPT，共 352 页，覆盖提示词工程、RAG 原理与 LangChain 开发、RAG 项目实战、LangChain4J + 通义千问。
@@ -35,4 +42,4 @@
 
 ---
 
-> 📎 **相关入口**：[[JavaSE/JavaSE 索引|JavaSE 索引]] · [[检索/检索中心|检索中心]]
+> 📎 **相关笔记**：[[JavaSE/JavaSE 索引|JavaSE]] · [[检索/检索中心|检索中心]]

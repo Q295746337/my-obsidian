@@ -1,3 +1,10 @@
+---
+aliases:
+  - LangChain4J
+  - 通义千问
+  - Function Calling
+---
+
 # LangChain4J 与通义千问（志愿填报大师）
 
 > 来源：`AI/LangChain4J+通义千问大模型应用开发(志愿填报大师).pptx`（132 页）。本笔记按“Java AI 化背景 → 大模型基础与调用 → LangChain4J 会话功能 → RAG 知识库 → Tools 工具调用”的主线整理。原 PPT 在第 130 页讲完 Tools 实现后结束，未展示完整的志愿填报项目整合；第 131 页为空，第 132 页为结束页。

@@ -1,3 +1,9 @@
+---
+aliases:
+  - Docker
+  - 容器
+---
+
 # Docker 实用篇
 
 > 来源：`微服务/实用篇/day03-Docker/讲义/Docker实用篇.md`（只读原文）。本篇覆盖 Docker 概念、镜像/容器/数据卷、Dockerfile、Docker Compose 与镜像仓库。

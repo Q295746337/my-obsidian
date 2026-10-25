@@ -1,3 +1,10 @@
+---
+aliases:
+  - JUC
+  - 并发编程
+  - 多线程
+---
+
 # JUC 知识体系
 
 > JUC 系列共 4 篇，按“基础 → 原理 → 应用 → 模式”组织。
@@ -11,4 +18,4 @@
 
 ---
 
-> 📎 **相关笔记**：[[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE 索引]] · [[JVM/JVM 索引|JVM 索引]]
+> 📎 **相关笔记**：[[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE]] · [[JVM/JVM 索引|JVM]] · [[检索/检索中心|检索中心]]

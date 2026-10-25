@@ -25,4 +25,4 @@ aliases:
 
 ---
 
-> 📎 [[JavaWeb/JavaWeb 索引|JavaWeb]] · [[MySQL/MySQL 索引|MySQL]] · [[Redis/Redis 索引|Redis]] · [[SSM框架/SSM框架 索引|SSM框架]] · [[SpringBoot2/SpringBoot2 索引|SpringBoot2]] · [[检索/检索中心|检索中心]]
+> 📎 [[JavaWeb/JavaWeb 索引|JavaWeb]] · [[MySQL/MySQL 索引|MySQL]] · [[Redis/Redis 索引|Redis]] · [[SSM框架/SSM框架 索引|SSM框架]] · [[SpringBoot2/SpringBoot2 索引|SpringBoot2]] · [[JVM/JVM 索引|JVM]] · [[JUC/JUC 索引|JUC]] · [[检索/检索中心|检索中心]]
