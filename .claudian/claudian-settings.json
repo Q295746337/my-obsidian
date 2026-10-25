@@ -2,19 +2,17 @@
   "userName": "",
   "permissionMode": "yolo",
   "model": "haiku",
-  "thinkingBudget": "off",
   "effortLevel": "max",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
+  "titleGenerationLocale": "",
   "titleGenerationModel": "",
   "excludedTags": [],
   "mediaFolder": "D:\\Java\\Obisidian笔记\\data",
   "systemPrompt": "",
-  "persistentExternalContextPaths": [],
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
-  "customModelAliases": {},
   "keyboardNavigation": {
     "scrollUpKey": "w",
     "scrollDownKey": "s",
@@ -27,7 +25,7 @@
       "safeMode": "acceptEdits",
       "cliPath": "",
       "cliPathsByHost": {
-        "device:ad33613f-e2df-4a8e-ab5f-62253ddc6c3d": "E:\\NodeJs\\node_modules\\@anthropic-ai\\claude-code\\bin\\claude.exe"
+        "device-149af39e715ca4322a2ca68f9e12e7c74cc6c8017df58bc6a9c35ac245386023": "E:\\NodeJs\\node_modules\\@anthropic-ai\\claude-code\\bin\\claude.exe"
       },
       "loadUserSettings": true,
       "enableChrome": true,
@@ -37,17 +35,105 @@
       "modelEnvironmentType": "",
       "titleModelEnvironmentType": "",
       "environmentVariables": "",
-      "environmentHash": ""
+      "environmentHash": "runtime-input:v1:c8962e7336fe71e858f94a4d7dbcf42217c0945e5e22709b453d05b734c31c12",
+      "enabled": true,
+      "outputStyle": null,
+      "promptSuggestions": false,
+      "discoveredOutputStyles": [
+        "default",
+        "Proactive",
+        "Explanatory",
+        "Learning"
+      ],
+      "modelAliases": {},
+      "visibleModels": [
+        "haiku",
+        "sonnet",
+        "opus",
+        "fable"
+      ],
+      "sessionEnvironmentHash": "runtime-input:v1:ebc4ebc6ad9f613efdcf6ec714d83795d5000ef0a5a8d9955baf5dbec8f4fa98",
+      "selectedModels": [
+        {
+          "value": "opus",
+          "label": "deepseek-v4-pro-0813",
+          "description": "Custom Opus model (1M context)",
+          "resolvedModel": "claude-opus-5[1M]",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "fable",
+          "label": "MiniMax/MiniMax-M2.7",
+          "description": "Custom Fable model",
+          "resolvedModel": "claude-fable-5[1M]",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "sonnet",
+          "label": "qwen3.8-max-0902",
+          "description": "Custom Sonnet model (1M context)",
+          "resolvedModel": "claude-sonnet-5[1M]",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "haiku",
+          "label": "deepseek-v4.1-flash-1017",
+          "description": "Custom Haiku model",
+          "resolvedModel": "claude-haiku-5-5",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        }
+      ]
     },
     "codex": {
       "enabled": false,
       "safeMode": "workspace-write",
       "cliPath": "",
       "cliPathsByHost": {
-        "device:ad33613f-e2df-4a8e-ab5f-62253ddc6c3d": "C:\\Users\\29574\\.codex\\.sandbox-bin\\codex.exe"
+        "device-149af39e715ca4322a2ca68f9e12e7c74cc6c8017df58bc6a9c35ac245386023": "C:\\Users\\29574\\.codex\\.sandbox-bin\\codex.exe"
       },
-      "customModels": "",
-      "discoveredModels": [
+      "modelAliases": {},
+      "visibleModels": [
+        "deepseek-v4-pro",
+        "deepseek-v4-flash"
+      ],
+      "enableUltraEffort": false,
+      "responseStyle": "pragmatic",
+      "responseVerbosity": "default",
+      "reasoningSummary": "detailed",
+      "environmentVariables": "",
+      "environmentHash": "runtime-input:v1:088b148520e94280d989b090a8da3310e1ebd4ceac21f9b22aaff87f4b3eb3c0",
+      "sessionEnvironmentHash": "runtime-input:v1:cf4a613a63a895356fbc95544817979656506c93b9fb3fe1c76833522e1c19fc",
+      "installationMethodsByHost": {},
+      "wslDistroOverridesByHost": {},
+      "selectedModels": [
         {
           "model": "deepseek-v4-pro",
           "displayName": "DeepSeek V4 Pro",
@@ -108,28 +194,18 @@
           ],
           "isDefault": false
         }
-      ],
-      "modelAliases": {},
-      "visibleModels": null,
-      "reasoningSummary": "detailed",
-      "environmentVariables": "",
-      "environmentHash": "",
-      "catalogTimestamp": 1784773549929,
-      "catalogFingerprint": "1:924f25e38de317068c8f393f39ff3527041784106d6437eb9f81c77d4f8954f3",
-      "installationMethodsByHost": {},
-      "wslDistroOverridesByHost": {}
+      ]
     },
     "grok": {
-      "catalogsByHost": {},
       "cliPath": "",
       "cliPathsByHost": {},
       "enabled": false,
       "environmentHash": "",
       "environmentVariables": "",
       "modelAliases": {},
-      "planBasePermissionMode": "normal",
       "preferredReasoningByModel": {},
-      "visibleModels": null
+      "visibleModels": [],
+      "selectedModelsByHost": {}
     },
     "opencode": {
       "cliPath": "",
@@ -139,41 +215,77 @@
       "environmentVariables": "OPENCODE_ENABLE_EXA=1",
       "modelAliases": {},
       "preferredThinkingByModel": {},
-      "selectedMode": "",
       "thinkingOptionsByModel": {},
-      "visibleModels": []
+      "visibleModels": [],
+      "selectedModels": []
     },
     "pi": {
       "cliPath": "",
       "cliPathsByHost": {},
-      "discoveredModels": [],
       "enabled": false,
       "environmentHash": "",
       "environmentVariables": "",
       "modelAliases": {},
       "preferredThinkingByModel": {},
-      "toolMode": "all",
-      "visibleModels": []
+      "sessionEnvironmentHash": "",
+      "visibleModels": [],
+      "selectedModels": []
+    },
+    "deepseek": {
+      "enabled": false,
+      "codeMode": false,
+      "presetPlugins": "",
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "environmentVariables": "",
+      "environmentHash": "",
+      "visibleModels": [],
+      "modelAliases": {},
+      "preferredReasoningByModel": {},
+      "selectedModels": []
     }
   },
   "settingsProvider": "claude",
+  "lastSelectedChatModel": {
+    "providerId": "claude",
+    "model": "haiku"
+  },
+  "inlineEditModel": null,
   "savedProviderModel": {
-    "claude": "haiku"
+    "claude": "haiku",
+    "codex": "openai-codex/deepseek-v4-pro"
   },
   "savedProviderEffort": {
-    "claude": "max"
+    "claude": "max",
+    "codex": "high"
   },
   "savedProviderServiceTier": {},
-  "savedProviderThinkingBudget": {},
   "savedProviderPermissionMode": {
-    "claude": "yolo"
+    "claude": "yolo",
+    "codex": "auto-review"
   },
   "pendingProviderSessionInvalidations": {},
-  "lastCustomModel": "",
-  "maxTabs": 3,
   "enableAutoScroll": true,
+  "showMessageTimestamps": false,
   "deferMathRenderingDuringStreaming": true,
+  "pluginRenderedFenceLanguages": [],
   "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
-  "hiddenProviderCommands": {}
+  "enableZenMode": true,
+  "zenModePosition": null,
+  "enableDualPane": true,
+  "dualPaneSide": "right",
+  "restoreTabsOnStartup": true,
+  "skillsSynced": false,
+  "sessionManagerOrganization": "list",
+  "sessionManagerSort": "last-updated",
+  "projectSort": "created",
+  "sessionAutoArchiveAfter": "off",
+  "pinnedLinkedContentPaths": [],
+  "hiddenCommands": [],
+  "thinkingBudget": "off",
+  "customModelAliases": {},
+  "savedProviderThinkingBudget": {},
+  "lastCustomModel": "",
+  "maxTabs": 3
 }
