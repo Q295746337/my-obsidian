@@ -1,5 +1,7 @@
 # SpringMVC 高级
 
+> 前置：[[SSM框架/SpringMVC/day01-基础|SpringMVC 基础]]；对比：[[SSM框架/Spring框架/day02-AOP|Spring AOP]]；应用：[[JavaWeb/04-SpringBoot请求响应|SpringBoot 请求响应]]。
+
 ## SpringMVC_day02
 
 **今日内容**

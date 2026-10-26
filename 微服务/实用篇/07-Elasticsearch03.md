@@ -2,7 +2,7 @@
 
 > 来源：`微服务/实用篇/day07-Elasticsearch03/讲义/分布式搜索引擎03.md`（只读原文）。本篇覆盖数据聚合、拼音分词与自动补全、MySQL 数据同步、ES 集群。
 >
-> 前置：[[微服务/实用篇/06-Elasticsearch02|Elasticsearch 02]] · 数据源：[[MySQL/进阶篇/02-索引|MySQL 索引]] · 数据同步依赖：[[微服务/实用篇/04-RabbitMQ|RabbitMQ]]
+> 前置：[[微服务/实用篇/06-Elasticsearch02|Elasticsearch 02]] · 数据源：[[MySQL/进阶篇/02-索引|索引]] · 数据同步依赖：[[微服务/实用篇/04-RabbitMQ|RabbitMQ]]
 
 ## 1.数据聚合
 

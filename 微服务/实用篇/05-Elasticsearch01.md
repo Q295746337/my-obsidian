@@ -2,7 +2,7 @@
 
 > 来源：`微服务/实用篇/day05-Elasticsearch01/讲义/分布式搜索引擎01.md`（只读原文）。本篇覆盖 Elasticsearch/ELK、倒排索引、索引库与文档 CRUD、RestClient。
 >
-> 对比：[[MySQL/进阶篇/02-索引|MySQL 索引]] · 后续：[[微服务/实用篇/06-Elasticsearch02|Elasticsearch 02]]
+> 对比：[[MySQL/进阶篇/02-索引|索引]] · 后续：[[微服务/实用篇/06-Elasticsearch02|Elasticsearch 02]]
 
 > 本篇主题：elasticsearch基础
 

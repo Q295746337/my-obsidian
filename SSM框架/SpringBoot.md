@@ -226,7 +226,7 @@ public class Application {
 
 官网地址如下：
 
-```
+```text
 https://spring.io/projects/spring-boot
 ```
 
@@ -456,13 +456,13 @@ public class Springboot01QuickstartApplication {
 
 我们现在启动服务器默认的端口号是 `8080`，访问路径可以书写为
 
-```
+```text
 http://localhost:8080/books/1
 ```
 
 在线上环境我们还是希望将端口号改为 `80`，这样在访问的时候就可以不写端口号了，如下
 
-```
+```text
 http://localhost/books/1
 ```
 
@@ -470,7 +470,7 @@ http://localhost/books/1
 
 * `application.properties`
 
-  ```
+  ```properties
   server.port=80
   ```
 
@@ -1066,7 +1066,7 @@ java –jar springboot.jar –-server.port=88 –-spring.profiles.active=test
 
 大家进行测试后就会发现命令行设置的端口号优先级高（也就是使用的是命令行设置的端口号），配置的优先级其实 `SpringBoot` 官网已经进行了说明，参见 :
 
-```
+```text
 https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config
 ```
 

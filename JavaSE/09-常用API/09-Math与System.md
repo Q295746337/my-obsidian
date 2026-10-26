@@ -1820,7 +1820,7 @@ BigDecimal divide(BigDecimal divisor, int scale, int roundingMode)
 
 上述divide方法参数说明：
 
-```
+```text
 divisor:			除数对应的BigDecimal对象；
 scale:				精确的位数；
 roundingMode:		取舍模式；

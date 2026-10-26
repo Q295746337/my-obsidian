@@ -1107,7 +1107,7 @@ public class BookController {
 
 发送请求与参数:
 
-```
+```text
 http://localhost/commonParam?name=itcast
 ```
 
@@ -1132,7 +1132,7 @@ public class UserController {
 
 发送请求与参数:
 
-```
+```text
 http://localhost/commonParam?name=itcast&age=15
 ```
 
@@ -1267,7 +1267,7 @@ CharacterEncodingFilter是在spring-web包中，所以用之前需要导入对�
 
 发送请求与参数:
 
-```
+```text
 http://localhost/commonParamDifferentName?name=张三&age=18
 ```
 
@@ -2608,19 +2608,19 @@ public class BookController {
 
 问题1：每个方法的@RequestMapping注解中都定义了访问路径/books，重复性太高。
 
-```
+```text
 将@RequestMapping提到类上面，用来定义所有方法共同的访问路径。
 ```
 
 问题2：每个方法的@RequestMapping注解中都要使用method属性定义请求方式，重复性太高。
 
-```
+```text
 使用@GetMapping  @PostMapping  @PutMapping  @DeleteMapping代替
 ```
 
 问题3：每个方法响应json都需要加上@ResponseBody注解，重复性太高。
 
-```
+```text
 1.将ResponseBody提到类上面，让所有的方法都有@ResponseBody的功能
 2.使用@RestController注解替换@Controller与@ResponseBody注解，简化书写
 ```

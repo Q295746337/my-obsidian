@@ -279,7 +279,7 @@ Maven安装配置步骤：
 
 3). 打开DOS命令提示符进行验证，出现如图所示表示安装成功
 
-```
+```bash
 mvn -v
 ```
 
@@ -343,7 +343,6 @@ mvn -v
 <img src="file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221201093737128.png" alt="image-20221201093737128" style="zoom:80%;" />
 
 这里所设置的maven的环境信息，并未指定任何一个project，此时设置的信息就属于全局配置信息。 以后，我们再创建project，默认就是使用我们全局配置的信息。
-
 
 #### 3.2 Maven项目
 
@@ -457,7 +456,6 @@ Maven坐标主要组成
 > * 上面所说的资源可以是插件、依赖、当前项目。
 > * 我们的项目如果被其他的项目依赖时，也是需要坐标来引入的。
 
-
 #### 3.3 导入Maven项目
 
 - **方式1：使用Maven面板，快速导入项目**
@@ -560,7 +558,6 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 在pom.xml文件中只添加了logback-classic依赖，但由于maven的依赖具有传递性，所以会自动把所依赖的其他jar包也一起导入。
 
-
 依赖传递可以分为：
 
 1. 直接依赖：在当前项目中通过依赖配置建立的依赖关系
@@ -582,7 +579,6 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 问题：之前我们讲了依赖具有传递性。那么A依赖B，B依赖C，如果A不想将C依赖进来，是否可以做到？ 
 
 答案：在maven项目中，我们可以通过排除依赖来实现。
-
 
 什么是排除依赖？
 
@@ -706,7 +702,6 @@ IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具
 >
 > 		clean不会运行，compile会运行。  因为compile与package属于同一套生命周期，而clean与package不属于同一套生命周期。
 
-
 ##### 4.4.2 执行
 
 在日常开发中，当我们要执行指定的生命周期时，有两种执行方式：
@@ -778,7 +773,7 @@ clean：
 
 如果本地仓库中有很多这样的以lastUpadted结尾的文件，可以定义一个批处理文件，在其中编写如下脚本来删除： 
 
-~~~
+~~~bash
 set REPOSITORY_PATH=E:\develop\apache-maven-3.6.1\mvn_repo
 rem 正在搜索...
 
@@ -800,7 +795,6 @@ pause
 ![](file:///D:/Java/data/JavaWeb/03-Maven与SpringBoot入门/image-20221214154559817.png) 
 
 修改完毕后，双击运行即可删除maven仓库中的残留文件。
-
 
 ---
 
@@ -858,7 +852,6 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
 
 接下来，我们就直接通过一个SpringBoot的web入门程序，让大家快速感受一下，基于SpringBoot进行Web开发的便捷性。
-
 
 ### 1. SpringBootWeb快速入门
 
@@ -1090,7 +1083,7 @@ HTTP协议又分为：请求协议和响应协议
 
   常见的HTTP请求头有:
 
-  ~~~
+  ~~~http
   Host: 表示请求的主机名
   
   User-Agent: 浏览器版本。 例如：Chrome浏览器的标识类似Mozilla/5.0 ...Chrome/79 ，IE浏览器的标识类似Mozilla/5.0 (Windows NT ...)like Gecko
@@ -1160,7 +1153,7 @@ GET请求和POST请求的区别：
 
   常见的HTTP响应头有:
 
-  ~~~
+  ~~~http
   Content-Type：表示该响应内容的类型，例如text/html，image/jpeg ；
   
   Content-Length：表示该响应内容的长度（字节数）；
@@ -1350,7 +1343,6 @@ Web服务器是一个应用程序(软件)，对HTTP协议的操作进行封装�
 
 Web服务器是安装在服务器端的一款软件，将来我们把自己写的Web项目部署到Tomcat服务器软件中，当Web服务器软件启动后，部署在Web服务器软件中的页面就可以直接通过浏览器来访问了。
 
-
 **Web服务器软件使用步骤**
 
 * 准备静态资源
@@ -1395,7 +1387,6 @@ Tomcat就是一款软件，我们主要是以学习如何去使用为主。具�
 4. IDEA中如何使用Tomcat,后面这两个都是我们以后开发经常会用到的方式
 
 首选我们来认识下Tomcat。
-
 
 ##### 3.1.3 Tomcat
 
@@ -1521,7 +1512,6 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入：`http://12
 
 > 注: HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。
 
-
 #### 3.3 入门程序解析
 
 关于web开发的基础知识，我们可以告一段落了。下面呢，我们在基于今天的核心技术点SpringBoot快速入门案例进行分析。
@@ -1587,7 +1577,6 @@ Spring的官方提供了很多现成的starter(起步依赖)，我们在开发�
 每一个起步依赖，都用于开发一个特定的功能。
 
 > 举例：当我们开发中需要使用redis数据库时，只需要在SpringBoot项目中，引入：spring-boot-starter-redis ，即可导入redis开发所需要的依赖。
-
 
 ##### 3.3.2 SpringBoot父工程
 

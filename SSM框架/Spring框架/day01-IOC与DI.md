@@ -588,7 +588,7 @@ public class BookServiceImpl implements BookService {
 
 对于bean的基础配置，在前面的案例中已经使用过:
 
-```
+```xml
 <bean id="" class=""/>
 ```
 
@@ -745,7 +745,7 @@ public class AppForName {
 
 * 将scope设置为`prototype`
 
-  ```
+  ```xml
   <bean id="bookDao" name="dao" class="com.itheima.dao.impl.BookDaoImpl" scope="prototype"/>
   ```
 
@@ -1249,7 +1249,7 @@ public class UserDaoFactoryBean implements FactoryBean<UserDao> {
 
 (1)bean是如何创建的呢?
 
-```
+```text
 构造方法
 ```
 
@@ -1408,7 +1408,7 @@ public class BookDaoImpl implements BookDao {
 
 * 调用ctx的close()方法
 
-  ```
+  ```java
   ctx.close();
   ```
 
@@ -1422,7 +1422,7 @@ public class BookDaoImpl implements BookDao {
 
 * 调用ctx的registerShutdownHook()方法
 
-  ```
+  ```java
   ctx.registerShutdownHook();
   ```
 

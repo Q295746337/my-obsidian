@@ -2,7 +2,7 @@
 
 > 来源：`微服务/实用篇/day02-SpringCloud02/讲义/SpringCloud实用篇02.md`（只读原文）。本篇覆盖 Nacos 配置管理、Feign 远程调用与 Gateway 服务网关。
 >
-> 前置：[[微服务/实用篇/01-SpringCloud01|SpringCloud 01]] · SpringBoot 基础：[[SpringBoot2/01-基础篇/02-SpringBoot基础配置|SpringBoot 基础配置]] · 后续：[[微服务/高级篇/01-微服务保护|微服务保护]]
+> 前置：[[微服务/实用篇/01-SpringCloud01|SpringCloud 01]] · SpringBoot 基础：[[SpringBoot2/01-基础篇/02-SpringBoot基础配置|基础配置]] · 后续：[[微服务/高级篇/01-微服务保护|微服务保护]]
 
 ## 1.Nacos配置管理
 

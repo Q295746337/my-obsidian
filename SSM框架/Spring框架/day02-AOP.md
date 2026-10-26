@@ -6,6 +6,8 @@ aliases:
 
 # Spring AOP
 
+> 前置：[[SSM框架/Spring框架/day01-IOC与DI|IOC 与 DI]]；后续：[[SSM框架/Spring框架/day03-事务|Spring 事务]]；应用：[[JavaWeb/06-SpringBoot事务与AOP|SpringBoot 事务与 AOP]]。
+
 ## Spring_day02
 
 **今日目标**
@@ -154,13 +156,13 @@ public class App {
 
 - 第三方的类指的是什么?
 
-  ```
+  ```text
   DruidDataSource
   ```
 
 - 如何注入数据库连接四要素?
 
-  ```
+  ```text
   setter注入
   ```
 
@@ -419,7 +421,7 @@ public class App {
 
   1.在properties中配置键值对的时候，如果key设置为`username`
 
-  ```
+  ```properties
   username=root666
   ```
 
@@ -545,7 +547,7 @@ public class App {
 
   * 如何在applicationContext.xml引入properties配置文件中的值
 
-    ```
+    ```text
     ${key}
     ```
 
@@ -665,7 +667,7 @@ BookDao bookDao = (BookDao) ctx.getBean("bookDao");
 
 方式二：
 
-```
+```java
 BookDao bookDao = ctx.getBean("bookDao"，BookDao.class);
 ```
 
@@ -673,7 +675,7 @@ BookDao bookDao = ctx.getBean("bookDao"，BookDao.class);
 
 方式三:
 
-```
+```java
 BookDao bookDao = ctx.getBean(BookDao.class);
 ```
 
@@ -1089,7 +1091,7 @@ public class AppForAnnotation {
 
 * @ComponentScan注解用于设定扫描路径，此注解只能添加一次，多个数据请用数组格式
 
-  ```
+  ```java
   @ComponentScan({com.itheima.service","com.itheima.dao"})
   ```
 

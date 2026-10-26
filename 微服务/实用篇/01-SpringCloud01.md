@@ -9,7 +9,7 @@ aliases:
 
 > 来源：`微服务/实用篇/day01-SpringCloud01/讲义/SpringCloud01.md`（只读原文）。本篇覆盖微服务架构演进、服务拆分与远程调用、Eureka、Ribbon、Nacos。
 >
-> 前置：[[SpringBoot2/01-基础篇/01-快速上手SpringBoot|SpringBoot 快速上手]] · 入口：[[微服务/微服务 索引|微服务索引]]
+> 前置：[[SpringBoot2/01-基础篇/01-快速上手SpringBoot|快速上手]] · 入口：[[微服务/微服务 索引|微服务索引]]
 
 ## 1.认识微服务
 

@@ -2,7 +2,7 @@
 
 > 来源：`微服务/实用篇/day04-MQ/讲义/RabbitMQ.md`（只读原文）。本篇覆盖同步/异步通讯、RabbitMQ 消息模型、SpringAMQP 的简单队列/WorkQueue/发布订阅与消息转换器。
 >
-> 对比：[[Redis/实战篇/实战-消息队列|Redis 消息队列]] · 应用：[[SpringBoot2/03-开发实用篇/08-整合第三方技术-消息|SpringBoot 整合消息]]
+> 对比：[[Redis/实战篇/实战-消息队列|消息队列]] · 应用：[[SpringBoot2/03-开发实用篇/08-整合第三方技术-消息|SpringBoot 消息]]
 
 ## 1.初识MQ
 

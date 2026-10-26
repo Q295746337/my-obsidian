@@ -1,3 +1,9 @@
+---
+aliases:
+  - Spring八股
+  - 框架八股
+---
+
 # Spring 与框架
 
 > 本笔记整理自八股文题库的「IOC/AOP、SpringMVC、SpringBoot、事务、循环依赖与自动装配」部分，保留原题表述与原文顺序。跨模块主笔记：[[SSM框架/SSM框架 索引|SSM]] · [[SpringBoot2/SpringBoot2 索引|SpringBoot2]]。

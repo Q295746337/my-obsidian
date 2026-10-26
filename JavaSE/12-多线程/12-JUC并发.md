@@ -343,7 +343,6 @@ pool-1-thread-1---->> 执行了任务4
 
 由于任务1在线程池中等待时间最长，因此任务1被丢弃。
 
-
 **案例演示4**：演示ThreadPoolExecutor.CallerRunsPolicy任务处理策略
 
 ```java
@@ -1212,7 +1211,6 @@ public class MyThread2 extends Thread {
 ```
 
 **程序问题 :**  女孩虽然知道结婚基金是十万，但是当基金的余额发生变化的时候，女孩无法知道最新的余额。
-
 
 ### 2.2 volatile解决
 

@@ -1,5 +1,7 @@
 # Spring 事务
 
+> 前置：[[SSM框架/Spring框架/day02-AOP|Spring AOP]] · [[MySQL/MySQL-基础篇|MySQL 基础篇]]；应用：[[JavaWeb/06-SpringBoot事务与AOP|SpringBoot 事务与 AOP]]。
+
 ## Spring_day03
 
 **今日目标**
@@ -218,7 +220,6 @@ public class BookDaoImpl implements BookDao {
 * 对于update方法来说，就没有该功能
 * 我们要使用SpringAOP的方式在不改变update方法的前提下让其具有打印系统时间的功能。
 
-
 ### 2.4 AOP实现步骤
 
 #### 步骤1:添加依赖
@@ -240,7 +241,7 @@ pom.xml
 
 #### 步骤2:定义接口与实现类
 
-```
+```text
 环境准备的时候，BookDaoImpl已经准备好，不需要做任何修改
 ```
 
@@ -552,7 +553,7 @@ execution(void com.itheima.dao.BookDao.update())
 
 描述方式二：执行com.itheima.dao.impl包下的BookDaoImpl类中的无参数update方法
 
-```
+```text
 execution(void com.itheima.dao.impl.BookDaoImpl.update())
 ```
 
@@ -564,7 +565,7 @@ execution(void com.itheima.dao.impl.BookDaoImpl.update())
 
 对于这个格式，我们不需要硬记，通过一个例子，理解它:
 
-```
+```text
 execution(public User com.itheima.service.UserService.findById(int))
 ```
 
@@ -587,7 +588,7 @@ execution(public User com.itheima.service.UserService.findById(int))
 
 * `*`:单个独立的任意符号，可以独立出现，也可以作为前缀或者后缀的匹配符出现
 
-  ```
+  ```text
   execution（public * com.itheima.*.UserService.find*(*))
   ```
 
@@ -595,7 +596,7 @@ execution(public User com.itheima.service.UserService.findById(int))
 
 * `..`：多个连续的任意符号，可以独立出现，常用于简化包名与参数的书写
 
-  ```
+  ```text
   execution（public User com..UserService.findById(..))
   ```
 
@@ -603,7 +604,7 @@ execution(public User com.itheima.service.UserService.findById(int))
 
 * `+`：专用于匹配子类类型
 
-  ```
+  ```text
   execution(* *..*Service+.*(..))
   ```
 
@@ -2058,7 +2059,7 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
 
 * 切入点表达式标准格式：动作关键字(访问修饰符  返回值  包名.类/接口名.方法名（参数）异常名)
 
-  ```
+  ```text
   execution(* com.itheima.service.*Service.*(..))
   ```
 
@@ -2640,7 +2641,6 @@ public class SpringConfig {
   * SERIALIZABLE: 串行化
 
 介绍完上述属性后，还有最后一个事务的传播行为，为了讲解该属性的设置，我们需要完成下面的案例。
-
 
 #### 6.3.2 转账业务追加日志案例
 

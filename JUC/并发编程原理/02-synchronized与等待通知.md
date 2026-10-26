@@ -12,7 +12,7 @@ aliases:
 >
 > 入口：[[JUC/JUC 索引|JUC 索引]]
 >
-> 前置：[[JUC/并发编程原理/01-CPU与volatile|CPU 与 volatile]]；后续：[[JUC/并发编程原理/03-AQS与锁|AQS 与锁]]。
+> 前置：[[JUC/并发编程原理/01-CPU与volatile|CPU 与 volatile]]；后续：[[JUC/并发编程原理/03-AQS与锁|JUC 锁]]。
 
 ## Monitor 原理
 

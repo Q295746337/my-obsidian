@@ -1,5 +1,7 @@
 # Java基础入门
 
+> 后续：[[JavaSE/02-运算符与流程控制|运算符与流程控制]] · [[JavaSE/05-面向对象编程|面向对象编程]]；练习：[[JavaSE/04-基础综合练习|基础综合练习]]。
+
 ## 1. 人机交互
 
 ### 1.1 什么是cmd？
@@ -439,7 +441,6 @@ JRE（Java Runtime Environment），Java运行环境，包含了JVM和Java的核
 JDK（Java Development Kit）称为Java开发工具，包含了JRE和开发工具
 
 总结：我们只需安装JDK即可，它包含了java的运行环境和虚拟机。
-
 
 ---
 

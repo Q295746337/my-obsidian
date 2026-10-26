@@ -1,5 +1,7 @@
 # Redis 入门篇
 
+> 后续：[[Redis/实战篇/实战-开篇导读|实战-开篇导读]]；延伸：[[Redis/高级篇/高级-分布式缓存|分布式缓存]]；索引：[[Redis/Redis 索引|Redis 索引]]。
+
 ## Redis实战课
 
 从基础入门，到企业应用实战，再到底层原理、源码分析，一套课程拿捏Redis.
@@ -45,11 +47,9 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 而NoSql则是相对于传统关系型数据库而言，有很大差异的一种数据库。
 
-
 ### 1.1.认识NoSQL
 
 **NoSql**可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为**非关系型数据库**。
-
 
 #### 1.1.1.结构化与非结构化
 
@@ -106,7 +106,6 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 此处要维护“张三”的订单与商品“荣耀”和“小米11”的关系，不得不冗余的将这两个商品保存在张三的订单文档中，不够优雅。还是建议用业务来维护关联关系。
 
-
 #### 1.1.3.查询方式
 
 传统关系型数据库会基于Sql语句做查询，语法有统一标准；
@@ -124,7 +123,6 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 
 而非关系型数据库往往不支持事务，或者不能严格保证ACID的特性，只能实现基本的一致性。
-
 
 #### 1.1.5.总结
 
@@ -210,7 +208,6 @@ make && make install
 
 如果没有出错，应该就安装成功了。
 
-
 默认的安装路径是在 `/usr/local/bin`目录下：
 
 ![](https://i.imgur.com/YSxkGm7.png)
@@ -235,7 +232,7 @@ redis的启动方式有很多种，例如：
 
 安装完成后，在任意目录输入redis-server命令即可启动Redis：
 
-```
+```bash
 redis-server
 ```
 
@@ -253,7 +250,7 @@ redis-server
 
 我们先将这个配置文件备份一份：
 
-```
+```bash
 cp redis.conf redis.conf.bck
 ```
 
@@ -397,7 +394,6 @@ GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://g
 
 不过该仓库提供的是RedisDesktopManager的源码，并未提供windows安装包。
 
-
 在下面这个仓库可以找到安装包：https://github.com/lework/RedisDesktopManager-Windows/releases
 
 
@@ -466,7 +462,6 @@ Redis为了方便我们学习，将操作不同数据类型的命令也做了分
 
 接下来，我们就学习常见的五种基本数据类型的相关命令。
 
-
 ### 2.1.Redis通用命令
 
 通用指令是部分数据类型的，都可以使用的指令，常见的有：
@@ -530,7 +525,7 @@ Redis没有类似MySQL中的Table的概念，我们该如何区分不同类型�
 
 Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔开，格式如下：
 
-```
+```text
 	项目名:业务名:类型:id
 ```
 
@@ -596,7 +591,6 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 - 查询速度一般
 
 常用来存储一个有序数据，例如：朋友圈点赞列表，评论列表等。
-
 
 List的常见命令有：
 
@@ -672,7 +666,6 @@ SortedSet具备下列特性：
 
 因为SortedSet的可排序特性，经常被用来实现排行榜这样的功能。
 
-
 SortedSet的常见命令有：
 
 - ZADD key score member：添加一个或多个元素到sorted set ，如果已经存在则更新其score值
@@ -724,7 +717,6 @@ Jack 85, Lucy 89, Rose 82, Tom 95, Jerry 78, Amy 92, Miles 76
 
 - Jedis和Lettuce：这两个主要是提供了Redis命令对应的API，方便我们操作Redis，而SpringDataRedis又对这两种做了抽象和封装，因此我们后期会直接以SpringDataRedis来学习。
 - Redisson：是在Redis基础上实现了分布式的可伸缩的java数据结构，例如Map、Queue等，而且支持跨进程的同步机制：Lock、Semaphore等待，比较适合用来实现特殊的功能需求。
-
 
 ### 3.1.Jedis客户端
 
@@ -863,7 +855,6 @@ SpringDataRedis中提供了RedisTemplate工具类，其中封装了各种对Redi
 #### 3.2.1.快速入门
 
 SpringBoot已经提供了对SpringDataRedis的支持，使用非常简单。
-
 
 首先，新建一个maven项目，然后按照下面步骤执行：
 
@@ -1041,7 +1032,6 @@ public class RedisConfig {
 
 整体可读性有了很大提升，并且能将Java对象自动的序列化为JSON字符串，并且查询时能自动把JSON反序列化为Java对象。不过，其中记录了序列化时对应的class名称，目的是为了查询时实现自动反序列化。这会带来额外的内存开销。
 
-
 #### 3.2.3.StringRedisTemplate
 
 为了节省内存空间，我们可以不使用JSON序列化器来处理value，而是统一使用String序列化器，要求只能存储String类型的key和value。当需要存储Java对象时，手动完成对象的序列化和反序列化。
@@ -1049,7 +1039,6 @@ public class RedisConfig {
 ![](file:///D:/Java/data/Redis/入门篇/Ip9TKSY.png)
 
 因为存入和读取时的序列化及反序列化都是我们自己实现的，SpringDataRedis就不会将class信息写入Redis了。
-
 
 这种用法比较普遍，因此SpringDataRedis就提供了RedisTemplate的子类：StringRedisTemplate，它的key和value的序列化方式默认就是String方式。
 
@@ -1109,7 +1098,6 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 而NoSql则是相对于传统关系型数据库而言，有很大差异的一种数据库。
 
 对于存储的数据，没有类似Mysql那么严格的约束，比如唯一性，是否可以为null等等，所以我们把这种松散结构的数据库，称之为NoSQL数据库。
-
 
 ### 2.课程目录
 
@@ -1187,7 +1175,6 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 此处要维护“张三”的订单与商品“荣耀”和“小米11”的关系，不得不冗余的将这两个商品保存在张三的订单文档中，不够优雅。还是建议用业务来维护关联关系。
 
-
 ##### 3.1.3.查询方式
 
 传统关系型数据库会基于Sql语句做查询，语法有统一标准；
@@ -1205,7 +1192,6 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 
 而非关系型数据库往往不支持事务，或者不能严格保证ACID的特性，只能实现基本的一致性。
-
 
 ##### 3.1.5.总结
 
@@ -1290,7 +1276,6 @@ make && make install
 
 如果没有出错，应该就安装成功了。
 
-
 默认的安装路径是在 `/usr/local/bin`目录下：
 
 ![](https://i.imgur.com/YSxkGm7.png)
@@ -1315,7 +1300,7 @@ redis的启动方式有很多种，例如：
 
 安装完成后，在任意目录输入redis-server命令即可启动Redis：
 
-```
+```bash
 redis-server
 ```
 
@@ -1333,7 +1318,7 @@ redis-server
 
 我们先将这个配置文件备份一份：
 
-```
+```bash
 cp redis.conf redis.conf.bck
 ```
 
@@ -1476,7 +1461,6 @@ redis-cli [options] [commonds]
 GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://github.com/uglide/RedisDesktopManager
 
 不过该仓库提供的是RedisDesktopManager的源码，并未提供windows安装包。
-
 
 在下面这个仓库可以找到安装包：https://github.com/lework/RedisDesktopManager-Windows/releases
 
@@ -2106,7 +2090,6 @@ SortedSet具备下列特性：
 
 因为SortedSet的可排序特性，经常被用来实现排行榜这样的功能。
 
-
 SortedSet的常见命令有：
 
 - ZADD key score member：添加一个或多个元素到sorted set ，如果已经存在则更新其score值
@@ -2140,7 +2123,6 @@ SortedSet的常见命令有：
 
 - Jedis和Lettuce：这两个主要是提供了Redis命令对应的API，方便我们操作Redis，而SpringDataRedis又对这两种做了抽象和封装，因此我们后期会直接以SpringDataRedis来学习。
 - Redisson：是在Redis基础上实现了分布式的可伸缩的java数据结构，例如Map.Queue等，而且支持跨进程的同步机制：Lock.Semaphore等待，比较适合用来实现特殊的功能需求。
-
 
 #### 5.1 Jedis快速入门
 
@@ -2235,7 +2217,6 @@ void tearDown() {
 Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性能损耗，因此我们推荐大家使用Jedis连接池代替Jedis的直连方式
 
 有关池化思想，并不仅仅是这里会使用，很多地方都有，比如说我们的数据库连接池，比如我们tomcat中的线程池，这些都是池化思想的体现。
-
 
 ##### 5.2.1.创建Jedis的连接池
 
@@ -2489,7 +2470,6 @@ public class RedisConfig {
 
 整体可读性有了很大提升，并且能将Java对象自动的序列化为JSON字符串，并且查询时能自动把JSON反序列化为Java对象。不过，其中记录了序列化时对应的class名称，目的是为了查询时实现自动反序列化。这会带来额外的内存开销。
 
-
 #### 6.3 StringRedisTemplate
 
 尽管JSON的序列化方式可以满足我们的需求，但依然存在一些问题，如图：
@@ -2646,7 +2626,6 @@ make && make install
 
 如果没有出错，应该就安装成功了。
 
-
 默认的安装路径是在 `/usr/local/bin`目录下：
 
 ![image-20211211080603710](file:///D:/Java/data/Redis/入门篇/image-20211211080603710.png)
@@ -2671,7 +2650,7 @@ redis的启动方式有很多种，例如：
 
 安装完成后，在任意目录输入redis-server命令即可启动Redis：
 
-```
+```bash
 redis-server
 ```
 
@@ -2682,7 +2661,6 @@ redis-server
 
 这种启动属于`前台启动`，会阻塞整个会话窗口，窗口关闭或者按下`CTRL + C`则Redis停止。不推荐使用。
 
-
 #### 1.3.2.指定配置启动
 
 如果要让Redis以`后台`方式启动，则必须修改Redis配置文件，就在我们之前解压的redis安装包下（`/usr/local/src/redis-6.2.6`），名字叫redis.conf：
@@ -2691,7 +2669,7 @@ redis-server
 
 我们先将这个配置文件备份一份：
 
-```
+```bash
 cp redis.conf redis.conf.bck
 ```
 
@@ -2835,7 +2813,6 @@ redis-cli [options] [commonds]
 GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://github.com/uglide/RedisDesktopManager
 
 不过该仓库提供的是RedisDesktopManager的源码，并未提供windows安装包。
-
 
 在下面这个仓库可以找到安装包：https://github.com/lework/RedisDesktopManager-Windows/releases
 

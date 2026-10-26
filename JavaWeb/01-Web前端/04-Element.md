@@ -1,5 +1,7 @@
 # Element
 
+> 前置：[[JavaWeb/01-Web前端/03-Ajax与Vue|03-Ajax与Vue]]；应用：[[JavaWeb/05-案例与登录/05-案例-员工管理(上)|员工管理(上)]]。
+
 ## 1 Ajax
 
 ### 1.1 Ajax介绍
@@ -14,7 +16,6 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
 
 - 与服务器进行数据交换：通过Ajax可以给服务器发送请求，并获取服务器响应的数据。
 - 异步交互：可以在**不重新加载整个页面**的情况下，与服务器交换数据并**更新部分网页**的技术，如：搜索联想、用户名是否可用的校验等等。
-
 
 #### 1.1.2 Ajax作用
 
@@ -49,7 +50,6 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
   ![](file:///D:/Java/data/JavaWeb/01-Web前端基础/1669105479350.png) 
 
   浏览器页面发送请求给服务器，在服务器处理请求的过程中，浏览器页面还可以做其他的操作。
-
 
 ### 1.2 原生Ajax
 
@@ -544,7 +544,6 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
 - 不便管理：所有的代码都在一个工程中
 - 不便维护和扩展：前端代码更新，和后台无关，但是需要整个工程包括后台一起重新打包部署。
 
-
 所以我们目前基本都是采用的前后台分离开发方式，如下图所示：
 
 ![](file:///D:/Java/data/JavaWeb/01-Web前端基础/1669143264499.png) 
@@ -631,7 +630,6 @@ YApi主要提供了2个功能：
 
 如上步骤就是YAPI接口平台中对于接口的配置步骤。
 
-
 ## 3 前端工程化
 
 ### 3.1 前端工程化介绍
@@ -655,7 +653,6 @@ YApi主要提供了2个功能：
 - 自动化：项目的构建，测试，部署全部都是自动完成
 
 所以对于前端工程化，说白了，就是在企业级的前端项目开发中，把前端开发所需要的工具、技术、流程、经验进行规范化和标准化。从而提升开发效率，降低开发难度等等。接下来我们就需要学习vue的官方提供的脚手架帮我们完成前端的工程化。
-
 
 ### 3.2 前端工程化入门
 
@@ -686,7 +683,7 @@ YApi主要提供了2个功能：
 
 - 命令行：直接通过命令行方式创建vue项目
 
-  ~~~
+  ~~~bash
   vue create vue-project01
   ~~~
 
@@ -694,7 +691,7 @@ YApi主要提供了2个功能：
 
 - 图形化界面：通过命令先进入到图形化界面，然后再进行vue工程的创建
 
-  ~~~
+  ~~~bash
   vue ui
   ~~~
 
@@ -826,7 +823,6 @@ vue项目的标准目录结构以及目录对应的解释如下图所示:
 
 然后就能都显示NPM脚本小窗口了。
 
-
 #### 3.2.3 Vue项目开发流程
 
 那么我们访问的首页是index.html，但是我们找到public/index.html文件，打开之后发现，里面没有什么代码，但是能够呈现内容丰富的首页：如下图所示：
@@ -859,9 +855,7 @@ new Vue({
 - router:  路由，详细在后面的小节讲解
 - render: 主要使用视图的渲染的。
 
-
 来到**public/index.html**中，我们**删除div的id=app属性**，打开浏览器，发现之前访问的首页一片空白，如下图所示，这样就证明了，我们main.js中通过代码挂在到index.html的id=app的标签区域的。
-
 
 此时我们知道了vue创建的dom对象挂在到id=app的标签区域，但是我们还是没有解决最开始的问题：首页内容如何呈现的？这就涉及到render中的App了，如下图所示：
 
@@ -925,14 +919,13 @@ Element 提供了很多组件（组成网页的部件）供我们使用。例如
 
 ElementUI的学习方式和我们之前的学习方式不太一样，对于ElementUI，我们作为一个后台开发者，只需要**学会如何从ElementUI的官网拷贝组件到我们自己的页面中，并且做一些修改即可**。其官网地址：https://element.eleme.cn/#/zh-CN，我们主要学习的是ElementUI中提供的常用组件，至于其他组件同学们可以通过我们这几个组件的学习掌握到ElementUI的学习技巧，然后课后自行学习。
 
-
 ### 4.2 快速入门
 
 首先我们要掌握ElementUI的快速入门，接下来同学们就一起跟着步骤来操作一下。
 
 首先，我们先要安装ElementUI的组件库，打开VS Code，停止之前的项目，然后在命令行输入如下命令：
 
-~~~
+~~~bash
 npm install element-ui@2.15.3 
 ~~~
 
@@ -1329,7 +1322,7 @@ Dialog: 在保留当前页面状态的情况下，告知用户并承载相关操
 
 并且复制数据模型script模块中：
 
-~~~
+~~~javascript
  gridData: [{
           date: '2016-05-02',
           name: '王小虎',
@@ -1425,7 +1418,6 @@ visible属性绑定的dialogTableVisble属性一开始默认是false，所以对
 
 然后对话框visible属性值为true，所以对话框呈现出来。
 
-
 #### 4.3.4 Form表单
 
 ##### 4.3.4.1 组件演示
@@ -1454,7 +1446,7 @@ Form 表单：由输入框、选择器、单选框、多选框等控件组成，
 
 还需要注意的是，针对这个新的对话框，我们需要在data中声明新的变量dialogFormVisible来控制对话框的隐藏与显示，代码如下：
 
-~~~
+~~~javascript
  dialogFormVisible: false,
 ~~~
 
@@ -1500,7 +1492,7 @@ Form 表单：由输入框、选择器、单选框、多选框等控件组成，
 
 ![](file:///D:/Java/data/JavaWeb/01-Web前端基础/1669371003680.png)
 
-~~~
+~~~javascript
  form: {
           name: '',
           region: '',
@@ -1514,7 +1506,7 @@ Form 表单：由输入框、选择器、单选框、多选框等控件组成，
 ![](file:///D:/Java/data/JavaWeb/01-Web前端基础/1669371163913.png) 
 
 
-~~~
+~~~javascript
  onSubmit() {
        console.log(this.form); //输出表单内容到控制台
         this.dialogFormVisible=false; //关闭表案例的对话框
@@ -1771,7 +1763,6 @@ export default {
 ~~~
 
 打开浏览器，我们发现之前的element案例内容没了，从而呈现的是一片空白，那么接下来我们就可以继续开发了。
-
 
 ##### 4.4.3.2 整体布局
 
@@ -2114,7 +2105,7 @@ export default {
 
 注意的是methods属性需要和data属性同级
 
-~~~
+~~~javascript
  methods:{
         onSubmit:function(){
             console.log(this.searchForm);
@@ -2148,7 +2139,7 @@ export default {
 
 我们添加了双向绑定，所以我们需要在data的searchForm中定义出来，需要注意的是这个日期包含2个值，所以我们定义为数组，代码如下：
 
-~~~
+~~~javascript
  searchForm:{
             name:'',
             gender:'',
@@ -2417,7 +2408,7 @@ export default {
 
 然后**重启项目**，来到我们的EmpView.vue组件页面，通过import命令导入axios，代码如下：
 
-~~~
+~~~javascript
 import axios  'axios';
 ~~~
 
@@ -2628,7 +2619,6 @@ export default {
 
 当我们点击左侧导航栏时，浏览器的地址栏会发生变化，路由自动更新显示与url所对应的vue组件。
 
-
 而我们vue官方提供了路由插件Vue Router,其主要组成如下：
 
 - VueRouter：路由器类，根据路由请求在路由视图中动态渲染选中的组件
@@ -2655,7 +2645,7 @@ export default {
 
 首先我们需要先安装vue-router插件，可以通过如下命令
 
-~~~
+~~~bash
 npm install vue-router@3.5.1
 ~~~
 
@@ -2766,7 +2756,6 @@ const routes = [
 
 到此我们的路由实现成功。
 
-
 ## 6 打包部署
 
 我们的前端工程开发好了，但是我们需要发布，那么如何发布呢？主要分为2步：
@@ -2815,7 +2804,6 @@ nginx服务器的端口号是80，所以启动成功之后，我们浏览器直�
 ![](file:///D:/Java/data/JavaWeb/01-Web前端基础/1669390177896.png)
 
 到此，我们的前端工程发布成功。
-
 
 PS: 如果80端口被占用，我们需要通过**conf/nginx.conf**配置文件来修改端口号。如下图所示：
 

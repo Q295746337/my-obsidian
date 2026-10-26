@@ -1,3 +1,10 @@
+---
+aliases:
+  - JavaSE八股
+  - Java基础八股
+  - 集合八股
+---
+
 # JavaSE 基础与集合
 
 > 本笔记整理自八股文题库的「集合、泛型、反射、动态代理、JDK 新特性、String、异常与 IO」部分，保留原题表述与原文顺序。跨模块主笔记：[[JavaSE/JavaSE 索引|JavaSE]]。

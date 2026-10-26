@@ -2,7 +2,7 @@
 
 > 来源：`微服务/实用篇/day06-Elasticsearch02/讲义/分布式搜索引擎02.md`（只读原文）。本篇覆盖 DSL 查询、排序/分页/高亮、RestClient 查询与黑马旅游案例。
 >
-> 前置：[[微服务/实用篇/05-Elasticsearch01|Elasticsearch 01]] · 对比：[[MySQL/进阶篇/02-索引|MySQL 索引]] · 后续：[[微服务/实用篇/07-Elasticsearch03|Elasticsearch 03]]
+> 前置：[[微服务/实用篇/05-Elasticsearch01|Elasticsearch 01]] · 对比：[[MySQL/进阶篇/02-索引|索引]] · 后续：[[微服务/实用篇/07-Elasticsearch03|Elasticsearch 03]]
 
 在昨天的学习中，我们已经导入了大量数据到elasticsearch中，实现了elasticsearch的数据存储功能。但elasticsearch最擅长的还是搜索和数据分析。
 

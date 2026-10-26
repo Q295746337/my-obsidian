@@ -639,7 +639,7 @@ Postman测试：
 
 在现在的开发中，经常还会直接在请求的URL中传递参数。例如：
 
-~~~
+~~~text
 http://localhost:8080/user/1		
 http://localhost:880/user/1/0
 ~~~
@@ -968,7 +968,6 @@ Springboot项目的静态资源(html，css，js等前端资源)默认存放目�
 >
 > - 代表的是类路径，在maven的项目中，其实指的就是 src/main/resources 或者 src/main/java，但是java目录是存放java代码的，所以相关的配置文件及静态资源文档，就放在 src/main/resources下。
 
-
 ##### 2.3.3 实现步骤
 
 1. 在pom.xml文件中引入dom4j的依赖，用于解析XML文件
@@ -1109,7 +1108,6 @@ public class Result {
 
 这样呢，就会造成我们整个工程代码的复用性比较差，而且代码难以维护。 那如何解决这个问题呢？其实在现在的开发中，有非常成熟的解决思路，那就是分层开发。
 
-
 ### 3. 分层解耦
 
 #### 3.1 三层架构
@@ -1139,7 +1137,6 @@ public class Result {
 - Controller：控制层。接收前端发送的请求，对请求进行处理，并响应数据。
 - Service：业务逻辑层。处理具体的业务逻辑。
 - Dao：数据访问层(Data Access Object)，也称为持久层。负责数据访问操作，包括数据的增、删、改、查。
-
 
 基于三层架构的程序执行流程：
 
@@ -1578,7 +1575,6 @@ public class EmpDaoA implements EmpDao {
 > - 声明bean的时候，可以通过value属性指定bean的名字，如果没有指定，默认为类名首字母小写。
 > - 使用以上四个注解都可以声明bean，但是在springboot集成web开发中，声明控制器bean只能用@Controller。
 
-
 ###### 3.3.2.2 组件扫描
 
 问题：使用前面学习的四个注解声明的bean，一定会生效吗？
@@ -1625,7 +1621,6 @@ public class EmpDaoA implements EmpDao {
 @Autowired注解，默认是按照**类型**进行自动装配的（去IOC容器中找某个类型的对象，然后完成注入操作）
 
 > 入门程序举例：在EmpController运行的时候，就要到IOC容器当中去查找EmpService这个类型的对象，而我们的IOC容器中刚好有一个EmpService这个类型的对象，所以就找到了这个类型的对象完成注入操作。
-
 
 那如果在IOC容器中，存在多个相同类型的bean对象，会出现什么情况呢？
 
