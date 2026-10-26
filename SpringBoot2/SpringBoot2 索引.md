@@ -17,4 +17,4 @@ aliases:
 
 ---
 
-> 📎 [[JavaSE/JavaSE 索引|JavaSE]] · [[JavaWeb/JavaWeb 索引|JavaWeb]] · [[MySQL/MySQL 索引|MySQL]] · [[Redis/Redis 索引|Redis]] · [[SSM框架/SSM框架 索引|SSM框架]] · [[微服务/微服务 索引|微服务]] · [[AI/AI 索引|AI]] · [[面试/面试 索引|面试]] · [[检索/检索中心|检索中心]]
+> 📎 [[JavaSE/JavaSE 索引|JavaSE]] · [[JavaWeb/JavaWeb 索引|JavaWeb]] · [[MySQL/MySQL 索引|MySQL]] · [[Redis/Redis 索引|Redis]] · [[SSM框架/SSM框架 索引|SSM框架]] · [[微服务/微服务 索引|微服务]] · [[AI/AI 索引|AI]] · [[面试/面试 索引|面试]] · [[黑马点评/黑马点评 索引|黑马点评]] · [[检索/检索中心|检索中心]]

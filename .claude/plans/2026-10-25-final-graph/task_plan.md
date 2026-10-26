@@ -12,7 +12,7 @@
 - [x] Phase 1：盘点新资料与结构设计
 - [x] Phase 2：线程池资料入 JVM
 - [x] Phase 3：整理八股文模块
-- [ ] Phase 4：整理黑马点评模块（已恢复，新任务进行中）
+- [x] Phase 4：整理黑马点评模块（8 篇完成并自检，详见 `heimadianping-report.md`）
 - [ ] Phase 5：全库图谱整理（颜色、索引、交叉链接、检索、健康度）
 - [ ] Phase 6：全库验收 + 交付报告
 
@@ -73,4 +73,4 @@
 
 ## Status
 
-**Currently in Phase 4** — 线程池、八股文已完成；黑马点评已恢复并启动新任务；图谱整理待开始。
+**Phase 4 complete** — 线程池、八股文、黑马点评均已完成；黑马点评 8 篇已自检，报告见 `heimadianping-report.md`。图谱整理（Phase 5-6）尚未开始。

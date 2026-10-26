@@ -18,4 +18,4 @@ aliases:
 
 ---
 
-> 📎 **相关笔记**：[[JUC/JUC 索引|JUC]] · [[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE]] · [[检索/检索中心|检索中心]]
+> 📎 **相关笔记**：[[JUC/JUC 索引|JUC]] · [[JavaSE/12-多线程/12-JUC并发|JavaSE JUC 入门]] · [[JavaSE/JavaSE 索引|JavaSE]] · [[八股文/八股文 索引|八股文]] · [[JVM/05-线程池面试专题|线程池专题]] · [[检索/检索中心|检索中心]]
