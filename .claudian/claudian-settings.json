@@ -279,7 +279,6 @@
   "skillsSynced": false,
   "sessionManagerOrganization": "list",
   "sessionManagerSort": "last-updated",
-  "projectSort": "created",
   "sessionAutoArchiveAfter": "off",
   "pinnedLinkedContentPaths": [],
   "hiddenCommands": [],
